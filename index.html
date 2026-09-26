@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Murad Wazir - Web Research, Data Collection, Web Development, Programming and Software Development. MW • Wazir Aura.">
+    <title>Wazir Research Lab | Web Research, Data & Technology</title>
 
-    <meta name="keywords"
-          content="Murad Wazir, Wazir Aura, Web Research, Data Collection, Web Development, Programming, Software Development">
-
+    <meta name="description" content="Wazir Research Lab provides web research, data collection, technology, programming and web development services.">
+    <meta name="keywords" content="Web Research, Data Collection, Web Development, Programming, Wazir Research Lab, Wazir Aura">
     <meta name="author" content="Murad Wazir">
 
-    <title>MW • Murad Wazir | Wazir Aura</title>
-
+    <meta property="og:title" content="Wazir Research Lab">
+    <meta property="og:description" content="Web Research • Data • Technology • Programming">
+    <meta property="og:type" content="website">
 
     <style>
-
-        /* =========================
-           BASIC RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
@@ -35,1207 +27,552 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #060914;
-            color: #f5f7ff;
-            line-height: 1.6;
+            background: #0b1120;
+            color: #e5e7eb;
+            line-height: 1.7;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
 
+        .container {
+            width: 90%;
+            max-width: 1150px;
+            margin: auto;
+        }
 
-        /* =========================
-           NAVBAR
-        ========================= */
+        /* NAVIGATION */
 
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1f2937;
+            backdrop-filter: blur(10px);
+        }
 
+        .nav-inner {
+            min-height: 70px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
-
-            padding: 18px 7%;
-
-            background: rgba(6, 9, 20, 0.90);
-            backdrop-filter: blur(18px);
-
-            border-bottom: 1px solid #20283b;
+            gap: 20px;
         }
 
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-
-            font-size: 19px;
+        .logo {
+            font-size: 22px;
             font-weight: bold;
+            color: #ffffff;
         }
 
+        .logo span {
+            color: #38bdf8;
+        }
 
-        /* MW LOGO */
-
-        .brand-logo {
-            width: 44px;
-            height: 44px;
-
+        .nav-links {
             display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 13px;
-
-            background: linear-gradient(
-                135deg,
-                #ffffff,
-                #8297ff
-            );
-
-            color: #080c18;
-
-            font-size: 17px;
-            font-weight: 900;
-
-            box-shadow:
-                0 0 25px rgba(130, 151, 255, 0.25);
-
-            transition: 0.3s;
-        }
-
-
-        .brand-logo:hover {
-            transform: rotate(-5deg) scale(1.08);
-        }
-
-
-        nav ul {
+            gap: 25px;
             list-style: none;
-
-            display: flex;
-            gap: 28px;
         }
 
-
-        nav ul li a {
-            color: #aeb8d0;
-
-            font-size: 14px;
-
+        .nav-links a {
+            color: #cbd5e1;
+            font-size: 15px;
             transition: 0.3s;
         }
 
-
-        nav ul li a:hover {
-            color: white;
+        .nav-links a:hover {
+            color: #38bdf8;
         }
 
-
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .hero {
-
-            min-height: 90vh;
-
+            min-height: 88vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-
-            gap: 60px;
-
-            padding: 90px 7%;
-
+            text-align: center;
             background:
-
-                radial-gradient(
-                    circle at 75% 25%,
-                    #263d7d 0%,
-                    transparent 30%
-                ),
-
-                radial-gradient(
-                    circle at 15% 75%,
-                    #16264e 0%,
-                    transparent 28%
-                );
+                radial-gradient(circle at top, #172554 0%, #0b1120 45%, #0b1120 100%);
         }
-
 
         .hero-content {
-            max-width: 760px;
-
-            animation: fadeUp 1s ease;
+            width: 100%;
         }
 
-
-        .small-title {
-
-            color: #8ea4ff;
-
-            letter-spacing: 4px;
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            margin-bottom: 18px;
+        .badge {
+            display: inline-block;
+            padding: 7px 15px;
+            border: 1px solid #334155;
+            border-radius: 30px;
+            color: #7dd3fc;
+            font-size: 14px;
+            margin-bottom: 22px;
+            background: rgba(15, 23, 42, 0.7);
         }
-
 
         .hero h1 {
-
-            font-size: clamp(
-                45px,
-                7vw,
-                82px
-            );
-
-            line-height: 1.02;
-
-            margin-bottom: 25px;
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            color: #ffffff;
+            margin-bottom: 22px;
         }
-
 
         .hero h1 span {
-            color: #8ea4ff;
+            color: #38bdf8;
         }
-
 
         .hero p {
-
-            color: #aeb8d0;
-
+            max-width: 750px;
+            margin: 0 auto 30px;
+            color: #94a3b8;
             font-size: 18px;
-
-            max-width: 680px;
         }
-
-
-        /* BUTTONS */
 
         .buttons {
-
             display: flex;
-
-            gap: 15px;
-
-            margin-top: 35px;
-
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 14px;
         }
 
-
-        .button {
-
-            padding: 14px 23px;
-
-            border-radius: 10px;
-
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 8px;
             font-weight: bold;
-
             transition: 0.3s;
         }
 
-
-        .button-primary {
-
-            background: white;
-
-            color: #080c18;
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
         }
 
-
-        .button-primary:hover {
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 10px 30px rgba(255,255,255,0.15);
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #7dd3fc;
         }
 
-
-        .button-secondary {
-
-            border: 1px solid #3a4665;
-
-            color: white;
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
         }
 
-
-        .button-secondary:hover {
-
-            background: #151d31;
-
-            transform: translateY(-4px);
+        .btn-secondary:hover {
+            border-color: #38bdf8;
+            color: #38bdf8;
         }
 
-
-        /* =========================
-           BIG MW LOGO
-        ========================= */
-
-        .logo-box {
-
-            width: 310px;
-            height: 310px;
-
-            flex-shrink: 0;
-
-            border-radius: 38px;
-
-            border: 1px solid #34405d;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.07),
-                    rgba(255,255,255,0.02)
-                );
-
-            display: flex;
-
-            flex-direction: column;
-
-            align-items: center;
-
-            justify-content: center;
-
-            box-shadow:
-                0 30px 90px rgba(0,0,0,0.45);
-
-            animation: floating 4s ease-in-out infinite;
-        }
-
-
-        .big-mw {
-
-            font-size: 105px;
-
-            font-weight: 900;
-
-            letter-spacing: -12px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    white,
-                    #7f95ff
-                );
-
-            -webkit-background-clip: text;
-
-            -webkit-text-fill-color: transparent;
-        }
-
-
-        .logo-box p {
-
-            color: #8ea4ff;
-
-            margin-top: 10px;
-
-            letter-spacing: 3px;
-
-            font-weight: bold;
-        }
-
-
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* GENERAL SECTIONS */
 
         section {
-
-            padding: 105px 7%;
-
-            border-top: 1px solid #1b2336;
+            padding: 90px 0;
         }
 
-
-        .section-label {
-
-            color: #8ea4ff;
-
-            letter-spacing: 4px;
-
-            font-size: 12px;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-
-        section h2 {
-
-            font-size:
-                clamp(
-                    32px,
-                    5vw,
-                    52px
-                );
-
-            line-height: 1.1;
-
-            margin-bottom: 20px;
+        .section-title h2 {
+            color: #ffffff;
+            font-size: 38px;
+            margin-bottom: 10px;
         }
 
+        .section-title p {
+            color: #94a3b8;
+        }
 
-        .section-description {
+        /* ABOUT */
 
-            color: #aeb8d0;
-
-            max-width: 780px;
-
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            color: #cbd5e1;
             font-size: 17px;
         }
 
-
-        /* =========================
-           ABOUT
-        ========================= */
-
-        .about-highlight {
-
-            margin-top: 35px;
-
-            padding: 30px;
-
-            border-radius: 20px;
-
-            border: 1px solid #293650;
-
-            background: #0c1322;
+        .about-box strong {
+            color: #38bdf8;
         }
 
+        /* SERVICES */
 
-        .about-highlight p {
-
-            color: #aeb8d0;
-
-            font-size: 16px;
+        .services {
+            background: #0f172a;
         }
 
-
-        /* =========================
-           SKILLS
-        ========================= */
-
-        .cards {
-
+        .grid {
             display: grid;
-
-            grid-template-columns:
-                repeat(4, 1fr);
-
-            gap: 20px;
-
-            margin-top: 45px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
         }
-
 
         .card {
-
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 14px;
             padding: 30px;
-
-            border: 1px solid #27324b;
-
-            background: #0d1425;
-
-            border-radius: 20px;
-
-            transition: 0.35s;
-        }
-
-
-        .card:hover {
-
-            transform: translateY(-8px);
-
-            border-color: #586da8;
-
-            box-shadow:
-                0 15px 40px rgba(0,0,0,0.25);
-        }
-
-
-        .card-icon {
-
-            font-size: 34px;
-
-            margin-bottom: 18px;
-        }
-
-
-        .card h3 {
-
-            margin-bottom: 10px;
-
-            font-size: 20px;
-        }
-
-
-        .card p {
-
-            color: #929db7;
-
-            font-size: 14px;
-        }
-
-
-        /* =========================
-           WEB RESEARCH FEATURE
-        ========================= */
-
-        .research-feature {
-
-            margin-top: 45px;
-
-            padding: 40px;
-
-            border-radius: 25px;
-
-            border: 1px solid #35456d;
-
-            background:
-
-                radial-gradient(
-                    circle at 90% 20%,
-                    #1d2e60,
-                    transparent 35%
-                ),
-
-                #0c1322;
-
-            position: relative;
-
-            overflow: hidden;
-        }
-
-
-        .research-feature h3 {
-
-            font-size: 30px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .research-feature p {
-
-            color: #aeb8d0;
-
-            max-width: 800px;
-        }
-
-
-        .research-list {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            gap: 12px;
-
-            margin-top: 25px;
-        }
-
-
-        .research-tag {
-
-            padding: 9px 14px;
-
-            border-radius: 50px;
-
-            border: 1px solid #344363;
-
-            color: #c5cce0;
-
-            font-size: 13px;
-
-            background: rgba(255,255,255,0.03);
-        }
-
-
-        /* =========================
-           PROJECTS
-        ========================= */
-
-        .project-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 22px;
-
-            margin-top: 45px;
-        }
-
-
-        .project {
-
-            padding: 32px;
-
-            border-radius: 20px;
-
-            border: 1px solid #303d5d;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #10192c,
-                    #0b1120
-                );
-
             transition: 0.3s;
         }
 
-
-        .project:hover {
-
-            transform: translateY(-6px);
-
-            border-color: #586da8;
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #38bdf8;
         }
 
-
-        .project h3 {
-
-            font-size: 24px;
-
-            margin-bottom: 10px;
+        .card h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+            font-size: 21px;
         }
 
-
-        .project p {
-
-            color: #929db7;
-
+        .card p {
+            color: #94a3b8;
             font-size: 15px;
         }
 
+        .main-service {
+            border-color: #38bdf8;
+        }
+
+        .main-service h3 {
+            color: #38bdf8;
+        }
+
+        /* WEB RESEARCH */
+
+        .research-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .research-text h2 {
+            font-size: 38px;
+            color: #ffffff;
+            margin-bottom: 18px;
+        }
+
+        .research-text h2 span {
+            color: #38bdf8;
+        }
+
+        .research-text p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .research-list {
+            list-style: none;
+        }
+
+        .research-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #1f2937;
+            color: #cbd5e1;
+        }
+
+        .research-list li::before {
+            content: "✓";
+            color: #38bdf8;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .workflow {
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .workflow h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .workflow-step {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .number {
+            min-width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #38bdf8;
+            color: #07111f;
+            font-weight: bold;
+        }
+
+        .workflow-step h4 {
+            color: #ffffff;
+        }
+
+        .workflow-step p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            background: #0f172a;
+        }
+
+        .project-card {
+            min-height: 210px;
+        }
 
         .project-tag {
-
-            color: #8ea4ff;
-
-            font-size: 13px;
-
-            margin-top: 15px;
-        }
-
-
-        /* =========================
-           RESEARCH / BLOG
-        ========================= */
-
-        .blog-card {
-
-            margin-top: 40px;
-
-            padding: 40px;
-
-            border-radius: 22px;
-
-            border: 1px dashed #455477;
-
-            background: #0c1322;
-        }
-
-
-        .blog-card h3 {
-
-            font-size: 26px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .blog-card p {
-
-            color: #929db7;
-
-            max-width: 800px;
-        }
-
-
-        /* =========================
-           CONTACT
-        ========================= */
-
-        .contact-box {
-
-            margin-top: 40px;
-
-            padding: 45px;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #101a30,
-                    #0b1120
-                );
-
-            border: 1px solid #354363;
-
-            text-align: center;
-        }
-
-
-        .contact-box p {
-
-            color: #aeb8d0;
-
-            margin-bottom: 12px;
-
-            max-width: 700px;
-
-            margin-left: auto;
-
-            margin-right: auto;
-        }
-
-
-        .fiverr-button {
-
             display: inline-block;
-
-            margin-top: 22px;
-
-            padding: 15px 30px;
-
-            border-radius: 10px;
-
-            background: white;
-
-            color: #080c18;
-
-            font-weight: bold;
-
-            transition: 0.3s;
+            font-size: 12px;
+            color: #7dd3fc;
+            border: 1px solid #334155;
+            padding: 4px 9px;
+            border-radius: 20px;
+            margin-bottom: 15px;
         }
 
+        /* ARTICLES */
 
-        .fiverr-button:hover {
-
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 12px 35px rgba(255,255,255,0.15);
+        .article-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 40px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 15px;
         }
 
+        .article-box h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        .article-box p {
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a, #172554);
+        }
+
+        .cta h2 {
+            color: #ffffff;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
 
         footer {
+            border-top: 1px solid #1f2937;
+            padding: 35px 0;
+            text-align: center;
+            background: #070b14;
+        }
 
-            padding: 30px 7%;
+        footer p {
+            color: #64748b;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
 
-            border-top: 1px solid #20283b;
-
+        .footer-links {
             display: flex;
-
-            justify-content: space-between;
-
-            color: #727e9b;
-
-            font-size: 13px;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 18px;
         }
 
-
-        /* =========================
-           ANIMATIONS
-        ========================= */
-
-        @keyframes fadeUp {
-
-            from {
-
-                opacity: 0;
-
-                transform: translateY(25px);
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform: translateY(0);
-            }
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 14px;
         }
 
-
-        @keyframes floating {
-
-            0%,
-            100% {
-
-                transform: translateY(0);
-            }
-
-            50% {
-
-                transform: translateY(-10px);
-            }
+        .footer-links a:hover {
+            color: #38bdf8;
         }
 
+        /* RESPONSIVE */
 
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 1000px) {
-
-            .hero {
-
-                flex-direction: column;
-
-                align-items: flex-start;
+        @media (max-width: 850px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
             }
 
-
-            .logo-box {
-
-                width: 250px;
-
-                height: 250px;
-            }
-
-
-            .big-mw {
-
-                font-size: 80px;
-            }
-
-
-            .cards {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-
-            .project-grid {
-
+            .research-box {
                 grid-template-columns: 1fr;
             }
+
+            .nav-inner {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
         }
 
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 650px) {
-
-            nav ul {
-
-                display: none;
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
             }
 
+            section {
+                padding: 65px 0;
+            }
 
             .hero {
-
-                padding:
-                    70px 6%;
-
-                min-height: auto;
+                min-height: 80vh;
             }
-
-
-            .hero h1 {
-
-                font-size: 48px;
-            }
-
 
             .hero p {
-
                 font-size: 16px;
             }
 
-
-            .logo-box {
-
-                width: 210px;
-
-                height: 210px;
-
-                align-self: center;
+            .section-title h2,
+            .research-text h2 {
+                font-size: 30px;
             }
 
-
-            .big-mw {
-
-                font-size: 68px;
+            .cta h2 {
+                font-size: 30px;
             }
-
-
-            section {
-
-                padding:
-                    75px 6%;
-            }
-
-
-            .cards {
-
-                grid-template-columns: 1fr;
-            }
-
-
-            .research-feature {
-
-                padding: 28px;
-            }
-
-
-            .blog-card {
-
-                padding: 28px;
-            }
-
-
-            .contact-box {
-
-                padding: 30px 20px;
-            }
-
-
-            footer {
-
-                flex-direction: column;
-
-                gap: 10px;
-
-                text-align: center;
-            }
-
         }
-
     </style>
-
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+    <!-- NAVIGATION -->
 
     <nav>
+        <div class="container nav-inner">
 
-        <a href="#home" class="brand">
+            <a href="index.html" class="logo">
+                Wazir<span>Research</span>Lab
+            </a>
 
-            <div class="brand-logo">
-                MW
-            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#research">Web Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-            <span>
-                Murad Wazir
-            </span>
-
-        </a>
-
-
-        <ul>
-
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="#skills">
-                    Skills
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="#research">
-                    Research
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact">
-                    Contact
-                </a>
-            </li>
-
-        </ul>
-
+        </div>
     </nav>
 
 
+    <!-- HERO -->
 
-    <!-- =========================
-         HERO
-    ========================= -->
+    <header class="hero">
 
-    <section class="hero" id="home">
+        <div class="container hero-content">
 
-
-        <div class="hero-content">
-
-            <div class="small-title">
-                MW • WAZIR AURA
+            <div class="badge">
+                Wazir Research Lab
             </div>
 
-
             <h1>
-
-                Building ideas with
-
-                <span>
-                    code, research
-                </span>
-
-                & curiosity.
-
+                Research.<br>
+                <span>Build. Create.</span>
             </h1>
 
-
             <p>
-
-                I'm Murad Wazir. I work with
-                Web Research, Data Collection,
-                Web Development, Programming,
-                and Software Development.
-
+                Web Research, Data, Technology and Programming —
+                building useful digital solutions through research,
+                accuracy and creativity.
             </p>
-
 
             <div class="buttons">
 
                 <a
-                    href="#projects"
-                    class="button button-primary">
-
-                    View Projects
-
+                    href="https://www.fiverr.com/s/P42eaXG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    Work With Me
                 </a>
-
 
                 <a
-                    href="#contact"
-                    class="button button-secondary">
-
-                    Contact Me
-
+                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary">
+                    LinkedIn
                 </a>
 
             </div>
 
         </div>
 
+    </header>
 
 
-        <div class="logo-box">
-
-            <div class="big-mw">
-                MW
-            </div>
-
-            <p>
-                WAZIR AURA
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ABOUT
-    ========================= -->
+    <!-- ABOUT -->
 
     <section id="about">
 
+        <div class="container">
 
-        <div class="section-label">
-            ABOUT ME
-        </div>
-
-
-        <h2>
-            Learning. Building. Researching.
-        </h2>
-
-
-        <p class="section-description">
-
-            I'm interested in turning ideas into
-            useful digital projects and practical
-            solutions. I enjoy learning new
-            technologies, researching information,
-            collecting data, and building websites
-            and software.
-
-        </p>
-
-
-        <div class="about-highlight">
-
-            <p>
-
-                <strong>
-                    MW • Wazir Aura
-                </strong>
-
-                is my personal digital space where
-                I share my work, projects, research,
-                programming experiments, and future
-                ideas.
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         SKILLS
-    ========================= -->
-
-    <section id="skills">
-
-
-        <div class="section-label">
-            SKILLS & INTERESTS
-        </div>
-
-
-        <h2>
-            What I work with.
-        </h2>
-
-
-        <div class="cards">
-
-
-            <!-- SOFTWARE -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    💻
-                </div>
-
-                <h3>
-                    Software Development
-                </h3>
-
-                <p>
-
-                    Exploring software ideas,
-                    applications, digital tools,
-                    and practical solutions.
-
-                </p>
-
+            <div class="section-title">
+                <h2>About Wazir Research Lab</h2>
+                <p>Research-driven digital work and technology.</p>
             </div>
 
-
-
-            <!-- WEB DEVELOPMENT -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🌐
-                </div>
-
-                <h3>
-                    Web Development
-                </h3>
+            <div class="about-box">
 
                 <p>
-
-                    Building clean, responsive,
-                    modern websites and web
-                    interfaces.
-
+                    <strong>Wazir Research Lab</strong> is a personal
+                    technology and research platform focused on
+                    <strong>Web Research</strong>, data collection,
+                    programming, web development and digital projects.
                 </p>
 
-            </div>
-
-
-
-            <!-- PROGRAMMING -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🧑‍💻
-                </div>
-
-                <h3>
-                    Programming
-                </h3>
+                <br>
 
                 <p>
-
-                    Learning programming languages,
-                    concepts, algorithms, and
-                    practical problem solving.
-
+                    The goal is simple: find useful information,
+                    organize data, build practical solutions and
+                    continuously learn new technologies.
                 </p>
 
-            </div>
+                <br>
 
-
-
-            <!-- WEB RESEARCH -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    🔎
-                </div>
-
-                <h3>
-                    Web Research
-                </h3>
-
-                <p>
-
-                    Finding information online,
-                    collecting data, comparing
-                    sources, and organizing
-                    useful research.
-
-                </p>
+                <a href="about.html" class="btn btn-secondary">
+                    Learn More About Me
+                </a>
 
             </div>
 
@@ -1244,212 +581,65 @@
     </section>
 
 
+    <!-- SERVICES -->
 
-    <!-- =========================
-         WEB RESEARCH FEATURE
-    ========================= -->
+    <section id="services" class="services">
 
-    <section>
+        <div class="container">
 
-
-        <div class="section-label">
-            WEB RESEARCH
-        </div>
-
-
-        <h2>
-            Research that turns information into useful results.
-        </h2>
-
-
-        <div class="research-feature">
-
-
-            <h3>
-                🔎 Web Research & Data Collection
-            </h3>
-
-
-            <p>
-
-                I enjoy finding useful information
-                from online sources, collecting
-                relevant data, comparing information,
-                and organizing research into clear
-                and useful results.
-
-            </p>
-
-
-            <div class="research-list">
-
-
-                <span class="research-tag">
-                    Web Research
-                </span>
-
-
-                <span class="research-tag">
-                    Data Collection
-                </span>
-
-
-                <span class="research-tag">
-                    Online Research
-                </span>
-
-
-                <span class="research-tag">
-                    Data Organization
-                </span>
-
-
-                <span class="research-tag">
-                    Information Finding
-                </span>
-
-
-                <span class="research-tag">
-                    Source Comparison
-                </span>
-
-
+            <div class="section-title">
+                <h2>Services & Skills</h2>
+                <p>Areas of work and learning.</p>
             </div>
 
-        </div>
+            <div class="grid">
 
-    </section>
-
-
-
-    <!-- =========================
-         PROJECTS
-    ========================= -->
-
-    <section id="projects">
-
-
-        <div class="section-label">
-            PROJECTS
-        </div>
-
-
-        <h2>
-            My work.
-        </h2>
-
-
-        <p class="section-description">
-
-            This section will grow as I create
-            new websites, software projects,
-            programming experiments, and
-            research projects.
-
-        </p>
-
-
-        <div class="project-grid">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project">
-
-                <h3>
-                    🌐 MW Personal Website
-                </h3>
-
-                <p>
-
-                    A personal website for showcasing
-                    my skills, projects, web research,
-                    programming work, and future ideas.
-
-                </p>
-
-                <div class="project-tag">
-
-                    HTML • CSS • Web Development
-
+                <div class="card main-service">
+                    <h3>Web Research</h3>
+                    <p>
+                        Finding, verifying, organizing and collecting
+                        information from reliable online sources.
+                    </p>
                 </div>
 
-            </div>
-
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project">
-
-                <h3>
-                    🔎 Web Research Projects
-                </h3>
-
-                <p>
-
-                    A collection of future web research
-                    and data collection projects with
-                    organized information and findings.
-
-                </p>
-
-                <div class="project-tag">
-
-                    Web Research • Data Collection
-
+                <div class="card">
+                    <h3>Data Collection</h3>
+                    <p>
+                        Collecting structured information and organizing
+                        datasets for practical research and business needs.
+                    </p>
                 </div>
 
-            </div>
-
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project">
-
-                <h3>
-                    💻 Programming Projects
-                </h3>
-
-                <p>
-
-                    Programming experiments,
-                    applications, problem-solving
-                    projects, and software ideas.
-
-                </p>
-
-                <div class="project-tag">
-
-                    Programming • Software
-
+                <div class="card">
+                    <h3>Web Development</h3>
+                    <p>
+                        Creating responsive websites using modern
+                        HTML, CSS and web technologies.
+                    </p>
                 </div>
 
-            </div>
+                <div class="card">
+                    <h3>Programming</h3>
+                    <p>
+                        Learning and building software solutions through
+                        programming and problem solving.
+                    </p>
+                </div>
 
+                <div class="card">
+                    <h3>Software Development</h3>
+                    <p>
+                        Exploring software development concepts and
+                        creating useful digital tools.
+                    </p>
+                </div>
 
-
-            <!-- PROJECT 4 -->
-
-            <div class="project">
-
-                <h3>
-                    🚀 Future Projects
-                </h3>
-
-                <p>
-
-                    New digital projects and ideas
-                    will be added here as they are
-                    developed.
-
-                </p>
-
-                <div class="project-tag">
-
-                    Coming Soon
-
+                <div class="card">
+                    <h3>Research & Documentation</h3>
+                    <p>
+                        Turning collected information into organized
+                        notes, documents, reports and useful resources.
+                    </p>
                 </div>
 
             </div>
@@ -1459,131 +649,275 @@
     </section>
 
 
-
-    <!-- =========================
-         RESEARCH / BLOG
-    ========================= -->
+    <!-- WEB RESEARCH -->
 
     <section id="research">
 
+        <div class="container">
 
-        <div class="section-label">
-            RESEARCH & BLOG
-        </div>
+            <div class="research-box">
 
+                <div class="research-text">
 
-        <h2>
-            Ideas, discoveries & research.
-        </h2>
+                    <h2>
+                        Web <span>Research</span>
+                    </h2>
 
+                    <p>
+                        Web Research is one of the main focuses of
+                        Wazir Research Lab. The process combines
+                        online research, source checking, data
+                        collection and organization.
+                    </p>
 
-        <p class="section-description">
+                    <ul class="research-list">
 
-            This section will become a space for
-            useful research articles, technology
-            discoveries, programming tutorials,
-            guides, experiments, and interesting
-            information.
+                        <li>Online information research</li>
+                        <li>Data collection</li>
+                        <li>Source verification</li>
+                        <li>Competitor research</li>
+                        <li>Contact and company research</li>
+                        <li>Information organization</li>
 
-        </p>
+                    </ul>
 
-
-        <div class="blog-card">
-
-
-            <h3>
-                📝 Research Articles — Coming Soon
-            </h3>
-
-
-            <p>
-
-                Future articles will cover topics
-                related to technology, programming,
-                web research, software, useful
-                online resources, and things I learn
-                while building new projects.
-
-            </p>
-
-        </div>
-
-    </section>
+                </div>
 
 
+                <div class="workflow">
 
-    <!-- =========================
-         CONTACT
-         FIVERR ONLY
-    ========================= -->
+                    <h3>Research Workflow</h3>
 
-    <section id="contact">
+                    <div class="workflow-step">
 
+                        <div class="number">1</div>
 
-        <div class="section-label">
-            CONTACT
-        </div>
+                        <div>
+                            <h4>Define</h4>
+                            <p>Understand the research requirement.</p>
+                        </div>
 
-
-        <h2>
-            Let's work together.
-        </h2>
+                    </div>
 
 
-        <div class="contact-box">
+                    <div class="workflow-step">
+
+                        <div class="number">2</div>
+
+                        <div>
+                            <h4>Search</h4>
+                            <p>Find relevant information and sources.</p>
+                        </div>
+
+                    </div>
 
 
-            <p>
+                    <div class="workflow-step">
 
-                Interested in Web Research,
-                Data Collection, Web Development,
-                Programming, or Software projects?
+                        <div class="number">3</div>
 
-            </p>
+                        <div>
+                            <h4>Verify</h4>
+                            <p>Check information and compare sources.</p>
+                        </div>
 
-
-            <p>
-
-                Contact me directly through Fiverr.
-
-            </p>
+                    </div>
 
 
-            <a
-                href="https://www.fiverr.com/pe/rEYkq6b"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="fiverr-button">
+                    <div class="workflow-step">
 
-                💼 Contact Me on Fiverr
+                        <div class="number">4</div>
 
-            </a>
+                        <div>
+                            <h4>Organize</h4>
+                            <p>Turn information into useful structured data.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
     </section>
 
 
+    <!-- PROJECTS -->
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+    <section id="projects" class="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Projects</h2>
+                <p>Things I am building and exploring.</p>
+            </div>
+
+            <div class="grid">
+
+                <div class="card project-card">
+
+                    <span class="project-tag">
+                        Website
+                    </span>
+
+                    <h3>Wazir Research Lab</h3>
+
+                    <p>
+                        A personal research and technology platform
+                        focused on web research, data and programming.
+                    </p>
+
+                </div>
+
+
+                <div class="card project-card">
+
+                    <span class="project-tag">
+                        Research
+                    </span>
+
+                    <h3>Web Research Projects</h3>
+
+                    <p>
+                        Research and data collection projects focused
+                        on finding and organizing useful information.
+                    </p>
+
+                </div>
+
+
+                <div class="card project-card">
+
+                    <span class="project-tag">
+                        Technology
+                    </span>
+
+                    <h3>Future Projects</h3>
+
+                    <p>
+                        More web, software and research projects will
+                        be added here as they are developed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ARTICLES -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <h2>Research & Articles</h2>
+                <p>Useful information and original research will be published here.</p>
+            </div>
+
+            <div class="article-box">
+
+                <h3>Articles Coming Soon</h3>
+
+                <p>
+                    This section will gradually include original
+                    articles, research notes, technology guides and
+                    useful resources.
+                </p>
+
+                <a href="about.html" class="btn btn-secondary">
+                    Explore Wazir Research Lab
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>Have a Project in Mind?</h2>
+
+            <p>
+                Let's connect and discuss your research,
+                data or technology project.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="contact.html"
+                    class="btn btn-primary">
+                    Contact Me
+                </a>
+
+                <a
+                    href="https://www.fiverr.com/s/P42eaXG"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-secondary">
+                    Fiverr Profile
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
 
+        <div class="container">
 
-        <span>
-            © 2026 Murad Wazir
-        </span>
+            <p>
+                © 2026 Wazir Research Lab. All rights reserved.
+            </p>
 
+            <div class="footer-links">
 
-        <span>
-            MW • Wazir Aura
-        </span>
+                <a href="about.html">About</a>
 
+                <a href="contact.html">Contact</a>
+
+                <a href="privacy.html">Privacy Policy</a>
+
+                <a href="terms.html">Terms & Disclaimer</a>
+
+                <a
+                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://www.fiverr.com/s/P42eaXG"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Fiverr
+                </a>
+
+            </div>
+
+        </div>
 
     </footer>
-
 
 </body>
 </html>
