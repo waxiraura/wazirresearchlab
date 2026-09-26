@@ -1,923 +1,952 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wazir Research Lab | Web Research, Data & Technology</title>
+```
+<title>Wazir Research Lab | Web Research, Data & Technology</title>
 
-    <meta name="description" content="Wazir Research Lab provides web research, data collection, technology, programming and web development services.">
-    <meta name="keywords" content="Web Research, Data Collection, Web Development, Programming, Wazir Research Lab, Wazir Aura">
-    <meta name="author" content="Murad Wazir">
+<meta name="description" content="Wazir Research Lab provides web research, data collection, technology, programming and web development services.">
+<meta name="keywords" content="Web Research, Data Collection, Web Development, Programming, Wazir Research Lab, Wazir Aura">
+<meta name="author" content="Murad Wazir">
 
-    <meta property="og:title" content="Wazir Research Lab">
-    <meta property="og:description" content="Web Research • Data • Technology • Programming">
-    <meta property="og:type" content="website">
+<meta property="og:title" content="Wazir Research Lab">
+<meta property="og:description" content="Web Research • Data • Technology • Programming">
+<meta property="og:type" content="website">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #0b1120;
+        color: #e5e7eb;
+        line-height: 1.7;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1150px;
+        margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(11, 17, 32, 0.95);
+        border-bottom: 1px solid #1f2937;
+        backdrop-filter: blur(10px);
+    }
+
+    .nav-inner {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #ffffff;
+        white-space: nowrap;
+    }
+
+    .logo img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+        border-radius: 8px;
+    }
+
+    .logo span {
+        color: #38bdf8;
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+    }
+
+    .nav-links a {
+        color: #cbd5e1;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        color: #38bdf8;
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 88vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background:
+            radial-gradient(circle at top, #172554 0%, #0b1120 45%, #0b1120 100%);
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 7px 15px;
+        border: 1px solid #334155;
+        border-radius: 30px;
+        color: #7dd3fc;
+        font-size: 14px;
+        margin-bottom: 22px;
+        background: rgba(15, 23, 42, 0.7);
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 7vw, 78px);
+        line-height: 1.05;
+        color: #ffffff;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+        color: #38bdf8;
+    }
+
+    .hero p {
+        max-width: 750px;
+        margin: 0 auto 30px;
+        color: #94a3b8;
+        font-size: 18px;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 13px 22px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: #38bdf8;
+        color: #07111f;
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-2px);
+        background: #7dd3fc;
+    }
+
+    .btn-secondary {
+        border: 1px solid #334155;
+        color: #e2e8f0;
+    }
+
+    .btn-secondary:hover {
+        border-color: #38bdf8;
+        color: #38bdf8;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+        padding: 90px 0;
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+        color: #ffffff;
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+
+    .section-title p {
+        color: #94a3b8;
+    }
+
+    /* ABOUT */
+
+    .about-box {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+        color: #cbd5e1;
+        font-size: 17px;
+    }
+
+    .about-box strong {
+        color: #38bdf8;
+    }
+
+    /* SERVICES */
+
+    .services {
+        background: #0f172a;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .card {
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 14px;
+        padding: 30px;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        border-color: #38bdf8;
+    }
+
+    .card h3 {
+        color: #ffffff;
+        margin-bottom: 12px;
+        font-size: 21px;
+    }
+
+    .card p {
+        color: #94a3b8;
+        font-size: 15px;
+    }
+
+    .main-service {
+        border-color: #38bdf8;
+    }
+
+    .main-service h3 {
+        color: #38bdf8;
+    }
+
+    /* WEB RESEARCH */
+
+    .research-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+        align-items: center;
+    }
+
+    .research-text h2 {
+        font-size: 38px;
+        color: #ffffff;
+        margin-bottom: 18px;
+    }
+
+    .research-text h2 span {
+        color: #38bdf8;
+    }
+
+    .research-text p {
+        color: #94a3b8;
+        margin-bottom: 20px;
+    }
+
+    .research-list {
+        list-style: none;
+    }
+
+    .research-list li {
+        padding: 10px 0;
+        border-bottom: 1px solid #1f2937;
+        color: #cbd5e1;
+    }
+
+    .research-list li::before {
+        content: "✓";
+        color: #38bdf8;
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .workflow {
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 15px;
+        padding: 30px;
+    }
+
+    .workflow h3 {
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .workflow-step {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .number {
+        min-width: 35px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #38bdf8;
+        color: #07111f;
+        font-weight: bold;
+    }
+
+    .workflow-step h4 {
+        color: #ffffff;
+    }
+
+    .workflow-step p {
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    /* PROJECTS */
+
+    .projects {
+        background: #0f172a;
+    }
+
+    .project-card {
+        min-height: 210px;
+    }
+
+    .project-tag {
+        display: inline-block;
+        font-size: 12px;
+        color: #7dd3fc;
+        border: 1px solid #334155;
+        padding: 4px 9px;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+
+    /* ARTICLES */
+
+    .article-box {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        padding: 40px;
+        background: #111827;
+        border: 1px solid #1f2937;
+        border-radius: 15px;
+    }
+
+    .article-box h3 {
+        color: #ffffff;
+        margin-bottom: 12px;
+    }
+
+    .article-box p {
+        color: #94a3b8;
+        margin-bottom: 20px;
+    }
+
+    /* CTA */
+
+    .cta {
+        text-align: center;
+        background: linear-gradient(135deg, #0f172a, #172554);
+    }
+
+    .cta h2 {
+        color: #ffffff;
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .cta p {
+        color: #94a3b8;
+        margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+        border-top: 1px solid #1f2937;
+        padding: 35px 0;
+        text-align: center;
+        background: #070b14;
+    }
+
+    footer p {
+        color: #64748b;
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .footer-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .footer-links a {
+        color: #94a3b8;
+        font-size: 14px;
+    }
+
+    .footer-links a:hover {
+        color: #38bdf8;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1150px;
-            margin: auto;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1f2937;
-            backdrop-filter: blur(10px);
+        .research-box {
+            grid-template-columns: 1fr;
         }
 
         .nav-inner {
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        .logo span {
-            color: #38bdf8;
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px 0;
         }
 
         .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .grid {
+            grid-template-columns: 1fr;
         }
 
-        .nav-links a {
-            color: #cbd5e1;
-            font-size: 15px;
-            transition: 0.3s;
+        section {
+            padding: 65px 0;
         }
-
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
-
-        /* HERO */
 
         .hero {
-            min-height: 88vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            background:
-                radial-gradient(circle at top, #172554 0%, #0b1120 45%, #0b1120 100%);
-        }
-
-        .hero-content {
-            width: 100%;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 7px 15px;
-            border: 1px solid #334155;
-            border-radius: 30px;
-            color: #7dd3fc;
-            font-size: 14px;
-            margin-bottom: 22px;
-            background: rgba(15, 23, 42, 0.7);
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 1.05;
-            color: #ffffff;
-            margin-bottom: 22px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
+            min-height: 80vh;
         }
 
         .hero p {
-            max-width: 750px;
-            margin: 0 auto 30px;
-            color: #94a3b8;
-            font-size: 18px;
+            font-size: 16px;
         }
 
-        .buttons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 14px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 13px 22px;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #38bdf8;
-            color: #07111f;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: #7dd3fc;
-        }
-
-        .btn-secondary {
-            border: 1px solid #334155;
-            color: #e2e8f0;
-        }
-
-        .btn-secondary:hover {
-            border-color: #38bdf8;
-            color: #38bdf8;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            padding: 90px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            color: #ffffff;
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #94a3b8;
-        }
-
-        /* ABOUT */
-
-        .about-box {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            color: #cbd5e1;
-            font-size: 17px;
-        }
-
-        .about-box strong {
-            color: #38bdf8;
-        }
-
-        /* SERVICES */
-
-        .services {
-            background: #0f172a;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 14px;
-            padding: 30px;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #38bdf8;
-        }
-
-        .card h3 {
-            color: #ffffff;
-            margin-bottom: 12px;
-            font-size: 21px;
-        }
-
-        .card p {
-            color: #94a3b8;
-            font-size: 15px;
-        }
-
-        .main-service {
-            border-color: #38bdf8;
-        }
-
-        .main-service h3 {
-            color: #38bdf8;
-        }
-
-        /* WEB RESEARCH */
-
-        .research-box {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 45px;
-            align-items: center;
-        }
-
+        .section-title h2,
         .research-text h2 {
-            font-size: 38px;
-            color: #ffffff;
-            margin-bottom: 18px;
-        }
-
-        .research-text h2 span {
-            color: #38bdf8;
-        }
-
-        .research-text p {
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        .research-list {
-            list-style: none;
-        }
-
-        .research-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #1f2937;
-            color: #cbd5e1;
-        }
-
-        .research-list li::before {
-            content: "✓";
-            color: #38bdf8;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-
-        .workflow {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 15px;
-            padding: 30px;
-        }
-
-        .workflow h3 {
-            color: #ffffff;
-            margin-bottom: 20px;
-        }
-
-        .workflow-step {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .number {
-            min-width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: #38bdf8;
-            color: #07111f;
-            font-weight: bold;
-        }
-
-        .workflow-step h4 {
-            color: #ffffff;
-        }
-
-        .workflow-step p {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        /* PROJECTS */
-
-        .projects {
-            background: #0f172a;
-        }
-
-        .project-card {
-            min-height: 210px;
-        }
-
-        .project-tag {
-            display: inline-block;
-            font-size: 12px;
-            color: #7dd3fc;
-            border: 1px solid #334155;
-            padding: 4px 9px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-        }
-
-        /* ARTICLES */
-
-        .article-box {
-            max-width: 800px;
-            margin: auto;
-            text-align: center;
-            padding: 40px;
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 15px;
-        }
-
-        .article-box h3 {
-            color: #ffffff;
-            margin-bottom: 12px;
-        }
-
-        .article-box p {
-            color: #94a3b8;
-            margin-bottom: 20px;
-        }
-
-        /* CTA */
-
-        .cta {
-            text-align: center;
-            background: linear-gradient(135deg, #0f172a, #172554);
+            font-size: 30px;
         }
 
         .cta h2 {
-            color: #ffffff;
-            font-size: 40px;
-            margin-bottom: 15px;
+            font-size: 30px;
         }
 
-        .cta p {
-            color: #94a3b8;
-            margin-bottom: 25px;
+        .logo {
+            font-size: 19px;
         }
 
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #1f2937;
-            padding: 35px 0;
-            text-align: center;
-            background: #070b14;
+        .logo img {
+            width: 38px;
+            height: 38px;
         }
+    }
+</style>
+```
 
-        footer p {
-            color: #64748b;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            color: #38bdf8;
-        }
-
-        /* RESPONSIVE */
-
-        @media (max-width: 850px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .research-box {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-inner {
-                flex-direction: column;
-                justify-content: center;
-                padding: 15px 0;
-            }
-
-            .nav-links {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 65px 0;
-            }
-
-            .hero {
-                min-height: 80vh;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .section-title h2,
-            .research-text h2 {
-                font-size: 30px;
-            }
-
-            .cta h2 {
-                font-size: 30px;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+```
+<!-- NAVIGATION -->
 
-    <nav>
-        <div class="container nav-inner">
+<nav>
+    <div class="container nav-inner">
 
-            <a href="index.html" class="logo">
-                Wazir<span>Research</span>Lab
+        <a href="index.html" class="logo">
+            <img src="MW-logo.png" alt="Wazir Research Lab Logo">
+            <span>Wazir Research Lab</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#research">Web Research</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="container hero-content">
+
+        <div class="badge">
+            Wazir Research Lab
+        </div>
+
+        <h1>
+            Research.<br>
+            <span>Build. Create.</span>
+        </h1>
+
+        <p>
+            Web Research, Data, Technology and Programming —
+            building useful digital solutions through research,
+            accuracy and creativity.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="https://www.fiverr.com/s/P42eaXG"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary">
+                Work With Me
             </a>
 
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#research">Web Research</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <a
+                href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+                LinkedIn
+            </a>
 
         </div>
-    </nav>
+
+    </div>
+
+</header>
 
 
-    <!-- HERO -->
+<!-- ABOUT -->
 
-    <header class="hero">
+<section id="about">
 
-        <div class="container hero-content">
+    <div class="container">
 
-            <div class="badge">
-                Wazir Research Lab
-            </div>
+        <div class="section-title">
+            <h2>About Wazir Research Lab</h2>
+            <p>Research-driven digital work and technology.</p>
+        </div>
 
-            <h1>
-                Research.<br>
-                <span>Build. Create.</span>
-            </h1>
+        <div class="about-box">
 
             <p>
-                Web Research, Data, Technology and Programming —
-                building useful digital solutions through research,
-                accuracy and creativity.
+                <strong>Wazir Research Lab</strong> is a personal
+                technology and research platform focused on
+                <strong>Web Research</strong>, data collection,
+                programming, web development and digital projects.
             </p>
 
-            <div class="buttons">
-
-                <a
-                    href="https://www.fiverr.com/s/P42eaXG"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-primary">
-                    Work With Me
-                </a>
-
-                <a
-                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-secondary">
-                    LinkedIn
-                </a>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-    <!-- ABOUT -->
-
-    <section id="about">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>About Wazir Research Lab</h2>
-                <p>Research-driven digital work and technology.</p>
-            </div>
-
-            <div class="about-box">
-
-                <p>
-                    <strong>Wazir Research Lab</strong> is a personal
-                    technology and research platform focused on
-                    <strong>Web Research</strong>, data collection,
-                    programming, web development and digital projects.
-                </p>
-
-                <br>
-
-                <p>
-                    The goal is simple: find useful information,
-                    organize data, build practical solutions and
-                    continuously learn new technologies.
-                </p>
-
-                <br>
-
-                <a href="about.html" class="btn btn-secondary">
-                    Learn More About Me
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- SERVICES -->
-
-    <section id="services" class="services">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Services & Skills</h2>
-                <p>Areas of work and learning.</p>
-            </div>
-
-            <div class="grid">
-
-                <div class="card main-service">
-                    <h3>Web Research</h3>
-                    <p>
-                        Finding, verifying, organizing and collecting
-                        information from reliable online sources.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Data Collection</h3>
-                    <p>
-                        Collecting structured information and organizing
-                        datasets for practical research and business needs.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Web Development</h3>
-                    <p>
-                        Creating responsive websites using modern
-                        HTML, CSS and web technologies.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Programming</h3>
-                    <p>
-                        Learning and building software solutions through
-                        programming and problem solving.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Software Development</h3>
-                    <p>
-                        Exploring software development concepts and
-                        creating useful digital tools.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <h3>Research & Documentation</h3>
-                    <p>
-                        Turning collected information into organized
-                        notes, documents, reports and useful resources.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- WEB RESEARCH -->
-
-    <section id="research">
-
-        <div class="container">
-
-            <div class="research-box">
-
-                <div class="research-text">
-
-                    <h2>
-                        Web <span>Research</span>
-                    </h2>
-
-                    <p>
-                        Web Research is one of the main focuses of
-                        Wazir Research Lab. The process combines
-                        online research, source checking, data
-                        collection and organization.
-                    </p>
-
-                    <ul class="research-list">
-
-                        <li>Online information research</li>
-                        <li>Data collection</li>
-                        <li>Source verification</li>
-                        <li>Competitor research</li>
-                        <li>Contact and company research</li>
-                        <li>Information organization</li>
-
-                    </ul>
-
-                </div>
-
-
-                <div class="workflow">
-
-                    <h3>Research Workflow</h3>
-
-                    <div class="workflow-step">
-
-                        <div class="number">1</div>
-
-                        <div>
-                            <h4>Define</h4>
-                            <p>Understand the research requirement.</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="workflow-step">
-
-                        <div class="number">2</div>
-
-                        <div>
-                            <h4>Search</h4>
-                            <p>Find relevant information and sources.</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="workflow-step">
-
-                        <div class="number">3</div>
-
-                        <div>
-                            <h4>Verify</h4>
-                            <p>Check information and compare sources.</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="workflow-step">
-
-                        <div class="number">4</div>
-
-                        <div>
-                            <h4>Organize</h4>
-                            <p>Turn information into useful structured data.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects" class="projects">
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Projects</h2>
-                <p>Things I am building and exploring.</p>
-            </div>
-
-            <div class="grid">
-
-                <div class="card project-card">
-
-                    <span class="project-tag">
-                        Website
-                    </span>
-
-                    <h3>Wazir Research Lab</h3>
-
-                    <p>
-                        A personal research and technology platform
-                        focused on web research, data and programming.
-                    </p>
-
-                </div>
-
-
-                <div class="card project-card">
-
-                    <span class="project-tag">
-                        Research
-                    </span>
-
-                    <h3>Web Research Projects</h3>
-
-                    <p>
-                        Research and data collection projects focused
-                        on finding and organizing useful information.
-                    </p>
-
-                </div>
-
-
-                <div class="card project-card">
-
-                    <span class="project-tag">
-                        Technology
-                    </span>
-
-                    <h3>Future Projects</h3>
-
-                    <p>
-                        More web, software and research projects will
-                        be added here as they are developed.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ARTICLES -->
-
-    <section>
-
-        <div class="container">
-
-            <div class="section-title">
-                <h2>Research & Articles</h2>
-                <p>Useful information and original research will be published here.</p>
-            </div>
-
-            <div class="article-box">
-
-                <h3>Articles Coming Soon</h3>
-
-                <p>
-                    This section will gradually include original
-                    articles, research notes, technology guides and
-                    useful resources.
-                </p>
-
-                <a href="about.html" class="btn btn-secondary">
-                    Explore Wazir Research Lab
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
-
-    <section class="cta">
-
-        <div class="container">
-
-            <h2>Have a Project in Mind?</h2>
+            <br>
 
             <p>
-                Let's connect and discuss your research,
-                data or technology project.
+                The goal is simple: find useful information,
+                organize data, build practical solutions and
+                continuously learn new technologies.
             </p>
 
-            <div class="buttons">
+            <br>
 
-                <a
-                    href="contact.html"
-                    class="btn btn-primary">
-                    Contact Me
-                </a>
+            <a href="about.html" class="btn btn-secondary">
+                Learn More About Me
+            </a>
 
-                <a
-                    href="https://www.fiverr.com/s/P42eaXG"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn-secondary">
-                    Fiverr Profile
-                </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services" class="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Services & Skills</h2>
+            <p>Areas of work and learning.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card main-service">
+                <h3>Web Research</h3>
+                <p>
+                    Finding, verifying, organizing and collecting
+                    information from reliable online sources.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Data Collection</h3>
+                <p>
+                    Collecting structured information and organizing
+                    datasets for practical research and business needs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Web Development</h3>
+                <p>
+                    Creating responsive websites using modern
+                    HTML, CSS and web technologies.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Programming</h3>
+                <p>
+                    Learning and building software solutions through
+                    programming and problem solving.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Software Development</h3>
+                <p>
+                    Exploring software development concepts and
+                    creating useful digital tools.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Research & Documentation</h3>
+                <p>
+                    Turning collected information into organized
+                    notes, documents, reports and useful resources.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WEB RESEARCH -->
+
+<section id="research">
+
+    <div class="container">
+
+        <div class="research-box">
+
+            <div class="research-text">
+
+                <h2>
+                    Web <span>Research</span>
+                </h2>
+
+                <p>
+                    Web Research is one of the main focuses of
+                    Wazir Research Lab. The process combines
+                    online research, source checking, data
+                    collection and organization.
+                </p>
+
+                <ul class="research-list">
+
+                    <li>Online information research</li>
+                    <li>Data collection</li>
+                    <li>Source verification</li>
+                    <li>Competitor research</li>
+                    <li>Contact and company research</li>
+                    <li>Information organization</li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="workflow">
+
+                <h3>Research Workflow</h3>
+
+                <div class="workflow-step">
+
+                    <div class="number">1</div>
+
+                    <div>
+                        <h4>Define</h4>
+                        <p>Understand the research requirement.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="number">2</div>
+
+                    <div>
+                        <h4>Search</h4>
+                        <p>Find relevant information and sources.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="number">3</div>
+
+                    <div>
+                        <h4>Verify</h4>
+                        <p>Check information and compare sources.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="workflow-step">
+
+                    <div class="number">4</div>
+
+                    <div>
+                        <h4>Organize</h4>
+                        <p>Turn information into useful structured data.</p>
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- FOOTER -->
+<!-- PROJECTS -->
 
-    <footer>
+<section id="projects" class="projects">
 
-        <div class="container">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Projects</h2>
+            <p>Things I am building and exploring.</p>
+        </div>
+
+        <div class="grid">
+
+            <div class="card project-card">
+
+                <span class="project-tag">
+                    Website
+                </span>
+
+                <h3>Wazir Research Lab</h3>
+
+                <p>
+                    A personal research and technology platform
+                    focused on web research, data and programming.
+                </p>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <span class="project-tag">
+                    Research
+                </span>
+
+                <h3>Web Research Projects</h3>
+
+                <p>
+                    Research and data collection projects focused
+                    on finding and organizing useful information.
+                </p>
+
+            </div>
+
+
+            <div class="card project-card">
+
+                <span class="project-tag">
+                    Technology
+                </span>
+
+                <h3>Future Projects</h3>
+
+                <p>
+                    More web, software and research projects will
+                    be added here as they are developed.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ARTICLES -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Research & Articles</h2>
+            <p>Useful information and original research will be published here.</p>
+        </div>
+
+        <div class="article-box">
+
+            <h3>Articles Coming Soon</h3>
 
             <p>
-                © 2026 Wazir Research Lab. All rights reserved.
+                This section will gradually include original
+                articles, research notes, technology guides and
+                useful resources.
             </p>
 
-            <div class="footer-links">
-
-                <a href="about.html">About</a>
-
-                <a href="contact.html">Contact</a>
-
-                <a href="privacy.html">Privacy Policy</a>
-
-                <a href="terms.html">Terms & Disclaimer</a>
-
-                <a
-                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-
-                <a
-                    href="https://www.fiverr.com/s/P42eaXG"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Fiverr
-                </a>
-
-            </div>
+            <a href="about.html" class="btn btn-secondary">
+                Explore Wazir Research Lab
+            </a>
 
         </div>
 
-    </footer>
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>Have a Project in Mind?</h2>
+
+        <p>
+            Let's connect and discuss your research,
+            data or technology project.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="contact.html"
+                class="btn btn-primary">
+                Contact Me
+            </a>
+
+            <a
+                href="https://www.fiverr.com/s/P42eaXG"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-secondary">
+                Fiverr Profile
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 Wazir Research Lab. All rights reserved.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="about.html">About</a>
+
+            <a href="contact.html">Contact</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms & Disclaimer</a>
+
+            <a
+                href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                target="_blank"
+                rel="noopener noreferrer">
+                LinkedIn
+            </a>
+
+            <a
+                href="https://www.fiverr.com/s/P42eaXG"
+                target="_blank"
+                rel="noopener noreferrer">
+                Fiverr
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+```
 
 </body>
 </html>
