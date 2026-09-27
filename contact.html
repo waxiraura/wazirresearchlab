@@ -1,198 +1,772 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Contact | Wazir Research Lab</title>
 
-    <meta name="description" content="Contact Murad Wazir and Wazir Research Lab for Web Research, Data Collection, Technology, Web Development, and Programming services.">
+    <meta name="description"
+          content="Contact Murad Wazir and Wazir Research Lab for Web Research, Data Collection, Technology, Web Development, and Programming services.">
 
     <style>
+
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
             background: #0b1120;
-            color: #e5e7eb;
+            color: #cbd5e1;
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 20px;
-        }
-
-        .back {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 16px;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            color: #60a5fa;
+        a {
             text-decoration: none;
         }
 
-        .back:hover {
-            background: #111827;
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
         }
 
-        h1 {
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7, 11, 20, 0.88);
+            border-bottom: 1px solid rgba(56, 189, 248, 0.12);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-inner {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 22px;
+            font-weight: 800;
             color: #ffffff;
-            font-size: 42px;
-            margin-bottom: 10px;
+            white-space: nowrap;
         }
 
-        h2 {
-            color: #ffffff;
-            margin-top: 40px;
+        .logo img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 10px;
+            transition: 0.3s;
         }
 
-        p {
+        .logo:hover img {
+            transform: rotate(-3deg) scale(1.05);
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            position: relative;
             color: #cbd5e1;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+
+        /* HEADER */
+
+        .page-header {
+            text-align: center;
+            padding: 90px 0 55px;
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #172554 0%,
+                    #0b1120 55%
+                );
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 17px;
+            border: 1px solid #334155;
+            border-radius: 30px;
+            color: #7dd3fc;
+            font-size: 14px;
+            margin-bottom: 22px;
+            background: rgba(15, 23, 42, 0.7);
+        }
+
+        .page-header h1 {
+            font-size: clamp(42px, 6vw, 64px);
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .page-header h1 span {
+            color: #38bdf8;
+        }
+
+        .page-header p {
+            color: #94a3b8;
+            font-size: 17px;
+        }
+
+
+        /* MAIN */
+
+        main {
+            padding: 75px 0;
         }
 
         .intro {
-            font-size: 18px;
-            margin-bottom: 35px;
+            max-width: 760px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            color: #ffffff;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .intro h2 span {
+            color: #38bdf8;
+        }
+
+        .intro p {
+            color: #94a3b8;
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+
+        /* CONTACT GRID */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
         }
 
         .card {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 25px;
-            margin-top: 20px;
+            background: rgba(17, 24, 39, 0.82);
+            border: 1px solid #1f2937;
+            border-radius: 15px;
+            padding: 30px;
+            transition: 0.35s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(56, 189, 248, 0.7);
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, 0.22);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
             color: #ffffff;
-            margin-top: 0;
             font-size: 22px;
+            margin-bottom: 12px;
         }
 
-        .button {
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+
+        /* BUTTONS */
+
+        .btn {
             display: inline-block;
-            margin-top: 10px;
-            margin-right: 8px;
-            padding: 12px 20px;
-            background: #2563eb;
-            color: #ffffff;
-            border-radius: 8px;
-            text-decoration: none;
+            padding: 13px 23px;
+            border-radius: 9px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
-        .button:hover {
-            opacity: 0.9;
+        .btn-primary {
+            background: #38bdf8;
+            color: #07111f;
+            box-shadow:
+                0 8px 25px rgba(56, 189, 248, 0.14);
         }
 
-        .secondary-button {
-            background: transparent;
-            border: 1px solid #475569;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            background: #7dd3fc;
         }
 
-        .secondary-button:hover {
-            background: #1e293b;
+        .btn-secondary {
+            border: 1px solid #334155;
+            color: #e2e8f0;
+            background: rgba(15, 23, 42, 0.35);
         }
+
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            border-color: #38bdf8;
+            color: #38bdf8;
+        }
+
+
+        /* SERVICES */
+
+        .services {
+            margin-top: 55px;
+            padding: 40px;
+            background: #111827;
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .services h2 {
+            color: #ffffff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .services h2 span {
+            color: #38bdf8;
+        }
+
+        .service-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 9px 15px;
+            border: 1px solid #334155;
+            border-radius: 25px;
+            color: #cbd5e1;
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+
+        /* CTA */
+
+        .cta {
+            margin-top: 55px;
+            padding: 45px 30px;
+            text-align: center;
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #172554
+                );
+            border: 1px solid #1f2937;
+            border-radius: 16px;
+        }
+
+        .cta h2 {
+            color: #ffffff;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: #94a3b8;
+            margin-bottom: 25px;
+        }
+
+
+        /* FOOTER */
 
         footer {
-            margin-top: 50px;
-            padding-top: 25px;
-            border-top: 1px solid #1e293b;
-            color: #94a3b8;
+            border-top: 1px solid #1f2937;
+            padding: 40px 0 25px;
+            background: #070b14;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .footer-content h3 {
+            color: #ffffff;
+            margin-bottom: 6px;
+        }
+
+        .footer-content p {
+            color: #64748b;
             font-size: 14px;
         }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 22px;
+            border-top: 1px solid #1f2937;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #64748b;
+            font-size: 13px;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 850px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-inner {
+                flex-direction: column;
+                justify-content: center;
+                padding: 15px 0;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .page-header {
+                padding: 65px 0 45px;
+            }
+
+            main {
+                padding: 55px 0;
+            }
+
+            .services {
+                padding: 28px 20px;
+            }
+
+            .logo {
+                font-size: 19px;
+            }
+
+            .logo img {
+                width: 38px;
+                height: 38px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<div class="container">
 
-    <a class="back" href="index.html">← Back to Wazir Research Lab</a>
+<!-- NAVIGATION -->
 
-    <h1>Contact Wazir Research Lab</h1>
+<nav>
 
-    <p class="intro">
-        Have a question, project idea, or need help with Web Research,
-        Data Collection, Technology, Web Development, or Programming?
-        Connect with me through LinkedIn or Fiverr.
-    </p>
+    <div class="container nav-inner">
 
-    <!-- LinkedIn -->
-    <div class="card">
-        <h3>LinkedIn</h3>
+        <a href="index.html" class="logo">
 
-        <p>
-            Connect with Murad Wazir on LinkedIn for professional networking,
-            opportunities, and collaboration.
-        </p>
+            <img src="MW-logo.png"
+                 alt="Wazir Research Lab Logo">
 
-        <a class="button"
-           href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
-           target="_blank"
-           rel="noopener noreferrer">
-            Visit LinkedIn Profile
+            <span>Wazir Research Lab</span>
+
         </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="about.html">About</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
     </div>
 
-    <!-- Fiverr Profile -->
-    <div class="card">
-        <h3>Fiverr Profile</h3>
+</nav>
+
+
+<!-- PAGE HEADER -->
+
+<header class="page-header">
+
+    <div class="container">
+
+        <div class="badge">
+            📩 Wazir Research Lab
+        </div>
+
+        <h1>
+            Contact <span>Me</span>
+        </h1>
 
         <p>
-            For freelance services, project inquiries, and client work,
-            visit my Fiverr profile.
+            Let's connect and discuss your project.
         </p>
 
-        <a class="button"
-           href="https://www.fiverr.com/s/P42eaXG"
-           target="_blank"
-           rel="noopener noreferrer">
-            Visit Fiverr Profile
-        </a>
     </div>
 
-    <!-- Fiverr Referral -->
-    <div class="card">
-        <h3>Fiverr Referral</h3>
+</header>
 
-        <p>
-            You can also use my Fiverr referral link to visit Fiverr.
-        </p>
 
-        <a class="button secondary-button"
-           href="https://www.fiverr.com/pe/rEYkq6b"
-           target="_blank"
-           rel="noopener noreferrer">
-            Open Fiverr Referral
-        </a>
+<!-- MAIN -->
+
+<main>
+
+    <div class="container">
+
+
+        <!-- INTRO -->
+
+        <div class="intro">
+
+            <h2>
+                Let's <span>Connect</span>
+            </h2>
+
+            <p>
+                Have a question, project idea, or need help with
+                Web Research, Data Collection, Technology,
+                Web Development or Programming?
+                You can connect with me through LinkedIn or Fiverr.
+            </p>
+
+        </div>
+
+
+        <!-- CONTACT CARDS -->
+
+        <div class="contact-grid">
+
+
+            <!-- LINKEDIN -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    💼
+                </div>
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    Connect with Murad Wazir on LinkedIn for
+                    professional networking, opportunities
+                    and collaboration.
+                </p>
+
+                <a
+                    class="btn btn-primary"
+                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Visit LinkedIn
+                </a>
+
+            </div>
+
+
+            <!-- FIVERR -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🧑‍💻
+                </div>
+
+                <h3>
+                    Fiverr
+                </h3>
+
+                <p>
+                    For freelance services, project inquiries
+                    and client work, visit my Fiverr profile.
+                </p>
+
+                <a
+                    class="btn btn-primary"
+                    href="https://www.fiverr.com/s/P42eaXG"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Visit Fiverr Profile
+                </a>
+
+            </div>
+
+
+            <!-- REFERRAL -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Fiverr Referral
+                </h3>
+
+                <p>
+                    You can also use my Fiverr referral link
+                    to visit Fiverr.
+                </p>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://www.fiverr.com/pe/rEYkq6b"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Open Referral
+                </a>
+
+            </div>
+
+
+            <!-- PROJECT -->
+
+            <div class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Project Discussion
+                </h3>
+
+                <p>
+                    Have a research, data or technology project
+                    in mind? Connect through LinkedIn or Fiverr
+                    to discuss the requirements.
+                </p>
+
+                <a
+                    class="btn btn-secondary"
+                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Let's Connect
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <div class="services">
+
+            <h2>
+                Available <span>Services</span>
+            </h2>
+
+            <ul class="service-list">
+
+                <li>🔎 Web Research</li>
+
+                <li>📊 Data Collection</li>
+
+                <li>💻 Web Development</li>
+
+                <li>⚙️ Programming</li>
+
+                <li>🧩 Software Development</li>
+
+                <li>📑 Research & Documentation</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- CTA -->
+
+        <div class="cta">
+
+            <h2>
+                Have a Project in Mind?
+            </h2>
+
+            <p>
+                Let's connect and discuss your research,
+                data or technology project.
+            </p>
+
+            <a
+                class="btn btn-primary"
+                href="https://www.fiverr.com/s/P42eaXG"
+                target="_blank"
+                rel="noopener noreferrer">
+                Start a Project
+            </a>
+
+        </div>
+
     </div>
 
-    <!-- Services -->
-    <div class="card">
-        <h3>Services</h3>
+</main>
 
-        <p>
-            • Web Research<br>
-            • Data Collection<br>
-            • Web Development<br>
-            • Programming<br>
-            • Software Development<br>
-            • Research & Documentation
-        </p>
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div>
+
+                <h3>
+                    Wazir Research Lab
+                </h3>
+
+                <p>
+                    Research, technology and practical digital solutions.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a href="privacy.html">
+                    Privacy
+                </a>
+
+                <a href="terms.html">
+                    Terms
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+
+                <a
+                    href="https://www.fiverr.com/s/P42eaXG"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    Fiverr
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Wazir Research Lab. All rights reserved.
+            </p>
+
+        </div>
+
     </div>
 
-    <footer>
-        © 2026 Wazir Research Lab. All rights reserved.
-    </footer>
+</footer>
 
-</div>
 
 </body>
+
 </html>
+```
