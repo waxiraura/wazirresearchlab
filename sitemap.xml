@@ -1,3 +1,4 @@
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
@@ -5,4 +6,21 @@
         <loc>https://waxiraura.github.io/wazirresearchlab/</loc>
     </url>
 
+    <url>
+        <loc>https://waxiraura.github.io/wazirresearchlab/about.html</loc>
+    </url>
+
+    <url>
+        <loc>https://waxiraura.github.io/wazirresearchlab/contact.html</loc>
+    </url>
+
+    <url>
+        <loc>https://waxiraura.github.io/wazirresearchlab/privacy.html</loc>
+    </url>
+
+    <url>
+        <loc>https://waxiraura.github.io/wazirresearchlab/terms.html</loc>
+    </url>
+
 </urlset>
+```
