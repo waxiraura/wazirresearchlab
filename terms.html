@@ -1,463 +1,3031 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Terms & Disclaimer | Wazir Research Lab</title>
-    <meta name="description" content="Terms of Use and Disclaimer for Wazir Research Lab.">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Terms & Disclaimer | Wazir Research Lab
+    </title>
+
+    <meta
+        name="description"
+        content="Terms of Use and Disclaimer for Wazir Research Lab. Review website use, information accuracy, external links, intellectual property, services and other important terms."
+    >
+
+    <meta
+        name="author"
+        content="Murad Wazir"
+    >
+
+    <meta
+        name="theme-color"
+        content="#050811"
+    >
+
 
     <style>
+
+        /* =====================================================
+           ROOT
+        ====================================================== */
+
+        :root {
+
+            --bg: #050811;
+            --bg-2: #080d18;
+            --bg-3: #0b1220;
+
+            --white: #f7fbff;
+            --text: #d7e0eb;
+            --muted: #8795a8;
+
+            --cyan: #59dcff;
+            --cyan-light: #a4efff;
+
+            --blue: #7286ff;
+            --blue-deep: #5368f2;
+
+            --green: #68e1aa;
+            --amber: #f2c76b;
+
+            --border: rgba(255,255,255,.075);
+            --border-hover: rgba(89,220,255,.19);
+
+            --shadow:
+                0 25px 75px rgba(0,0,0,.34);
+
+            --shadow-soft:
+                0 13px 38px rgba(0,0,0,.21);
+
+            --radius: 21px;
+            --radius-lg: 29px;
+
+            --container: 1180px;
+
+            --ease:
+                cubic-bezier(.2,.7,.2,1);
+        }
+
+
+        /* =====================================================
+           RESET
+        ====================================================== */
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
+
 
         html {
             scroll-behavior: smooth;
         }
 
+
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
+
+            min-height: 100vh;
+
+            overflow-x: hidden;
+
+            color: var(--white);
+
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
             line-height: 1.7;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 0%,
+                    rgba(89,220,255,.075),
+                    transparent 29%
+                ),
+
+                radial-gradient(
+                    circle at 90% 8%,
+                    rgba(114,134,255,.09),
+                    transparent 30%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #040710 0%,
+                    #060a13 48%,
+                    #07101b 100%
+                );
         }
 
-        /* NAVBAR */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: -1;
+
+            pointer-events: none;
+
+            opacity: .15;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(255,255,255,.023) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.023) 1px,
+                    transparent 1px
+                );
+
+            background-size: 72px 72px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 82%
+                );
+        }
+
+
+        ::selection {
+
+            color: #03131b;
+
+            background: var(--cyan);
+        }
+
+
+        a {
+
+            color: inherit;
+
+            text-decoration: none;
+        }
+
+
+        img {
+
+            display: block;
+
+            max-width: 100%;
+        }
+
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--container)
+                );
+
+            margin-inline: auto;
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ====================================================== */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #040710;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    var(--cyan),
+                    var(--blue)
+                );
+
+            border:
+                3px solid #040710;
+
+            border-radius: 999px;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
+
         nav {
+
             position: sticky;
+
             top: 0;
+
             z-index: 1000;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #1e293b;
-            backdrop-filter: blur(10px);
+
+            border-bottom:
+                1px solid rgba(255,255,255,.055);
+
+            background:
+                rgba(4,7,16,.74);
+
+            backdrop-filter:
+                blur(18px);
+
+            -webkit-backdrop-filter:
+                blur(18px);
         }
 
-        .nav-container {
-            max-width: 1150px;
-            margin: auto;
-            padding: 14px 20px;
+
+        .nav-inner {
+
+            min-height: 80px;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
-            gap: 20px;
+
+            gap: 24px;
         }
+
 
         .logo {
-            display: flex;
+
+            display: inline-flex;
+
             align-items: center;
-            gap: 10px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
+
+            gap: 12px;
+
+            min-width: 0;
         }
 
-        .logo img {
-            width: 42px;
-            height: 42px;
-            object-fit: contain;
-            border-radius: 8px;
+
+        .logo-mark {
+
+            width: 48px;
+            height: 48px;
+
+            display: grid;
+
+            place-items: center;
+
+            border:
+                1px solid rgba(89,220,255,.16);
+
+            border-radius: 15px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(89,220,255,.09),
+                    rgba(114,134,255,.045)
+                );
+
+            box-shadow:
+
+                inset 0 1px 0 rgba(255,255,255,.04),
+
+                0 0 30px rgba(89,220,255,.04);
         }
+
+
+        .logo-mark img {
+
+            width: 31px;
+            height: 31px;
+
+            object-fit: contain;
+        }
+
+
+        .logo-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            line-height: 1.05;
+        }
+
+
+        .logo-text strong {
+
+            color: #ffffff;
+
+            font-size: .93rem;
+
+            font-weight: 850;
+        }
+
+
+        .logo-text span {
+
+            margin-top: 5px;
+
+            color: #7f8ea3;
+
+            font-size: .60rem;
+
+            font-weight: 800;
+
+            letter-spacing: .17em;
+
+            text-transform: uppercase;
+        }
+
 
         .nav-links {
+
             display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
+
+            align-items: center;
+
+            gap: 4px;
+
+            list-style: none;
         }
+
 
         .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
+
+            position: relative;
+
+            padding:
+                10px 13px;
+
+            color: #aeb9c8;
+
+            font-size: .80rem;
+
+            font-weight: 750;
+
+            transition:
+                color .3s var(--ease),
+                transform .3s var(--ease);
         }
 
-        .nav-links a:hover,
+
+        .nav-links a:hover {
+
+            color: white;
+
+            transform:
+                translateY(-1px);
+        }
+
+
         .nav-links a.active {
-            color: #38bdf8;
+
+            color: #e2f9ff;
         }
 
-        /* MAIN */
-        .container {
-            max-width: 950px;
-            margin: auto;
-            padding: 70px 20px;
+
+        .nav-links a:not(.active):not(.nav-cta)::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 13px;
+            right: 13px;
+
+            bottom: 3px;
+
+            height: 2px;
+
+            border-radius: 999px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--blue)
+                );
+
+            transform:
+                scaleX(0);
+
+            transition:
+                transform .3s var(--ease);
         }
+
+
+        .nav-links a:not(.active):not(.nav-cta):hover::after {
+
+            transform:
+                scaleX(1);
+        }
+
+
+        .nav-links a.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 13px;
+            right: 13px;
+
+            bottom: 3px;
+
+            height: 2px;
+
+            border-radius: 999px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--blue)
+                );
+        }
+
+
+        .nav-cta {
+
+            margin-left: 7px;
+
+            padding:
+                11px 16px !important;
+
+            color: #04131a !important;
+
+            border-radius: 12px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #83eaff,
+                    var(--cyan)
+                );
+
+            box-shadow:
+                0 11px 28px rgba(89,220,255,.14);
+        }
+
+
+        .nav-cta:hover {
+
+            transform:
+                translateY(-2px) !important;
+        }
+
+
+        /* =====================================================
+           PAGE HERO
+        ====================================================== */
 
         .page-header {
+
+            position: relative;
+
+            min-height: 460px;
+
+            display: grid;
+
+            place-items: center;
+
+            overflow: hidden;
+
             text-align: center;
-            margin-bottom: 45px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.05);
         }
+
+
+        .header-grid {
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    rgba(89,220,255,.043) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(89,220,255,.043) 1px,
+                    transparent 1px
+                );
+
+            background-size: 78px 78px;
+
+            mask-image:
+                radial-gradient(
+                    ellipse at center,
+                    black 0%,
+                    rgba(0,0,0,.87) 45%,
+                    transparent 82%
+                );
+        }
+
+
+        .header-glow {
+
+            position: absolute;
+
+            width: 620px;
+            height: 620px;
+
+            left: 50%;
+            top: 45%;
+
+            transform:
+                translate(-50%,-50%);
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    circle,
+                    rgba(89,220,255,.10),
+                    rgba(89,220,255,.025) 38%,
+                    transparent 72%
+                );
+
+            filter: blur(5px);
+        }
+
+
+        .header-watermark {
+
+            position: absolute;
+
+            width:
+                min(
+                    445px,
+                    68vw
+                );
+
+            height:
+                min(
+                    445px,
+                    68vw
+                );
+
+            left: 50%;
+            top: 49%;
+
+            transform:
+                translate(-50%,-50%);
+
+            background:
+                url("MW-logo.png")
+                center / contain
+                no-repeat;
+
+            opacity: .034;
+
+            filter:
+                grayscale(100%)
+                brightness(1.7)
+                blur(.2px);
+
+            animation:
+                watermarkFloat 9s ease-in-out infinite;
+
+            pointer-events: none;
+        }
+
+
+        @keyframes watermarkFloat {
+
+            0%,100% {
+
+                transform:
+                    translate(-50%,-50%)
+                    scale(1);
+            }
+
+
+            50% {
+
+                transform:
+                    translate(-50%,-50%)
+                    scale(1.025);
+            }
+        }
+
+
+        .page-header-content {
+
+            position: relative;
+
+            z-index: 2;
+
+            padding:
+                67px 0
+                59px;
+        }
+
 
         .badge {
-            display: inline-block;
-            padding: 7px 14px;
-            border: 1px solid #164e63;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            padding:
+                8px 13px;
+
+            color: #c9f5ff;
+
+            border:
+                1px solid rgba(89,220,255,.15);
+
             border-radius: 999px;
-            color: #38bdf8;
-            background: #082f49;
-            font-size: 13px;
-            margin-bottom: 18px;
+
+            background:
+                rgba(89,220,255,.035);
+
+            font-size: .67rem;
+
+            font-weight: 850;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
         }
 
-        h1 {
-            color: #ffffff;
-            font-size: 44px;
-            margin: 0 0 12px;
+
+        .badge-dot {
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background:
+                var(--cyan);
+
+            box-shadow:
+                0 0 13px rgba(89,220,255,.78);
         }
 
-        .subtitle {
-            color: #94a3b8;
-            max-width: 650px;
-            margin: auto;
+
+        .page-header h1 {
+
+            margin-top: 23px;
+
+            font-size:
+                clamp(
+                    2.8rem,
+                    7vw,
+                    6rem
+                );
+
+            line-height: .96;
+
+            letter-spacing: -.055em;
+
+            font-weight: 950;
+
+            background:
+
+                linear-gradient(
+                    180deg,
+                    #ffffff 8%,
+                    #edfaff 47%,
+                    #9eeeff 100%
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
         }
+
+
+        .page-header h1 span {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #a9f2ff,
+                    var(--cyan),
+                    #8292ff
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .page-header p {
+
+            max-width: 730px;
+
+            margin:
+                16px auto 0;
+
+            color:
+                var(--text);
+
+            font-size:
+                clamp(
+                    .88rem,
+                    1.5vw,
+                    .98rem
+                );
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           TERMS AREA
+        ====================================================== */
+
+        .terms-section {
+
+            position: relative;
+
+            padding:
+                69px 0
+                80px;
+        }
+
+
+        .terms-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 50%;
+
+            width:
+                min(
+                    calc(100% - 90px),
+                    1000px
+                );
+
+            height: 1px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(255,255,255,.025) 14%,
+                    rgba(89,220,255,.17) 50%,
+                    rgba(255,255,255,.025) 86%,
+                    transparent
+                );
+        }
+
+
+        .terms-section::after {
+
+            content: "";
+
+            position: absolute;
+
+            top: -4px;
+
+            left: 50%;
+
+            width: 125px;
+            height: 9px;
+
+            transform:
+                translateX(-50%);
+
+            background:
+
+                radial-gradient(
+                    ellipse,
+                    rgba(89,220,255,.14),
+                    transparent 72%
+                );
+
+            filter:
+                blur(3px);
+
+            pointer-events: none;
+        }
+
+
+        .terms-layout {
+
+            display: grid;
+
+            grid-template-columns:
+                .78fr
+                1.22fr;
+
+            gap: 28px;
+
+            align-items: start;
+        }
+
+
+        /* =====================================================
+           SIDEBAR
+        ====================================================== */
+
+        .terms-sidebar {
+
+            position: sticky;
+
+            top: 103px;
+
+            padding:
+                22px;
+
+            border:
+                1px solid rgba(255,255,255,.07);
+
+            border-radius: 20px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(15,24,41,.91),
+                    rgba(7,12,21,.95)
+                );
+
+            box-shadow:
+                var(--shadow-soft);
+        }
+
+
+        .sidebar-head {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 17px;
+        }
+
+
+        .sidebar-icon {
+
+            width: 43px;
+            height: 43px;
+
+            display: grid;
+
+            place-items: center;
+
+            flex: 0 0 auto;
+
+            border:
+                1px solid rgba(89,220,255,.13);
+
+            border-radius: 12px;
+
+            background:
+                rgba(89,220,255,.04);
+        }
+
+
+        .sidebar-icon svg {
+
+            width: 20px;
+            height: 20px;
+
+            stroke:
+                var(--cyan);
+        }
+
+
+        .sidebar-head h2 {
+
+            color: white;
+
+            font-size: .94rem;
+
+            font-weight: 900;
+        }
+
+
+        .sidebar-subtitle {
+
+            margin-top: 3px;
+
+            color: #748397;
+
+            font-size: .64rem;
+        }
+
 
         .updated {
-            display: inline-block;
-            margin-top: 18px;
-            padding: 7px 13px;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding:
+                7px 10px;
+
+            color:
+                #a7edfd;
+
+            border:
+                1px solid rgba(89,220,255,.11);
+
             border-radius: 999px;
-            background: #111827;
-            border: 1px solid #1e293b;
-            color: #94a3b8;
-            font-size: 13px;
+
+            background:
+                rgba(89,220,255,.035);
+
+            font-size: .62rem;
+
+            font-weight: 800;
         }
 
-        /* CONTENT CARD */
-        .content-card {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            border-radius: 18px;
-            padding: 35px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+
+        .updated svg {
+
+            width: 14px;
+            height: 14px;
+
+            stroke:
+                var(--cyan);
         }
 
-        .back {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 10px 16px;
-            border: 1px solid #334155;
+
+        .sidebar-description {
+
+            margin-top: 15px;
+
+            color:
+                var(--muted);
+
+            font-size: .72rem;
+
+            line-height: 1.76;
+        }
+
+
+        .terms-nav {
+
+            margin-top: 18px;
+
+            display: grid;
+
+            gap: 6px;
+        }
+
+
+        .terms-nav a {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding:
+                9px 10px;
+
+            color: #8b9aad;
+
+            border:
+                1px solid transparent;
+
             border-radius: 9px;
-            color: #38bdf8;
-            text-decoration: none;
-            transition: 0.3s;
+
+            font-size: .67rem;
+
+            font-weight: 750;
+
+            transition:
+
+                color .3s ease,
+
+                border-color .3s ease,
+
+                background .3s ease;
         }
 
-        .back:hover {
-            background: #111827;
-            border-color: #38bdf8;
+
+        .terms-nav a:hover {
+
+            color:
+                var(--cyan);
+
+            border-color:
+                rgba(89,220,255,.10);
+
+            background:
+                rgba(89,220,255,.025);
         }
 
-        h2 {
-            color: #ffffff;
-            font-size: 23px;
-            margin-top: 38px;
-            margin-bottom: 12px;
+
+        .terms-nav a span {
+
+            color:
+                var(--cyan);
+
+            font-size: .59rem;
         }
 
-        h2:first-of-type {
+
+        /* =====================================================
+           CONTENT CARD
+        ====================================================== */
+
+        .content-card {
+
+            padding:
+                28px;
+
+            border:
+                1px solid rgba(255,255,255,.075);
+
+            border-radius: 22px;
+
+            background:
+
+                linear-gradient(
+                    150deg,
+                    rgba(14,24,41,.93),
+                    rgba(7,12,21,.96)
+                );
+
+            box-shadow:
+                var(--shadow-soft);
+        }
+
+
+        .content-intro {
+
+            padding-bottom:
+                20px;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.055);
+        }
+
+
+        .content-intro p {
+
+            color:
+                var(--text);
+
+            font-size: .81rem;
+
+            line-height: 1.86;
+        }
+
+
+        .notice {
+
+            margin:
+                20px 0 5px;
+
+            padding:
+                16px 17px;
+
+            border-left:
+                2px solid var(--cyan);
+
+            border-radius:
+                0 13px 13px 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(89,220,255,.05),
+                    transparent
+                );
+        }
+
+
+        .notice-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color:
+                #e0f8ff;
+
+            font-size: .71rem;
+
+            font-weight: 850;
+        }
+
+
+        .notice-title svg {
+
+            width: 16px;
+            height: 16px;
+
+            stroke:
+                var(--cyan);
+        }
+
+
+        .notice p {
+
+            margin-top: 6px;
+
+            color:
+                var(--muted);
+
+            font-size: .71rem;
+
+            line-height: 1.75;
+        }
+
+
+        /* =====================================================
+           TERM BLOCKS
+        ====================================================== */
+
+        .term-block {
+
+            padding:
+                21px 0;
+
+            border-bottom:
+                1px solid rgba(255,255,255,.05);
+        }
+
+
+        .term-block:last-of-type {
+
+            border-bottom:
+                none;
+
+            padding-bottom:
+                5px;
+        }
+
+
+        .term-heading {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 9px;
+        }
+
+
+        .term-number {
+
+            width: 31px;
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            flex: 0 0 auto;
+
+            color:
+                var(--cyan);
+
+            border:
+                1px solid rgba(89,220,255,.11);
+
+            border-radius: 9px;
+
+            background:
+                rgba(89,220,255,.035);
+
+            font-size: .59rem;
+
+            font-weight: 900;
+        }
+
+
+        .term-heading h2 {
+
+            color:
+                #eff8fc;
+
+            font-size: .91rem;
+
+            font-weight: 900;
+
+            letter-spacing:
+                -.01em;
+        }
+
+
+        .term-block p {
+
+            color:
+                var(--muted);
+
+            font-size: .75rem;
+
+            line-height: 1.82;
+        }
+
+
+        .term-block p + p {
+
             margin-top: 10px;
         }
 
-        p,
-        li {
-            color: #cbd5e1;
-        }
-
-        p {
-            margin-bottom: 18px;
-        }
-
-        .notice {
-            background: #082f49;
-            border: 1px solid #164e63;
-            border-left: 4px solid #38bdf8;
-            border-radius: 12px;
-            padding: 18px 20px;
-            margin: 25px 0 35px;
-        }
-
-        .notice p {
-            margin: 0;
-            color: #bae6fd;
-        }
 
         .highlight {
-            color: #38bdf8;
-            font-weight: bold;
+
+            color:
+                var(--cyan);
+
+            font-weight: 850;
         }
 
-        /* CTA */
+
+        .term-list {
+
+            margin-top: 10px;
+
+            display: grid;
+
+            gap: 7px;
+
+            list-style: none;
+        }
+
+
+        .term-list li {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 8px;
+
+            color:
+                var(--muted);
+
+            font-size: .72rem;
+
+            line-height: 1.72;
+        }
+
+
+        .term-list svg {
+
+            width: 14px;
+            height: 14px;
+
+            flex:
+                0 0 auto;
+
+            margin-top: 3px;
+
+            stroke:
+                var(--cyan);
+        }
+
+
+        /* =====================================================
+           DISCLAIMER BOX
+        ====================================================== */
+
+        .disclaimer-box {
+
+            margin-top:
+                19px;
+
+            padding:
+                17px;
+
+            border:
+                1px solid rgba(242,199,107,.12);
+
+            border-radius:
+                14px;
+
+            background:
+                rgba(242,199,107,.025);
+        }
+
+
+        .disclaimer-head {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color:
+                #f1dfaa;
+
+            font-size: .70rem;
+
+            font-weight: 850;
+        }
+
+
+        .disclaimer-head svg {
+
+            width: 16px;
+            height: 16px;
+
+            stroke:
+                var(--amber);
+        }
+
+
+        .disclaimer-box p {
+
+            margin-top: 6px;
+
+            color:
+                #9a9278;
+
+            font-size: .70rem;
+
+            line-height: 1.76;
+        }
+
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
         .cta {
-            margin-top: 45px;
-            padding: 28px;
-            border-radius: 16px;
-            background: linear-gradient(
-                135deg,
-                #0f172a,
-                #082f49
-            );
-            border: 1px solid #164e63;
+
+            margin-top:
+                20px;
+
+            padding:
+                22px;
+
             text-align: center;
+
+            border:
+                1px solid rgba(89,220,255,.09);
+
+            border-radius:
+                17px;
+
+            background:
+                rgba(89,220,255,.022);
         }
 
-        .cta h2 {
-            margin-top: 0;
+
+        .cta h3 {
+
+            color:
+                #eaf8fd;
+
+            font-size: .94rem;
+
+            font-weight: 900;
         }
+
+
+        .cta p {
+
+            margin-top:
+                5px;
+
+            color:
+                var(--muted);
+
+            font-size: .71rem;
+
+            line-height: 1.72;
+        }
+
 
         .cta a {
-            display: inline-block;
-            margin-top: 8px;
-            padding: 11px 20px;
-            border-radius: 9px;
-            background: #38bdf8;
-            color: #082f49;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 7px;
+
+            min-height: 44px;
+
+            margin-top: 13px;
+
+            padding:
+                0 16px;
+
+            border-radius: 11px;
+
+            color: #03131b;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #8aeaff,
+                    var(--cyan)
+                );
+
+            font-size: .69rem;
+
+            font-weight: 850;
+
+            box-shadow:
+                0 11px 30px rgba(89,220,255,.12);
+
+            transition:
+                transform .3s var(--ease),
+                box-shadow .3s var(--ease);
         }
+
 
         .cta a:hover {
-            transform: translateY(-2px);
-            opacity: 0.9;
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 17px 38px rgba(89,220,255,.19);
         }
 
-        /* FOOTER */
-        footer {
-            margin-top: 60px;
-            padding-top: 25px;
-            border-top: 1px solid #1e293b;
-            text-align: center;
-            color: #94a3b8;
-            font-size: 14px;
+
+        .cta a svg {
+
+            width: 15px;
+            height: 15px;
         }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
+
+        footer {
+
+            border-top:
+                1px solid rgba(255,255,255,.055);
+
+            background:
+                rgba(2,4,9,.76);
+        }
+
+
+        .footer-main {
+
+            padding:
+                38px 0;
+
+            display: grid;
+
+            grid-template-columns:
+                1.35fr
+                .7fr
+                .7fr;
+
+            gap: 30px;
+        }
+
+
+        .footer-description {
+
+            max-width: 430px;
+
+            margin-top: 11px;
+
+            color: #738095;
+
+            font-size: .70rem;
+
+            line-height: 1.8;
+        }
+
+
+        .footer-title {
+
+            margin-bottom: 10px;
+
+            color: #e0ebf3;
+
+            font-size: .64rem;
+
+            font-weight: 900;
+
+            letter-spacing: .13em;
+
+            text-transform: uppercase;
+        }
+
 
         .footer-links {
-            margin-bottom: 15px;
+
+            display: grid;
+
+            gap: 7px;
         }
+
 
         .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin: 0 8px;
-            transition: 0.3s;
+
+            color: #7b899c;
+
+            font-size: .69rem;
+
+            transition:
+                color .3s ease;
         }
+
 
         .footer-links a:hover {
-            color: #38bdf8;
+
+            color:
+                var(--cyan);
         }
 
-        /* MOBILE */
-        @media (max-width: 700px) {
-            .nav-container {
-                flex-direction: column;
-                align-items: flex-start;
+
+        .footer-bottom {
+
+            min-height: 62px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            border-top:
+                1px solid rgba(255,255,255,.045);
+
+            color: #667489;
+
+            font-size: .63rem;
+        }
+
+
+        /* =====================================================
+           REVEAL
+        ====================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(17px);
+
+            transition:
+
+                opacity .72s ease,
+
+                transform .72s var(--ease);
+        }
+
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           TABLET
+        ====================================================== */
+
+        @media (max-width: 950px) {
+
+            .terms-layout {
+
+                grid-template-columns:
+                    1fr;
             }
 
-            .nav-links {
-                gap: 12px;
+
+            .terms-sidebar {
+
+                position:
+                    relative;
+
+                top: auto;
             }
+
+
+            .footer-main {
+
+                grid-template-columns:
+                    1.2fr
+                    .8fr;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 720px) {
 
             .container {
-                padding: 50px 15px;
+
+                width:
+                    min(
+                        calc(100% - 28px),
+                        var(--container)
+                    );
             }
 
-            h1 {
-                font-size: 34px;
+
+            .nav-inner {
+
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                padding:
+                    13px 0;
             }
+
+
+            .nav-links {
+
+                flex-wrap:
+                    wrap;
+
+                justify-content:
+                    center;
+
+                gap:
+                    1px 5px;
+            }
+
+
+            .nav-links a {
+
+                padding:
+                    8px 8px;
+
+                font-size:
+                    .71rem;
+            }
+
+
+            .nav-cta {
+
+                margin-left:
+                    0;
+
+                margin-top:
+                    2px;
+            }
+
+
+            .page-header {
+
+                min-height:
+                    425px;
+            }
+
+
+            .page-header-content {
+
+                padding:
+                    60px 0
+                    52px;
+            }
+
+
+            .page-header h1 {
+
+                font-size:
+                    clamp(
+                        2.50rem,
+                        13vw,
+                        4.6rem
+                    );
+            }
+
+
+            .terms-section {
+
+                padding:
+                    60px 0
+                    68px;
+            }
+
+
+            .terms-section::before {
+
+                width:
+                    calc(100% - 46px);
+            }
+
+
+            .terms-sidebar {
+
+                padding:
+                    20px 18px;
+            }
+
 
             .content-card {
-                padding: 24px 20px;
+
+                padding:
+                    21px 18px;
             }
 
-            h2 {
-                font-size: 21px;
+
+            .term-block {
+
+                padding:
+                    19px 0;
             }
 
-            .footer-links a {
-                display: inline-block;
-                margin: 5px 6px;
+
+            .cta {
+
+                padding:
+                    18px 15px;
             }
+
+
+            .cta a {
+
+                width:
+                    100%;
+            }
+
+
+            .footer-main {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .footer-bottom {
+
+                padding:
+                    18px 0;
+
+                flex-direction:
+                    column;
+
+                justify-content:
+                    center;
+
+                text-align:
+                    center;
+            }
+
+
+            .header-watermark {
+
+                width:
+                    340px;
+
+                height:
+                    340px;
+
+                opacity:
+                    .028;
+            }
+
         }
+
+
+        /* =====================================================
+           REDUCED MOTION
+        ====================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+
+            * {
+
+                animation:
+                    none !important;
+
+                transition:
+                    none !important;
+            }
+
+
+            .reveal {
+
+                opacity:
+                    1;
+
+                transform:
+                    none;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<!-- NAVBAR -->
-<nav>
-    <div class="nav-container">
 
-        <a href="index.html" class="logo">
-            <img src="MW-logo.png" alt="Wazir Research Lab Logo">
-            <span>Wazir Research Lab</span>
-        </a>
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
 
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html" class="active">Terms</a>
+    <nav>
+
+        <div class="container nav-inner">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <span class="logo-mark">
+
+                    <img
+                        src="MW-logo.png"
+                        alt="MW Logo"
+                    >
+
+                </span>
+
+
+                <span class="logo-text">
+
+                    <strong>
+                        Wazir Research Lab
+                    </strong>
+
+                    <span>
+                        Research • Technology • Solutions
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="privacy.html">
+                        Privacy
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="terms.html"
+                        class="active"
+                    >
+                        Terms
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="contact.html"
+                        class="nav-cta"
+                    >
+                        Contact Me
+                    </a>
+                </li>
+
+            </ul>
+
         </div>
 
-    </div>
-</nav>
+    </nav>
 
-<!-- MAIN CONTENT -->
-<div class="container">
 
-    <div class="page-header">
+    <!-- =====================================================
+         PAGE HEADER
+    ====================================================== -->
 
-        <div class="badge">
-            📄 Wazir Research Lab
+    <header class="page-header">
+
+
+        <div class="header-grid"></div>
+
+        <div class="header-glow"></div>
+
+        <div class="header-watermark"></div>
+
+
+        <div class="container">
+
+            <div class="page-header-content reveal">
+
+
+                <span class="badge">
+
+                    <span class="badge-dot"></span>
+
+                    Wazir Research Lab
+
+                </span>
+
+
+                <h1>
+
+                    Terms &
+                    <span>
+                        Disclaimer
+                    </span>
+
+                </h1>
+
+
+                <p>
+
+                    Please review these terms before using the information,
+                    resources and services available through this website.
+
+                </p>
+
+            </div>
+
         </div>
 
-        <h1>Terms & Disclaimer</h1>
+    </header>
 
-        <p class="subtitle">
-            Please review these terms before using the information,
-            resources, and services available on this website.
-        </p>
 
-        <div class="updated">
-            Last updated: September 27, 2026
-        </div>
+    <!-- =====================================================
+         TERMS
+    ====================================================== -->
 
-    </div>
+    <main>
 
-    <div class="content-card">
 
-        <a class="back" href="index.html">
-            ← Back to Wazir Research Lab
-        </a>
+        <section class="terms-section">
 
-        <div class="notice">
-            <p>
-                By using <span class="highlight">Wazir Research Lab</span>,
-                you agree to use this website responsibly and in accordance
-                with these terms.
-            </p>
-        </div>
+            <div class="container">
 
-        <h2>1. Website Use</h2>
 
-        <p>
-            Wazir Research Lab provides information, resources, research-related
-            content, technology content, and digital project information.
-            You may use this website for lawful and personal or professional
-            informational purposes.
-        </p>
+                <div class="terms-layout">
 
-        <h2>2. Information Accuracy</h2>
 
-        <p>
-            We aim to provide useful and accurate information. However, we do not
-            guarantee that all information on the website will always be
-            complete, accurate, current, or error-free.
-        </p>
+                    <!-- =====================================
+                         SIDEBAR
+                    ====================================== -->
 
-        <h2>3. Research Disclaimer</h2>
+                    <aside class="terms-sidebar reveal">
 
-        <p>
-            Research and informational content published on this website is
-            provided for general informational purposes. Users should
-            independently verify important information before making decisions
-            or relying on it.
-        </p>
 
-        <h2>4. External Links</h2>
+                        <div class="sidebar-head">
 
-        <p>
-            This website may contain links to external websites and third-party
-            services. These websites are operated independently, and Wazir
-            Research Lab is not responsible for their content, availability,
-            or privacy practices.
-        </p>
 
-        <h2>5. Intellectual Property</h2>
+                            <div class="sidebar-icon">
 
-        <p>
-            Unless otherwise stated, original content, text, design, and
-            materials created for Wazir Research Lab belong to Wazir Research
-            Lab or their respective owners.
-        </p>
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
 
-        <p>
-            You may not reproduce, copy, modify, or redistribute original
-            website content in a way that violates applicable laws or the
-            rights of the content owner.
-        </p>
+                                    <path
+                                        d="M6 3h12v18H6z"
+                                    />
 
-        <h2>6. Services</h2>
+                                    <path
+                                        d="M9 7h6"
+                                    />
 
-        <p>
-            Information about services such as Web Research, Data Collection,
-            Web Development, and Programming is provided for informational and
-            promotional purposes. Specific service terms, prices, deadlines,
-            and deliverables may vary depending on the individual project.
-        </p>
+                                    <path
+                                        d="M9 11h6"
+                                    />
 
-        <h2>7. No Guarantee</h2>
+                                    <path
+                                        d="M9 15h4"
+                                    />
 
-        <p>
-            Wazir Research Lab does not guarantee that the website will always
-            be available, uninterrupted, completely secure, or free from
-            technical problems.
-        </p>
+                                </svg>
 
-        <h2>8. Changes to These Terms</h2>
+                            </div>
 
-        <p>
-            These Terms & Disclaimer may be updated from time to time.
-            Changes will be posted on this page with an updated date.
-        </p>
 
-        <h2>9. Contact</h2>
+                            <div>
 
-        <p>
-            If you have questions about these terms, please use the contact
-            method provided on the Wazir Research Lab website.
-        </p>
+                                <h2>
+                                    Terms Overview
+                                </h2>
 
-        <div class="cta">
-            <h2>Have a Question?</h2>
+                                <div class="sidebar-subtitle">
+                                    Wazir Research Lab
+                                </div>
 
-            <p>
-                If you have any questions about these terms or the website,
-                you can visit our contact page.
-            </p>
+                            </div>
 
-            <a href="contact.html">Contact Wazir Research Lab</a>
-        </div>
+                        </div>
 
-    </div>
 
-    <!-- FOOTER -->
+                        <span class="updated">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+
+                                <rect
+                                    x="3"
+                                    y="4"
+                                    width="18"
+                                    height="17"
+                                    rx="2"
+                                />
+
+                                <path d="M16 2v4"/>
+                                <path d="M8 2v4"/>
+                                <path d="M3 9h18"/>
+
+                            </svg>
+
+                            Last updated: September 27, 2026
+
+                        </span>
+
+
+                        <p class="sidebar-description">
+
+                            These terms describe general website usage,
+                            information limitations, external resources,
+                            intellectual property and service-related
+                            considerations.
+
+                        </p>
+
+
+                        <nav class="terms-nav">
+
+
+                            <a href="#website-use">
+                                <span>01</span>
+                                Website Use
+                            </a>
+
+
+                            <a href="#accuracy">
+                                <span>02</span>
+                                Information Accuracy
+                            </a>
+
+
+                            <a href="#research">
+                                <span>03</span>
+                                Research Disclaimer
+                            </a>
+
+
+                            <a href="#external">
+                                <span>04</span>
+                                External Links
+                            </a>
+
+
+                            <a href="#property">
+                                <span>05</span>
+                                Intellectual Property
+                            </a>
+
+
+                            <a href="#services">
+                                <span>06</span>
+                                Services
+                            </a>
+
+
+                            <a href="#guarantee">
+                                <span>07</span>
+                                No Guarantee
+                            </a>
+
+
+                            <a href="#changes">
+                                <span>08</span>
+                                Changes
+                            </a>
+
+
+                            <a href="#contact">
+                                <span>09</span>
+                                Contact
+                            </a>
+
+
+                        </nav>
+
+                    </aside>
+
+
+                    <!-- =====================================
+                         CONTENT
+                    ====================================== -->
+
+                    <article class="content-card reveal">
+
+
+                        <div class="content-intro">
+
+
+                            <p>
+
+                                By using
+                                <strong>
+                                    Wazir Research Lab
+                                </strong>,
+                                you agree to use this website responsibly
+                                and in accordance with these general terms.
+
+                            </p>
+
+
+                            <div class="notice">
+
+
+                                <div class="notice-title">
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+
+                                        <circle
+                                            cx="12"
+                                            cy="12"
+                                            r="9"
+                                        />
+
+                                        <path d="M12 10v6"/>
+                                        <path d="M12 7h.01"/>
+
+                                    </svg>
+
+                                    Important Notice
+
+                                </div>
+
+
+                                <p>
+
+                                    These terms are intended as a general
+                                    description of website usage and
+                                    disclaimers. Specific agreements for
+                                    individual projects may contain additional
+                                    terms.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- =================================
+                             01
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="website-use"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    01
+                                </div>
+
+
+                                <h2>
+                                    Website Use
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                Wazir Research Lab provides information,
+                                resources, research-related content,
+                                technology content and digital project
+                                information.
+
+                            </p>
+
+
+                            <p>
+
+                                You may use this website for lawful
+                                personal or professional informational
+                                purposes.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             02
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="accuracy"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    02
+                                </div>
+
+
+                                <h2>
+                                    Information Accuracy
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                We aim to provide useful and accurate
+                                information. However, we do not guarantee
+                                that all information on the website will
+                                always be complete, accurate, current or
+                                error-free.
+
+                            </p>
+
+
+                            <p>
+
+                                Information may change over time, and users
+                                should consider the date and context of
+                                information before relying on it.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             03
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="research"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    03
+                                </div>
+
+
+                                <h2>
+                                    Research Disclaimer
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                Research and informational content published
+                                on this website is provided for general
+                                informational purposes.
+
+                            </p>
+
+
+                            <p>
+
+                                Users should independently verify important
+                                information before making decisions or
+                                relying on it for a specific purpose.
+
+                            </p>
+
+
+                            <div class="disclaimer-box">
+
+
+                                <div class="disclaimer-head">
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    >
+
+                                        <path
+                                            d="M12 3 4 7v5c0 4.7 3.2 7.9 8 9 4.8-1.1 8-4.3 8-9V7z"
+                                        />
+
+                                        <path d="M12 8v5"/>
+                                        <path d="M12 16h.01"/>
+
+                                    </svg>
+
+                                    Use Information Carefully
+
+                                </div>
+
+
+                                <p>
+
+                                    Important decisions should not be made
+                                    solely on the basis of general website
+                                    content. Seek appropriate independent
+                                    information where necessary.
+
+                                </p>
+
+                            </div>
+
+                        </section>
+
+
+                        <!-- =================================
+                             04
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="external"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    04
+                                </div>
+
+
+                                <h2>
+                                    External Links
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                This website may contain links to external
+                                websites and third-party services.
+
+                            </p>
+
+
+                            <p>
+
+                                These websites are operated independently,
+                                and Wazir Research Lab is not responsible
+                                for their content, availability or privacy
+                                practices.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             05
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="property"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    05
+                                </div>
+
+
+                                <h2>
+                                    Intellectual Property
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                Unless otherwise stated, original content,
+                                text, design and materials created for
+                                Wazir Research Lab belong to Wazir Research
+                                Lab or their respective owners.
+
+                            </p>
+
+
+                            <p>
+
+                                You may not reproduce, copy, modify or
+                                redistribute original website content in a
+                                way that violates applicable laws or the
+                                rights of the content owner.
+
+                            </p>
+
+
+                            <ul class="term-list">
+
+
+                                <li>
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                    >
+
+                                        <path
+                                            d="m5 12 4 4L19 6"
+                                        />
+
+                                    </svg>
+
+                                    Respect original website content.
+
+                                </li>
+
+
+                                <li>
+
+                                    <svg
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.8"
+                                    >
+
+                                        <path
+                                            d="m5 12 4 4L19 6"
+                                        />
+
+                                    </svg>
+
+                                    Do not use protected materials
+                                    without appropriate permission.
+
+                                </li>
+
+
+                            </ul>
+
+                        </section>
+
+
+                        <!-- =================================
+                             06
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="services"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    06
+                                </div>
+
+
+                                <h2>
+                                    Services
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                Information about services such as
+                                <span class="highlight">
+                                    Web Research, Data Collection,
+                                    Web Development and Programming
+                                </span>
+                                is provided for informational and
+                                promotional purposes.
+
+                            </p>
+
+
+                            <p>
+
+                                Specific service terms, prices, deadlines,
+                                scope and deliverables may vary depending
+                                on the individual project and agreement.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             07
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="guarantee"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    07
+                                </div>
+
+
+                                <h2>
+                                    No Guarantee
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                Wazir Research Lab does not guarantee that
+                                the website will always be available,
+                                uninterrupted, completely secure or free
+                                from technical problems.
+
+                            </p>
+
+
+                            <p>
+
+                                Website availability may be affected by
+                                hosting, GitHub Pages, internet connectivity,
+                                browser behavior or other technical factors.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             08
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="changes"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    08
+                                </div>
+
+
+                                <h2>
+                                    Changes to These Terms
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                These Terms & Disclaimer may be updated
+                                from time to time.
+
+                            </p>
+
+
+                            <p>
+
+                                Changes will be posted on this page with
+                                an updated date so visitors can review the
+                                current version.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             09
+                        ================================== -->
+
+                        <section
+                            class="term-block"
+                            id="contact"
+                        >
+
+                            <div class="term-heading">
+
+                                <div class="term-number">
+                                    09
+                                </div>
+
+
+                                <h2>
+                                    Contact
+                                </h2>
+
+                            </div>
+
+
+                            <p>
+
+                                If you have questions about these terms,
+                                please use the available communication
+                                method provided through the
+                                <a
+                                    href="contact.html"
+                                    class="highlight"
+                                >
+                                    Contact page
+                                </a>.
+
+                            </p>
+
+                        </section>
+
+
+                        <!-- =================================
+                             CTA
+                        ================================== -->
+
+                        <div class="cta">
+
+
+                            <h3>
+                                Have a Question About These Terms?
+                            </h3>
+
+
+                            <p>
+
+                                Visit the Contact page for available
+                                communication options.
+
+                            </p>
+
+
+                            <a href="contact.html">
+
+                                Contact Wazir Research Lab
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <path d="M5 12h14"/>
+                                    <path d="m13 6 6 6-6 6"/>
+
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer>
 
-        <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-            <a href="https://www.linkedin.com/in/murad-wazir-bbb0b541/" target="_blank">
-                LinkedIn
-            </a>
-            <a href="https://www.fiverr.com/s/P42eaXG" target="_blank">
-                Fiverr
-            </a>
+        <div class="container">
+
+
+            <div class="footer-main">
+
+
+                <div>
+
+
+                    <a
+                        href="index.html"
+                        class="logo"
+                    >
+
+                        <span class="logo-mark">
+
+                            <img
+                                src="MW-logo.png"
+                                alt="MW Logo"
+                            >
+
+                        </span>
+
+
+                        <span class="logo-text">
+
+                            <strong>
+                                Wazir Research Lab
+                            </strong>
+
+                            <span>
+                                Research • Technology • Solutions
+                            </span>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+
+                        A professional digital workspace by Murad Wazir,
+                        bringing research, data, technology, programming
+                        and digital presentation together in one platform.
+
+                    </p>
+
+                </div>
+
+
+                <div>
+
+
+                    <div class="footer-title">
+                        Explore
+                    </div>
+
+
+                    <div class="footer-links">
+
+                        <a href="index.html">
+                            Home
+                        </a>
+
+                        <a href="about.html">
+                            About
+                        </a>
+
+                        <a href="contact.html">
+                            Contact
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+
+                    <div class="footer-title">
+                        Legal
+                    </div>
+
+
+                    <div class="footer-links">
+
+                        <a href="privacy.html">
+                            Privacy Policy
+                        </a>
+
+                        <a href="terms.html">
+                            Terms & Disclaimer
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            LinkedIn
+                        </a>
+
+                        <a
+                            href="https://www.fiverr.com/s/P42eaXG"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Fiverr
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+
+                <span>
+
+                    © 2026 Wazir Research Lab.
+                    All rights reserved.
+
+                </span>
+
+
+                <span>
+
+                    Research • Technology • Solutions
+
+                </span>
+
+
+            </div>
+
         </div>
 
-        <p>
-            © 2026 Wazir Research Lab. All rights reserved.
-        </p>
-
     </footer>
-</div>
+
+
+    <!-- =====================================================
+         SCRIPT
+    ====================================================== -->
+
+    <script>
+
+        /* SCROLL REVEAL */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const revealObserver =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (
+                                entry.isIntersecting
+                            ) {
+
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                revealObserver.unobserve(
+                                    entry.target
+                                );
+
+                            }
+
+                        }
+                    );
+
+                },
+
+                {
+                    threshold: .10
+                }
+
+            );
+
+
+        revealElements.forEach(
+            (element) => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            }
+        );
+
+    </script>
+
 
 </body>
+
 </html>
