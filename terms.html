@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +13,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -20,10 +25,114 @@
             line-height: 1.7;
         }
 
-        .container {
-            max-width: 900px;
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(11, 17, 32, 0.95);
+            border-bottom: 1px solid #1e293b;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1150px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #38bdf8;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 950px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 14px;
+            border: 1px solid #164e63;
+            border-radius: 999px;
+            color: #38bdf8;
+            background: #082f49;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 44px;
+            margin: 0 0 12px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .updated {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 7px 13px;
+            border-radius: 999px;
+            background: #111827;
+            border: 1px solid #1e293b;
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        /* CONTENT CARD */
+        .content-card {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
         }
 
         .back {
@@ -31,24 +140,26 @@
             margin-bottom: 30px;
             padding: 10px 16px;
             border: 1px solid #334155;
-            border-radius: 8px;
-            color: #60a5fa;
+            border-radius: 9px;
+            color: #38bdf8;
             text-decoration: none;
+            transition: 0.3s;
         }
 
         .back:hover {
             background: #111827;
-        }
-
-        h1 {
-            color: #ffffff;
-            font-size: 42px;
-            margin-bottom: 10px;
+            border-color: #38bdf8;
         }
 
         h2 {
             color: #ffffff;
-            margin-top: 40px;
+            font-size: 23px;
+            margin-top: 38px;
+            margin-bottom: 12px;
+        }
+
+        h2:first-of-type {
+            margin-top: 10px;
         }
 
         p,
@@ -56,134 +167,300 @@
             color: #cbd5e1;
         }
 
-        .updated {
-            color: #94a3b8;
-            font-size: 14px;
+        p {
+            margin-bottom: 18px;
         }
 
         .notice {
-            background: #111827;
-            border: 1px solid #1e293b;
-            border-radius: 14px;
-            padding: 22px;
-            margin: 25px 0;
+            background: #082f49;
+            border: 1px solid #164e63;
+            border-left: 4px solid #38bdf8;
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin: 25px 0 35px;
         }
 
-        a {
-            color: #60a5fa;
+        .notice p {
+            margin: 0;
+            color: #bae6fd;
         }
 
+        .highlight {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        /* CTA */
+        .cta {
+            margin-top: 45px;
+            padding: 28px;
+            border-radius: 16px;
+            background: linear-gradient(
+                135deg,
+                #0f172a,
+                #082f49
+            );
+            border: 1px solid #164e63;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-top: 0;
+        }
+
+        .cta a {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 11px 20px;
+            border-radius: 9px;
+            background: #38bdf8;
+            color: #082f49;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cta a:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* FOOTER */
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             padding-top: 25px;
             border-top: 1px solid #1e293b;
+            text-align: center;
             color: #94a3b8;
             font-size: 14px;
+        }
+
+        .footer-links {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin: 0 8px;
+            transition: 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #38bdf8;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .container {
+                padding: 50px 15px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .content-card {
+                padding: 24px 20px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+
+            .footer-links a {
+                display: inline-block;
+                margin: 5px 6px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav>
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="MW-logo.png" alt="Wazir Research Lab Logo">
+            <span>Wazir Research Lab</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html" class="active">Terms</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
-    <a class="back" href="index.html">← Back to Wazir Research Lab</a>
+    <div class="page-header">
 
-    <h1>Terms & Disclaimer</h1>
+        <div class="badge">
+            📄 Wazir Research Lab
+        </div>
 
-    <p class="updated">Last updated: September 27, 2026</p>
+        <h1>Terms & Disclaimer</h1>
 
-    <div class="notice">
-        <p>
-            By using Wazir Research Lab, you agree to use this website
-            responsibly and in accordance with these terms.
+        <p class="subtitle">
+            Please review these terms before using the information,
+            resources, and services available on this website.
         </p>
+
+        <div class="updated">
+            Last updated: September 27, 2026
+        </div>
+
     </div>
 
-    <h2>1. Website Use</h2>
+    <div class="content-card">
 
-    <p>
-        Wazir Research Lab provides information, resources, research-related
-        content, technology content, and digital project information.
-        You may use this website for lawful and personal or professional
-        informational purposes.
-    </p>
+        <a class="back" href="index.html">
+            ← Back to Wazir Research Lab
+        </a>
 
-    <h2>2. Information Accuracy</h2>
+        <div class="notice">
+            <p>
+                By using <span class="highlight">Wazir Research Lab</span>,
+                you agree to use this website responsibly and in accordance
+                with these terms.
+            </p>
+        </div>
 
-    <p>
-        We aim to provide useful and accurate information. However, we do not
-        guarantee that all information on the website will always be complete,
-        accurate, current, or error-free.
-    </p>
+        <h2>1. Website Use</h2>
 
-    <h2>3. Research Disclaimer</h2>
+        <p>
+            Wazir Research Lab provides information, resources, research-related
+            content, technology content, and digital project information.
+            You may use this website for lawful and personal or professional
+            informational purposes.
+        </p>
 
-    <p>
-        Research and informational content published on this website is
-        provided for general informational purposes. Users should independently
-        verify important information before making decisions or relying on it.
-    </p>
+        <h2>2. Information Accuracy</h2>
 
-    <h2>4. External Links</h2>
+        <p>
+            We aim to provide useful and accurate information. However, we do not
+            guarantee that all information on the website will always be
+            complete, accurate, current, or error-free.
+        </p>
 
-    <p>
-        This website may contain links to external websites and third-party
-        services. These websites are operated independently, and Wazir Research
-        Lab is not responsible for their content, availability, or privacy
-        practices.
-    </p>
+        <h2>3. Research Disclaimer</h2>
 
-    <h2>5. Intellectual Property</h2>
+        <p>
+            Research and informational content published on this website is
+            provided for general informational purposes. Users should
+            independently verify important information before making decisions
+            or relying on it.
+        </p>
 
-    <p>
-        Unless otherwise stated, original content, text, design, and materials
-        created for Wazir Research Lab belong to Wazir Research Lab or their
-        respective owners.
-    </p>
+        <h2>4. External Links</h2>
 
-    <p>
-        You may not reproduce, copy, modify, or redistribute original website
-        content in a way that violates applicable laws or the rights of the
-        content owner.
-    </p>
+        <p>
+            This website may contain links to external websites and third-party
+            services. These websites are operated independently, and Wazir
+            Research Lab is not responsible for their content, availability,
+            or privacy practices.
+        </p>
 
-    <h2>6. Services</h2>
+        <h2>5. Intellectual Property</h2>
 
-    <p>
-        Information about services such as Web Research, Data Collection,
-        Web Development, and Programming is provided for informational and
-        promotional purposes. Specific service terms, prices, deadlines, and
-        deliverables may vary depending on the individual project.
-    </p>
+        <p>
+            Unless otherwise stated, original content, text, design, and
+            materials created for Wazir Research Lab belong to Wazir Research
+            Lab or their respective owners.
+        </p>
 
-    <h2>7. No Guarantee</h2>
+        <p>
+            You may not reproduce, copy, modify, or redistribute original
+            website content in a way that violates applicable laws or the
+            rights of the content owner.
+        </p>
 
-    <p>
-        Wazir Research Lab does not guarantee that the website will always be
-        available, uninterrupted, completely secure, or free from technical
-        problems.
-    </p>
+        <h2>6. Services</h2>
 
-    <h2>8. Changes to These Terms</h2>
+        <p>
+            Information about services such as Web Research, Data Collection,
+            Web Development, and Programming is provided for informational and
+            promotional purposes. Specific service terms, prices, deadlines,
+            and deliverables may vary depending on the individual project.
+        </p>
 
-    <p>
-        These Terms & Disclaimer may be updated from time to time.
-        Changes will be posted on this page with an updated date.
-    </p>
+        <h2>7. No Guarantee</h2>
 
-    <h2>9. Contact</h2>
+        <p>
+            Wazir Research Lab does not guarantee that the website will always
+            be available, uninterrupted, completely secure, or free from
+            technical problems.
+        </p>
 
-    <p>
-        If you have questions about these terms, please use the contact method
-        provided on the Wazir Research Lab website.
-    </p>
+        <h2>8. Changes to These Terms</h2>
 
+        <p>
+            These Terms & Disclaimer may be updated from time to time.
+            Changes will be posted on this page with an updated date.
+        </p>
+
+        <h2>9. Contact</h2>
+
+        <p>
+            If you have questions about these terms, please use the contact
+            method provided on the Wazir Research Lab website.
+        </p>
+
+        <div class="cta">
+            <h2>Have a Question?</h2>
+
+            <p>
+                If you have any questions about these terms or the website,
+                you can visit our contact page.
+            </p>
+
+            <a href="contact.html">Contact Wazir Research Lab</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
     <footer>
-        © 2026 Wazir Research Lab. All rights reserved.
+
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="terms.html">Terms</a>
+            <a href="https://www.linkedin.com/in/murad-wazir-bbb0b541/" target="_blank">
+                LinkedIn
+            </a>
+            <a href="https://www.fiverr.com/s/P42eaXG" target="_blank">
+                Fiverr
+            </a>
+        </div>
+
+        <p>
+            © 2026 Wazir Research Lab. All rights reserved.
+        </p>
+
     </footer>
 
 </div>
 
 </body>
 </html>
+```
