@@ -2,34 +2,29 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<!-- Homepage -->
 <url>
     <loc>https://waziraura.github.io/wazirresearchlab/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
 </url>
 
-<!-- About -->
 <url>
     <loc>https://waziraura.github.io/wazirresearchlab/about.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
 </url>
 
-<!-- Contact -->
 <url>
     <loc>https://waziraura.github.io/wazirresearchlab/contact.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
 </url>
 
-<!-- Privacy Policy -->
 <url>
     <loc>https://waziraura.github.io/wazirresearchlab/privacy.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
 </url>
 
-<!-- Terms -->
 <url>
     <loc>https://waziraura.github.io/wazirresearchlab/terms.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-03</lastmod>
 </url>
 
 </urlset>
