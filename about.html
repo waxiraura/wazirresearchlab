@@ -1,25 +1,29 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta
-name="description"
-content="About Murad Wazir and Wazir Research Lab — research, data, technology, programming, digital productivity and modern web work."
-
->
-
+  <meta
+    name="description"
+    content="About Murad Wazir and Wazir Research Lab — research, data, technology, programming, digital productivity and modern web work."
+  >
   <meta name="author" content="Murad Wazir">
   <meta name="theme-color" content="#050812">
+  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="About Murad Wazir | Wazir Research Lab">
+  <meta
+    property="og:title"
+    content="About Murad Wazir | Wazir Research Lab"
+  >
   <meta
     property="og:description"
     content="Discover Murad Wazir's work across research, data, technology, programming and digital solutions."
   >
   <meta property="og:type" content="website">
+  <meta property="og:image" content="MW-logo.png">
+
+  <link rel="icon" type="image/png" href="MW-logo.png">
 
   <title>About Murad Wazir | Wazir Research Lab</title>
 
@@ -30,7 +34,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       --bg-3: #0a111e;
 
       --surface: rgba(13, 21, 36, .74);
-      --surface-strong: rgba(11, 19, 33, .94);
+      --surface-strong: rgba(11, 19, 33, .95);
       --surface-soft: rgba(255, 255, 255, .028);
 
       --heading: #f4f8ff;
@@ -86,6 +90,8 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
         radial-gradient(circle at 8% 0%, rgba(92, 225, 255, .075), transparent 26%),
         radial-gradient(circle at 92% 7%, rgba(125, 141, 255, .085), transparent 29%),
         linear-gradient(180deg, #04070f 0%, #060b14 45%, #07101b 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body::before {
@@ -94,12 +100,13 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       inset: 0;
       z-index: -2;
       pointer-events: none;
-      opacity: .15;
+      opacity: .13;
       background-image:
         linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
       background-size: 72px 72px;
       mask-image: linear-gradient(to bottom, black, transparent 88%);
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 88%);
     }
 
     body::after {
@@ -178,6 +185,16 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       background: rgba(4, 8, 16, .73);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+      transition:
+        background .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(4, 8, 16, .9);
+      border-bottom-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .16);
     }
 
     .nav {
@@ -202,6 +219,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       display: grid;
       place-items: center;
       flex: 0 0 auto;
+      overflow: hidden;
       border: 1px solid rgba(92, 225, 255, .17);
       border-radius: 14px;
       background:
@@ -213,7 +231,6 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, .05),
         0 0 28px rgba(92, 225, 255, .05);
-      overflow: hidden;
     }
 
     .brand-logo::before {
@@ -355,11 +372,12 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
 
     .page-hero {
       position: relative;
-      min-height: 565px;
+      min-height: 560px;
       display: grid;
       place-items: center;
       overflow: hidden;
       border-bottom: 1px solid rgba(255, 255, 255, .045);
+      isolation: isolate;
     }
 
     .page-grid {
@@ -370,6 +388,13 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
         linear-gradient(90deg, rgba(92, 225, 255, .035) 1px, transparent 1px);
       background-size: 78px 78px;
       mask-image:
+        radial-gradient(
+          ellipse at center,
+          black 0%,
+          rgba(0, 0, 0, .9) 42%,
+          transparent 84%
+        );
+      -webkit-mask-image:
         radial-gradient(
           ellipse at center,
           black 0%,
@@ -603,7 +628,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
     }
 
     /* =========================
-       GLOBAL SECTIONS
+       SECTIONS
     ========================== */
 
     main {
@@ -612,7 +637,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
 
     section {
       position: relative;
-      padding: 90px 0;
+      padding: 92px 0;
     }
 
     section + section::before {
@@ -632,24 +657,6 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
           rgba(255, 255, 255, .025) 86%,
           transparent
         );
-    }
-
-    section + section::after {
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: 50%;
-      width: 135px;
-      height: 9px;
-      transform: translateX(-50%);
-      background:
-        radial-gradient(
-          ellipse,
-          rgba(92, 225, 255, .13),
-          transparent 72%
-        );
-      filter: blur(3px);
-      pointer-events: none;
     }
 
     .section-top {
@@ -712,6 +719,10 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
 
     .intro-copy p + p {
       margin-top: 13px;
+    }
+
+    .intro-copy strong {
+      color: #effbff;
     }
 
     .intro-note {
@@ -833,7 +844,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
     .identity-logo {
       position: absolute;
       left: 50%;
-      top: 48%;
+      top: 47%;
       width: 255px;
       height: 255px;
       transform: translate(-50%, -50%);
@@ -1015,6 +1026,14 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
           rgba(7, 12, 21, .97)
         );
       box-shadow: var(--shadow-soft);
+      transition:
+        transform .35s var(--ease),
+        border-color .35s ease;
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(92, 225, 255, .17);
     }
 
     .philosophy-card + .philosophy-card {
@@ -1135,11 +1154,6 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
        JOURNEY
     ========================== */
 
-    .journey-head {
-      max-width: 820px;
-      margin-bottom: 30px;
-    }
-
     .journey-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1154,12 +1168,14 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       background: rgba(255, 255, 255, .018);
       transition:
         transform .4s var(--ease),
-        border-color .4s ease;
+        border-color .4s ease,
+        background .4s ease;
     }
 
     .journey-card:hover {
       transform: translateY(-4px);
       border-color: rgba(92, 225, 255, .17);
+      background: rgba(92, 225, 255, .025);
     }
 
     .journey-card span {
@@ -1184,6 +1200,69 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       color: var(--muted);
       font-size: .63rem;
       line-height: 1.7;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .skill-panel {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 19px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(14, 23, 40, .93),
+          rgba(7, 12, 21, .97)
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .skill-panel h3 {
+      color: var(--heading);
+      font-size: .92rem;
+      font-weight: 900;
+    }
+
+    .skill-panel > p {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: .69rem;
+      line-height: 1.75;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 17px;
+    }
+
+    .skill-tags span {
+      padding: 7px 10px;
+      color: #b4c4d3;
+      border: 1px solid rgba(255,255,255,.065);
+      border-radius: 9px;
+      background: rgba(255,255,255,.02);
+      font-size: .59rem;
+      font-weight: 760;
+      transition:
+        border-color .3s ease,
+        color .3s ease,
+        background .3s ease;
+    }
+
+    .skill-tags span:hover {
+      color: var(--cyan-bright);
+      border-color: rgba(92,225,255,.17);
+      background: rgba(92,225,255,.035);
     }
 
     /* =========================
@@ -1269,6 +1348,7 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
     }
 
     .footer-links a {
+      width: fit-content;
       color: #7f8da0;
       font-size: .65rem;
       transition: color .3s ease;
@@ -1373,6 +1453,10 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
 
       .journey-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
       }
 
       .footer-main {
@@ -1483,12 +1567,12 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       }
 
       .identity-card {
-        min-height: 395px;
+        min-height: 405px;
         padding: 20px;
       }
 
       .identity-content {
-        min-height: 350px;
+        min-height: 355px;
       }
 
       .identity-logo {
@@ -1565,8 +1649,14 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       }
 
       .focus-card,
-      .philosophy-card {
+      .philosophy-card,
+      .skill-panel {
         padding: 21px;
+      }
+
+      .identity-top {
+        align-items: flex-start;
+        flex-direction: column;
       }
     }
 
@@ -1588,7 +1678,6 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -1599,597 +1688,808 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
        HEADER
   ========================== -->
 
-  <header>
+  <header id="siteHeader">
     <div class="container">
-      <nav class="nav">
 
-```
-    <a
-      href="index.html"
-      class="brand"
-      aria-label="Wazir Research Lab home"
-    >
-      <span class="brand-logo">
-        <img src="MW-logo.png" alt="MW logo">
-      </span>
+      <nav class="nav" aria-label="Main navigation">
 
-      <span class="brand-name">
-        <strong>Wazir Research Lab</strong>
-        <span>Research • Technology • Solutions</span>
-      </span>
-    </a>
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Wazir Research Lab home"
+        >
+          <span class="brand-logo">
+            <img src="MW-logo.png" alt="MW logo">
+          </span>
 
-    <button
-      id="menuToggle"
-      class="menu-toggle"
-      type="button"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-      aria-controls="navLinks"
-    >
-      <svg
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="1.9"
-        stroke-linecap="round"
-      >
-        <path d="M4 6h16"></path>
-        <path d="M4 12h16"></path>
-        <path d="M4 18h16"></path>
-      </svg>
-    </button>
+          <span class="brand-name">
+            <strong>Wazir Research Lab</strong>
+            <span>Research • Technology • Solutions</span>
+          </span>
+        </a>
 
-    <div id="navLinks" class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="nav-cta">Let's Work</a>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+          >
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div id="navLinks" class="nav-links">
+
+          <a href="index.html">Home</a>
+
+          <a href="about.html" class="active">
+            About
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+          <a
+            href="https://www.fiverr.com/s/jyjz6rZ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fiverr
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a href="contact.html" class="nav-cta">
+            Let’s Work
+          </a>
+
+        </div>
+
+      </nav>
+
     </div>
-
-  </nav>
-</div>
-```
-
   </header>
 
   <main>
 
-```
-<!-- =========================
-     HERO
-========================== -->
+    <!-- =========================
+         HERO
+    ========================== -->
 
-<section class="page-hero">
+    <section class="page-hero">
 
-  <div class="page-grid"></div>
-  <div class="page-orbit"></div>
-  <div class="page-glow"></div>
-  <div class="page-glow blue"></div>
-  <div class="page-watermark"></div>
+      <div class="page-grid"></div>
+      <div class="page-orbit"></div>
+      <div class="page-glow"></div>
+      <div class="page-glow blue"></div>
+      <div class="page-watermark"></div>
 
-  <div class="container">
+      <div class="container">
 
-    <div class="page-content reveal">
+        <div class="page-content reveal">
 
-      <span class="page-badge">
-        <i></i>
-        Wazir Research Lab
-      </span>
-
-      <h1>
-        About
-        <span>Murad.</span>
-      </h1>
-
-      <div class="page-role">
-        Research • Data • Technology • Programming
-      </div>
-
-      <p class="page-description">
-        A closer look at the person, ideas and working philosophy behind
-        Wazir Research Lab — a personal digital workspace built around
-        research, structured information and practical technology.
-      </p>
-
-      <div class="page-actions">
-
-        <a
-          href="https://www.fiverr.com/s/jyjz6rZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button button-primary"
-        >
-          View My Fiverr
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m13 6 6 6-6 6"></path>
-          </svg>
-        </a>
-
-        <a
-          href="contact.html"
-          class="button button-secondary"
-        >
-          Contact Me
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m13 6 6 6-6 6"></path>
-          </svg>
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     INTRO
-========================== -->
-
-<section>
-  <div class="container">
-
-    <div class="intro-layout">
-
-      <div class="intro-copy reveal">
-
-        <span class="section-kicker">The Lab</span>
-
-        <div class="section-top">
-          <h2 class="section-title">
-            A digital workspace where information and technology meet.
-          </h2>
-        </div>
-
-        <p>
-          Wazir Research Lab is the personal digital platform of
-          <strong>Murad Wazir</strong>. It brings together research,
-          data organization, productivity tools, technology,
-          programming and modern digital work in one structured environment.
-        </p>
-
-        <p>
-          The idea behind the lab is simple: useful work often begins with
-          information. That information needs to be found, understood,
-          organized and then transformed into something practical.
-        </p>
-
-        <p>
-          This approach connects naturally across web research,
-          data collection, spreadsheets, documents, digital design and
-          web development. Each area contributes to the same objective:
-          turning a requirement into a clearer and more useful result.
-        </p>
-
-        <div class="intro-note">
-          <strong>Research with purpose.</strong>
-          <strong>Build with structure.</strong>
-          <strong>Present with clarity.</strong>
-        </div>
-
-      </div>
-
-      <div class="identity-card reveal">
-
-        <div class="identity-top">
-
-          <div class="identity-label">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke-width="1.8"
-              stroke-linecap="round"
-            >
-              <path d="M4 5h16"></path>
-              <path d="M4 12h16"></path>
-              <path d="M4 19h16"></path>
-              <circle cx="8" cy="5" r="1"></circle>
-              <circle cx="15" cy="12" r="1"></circle>
-              <circle cx="10" cy="19" r="1"></circle>
-            </svg>
-            Digital Identity
-          </div>
-
-          <span class="identity-status">
+          <span class="page-badge">
             <i></i>
-            MW
+            Wazir Research Lab
           </span>
 
-        </div>
+          <h1>
+            About
+            <span>Murad.</span>
+          </h1>
 
-        <div class="identity-logo"></div>
+          <div class="page-role">
+            Research • Data • Technology • Programming
+          </div>
 
-        <div class="identity-content">
-
-          <h3>
-            One identity for
-            <span>research, data and digital work.</span>
-          </h3>
-
-          <p>
-            The MW identity represents the connection between personal
-            creativity, structured research and practical technology.
+          <p class="page-description">
+            A closer look at the person, ideas and working philosophy
+            behind Wazir Research Lab — a personal digital workspace
+            built around research, structured information and practical
+            technology.
           </p>
 
-          <div class="identity-tags">
-            <span>Web Research</span>
-            <span>Data</span>
-            <span>Excel</span>
-            <span>Google Sheets</span>
-            <span>Word</span>
-            <span>PowerPoint</span>
-            <span>Web Design</span>
-            <span>Programming</span>
+          <div class="page-actions">
+
+            <a
+              href="index.html"
+              class="button button-secondary"
+            >
+              Back to Home
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M19 12H5"></path>
+                <path d="m11 18-6-6 6-6"></path>
+              </svg>
+            </a>
+
+            <a
+              href="contact.html"
+              class="button button-primary"
+            >
+              Contact Me
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         INTRO
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="intro-layout">
+
+          <div class="intro-copy reveal">
+
+            <span class="section-kicker">
+              The Lab
+            </span>
+
+            <div class="section-top">
+
+              <h2 class="section-title">
+                A digital workspace where information and technology meet.
+              </h2>
+
+            </div>
+
+            <p>
+              Wazir Research Lab is the personal digital platform of
+              <strong>Murad Wazir</strong>. It brings together research,
+              data organization, productivity tools, technology,
+              programming and modern digital work in one structured
+              environment.
+            </p>
+
+            <p>
+              The idea behind the lab is simple: useful work often begins
+              with information. That information needs to be found,
+              understood, organized and then transformed into something
+              practical.
+            </p>
+
+            <p>
+              This approach connects naturally across web research,
+              data collection, spreadsheets, documents, digital design
+              and web development. Each area contributes to the same
+              objective: turning a requirement into a clearer and more
+              useful result.
+            </p>
+
+            <div class="intro-note">
+              <strong>Research with purpose.</strong>
+              <br>
+              <strong>Build with structure.</strong>
+              <br>
+              <strong>Present with clarity.</strong>
+            </div>
+
+          </div>
+
+          <div class="identity-card reveal">
+
+            <div class="identity-top">
+
+              <div class="identity-label">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                >
+                  <path d="M4 5h16"></path>
+                  <path d="M4 12h16"></path>
+                  <path d="M4 19h16"></path>
+                  <circle cx="8" cy="5" r="1"></circle>
+                  <circle cx="15" cy="12" r="1"></circle>
+                  <circle cx="10" cy="19" r="1"></circle>
+                </svg>
+
+                Digital Identity
+
+              </div>
+
+              <span class="identity-status">
+                <i></i>
+                MW
+              </span>
+
+            </div>
+
+            <div class="identity-logo" aria-hidden="true"></div>
+
+            <div class="identity-content">
+
+              <h3>
+                One identity for
+                <span>research, data and digital work.</span>
+              </h3>
+
+              <p>
+                The MW identity represents the connection between
+                personal creativity, structured research and practical
+                technology.
+              </p>
+
+              <div class="identity-tags">
+                <span>Web Research</span>
+                <span>Data</span>
+                <span>Excel</span>
+                <span>Google Sheets</span>
+                <span>Word</span>
+                <span>PowerPoint</span>
+                <span>Web Design</span>
+                <span>Programming</span>
+              </div>
+
+            </div>
+
           </div>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- =========================
+         CORE FOCUS
+    ========================== -->
 
-<!-- =========================
-     CORE FOCUS
-========================== -->
+    <section>
 
-<section>
-  <div class="container">
-
-    <div class="section-top reveal">
-
-      <span class="section-kicker">Core Focus</span>
-
-      <h2 class="section-title">
-        The areas that shape my work and learning.
-      </h2>
-
-      <p class="section-description">
-        Three connected areas form the core of Wazir Research Lab:
-        discovering information, organizing it effectively and using
-        technology to create practical digital results.
-      </p>
-
-    </div>
-
-    <div class="focus-grid">
-
-      <article class="focus-card reveal">
-
-        <div class="focus-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="1.8"
-          >
-            <circle cx="11" cy="11" r="7"></circle>
-            <path d="m20 20-4-4"></path>
-            <path d="M11 8v6"></path>
-            <path d="M8 11h6"></path>
-          </svg>
-        </div>
-
-        <h3>Research</h3>
-
-        <p>
-          Exploring online information, locating relevant sources,
-          organizing findings and turning research into useful material.
-        </p>
-
-        <span class="focus-label">Information</span>
-
-      </article>
-
-      <article class="focus-card reveal">
-
-        <div class="focus-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="1.8"
-          >
-            <path d="M4 19V5"></path>
-            <path d="M4 19h16"></path>
-            <path d="M7 15v-4"></path>
-            <path d="M11 15V8"></path>
-            <path d="M15 15V6"></path>
-            <path d="M19 15V4"></path>
-          </svg>
-        </div>
-
-        <h3>Data & Organization</h3>
-
-        <p>
-          Working with structured information, spreadsheets, data entry
-          and practical workflows that make information easier to manage.
-        </p>
-
-        <span class="focus-label">Structure</span>
-
-      </article>
-
-      <article class="focus-card reveal">
-
-        <div class="focus-icon">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="1.8"
-          >
-            <rect x="3" y="4" width="18" height="15" rx="2"></rect>
-            <path d="M8 21h8"></path>
-            <path d="M12 19v2"></path>
-            <path d="M7 9h10"></path>
-            <path d="M7 13h6"></path>
-          </svg>
-        </div>
-
-        <h3>Technology & Programming</h3>
-
-        <p>
-          Learning through practical web development, programming,
-          digital projects and hands-on experimentation.
-        </p>
-
-        <span class="focus-label">Build</span>
-
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================
-     ABOUT MURAD
-========================== -->
-
-<section>
-  <div class="container">
-
-    <div class="philosophy-layout">
-
-      <div>
+      <div class="container">
 
         <div class="section-top reveal">
-          <span class="section-kicker">About Murad</span>
+
+          <span class="section-kicker">
+            Core Focus
+          </span>
 
           <h2 class="section-title">
-            Learning by building, improving through practice.
+            The areas that shape my work and learning.
           </h2>
 
           <p class="section-description">
-            My approach is practical. I learn concepts by applying them,
-            testing ideas and turning them into real digital work.
+            Three connected areas form the core of Wazir Research Lab:
+            discovering information, organizing it effectively and using
+            technology to create practical digital results.
           </p>
+
         </div>
 
-        <div class="philosophy-card reveal">
-          <div class="philosophy-index">01 • Understand</div>
-          <h3>Start with the objective</h3>
-          <p>
-            Before building anything, I focus on understanding the
-            requirement, purpose and expected result.
-          </p>
-        </div>
+        <div class="focus-grid">
 
-        <div class="philosophy-card reveal">
-          <div class="philosophy-index">02 • Explore</div>
-          <h3>Research and learn</h3>
-          <p>
-            I use research and experimentation to discover better ways
-            to approach the problem.
-          </p>
-        </div>
+          <article class="focus-card reveal">
 
-        <div class="philosophy-card reveal">
-          <div class="philosophy-index">03 • Build</div>
-          <h3>Turn ideas into work</h3>
-          <p>
-            Concepts become practical through websites, documents,
-            spreadsheets, workflows and digital projects.
-          </p>
+            <div class="focus-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+                <path d="M11 8v6"></path>
+                <path d="M8 11h6"></path>
+              </svg>
+
+            </div>
+
+            <h3>
+              Research
+            </h3>
+
+            <p>
+              Exploring online information, locating relevant sources,
+              organizing findings and turning research into useful
+              material.
+            </p>
+
+            <span class="focus-label">
+              Information
+            </span>
+
+          </article>
+
+          <article class="focus-card reveal">
+
+            <div class="focus-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="M7 15v-4"></path>
+                <path d="M11 15V8"></path>
+                <path d="M15 15V6"></path>
+                <path d="M19 15V4"></path>
+              </svg>
+
+            </div>
+
+            <h3>
+              Data & Organization
+            </h3>
+
+            <p>
+              Working with structured information, spreadsheets,
+              data entry and practical workflows that make information
+              easier to manage.
+            </p>
+
+            <span class="focus-label">
+              Structure
+            </span>
+
+          </article>
+
+          <article class="focus-card reveal">
+
+            <div class="focus-icon">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <rect
+                  x="3"
+                  y="4"
+                  width="18"
+                  height="15"
+                  rx="2"
+                ></rect>
+                <path d="M8 21h8"></path>
+                <path d="M12 19v2"></path>
+                <path d="M7 9h10"></path>
+                <path d="M7 13h6"></path>
+              </svg>
+
+            </div>
+
+            <h3>
+              Technology & Programming
+            </h3>
+
+            <p>
+              Learning through practical web development, programming,
+              digital projects and hands-on experimentation.
+            </p>
+
+            <span class="focus-label">
+              Build
+            </span>
+
+          </article>
+
         </div>
 
       </div>
 
-      <div class="statement reveal">
+    </section>
 
-        <div class="statement-content">
+    <!-- =========================
+         PHILOSOPHY
+    ========================== -->
 
-          <div class="statement-icon">
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke-width="1.8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M12 3v18"></path>
-              <path d="M3 12h18"></path>
-              <path d="m5 5 14 14"></path>
-              <path d="m19 5-14 14"></path>
-            </svg>
+    <section>
+
+      <div class="container">
+
+        <div class="philosophy-layout">
+
+          <div>
+
+            <div class="section-top reveal">
+
+              <span class="section-kicker">
+                About Murad
+              </span>
+
+              <h2 class="section-title">
+                Learning by building, improving through practice.
+              </h2>
+
+              <p class="section-description">
+                My approach is practical. I learn concepts by applying
+                them, testing ideas and turning them into real digital work.
+              </p>
+
+            </div>
+
+            <div class="philosophy-card reveal">
+
+              <div class="philosophy-index">
+                01 • Understand
+              </div>
+
+              <h3>
+                Start with the objective
+              </h3>
+
+              <p>
+                Before building anything, I focus on understanding the
+                requirement, purpose and expected result.
+              </p>
+
+            </div>
+
+            <div class="philosophy-card reveal">
+
+              <div class="philosophy-index">
+                02 • Explore
+              </div>
+
+              <h3>
+                Research and learn
+              </h3>
+
+              <p>
+                I use research and experimentation to discover better
+                ways to approach the problem.
+              </p>
+
+            </div>
+
+            <div class="philosophy-card reveal">
+
+              <div class="philosophy-index">
+                03 • Build
+              </div>
+
+              <h3>
+                Turn ideas into work
+              </h3>
+
+              <p>
+                Concepts become practical through websites, documents,
+                spreadsheets, workflows and digital projects.
+              </p>
+
+            </div>
+
           </div>
 
-          <h2>
-            Technology becomes more valuable when it
-            <span>solves something real.</span>
+          <div class="statement reveal">
+
+            <div class="statement-content">
+
+              <div class="statement-icon">
+
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 3v18"></path>
+                  <path d="M3 12h18"></path>
+                  <path d="m5 5 14 14"></path>
+                  <path d="m19 5-14 14"></path>
+                </svg>
+
+              </div>
+
+              <h2>
+                Technology becomes more valuable when it
+                <span>solves something real.</span>
+              </h2>
+
+              <p>
+                My goal is not to collect tools simply for the sake of
+                knowing them. The goal is to understand how digital tools
+                can be used together to solve practical problems and
+                produce better results.
+              </p>
+
+              <p>
+                That is why research, data, documents, design, web
+                development and programming can all exist under one
+                platform. They may be different skills, but they can
+                support the same workflow.
+              </p>
+
+              <div class="statement-quote">
+                The best learning happens when knowledge moves from
+                theory into practical work.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         JOURNEY
+    ========================== -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="section-top reveal">
+
+          <span class="section-kicker">
+            My Digital Journey
+          </span>
+
+          <h2 class="section-title">
+            From information to implementation.
           </h2>
 
-          <p>
-            My goal is not to collect tools simply for the sake of knowing
-            them. The goal is to understand how digital tools can be used
-            together to solve practical problems and produce better results.
+          <p class="section-description">
+            The work behind Wazir Research Lab follows a simple
+            progression: discover, understand, organize and build.
           </p>
 
-          <p>
-            That is why research, data, documents, design, web development
-            and programming can all exist under one platform. They may be
-            different skills, but they can support the same workflow.
-          </p>
+        </div>
 
-          <div class="statement-quote">
-            The best learning happens when knowledge moves from theory
-            into practical work.
+        <div class="journey-grid">
+
+          <div class="journey-card reveal">
+            <span>Stage 01</span>
+            <strong>Discover</strong>
+            <p>
+              Find information, ideas, references and opportunities
+              to explore.
+            </p>
+          </div>
+
+          <div class="journey-card reveal">
+            <span>Stage 02</span>
+            <strong>Understand</strong>
+            <p>
+              Study the requirements and identify what needs to be solved.
+            </p>
+          </div>
+
+          <div class="journey-card reveal">
+            <span>Stage 03</span>
+            <strong>Structure</strong>
+            <p>
+              Organize information, content and technical requirements.
+            </p>
+          </div>
+
+          <div class="journey-card reveal">
+            <span>Stage 04</span>
+            <strong>Build</strong>
+            <p>
+              Turn the structure into a useful digital result.
+            </p>
           </div>
 
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- =========================
+         SKILLS
+    ========================== -->
 
-<!-- =========================
-     JOURNEY
-========================== -->
+    <section>
 
-<section>
-  <div class="container">
+      <div class="container">
 
-    <div class="journey-head reveal">
+        <div class="section-top reveal">
 
-      <span class="section-kicker">My Digital Journey</span>
+          <span class="section-kicker">
+            Working Areas
+          </span>
 
-      <h2 class="section-title">
-        From information to implementation.
-      </h2>
+          <h2 class="section-title">
+            Skills and tools connected to the lab.
+          </h2>
 
-      <p class="section-description">
-        The work behind Wazir Research Lab follows a simple progression:
-        discover, understand, organize and build.
-      </p>
+          <p class="section-description">
+            The focus is on practical digital work rather than isolated
+            tools. These areas support research, organization,
+            presentation and web-based projects.
+          </p>
 
-    </div>
+        </div>
 
-    <div class="journey-grid">
+        <div class="skills-grid">
 
-      <div class="journey-card reveal">
-        <span>Stage 01</span>
-        <strong>Discover</strong>
-        <p>
-          Find information, ideas, references and opportunities to explore.
-        </p>
-      </div>
+          <div class="skill-panel reveal">
 
-      <div class="journey-card reveal">
-        <span>Stage 02</span>
-        <strong>Understand</strong>
-        <p>
-          Study the requirements and identify what needs to be solved.
-        </p>
-      </div>
+            <h3>
+              Research & Productivity
+            </h3>
 
-      <div class="journey-card reveal">
-        <span>Stage 03</span>
-        <strong>Structure</strong>
-        <p>
-          Organize information, content and technical requirements.
-        </p>
-      </div>
+            <p>
+              Information discovery, data organization and everyday
+              productivity work.
+            </p>
 
-      <div class="journey-card reveal">
-        <span>Stage 04</span>
-        <strong>Build</strong>
-        <p>
-          Turn the structure into a useful digital result.
-        </p>
-      </div>
+            <div class="skill-tags">
+              <span>Web Research</span>
+              <span>Data Collection</span>
+              <span>Data Entry</span>
+              <span>Excel</span>
+              <span>Google Sheets</span>
+              <span>Microsoft Word</span>
+              <span>PowerPoint</span>
+              <span>PDF Typing</span>
+            </div>
 
-    </div>
+          </div>
 
-  </div>
-</section>
+          <div class="skill-panel reveal">
 
-<!-- =========================
-     CONNECT
-========================== -->
+            <h3>
+              Digital & Web
+            </h3>
 
-<section>
-  <div class="container">
+            <p>
+              Modern digital presentation, website development and
+              practical technology projects.
+            </p>
 
-    <div class="connect-panel reveal">
+            <div class="skill-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>UI Design</span>
+              <span>Web Development</span>
+              <span>Branding</span>
+              <span>Digital Design</span>
+            </div>
 
-      <div>
+          </div>
 
-        <span class="section-kicker">Continue Exploring</span>
-
-        <h2>
-          See the services, work and professional presence behind the lab.
-        </h2>
-
-        <p>
-          Explore the main website, hire me through Fiverr or connect with
-          me professionally on LinkedIn.
-        </p>
+        </div>
 
       </div>
 
-      <div class="connect-actions">
+    </section>
 
-        <a
-          href="index.html"
-          class="button button-secondary"
-        >
-          Back to Home
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-          >
-            <path d="M19 12H5"></path>
-            <path d="m11 18-6-6 6-6"></path>
-          </svg>
-        </a>
+    <!-- =========================
+         CONNECT
+    ========================== -->
 
-        <a
-          href="https://www.fiverr.com/s/jyjz6rZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button button-primary"
-        >
-          Fiverr Profile
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-          >
-            <path d="M5 12h14"></path>
-            <path d="m13 6 6 6-6 6"></path>
-          </svg>
-        </a>
+    <section>
+
+      <div class="container">
+
+        <div class="connect-panel reveal">
+
+          <div>
+
+            <span class="section-kicker">
+              Continue Exploring
+            </span>
+
+            <h2>
+              See the services, work and professional presence
+              behind the lab.
+            </h2>
+
+            <p>
+              Explore the main website, view the services on Fiverr,
+              connect on LinkedIn or send a project message through
+              the contact page.
+            </p>
+
+          </div>
+
+          <div class="connect-actions">
+
+            <a
+              href="index.html"
+              class="button button-secondary"
+            >
+              Home
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M19 12H5"></path>
+                <path d="m11 18-6-6 6-6"></path>
+              </svg>
+            </a>
+
+            <a
+              href="https://www.fiverr.com/s/jyjz6rZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+            >
+              Fiverr
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
+            </a>
+
+            <a
+              href="contact.html"
+              class="button button-primary"
+            >
+              Contact
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
 
-    </div>
-
-  </div>
-</section>
-```
+    </section>
 
   </main>
 
@@ -2199,100 +2499,133 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
 
   <footer>
 
-```
-<div class="container">
+    <div class="container">
 
-  <div class="footer-main">
+      <div class="footer-main">
 
-    <div>
+        <div>
 
-      <a href="index.html" class="brand">
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="Wazir Research Lab home"
+          >
 
-        <span class="brand-logo">
-          <img src="MW-logo.png" alt="MW logo">
+            <span class="brand-logo">
+              <img src="MW-logo.png" alt="MW logo">
+            </span>
+
+            <span class="brand-name">
+              <strong>Wazir Research Lab</strong>
+              <span>Research • Technology • Solutions</span>
+            </span>
+
+          </a>
+
+          <p class="footer-description">
+            A professional digital workspace by Murad Wazir,
+            bringing research, data, technology, programming and
+            modern digital work together through one consistent identity.
+          </p>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">
+            Explore
+          </div>
+
+          <div class="footer-links">
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+            <a href="index.html#services">
+              Services
+            </a>
+
+            <a href="index.html#work">
+              Work
+            </a>
+
+            <a href="index.html#faq">
+              FAQ
+            </a>
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">
+            Connect
+          </div>
+
+          <div class="footer-links">
+
+            <a
+              href="https://www.fiverr.com/s/jyjz6rZ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fiverr
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a href="mailto:zuhaibwazir558@gmail.com">
+              Email
+            </a>
+
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © <span id="year"></span>
+          Wazir Research Lab. All rights reserved.
         </span>
 
-        <span class="brand-name">
-          <strong>Wazir Research Lab</strong>
-          <span>Research • Technology • Solutions</span>
+        <span>
+          <a href="privacy.html">
+            Privacy
+          </a>
+          &nbsp;•&nbsp;
+          <a href="terms.html">
+            Terms
+          </a>
         </span>
 
-      </a>
-
-      <p class="footer-description">
-        A professional digital workspace by Murad Wazir, bringing
-        research, data, technology, programming and modern digital
-        work together through one consistent identity.
-      </p>
-
-    </div>
-
-    <div>
-
-      <div class="footer-title">Explore</div>
-
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
       </div>
 
     </div>
-
-    <div>
-
-      <div class="footer-title">Connect</div>
-
-      <div class="footer-links">
-
-        <a
-          href="https://www.fiverr.com/s/jyjz6rZ"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fiverr
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <a href="mailto:zuhaibwazir558@gmail.com">
-          Email
-        </a>
-
-        <a href="privacy.html">
-          Privacy
-        </a>
-
-        <a href="terms.html">
-          Terms
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-
-    <span>
-      © <span id="year"></span> Wazir Research Lab. All rights reserved.
-    </span>
-
-    <span>
-      Research • Technology • Solutions
-    </span>
-
-  </div>
-
-</div>
-```
 
   </footer>
 
@@ -2300,29 +2633,21 @@ content="About Murad Wazir and Wazir Research Lab — research, data, technology
        BACK TO TOP
   ========================== -->
 
-<button
-id="backToTop"
-type="button"
-aria-label="Back to top"
-
->
-
-```
-<svg
-```
-
-```
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="1.8"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <path d="m18 15-6-6-6 6"></path>
-</svg>
-```
-
+  <button
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
   </button>
 
   <!-- =========================
@@ -2334,6 +2659,7 @@ aria-label="Back to top"
       "use strict";
 
       const year = document.getElementById("year");
+      const siteHeader = document.getElementById("siteHeader");
       const menuToggle = document.getElementById("menuToggle");
       const navLinks = document.getElementById("navLinks");
       const backToTop = document.getElementById("backToTop");
@@ -2351,38 +2677,73 @@ aria-label="Back to top"
          MOBILE MENU
       ========================== */
 
+      const closeMenu = () => {
+        if (!navLinks || !menuToggle) {
+          return;
+        }
+
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      };
+
       if (menuToggle && navLinks) {
 
-        const closeMenu = () => {
-          navLinks.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        };
-
         menuToggle.addEventListener("click", () => {
-          const isOpen = navLinks.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+          const isOpen =
+            navLinks.classList.toggle("open");
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+          );
+
         });
 
         navLinks.querySelectorAll("a").forEach((link) => {
+
           link.addEventListener("click", closeMenu);
+
         });
 
         document.addEventListener("keydown", (event) => {
+
           if (event.key === "Escape") {
             closeMenu();
           }
+
         });
+
+        document.addEventListener("click", (event) => {
+
+          if (!navLinks.classList.contains("open")) {
+            return;
+          }
+
+          const clickedInside =
+            navLinks.contains(event.target) ||
+            menuToggle.contains(event.target);
+
+          if (!clickedInside) {
+            closeMenu();
+          }
+
+        });
+
       }
 
       /* =========================
-         SCROLL PROGRESS
+         SCROLL EFFECTS
       ========================== */
 
-      const updateScroll = () => {
+      const handleScroll = () => {
 
-        const documentElement = document.documentElement;
+        const documentElement =
+          document.documentElement;
+
         const scrollable =
-          documentElement.scrollHeight - window.innerHeight;
+          documentElement.scrollHeight -
+          window.innerHeight;
 
         const progress =
           scrollable > 0
@@ -2390,24 +2751,42 @@ aria-label="Back to top"
             : 0;
 
         if (scrollProgress) {
+
           scrollProgress.style.transform =
-            `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+            `scaleX(${Math.min(
+              Math.max(progress, 0),
+              1
+            )})`;
+
+        }
+
+        if (siteHeader) {
+
+          siteHeader.classList.toggle(
+            "scrolled",
+            window.scrollY > 12
+          );
+
         }
 
         if (backToTop) {
-          if (window.scrollY > 500) {
-            backToTop.classList.add("show");
-          } else {
-            backToTop.classList.remove("show");
-          }
+
+          backToTop.classList.toggle(
+            "show",
+            window.scrollY > 500
+          );
+
         }
+
       };
 
-      window.addEventListener("scroll", updateScroll, {
-        passive: true
-      });
+      window.addEventListener(
+        "scroll",
+        handleScroll,
+        { passive: true }
+      );
 
-      updateScroll();
+      handleScroll();
 
       /* =========================
          BACK TO TOP
@@ -2416,16 +2795,18 @@ aria-label="Back to top"
       if (backToTop) {
 
         backToTop.addEventListener("click", () => {
+
           window.scrollTo({
             top: 0,
             behavior: "smooth"
           });
+
         });
 
       }
 
       /* =========================
-         REVEAL
+         REVEAL ANIMATION
       ========================== */
 
       const revealElements =
@@ -2441,9 +2822,14 @@ aria-label="Back to top"
 
                 if (entry.isIntersecting) {
 
-                  entry.target.classList.add("visible");
+                  entry.target.classList.add(
+                    "visible"
+                  );
 
-                  observer.unobserve(entry.target);
+                  observer.unobserve(
+                    entry.target
+                  );
+
                 }
 
               });
@@ -2456,13 +2842,17 @@ aria-label="Back to top"
           );
 
         revealElements.forEach((element) => {
+
           observer.observe(element);
+
         });
 
       } else {
 
         revealElements.forEach((element) => {
+
           element.classList.add("visible");
+
         });
 
       }
