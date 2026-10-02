@@ -1,89 +1,72 @@
-# Wazir Research Lab
+<div align="center">
+
+# WAZIR RESEARCH LAB
 
 ### Research • Technology • Solutions
 
-A professional personal digital workspace and portfolio focused on **web research, data collection, documentation, programming, and web development**.
+**A personal digital workspace for research, technology, programming, and practical digital solutions.**
 
-Wazir Research Lab brings research, technology, digital skills, and practical solutions together in one structured platform.
+<br>
 
----
+[![Live Website](https://img.shields.io/badge/Live%20Website-waziraura.github.io-0ea5e9?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://waziraura.github.io/wazirresearchlab/)
+[![GitHub](https://img.shields.io/badge/GitHub-waxiraura-111827?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/waxiraura)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Murad%20Wazir-0a66c2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/murad-wazir-bbb0b541a/)
+[![Fiverr](https://img.shields.io/badge/Fiverr-Wazir%20Aura-1dbf73?style=for-the-badge\&logo=fiverr\&logoColor=white)](https://www.fiverr.com/s/jyjz6rZ)
 
-## Live Website
-
-**Website:**
-https://waziraura.github.io/wazirresearchlab/
+</div>
 
 ---
 
 ## About
 
-**Wazir Research Lab** is a personal research and technology platform created to present professional skills, services, projects, workflows, and digital capabilities.
+**Wazir Research Lab** is a professional personal website and digital portfolio focused on:
 
-The project combines research-driven work with practical technology solutions across areas such as:
+**Web Research · Data Collection · Documentation · Programming · Web Development**
 
-* Web Research
-* Data Collection
-* Data Entry
-* Research & Documentation
-* Microsoft Office
-* Programming
-* Web Development
-* Responsive Web Design
+The platform brings research workflows, technical skills, professional services, and digital projects together in one structured online workspace.
 
 ---
 
 ## Core Services
 
-| Service                  | Focus                                                                    |
-| ------------------------ | ------------------------------------------------------------------------ |
-| Web Research             | Online research, information discovery, and source-based data collection |
-| Data Collection          | Structured data gathering and organization                               |
-| Data Entry               | Accurate digital data entry and formatting                               |
-| Research & Documentation | Organized research notes, reports, and documentation                     |
-| Microsoft Excel          | Spreadsheets, data organization, and structured records                  |
-| Microsoft Word           | Professional documents and formatting                                    |
-| Microsoft PowerPoint     | Presentation design and structured content                               |
-| Web Development          | Modern and responsive website development                                |
-| Programming              | Practical coding and web-based solutions                                 |
+| Area                | Services                                                     |
+| ------------------- | ------------------------------------------------------------ |
+| **Research**        | Web Research, Information Gathering, Research Support        |
+| **Data**            | Data Collection, Data Entry, Data Organization               |
+| **Documentation**   | Research Documentation, Microsoft Word, Structured Reports   |
+| **Office Tools**    | Microsoft Excel, Microsoft PowerPoint, Microsoft Word        |
+| **Technology**      | Programming, HTML, CSS, Responsive Web Design                |
+| **Web Development** | Personal Websites, Portfolio Websites, Front-End Development |
 
 ---
 
-## Technologies
+## Technology Stack
 
-The website is built using lightweight and widely supported web technologies:
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square\&logo=html5\&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square\&logo=css3\&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square\&logo=git\&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square\&logo=github\&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=flat-square\&logo=githubpages\&logoColor=white)
 
-* HTML5
-* CSS3
-* Responsive Web Design
-* Git
-* GitHub
-* GitHub Pages
-
----
-
-## Website Pages
-
-| Page                   | Description                                                 |
-| ---------------------- | ----------------------------------------------------------- |
-| **Home**               | Introduction, services, projects, and core focus            |
-| **About**              | Background, skills, focus areas, and professional direction |
-| **Contact**            | Professional contact information and service connections    |
-| **Privacy Policy**     | Privacy and data-related information                        |
-| **Terms & Conditions** | Website usage terms and disclaimers                         |
+The website uses a lightweight front-end structure designed for responsive performance, clear presentation, and easy maintenance.
 
 ---
 
-## Key Features
+## Website
 
-* Professional personal portfolio
-* Modern dark technology-focused interface
-* Responsive design for desktop, tablet, and mobile
-* Mobile-friendly navigation
-* Research and technology focused presentation
-* Service and project sections
-* Lightweight HTML and CSS structure
-* GitHub Pages deployment
-* Accessible and user-friendly page structure
+### Main Pages
+
+| Page                   | Purpose                                                  |
+| ---------------------- | -------------------------------------------------------- |
+| **Home**               | Introduction, services, projects, and professional focus |
+| **About**              | Background, skills, goals, and areas of expertise        |
+| **Contact**            | Professional contact information and service links       |
+| **Privacy Policy**     | Privacy and data-related information                     |
+| **Terms & Conditions** | Website terms, usage information, and disclaimers        |
+
+### Live Site
+
+**https://waziraura.github.io/wazirresearchlab/**
 
 ---
 
@@ -97,52 +80,67 @@ wazirresearchlab/
 ├── contact.html
 ├── privacy.html
 ├── terms.html
+│
 ├── sitemap.xml
 ├── robots.txt
-├── google-site-verification: googlef557233fb10a849d.html
+├── googlef557233fb10a849d.html
+│
 ├── MW-logo.png
 └── README.md
 ```
 
 ---
 
-## Deployment
+## Key Features
 
-The website is deployed and hosted through **GitHub Pages**.
+**01 — Professional Interface**
+Modern dark technology-focused visual design with a consistent brand identity.
 
-### Repository
+**02 — Responsive Experience**
+Optimized for desktop, tablet, and mobile screen sizes.
 
-https://github.com/waxiraura/wazirresearchlab
+**03 — Structured Presentation**
+Services, skills, projects, professional profiles, and important website information are organized into clear sections.
 
-### GitHub Profile
+**04 — Lightweight Architecture**
+Built with a simple HTML/CSS approach without unnecessary framework overhead.
 
-https://github.com/waxiraura
+**05 — GitHub Pages Deployment**
+Hosted and maintained through GitHub Pages.
 
----
-
-## Professional Presence
-
-### LinkedIn
-
-https://www.linkedin.com/in/murad-wazir-bbb0b541a/
-
-### Fiverr
-
-https://www.fiverr.com/s/jyjz6rZ
-
-### Contact
-
-[zuhaibwazir558@gmail.com](mailto:zuhaibwazir558@gmail.com)
+**06 — SEO Essentials**
+Includes sitemap, robots.txt, and Google site verification support.
 
 ---
 
 ## Professional Focus
 
-Wazir Research Lab focuses on providing practical digital support across:
+Wazir Research Lab is centered around practical digital work in the following areas:
 
-**Web Research · Data Collection · Data Entry · Documentation · Microsoft Office · Programming · Web Development**
+```text
+Web Research
+Data Collection
+Data Entry
+Research & Documentation
+Microsoft Excel
+Microsoft Word
+Microsoft PowerPoint
+Programming
+Web Development
+Responsive Web Design
+```
 
-The platform is designed to showcase skills, workflows, digital projects, and professional services in a clear and organized way.
+---
+
+## Professional Links
+
+| Platform     | Link                                                        |
+| ------------ | ----------------------------------------------------------- |
+| **Website**  | https://waziraura.github.io/wazirresearchlab/               |
+| **GitHub**   | https://github.com/waxiraura                                |
+| **LinkedIn** | https://www.linkedin.com/in/murad-wazir-bbb0b541a/          |
+| **Fiverr**   | https://www.fiverr.com/s/jyjz6rZ                            |
+| **Email**    | [zuhaibwazir558@gmail.com](mailto:zuhaibwazir558@gmail.com) |
 
 ---
 
@@ -152,7 +150,21 @@ The platform is designed to showcase skills, workflows, digital projects, and pr
 **Tagline:** Research • Technology • Solutions
 **Brand Mark:** MW
 
-The project uses the **MW** logo and a technology-focused visual identity throughout the website.
+The **MW** identity represents the personal brand behind Wazir Research Lab and is used across the website's visual identity.
+
+---
+
+## Deployment
+
+This project is deployed using **GitHub Pages**.
+
+**Repository**
+
+https://github.com/waxiraura/wazirresearchlab
+
+**Live Website**
+
+https://waziraura.github.io/wazirresearchlab/
 
 ---
 
@@ -160,19 +172,25 @@ The project uses the **MW** logo and a technology-focused visual identity throug
 
 This website and its original materials are created for **Wazir Research Lab**.
 
-Unless otherwise stated, the original design, branding, logo, and content may not be reproduced, redistributed, or used commercially without permission.
+Unless otherwise stated, the original design, branding, logo, source content, and custom materials may not be reproduced, redistributed, or commercially reused without permission.
 
-Third-party trademarks, services, and referenced platforms remain the property of their respective owners.
-
----
-
-## Author
-
-**Murad Wazir**
-
-**Wazir Research Lab**
-*Research • Technology • Solutions*
+Third-party names, trademarks, platforms, and services remain the property of their respective owners.
 
 ---
+
+<div align="center">
+
+## WAZIR RESEARCH LAB
+
+**Research • Technology • Solutions**
+
+[Website](https://waziraura.github.io/wazirresearchlab/) ·
+[GitHub](https://github.com/waxiraura) ·
+[LinkedIn](https://www.linkedin.com/in/murad-wazir-bbb0b541a/) ·
+[Fiverr](https://www.fiverr.com/s/jyjz6rZ)
+
+<br>
 
 © 2026 **Wazir Research Lab**. All rights reserved.
+
+</div>
