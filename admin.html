@@ -219,6 +219,19 @@
       line-height: 1.7;
       white-space: pre-wrap;
       word-break: break-word;
+      margin-bottom: 16px;
+    }
+
+    .delete-button {
+      background: rgba(255, 82, 82, 0.10);
+      color: #ff8585;
+      border: 1px solid rgba(255, 82, 82, 0.20);
+      padding: 9px 13px;
+      font-size: .72rem;
+    }
+
+    .delete-button:hover {
+      background: rgba(255, 82, 82, 0.18);
     }
 
     .empty {
@@ -476,10 +489,60 @@
               ${escapeHtml(item.message)}
             </div>
 
+            <button
+              type="button"
+              class="delete-button"
+              data-id="${item.id}"
+            >
+              Delete Message
+            </button>
+
           </article>
         `;
 
       }).join("");
+
+      document
+        .querySelectorAll(".delete-button")
+        .forEach((button) => {
+
+          button.addEventListener("click", async () => {
+
+            const messageId = button.dataset.id;
+
+            const confirmed = confirm(
+              "Delete this message?"
+            );
+
+            if (!confirmed) {
+              return;
+            }
+
+            button.disabled = true;
+            button.textContent = "Deleting...";
+
+            const { error } =
+              await supabaseClient
+                .from("messages")
+                .delete()
+                .eq("id", messageId);
+
+            if (error) {
+              console.error(error);
+
+              button.disabled = false;
+              button.textContent = "Delete Message";
+
+              alert(
+                "Message could not be deleted."
+              );
+
+              return;
+            }
+
+            await loadMessages();
+          });
+        });
     }
 
 
@@ -518,6 +581,7 @@
       });
 
       if (error) {
+
         loginStatus.textContent =
           "Invalid email or password.";
 
