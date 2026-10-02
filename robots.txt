@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://waxiraura.github.io/wazirresearchlab/sitemap.xml
+Sitemap: https://waziraura.github.io/wazirresearchlab/sitemap.xml
