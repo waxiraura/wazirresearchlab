@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
+
+<!-- Homepage -->
+<url>
     <loc>https://waxiraura.github.io/wazirresearchlab/</loc>
-  </url>
-  <url>
+    <lastmod>2026-10-02</lastmod>
+</url>
+
+<!-- About -->
+<url>
     <loc>https://waxiraura.github.io/wazirresearchlab/about.html</loc>
-  </url>
-  <url>
+    <lastmod>2026-10-02</lastmod>
+</url>
+
+<!-- Contact -->
+<url>
     <loc>https://waxiraura.github.io/wazirresearchlab/contact.html</loc>
-  </url>
-  <url>
+    <lastmod>2026-10-02</lastmod>
+</url>
+
+<!-- Privacy Policy -->
+<url>
     <loc>https://waxiraura.github.io/wazirresearchlab/privacy.html</loc>
-  </url>
-  <url>
+    <lastmod>2026-10-02</lastmod>
+</url>
+
+<!-- Terms -->
+<url>
     <loc>https://waxiraura.github.io/wazirresearchlab/terms.html</loc>
-  </url>
+    <lastmod>2026-10-02</lastmod>
+</url>
+
 </urlset>
