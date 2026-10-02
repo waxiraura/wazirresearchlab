@@ -6,17 +6,24 @@
 
   <meta
     name="description"
-    content="Privacy Policy for Wazir Research Lab by Murad Wazir. Learn how information may be collected, used, protected and handled on this website."
+    content="Privacy Policy for Wazir Research Lab by Murad Wazir. Learn how information submitted through the website may be collected, stored, used and handled."
   >
   <meta name="author" content="Murad Wazir">
   <meta name="theme-color" content="#050812">
+  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="Privacy Policy | Wazir Research Lab">
+  <meta
+    property="og:title"
+    content="Privacy Policy | Wazir Research Lab"
+  >
   <meta
     property="og:description"
-    content="Privacy information for visitors to Wazir Research Lab."
+    content="Privacy information for visitors and people who contact Wazir Research Lab."
   >
   <meta property="og:type" content="website">
+  <meta property="og:image" content="MW-logo.png">
+
+  <link rel="icon" type="image/png" href="MW-logo.png">
 
   <title>Privacy Policy | Wazir Research Lab</title>
 
@@ -26,13 +33,13 @@
       --bg-2: #070c16;
       --bg-3: #0a111e;
 
-      --surface: rgba(13, 21, 36, .74);
+      --surface: rgba(13, 21, 36, .76);
       --surface-strong: rgba(11, 19, 33, .95);
       --surface-soft: rgba(255, 255, 255, .028);
 
       --heading: #f4f8ff;
       --text: #c8d4e3;
-      --muted: #8f9eb1;
+      --muted: #91a0b4;
       --muted-2: #738298;
 
       --cyan: #5ce1ff;
@@ -80,9 +87,24 @@
         sans-serif;
       line-height: 1.7;
       background:
-        radial-gradient(circle at 8% 0%, rgba(92, 225, 255, .075), transparent 26%),
-        radial-gradient(circle at 92% 7%, rgba(125, 141, 255, .085), transparent 29%),
-        linear-gradient(180deg, #04070f 0%, #060b14 45%, #07101b 100%);
+        radial-gradient(
+          circle at 8% 0%,
+          rgba(92, 225, 255, .075),
+          transparent 26%
+        ),
+        radial-gradient(
+          circle at 92% 7%,
+          rgba(125, 141, 255, .085),
+          transparent 29%
+        ),
+        linear-gradient(
+          180deg,
+          #04070f 0%,
+          #060b14 45%,
+          #07101b 100%
+        );
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
     body::before {
@@ -91,12 +113,30 @@
       inset: 0;
       z-index: -2;
       pointer-events: none;
-      opacity: .15;
+      opacity: .13;
       background-image:
-        linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
+        linear-gradient(
+          rgba(255, 255, 255, .022) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, .022) 1px,
+          transparent 1px
+        );
       background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 88%
+        );
+      -webkit-mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 88%
+        );
     }
 
     body::after {
@@ -106,7 +146,11 @@
       z-index: -3;
       pointer-events: none;
       background:
-        radial-gradient(circle at center, transparent 34%, rgba(0, 0, 0, .18) 100%);
+        radial-gradient(
+          circle at center,
+          transparent 35%,
+          rgba(0, 0, 0, .18) 100%
+        );
     }
 
     ::selection {
@@ -123,7 +167,12 @@
     }
 
     ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--cyan), var(--blue));
+      background:
+        linear-gradient(
+          180deg,
+          var(--cyan),
+          var(--blue)
+        );
       border: 3px solid #04070e;
       border-radius: 999px;
     }
@@ -133,17 +182,20 @@
       text-decoration: none;
     }
 
+    button {
+      font: inherit;
+    }
+
     img {
       display: block;
       max-width: 100%;
     }
 
-    button {
-      font: inherit;
-    }
-
     .container {
-      width: min(calc(100% - 40px), var(--container));
+      width: min(
+        calc(100% - 40px),
+        var(--container)
+      );
       margin-inline: auto;
     }
 
@@ -159,8 +211,14 @@
       height: 2px;
       transform: scaleX(0);
       transform-origin: left;
-      background: linear-gradient(90deg, var(--cyan), var(--blue));
-      box-shadow: 0 0 18px rgba(92, 225, 255, .45);
+      background:
+        linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--blue)
+        );
+      box-shadow:
+        0 0 18px rgba(92, 225, 255, .45);
     }
 
     /* =========================
@@ -171,10 +229,25 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255, 255, 255, .055);
-      background: rgba(4, 8, 16, .73);
+      border-bottom:
+        1px solid rgba(255, 255, 255, .055);
+      background:
+        rgba(4, 8, 16, .74);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    header.scrolled {
+      background:
+        rgba(4, 8, 16, .91);
+      border-bottom-color:
+        rgba(255, 255, 255, .08);
+      box-shadow:
+        0 16px 34px rgba(0, 0, 0, .16);
     }
 
     .nav {
@@ -200,7 +273,8 @@
       place-items: center;
       flex: 0 0 auto;
       overflow: hidden;
-      border: 1px solid rgba(92, 225, 255, .17);
+      border:
+        1px solid rgba(92, 225, 255, .17);
       border-radius: 14px;
       background:
         linear-gradient(
@@ -293,12 +367,18 @@
       bottom: 4px;
       height: 2px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      background:
+        linear-gradient(
+          90deg,
+          var(--cyan),
+          var(--blue)
+        );
     }
 
     .nav-links a:not(.active):not(.nav-cta)::after {
       transform: scaleX(0);
-      transition: transform .35s var(--ease);
+      transition:
+        transform .35s var(--ease);
     }
 
     .nav-links a:not(.active):not(.nav-cta):hover::after {
@@ -309,15 +389,23 @@
       margin-left: 8px;
       padding: 10px 16px !important;
       color: #03131a !important;
-      border: 1px solid rgba(92, 225, 255, .2);
+      border:
+        1px solid rgba(92, 225, 255, .2);
       border-radius: 11px;
-      background: linear-gradient(135deg, #99efff, var(--cyan));
-      box-shadow: 0 10px 28px rgba(92, 225, 255, .13);
+      background:
+        linear-gradient(
+          135deg,
+          #99efff,
+          var(--cyan)
+        );
+      box-shadow:
+        0 10px 28px rgba(92, 225, 255, .13);
     }
 
     .nav-cta:hover {
       transform: translateY(-3px) !important;
-      box-shadow: 0 16px 36px rgba(92, 225, 255, .25);
+      box-shadow:
+        0 16px 36px rgba(92, 225, 255, .25);
     }
 
     .menu-toggle {
@@ -326,9 +414,11 @@
       height: 44px;
       place-items: center;
       color: #fff;
-      border: 1px solid var(--line);
+      border:
+        1px solid var(--line);
       border-radius: 12px;
-      background: rgba(255, 255, 255, .03);
+      background:
+        rgba(255, 255, 255, .03);
       cursor: pointer;
     }
 
@@ -343,21 +433,36 @@
 
     .page-hero {
       position: relative;
-      min-height: 500px;
+      min-height: 520px;
       display: grid;
       place-items: center;
       overflow: hidden;
-      border-bottom: 1px solid rgba(255, 255, 255, .045);
+      border-bottom:
+        1px solid rgba(255, 255, 255, .045);
     }
 
     .hero-grid {
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(rgba(92, 225, 255, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92, 225, 255, .035) 1px, transparent 1px);
+        linear-gradient(
+          rgba(92, 225, 255, .035) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(92, 225, 255, .035) 1px,
+          transparent 1px
+        );
       background-size: 78px 78px;
       mask-image:
+        radial-gradient(
+          ellipse at center,
+          black 0%,
+          rgba(0, 0, 0, .9) 42%,
+          transparent 84%
+        );
+      -webkit-mask-image:
         radial-gradient(
           ellipse at center,
           black 0%,
@@ -372,19 +477,19 @@
       top: 45%;
       width: 620px;
       height: 620px;
-      transform: translate(-50%, -50%);
-      border: 1px solid rgba(92, 225, 255, .04);
+      transform:
+        translate(-50%, -50%);
+      border:
+        1px solid rgba(92, 225, 255, .04);
       border-radius: 50%;
-      box-shadow:
-        0 0 0 1px rgba(125, 141, 255, .016),
-        inset 0 0 80px rgba(92, 225, 255, .02);
     }
 
     .hero-orbit::before,
     .hero-orbit::after {
       content: "";
       position: absolute;
-      border: 1px solid rgba(255, 255, 255, .024);
+      border:
+        1px solid rgba(255, 255, 255, .024);
       border-radius: 50%;
     }
 
@@ -394,7 +499,8 @@
 
     .hero-orbit::after {
       inset: 23%;
-      border-color: rgba(92, 225, 255, .025);
+      border-color:
+        rgba(92, 225, 255, .025);
     }
 
     .hero-glow {
@@ -403,7 +509,8 @@
       height: 640px;
       left: 50%;
       top: 42%;
-      transform: translate(-50%, -50%);
+      transform:
+        translate(-50%, -50%);
       border-radius: 50%;
       background:
         radial-gradient(
@@ -432,32 +539,43 @@
 
     .hero-watermark {
       position: absolute;
-      width: min(470px, 70vw);
-      height: min(470px, 70vw);
+      width: min(440px, 68vw);
+      height: min(440px, 68vw);
       left: 50%;
-      top: 48%;
-      transform: translate(-50%, -50%);
-      background: url("MW-logo.png") center / contain no-repeat;
-      opacity: .028;
-      filter: grayscale(100%) brightness(1.75);
+      top: 46%;
+      transform:
+        translate(-50%, -50%);
+      background:
+        url("MW-logo.png")
+        center / contain
+        no-repeat;
+      opacity: .026;
+      filter:
+        grayscale(100%)
+        brightness(1.8);
       pointer-events: none;
-      animation: watermarkFloat 9s ease-in-out infinite;
+      animation:
+        watermarkFloat 9s ease-in-out infinite;
     }
 
     @keyframes watermarkFloat {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
+      0%,
+      100% {
+        transform:
+          translate(-50%, -50%)
+          scale(1);
       }
 
       50% {
-        transform: translate(-50%, -50%) scale(1.018);
+        transform:
+          translate(-50%, -50%)
+          scale(1.018);
       }
     }
 
     .hero-content {
       position: relative;
-      z-index: 5;
-      width: 100%;
+      z-index: 3;
       padding: 76px 0 70px;
       text-align: center;
     }
@@ -468,10 +586,13 @@
       gap: 8px;
       padding: 8px 13px;
       color: #caf5ff;
-      border: 1px solid rgba(92, 225, 255, .17);
+      border:
+        1px solid rgba(92, 225, 255, .17);
       border-radius: 999px;
-      background: rgba(92, 225, 255, .04);
-      box-shadow: 0 0 30px rgba(92, 225, 255, .03);
+      background:
+        rgba(92, 225, 255, .04);
+      box-shadow:
+        0 0 30px rgba(92, 225, 255, .03);
       font-size: .61rem;
       font-weight: 880;
       letter-spacing: .15em;
@@ -483,18 +604,19 @@
       height: 7px;
       border-radius: 50%;
       background: var(--cyan);
-      box-shadow: 0 0 14px rgba(92, 225, 255, .8);
+      box-shadow:
+        0 0 14px rgba(92, 225, 255, .8);
     }
 
     .hero h1 {
       max-width: 950px;
       margin: 25px auto 0;
       color: var(--heading);
-      font-size: clamp(3rem, 7vw, 6.2rem);
+      font-size:
+        clamp(3rem, 7vw, 6.1rem);
       line-height: .92;
       letter-spacing: -.07em;
       font-weight: 950;
-      text-wrap: balance;
     }
 
     .hero h1 span {
@@ -513,18 +635,95 @@
     .hero-role {
       margin-top: 20px;
       color: #d8f7ff;
-      font-size: clamp(.7rem, 1.45vw, .9rem);
+      font-size:
+        clamp(.69rem, 1.45vw, .9rem);
       font-weight: 840;
-      letter-spacing: .11em;
+      letter-spacing: .115em;
       text-transform: uppercase;
     }
 
     .hero-text {
-      max-width: 760px;
-      margin: 15px auto 0;
+      max-width: 770px;
+      margin: 16px auto 0;
       color: var(--text);
-      font-size: clamp(.87rem, 1.5vw, .97rem);
-      line-height: 1.84;
+      font-size:
+        clamp(.86rem, 1.5vw, .97rem);
+      line-height: 1.86;
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 18px;
+      border:
+        1px solid transparent;
+      border-radius: 12px;
+      font-size: .71rem;
+      font-weight: 860;
+      transition:
+        transform .4s var(--ease),
+        box-shadow .4s var(--ease),
+        border-color .35s ease,
+        background .35s ease,
+        filter .35s ease;
+    }
+
+    .button svg {
+      width: 15px;
+      height: 15px;
+      transition:
+        transform .35s var(--ease);
+    }
+
+    .button-primary {
+      color: #03141b;
+      background:
+        linear-gradient(
+          135deg,
+          #9bf0ff,
+          var(--cyan)
+        );
+      box-shadow:
+        0 12px 32px rgba(92, 225, 255, .14);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 18px 42px rgba(92, 225, 255, .25);
+      filter: brightness(1.04);
+    }
+
+    .button-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .button-secondary {
+      color: #d5e3ed;
+      border-color:
+        rgba(255, 255, 255, .09);
+      background:
+        rgba(255, 255, 255, .025);
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-3px);
+      color: var(--cyan);
+      border-color:
+        rgba(92, 225, 255, .2);
+      background:
+        rgba(92, 225, 255, .05);
     }
 
     /* =========================
@@ -533,7 +732,7 @@
 
     .policy-section {
       position: relative;
-      padding: 88px 0 84px;
+      padding: 88px 0 105px;
     }
 
     .policy-section::before {
@@ -541,16 +740,18 @@
       position: absolute;
       top: 0;
       left: 50%;
-      width: min(calc(100% - 100px), 1040px);
+      width:
+        min(calc(100% - 100px), 1040px);
       height: 1px;
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
       background:
         linear-gradient(
           90deg,
           transparent,
-          rgba(255, 255, 255, .025) 14%,
-          rgba(92, 225, 255, .17) 50%,
-          rgba(255, 255, 255, .025) 86%,
+          rgba(255,255,255,.025) 14%,
+          rgba(92,225,255,.17) 50%,
+          rgba(255,255,255,.025) 86%,
           transparent
         );
     }
@@ -562,21 +763,21 @@
       left: 50%;
       width: 135px;
       height: 9px;
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
       background:
         radial-gradient(
           ellipse,
-          rgba(92, 225, 255, .13),
+          rgba(92,225,255,.13),
           transparent 72%
         );
       filter: blur(3px);
-      pointer-events: none;
     }
 
     .policy-layout {
       display: grid;
       grid-template-columns: .76fr 1.24fr;
-      gap: 28px;
+      gap: 26px;
       align-items: start;
     }
 
@@ -586,15 +787,16 @@
 
     .policy-sidebar {
       position: sticky;
-      top: 102px;
+      top: 103px;
       padding: 22px;
-      border: 1px solid rgba(255, 255, 255, .075);
+      border:
+        1px solid rgba(255,255,255,.075);
       border-radius: 20px;
       background:
         linear-gradient(
           145deg,
-          rgba(15, 24, 41, .92),
-          rgba(7, 12, 21, .97)
+          rgba(15,24,41,.92),
+          rgba(7,12,21,.97)
         );
       box-shadow: var(--shadow-soft);
     }
@@ -611,9 +813,11 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      border: 1px solid rgba(92, 225, 255, .13);
+      border:
+        1px solid rgba(92,225,255,.13);
       border-radius: 12px;
-      background: rgba(92, 225, 255, .04);
+      background:
+        rgba(92,225,255,.04);
     }
 
     .sidebar-icon svg {
@@ -637,9 +841,11 @@
     .policy-meta {
       margin-top: 18px;
       padding: 13px;
-      border: 1px solid rgba(92, 225, 255, .085);
+      border:
+        1px solid rgba(92,225,255,.085);
       border-radius: 12px;
-      background: rgba(92, 225, 255, .022);
+      background:
+        rgba(92,225,255,.022);
     }
 
     .policy-meta strong {
@@ -668,7 +874,8 @@
       gap: 8px;
       padding: 9px 10px;
       color: #8a99ac;
-      border: 1px solid transparent;
+      border:
+        1px solid transparent;
       border-radius: 9px;
       font-size: .65rem;
       font-weight: 750;
@@ -682,8 +889,10 @@
     .policy-nav a:hover {
       transform: translateX(3px);
       color: var(--cyan);
-      border-color: rgba(92, 225, 255, .12);
-      background: rgba(92, 225, 255, .025);
+      border-color:
+        rgba(92,225,255,.12);
+      background:
+        rgba(92,225,255,.025);
     }
 
     .policy-nav a span {
@@ -696,40 +905,68 @@
     .sidebar-note {
       margin-top: 18px;
       padding-top: 16px;
-      border-top: 1px solid rgba(255, 255, 255, .05);
+      border-top:
+        1px solid rgba(255,255,255,.05);
       color: #718095;
       font-size: .62rem;
       line-height: 1.75;
     }
 
     /* =========================
-       POLICY CONTENT
+       CONTENT
     ========================== */
 
     .policy-content {
       padding: 28px;
-      border: 1px solid rgba(255, 255, 255, .075);
+      border:
+        1px solid rgba(255,255,255,.075);
       border-radius: 23px;
       background:
         linear-gradient(
           150deg,
-          rgba(14, 24, 41, .93),
-          rgba(7, 12, 21, .97)
+          rgba(14,24,41,.93),
+          rgba(7,12,21,.97)
         );
       box-shadow: var(--shadow-soft);
     }
 
     .policy-intro {
       padding-bottom: 21px;
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 11px;
+      color: var(--cyan);
+      font-size: .61rem;
+      font-weight: 900;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .section-kicker::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--cyan)
+        );
     }
 
     .policy-intro h2 {
       color: var(--heading);
-      font-size: clamp(1.5rem, 3vw, 2.15rem);
-      line-height: 1.1;
-      letter-spacing: -.035em;
-      font-weight: 910;
+      font-size:
+        clamp(1.55rem, 3.2vw, 2.3rem);
+      line-height: 1.08;
+      letter-spacing: -.04em;
+      font-weight: 920;
     }
 
     .policy-intro h2 span {
@@ -739,19 +976,20 @@
     .policy-intro p {
       margin-top: 11px;
       color: var(--text);
-      font-size: .78rem;
+      font-size: .77rem;
       line-height: 1.84;
     }
 
     .notice {
       margin-top: 19px;
       padding: 15px 16px;
-      border-left: 2px solid var(--cyan);
+      border-left:
+        2px solid var(--cyan);
       border-radius: 0 13px 13px 0;
       background:
         linear-gradient(
           90deg,
-          rgba(92, 225, 255, .06),
+          rgba(92,225,255,.06),
           transparent
         );
     }
@@ -778,9 +1016,14 @@
       line-height: 1.75;
     }
 
+    /* =========================
+       POLICY BLOCKS
+    ========================== */
+
     .policy-block {
       padding: 23px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .05);
+      border-bottom:
+        1px solid rgba(255,255,255,.05);
       scroll-margin-top: 102px;
     }
 
@@ -803,9 +1046,11 @@
       place-items: center;
       flex: 0 0 auto;
       color: var(--cyan);
-      border: 1px solid rgba(92, 225, 255, .13);
+      border:
+        1px solid rgba(92,225,255,.13);
       border-radius: 9px;
-      background: rgba(92, 225, 255, .035);
+      background:
+        rgba(92,225,255,.035);
       font-size: .58rem;
       font-weight: 900;
     }
@@ -820,7 +1065,7 @@
     .policy-block p {
       color: var(--muted);
       font-size: .74rem;
-      line-height: 1.84;
+      line-height: 1.86;
     }
 
     .policy-block p + p {
@@ -841,17 +1086,39 @@
       color: var(--cyan-bright);
     }
 
+    /* =========================
+       LISTS
+    ========================== */
+
+    .policy-list {
+      margin-top: 10px;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .policy-list li {
+      margin-top: 6px;
+      padding-left: 3px;
+      font-size: .73rem;
+      line-height: 1.78;
+    }
+
+    /* =========================
+       ACTION
+    ========================== */
+
     .policy-action {
-      margin-top: 21px;
+      margin-top: 22px;
       padding: 20px;
       text-align: center;
-      border: 1px solid rgba(92, 225, 255, .1);
+      border:
+        1px solid rgba(92,225,255,.1);
       border-radius: 17px;
       background:
         linear-gradient(
           145deg,
-          rgba(92, 225, 255, .038),
-          rgba(125, 141, 255, .02)
+          rgba(92,225,255,.038),
+          rgba(125,141,255,.02)
         );
     }
 
@@ -875,67 +1142,15 @@
       gap: 9px;
     }
 
-    .button {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 17px;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      font-size: .7rem;
-      font-weight: 860;
-      transition:
-        transform .4s var(--ease),
-        box-shadow .4s var(--ease),
-        border-color .35s ease,
-        background .35s ease,
-        filter .35s ease;
-    }
-
-    .button svg {
-      width: 15px;
-      height: 15px;
-      transition: transform .35s var(--ease);
-    }
-
-    .button-primary {
-      color: #03141b;
-      background: linear-gradient(135deg, #9bf0ff, var(--cyan));
-      box-shadow: 0 12px 32px rgba(92, 225, 255, .14);
-    }
-
-    .button-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 42px rgba(92, 225, 255, .25);
-      filter: brightness(1.04);
-    }
-
-    .button-primary:hover svg {
-      transform: translateX(3px);
-    }
-
-    .button-secondary {
-      color: #d5e3ed;
-      border-color: rgba(255, 255, 255, .09);
-      background: rgba(255, 255, 255, .025);
-    }
-
-    .button-secondary:hover {
-      transform: translateY(-3px);
-      color: var(--cyan);
-      border-color: rgba(92, 225, 255, .2);
-      background: rgba(92, 225, 255, .05);
-    }
-
     /* =========================
        FOOTER
     ========================== */
 
     footer {
-      border-top: 1px solid rgba(255, 255, 255, .05);
-      background: rgba(2, 4, 9, .8);
+      border-top:
+        1px solid rgba(255,255,255,.05);
+      background:
+        rgba(2,4,9,.8);
     }
 
     .footer-main {
@@ -968,6 +1183,7 @@
     }
 
     .footer-links a {
+      width: fit-content;
       color: #7f8da0;
       font-size: .65rem;
       transition: color .3s ease;
@@ -983,7 +1199,8 @@
       align-items: center;
       justify-content: space-between;
       gap: 15px;
-      border-top: 1px solid rgba(255, 255, 255, .04);
+      border-top:
+        1px solid rgba(255,255,255,.04);
       color: #68778a;
       font-size: .59rem;
     }
@@ -1023,12 +1240,15 @@
       display: grid;
       place-items: center;
       color: var(--cyan);
-      border: 1px solid rgba(92, 225, 255, .14);
+      border:
+        1px solid rgba(92,225,255,.14);
       border-radius: 13px;
-      background: rgba(7, 13, 23, .88);
+      background:
+        rgba(7,13,23,.88);
       backdrop-filter: blur(15px);
       -webkit-backdrop-filter: blur(15px);
-      box-shadow: 0 15px 34px rgba(0, 0, 0, .25);
+      box-shadow:
+        0 15px 34px rgba(0,0,0,.25);
       opacity: 0;
       visibility: hidden;
       transform: translateY(12px);
@@ -1048,7 +1268,8 @@
 
     #backToTop:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 42px rgba(92, 225, 255, .13);
+      box-shadow:
+        0 20px 42px rgba(92,225,255,.13);
     }
 
     #backToTop svg {
@@ -1089,10 +1310,13 @@
         flex-direction: column;
         align-items: stretch;
         padding: 9px;
-        border: 1px solid rgba(255, 255, 255, .08);
+        border:
+          1px solid rgba(255,255,255,.08);
         border-radius: 17px;
-        background: rgba(7, 12, 22, .97);
-        box-shadow: 0 25px 62px rgba(0, 0, 0, .4);
+        background:
+          rgba(7,12,22,.97);
+        box-shadow:
+          0 25px 62px rgba(0,0,0,.4);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
       }
@@ -1115,23 +1339,25 @@
         margin-top: 2px;
         text-align: center;
       }
+
+      .page-hero {
+        min-height: 480px;
+      }
+
+      .hero-content {
+        padding: 66px 0 58px;
+      }
     }
 
     @media (max-width: 690px) {
       .container {
-        width: min(calc(100% - 28px), var(--container));
-      }
-
-      .page-hero {
-        min-height: 475px;
-      }
-
-      .hero-content {
-        padding: 66px 0 56px;
+        width:
+          min(calc(100% - 28px), var(--container));
       }
 
       .hero h1 {
-        font-size: clamp(2.7rem, 13vw, 4.8rem);
+        font-size:
+          clamp(2.6rem, 13vw, 4.8rem);
       }
 
       .hero-role {
@@ -1140,12 +1366,20 @@
       }
 
       .hero-text {
-        font-size: .84rem;
-        line-height: 1.78;
+        font-size: .83rem;
+        line-height: 1.8;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
       }
 
       .policy-section {
-        padding: 67px 0 71px;
+        padding: 68px 0 78px;
       }
 
       .policy-section::before {
@@ -1185,8 +1419,8 @@
       }
 
       .hero-watermark {
-        width: 340px;
-        height: 340px;
+        width: 330px;
+        height: 330px;
         opacity: .024;
       }
 
@@ -1253,23 +1487,35 @@
        HEADER
   ========================== -->
 
-  <header>
+  <header id="siteHeader">
+
     <div class="container">
-      <nav class="nav">
+
+      <nav
+        class="nav"
+        aria-label="Main navigation"
+      >
 
         <a
           href="index.html"
           class="brand"
           aria-label="Wazir Research Lab home"
         >
+
           <span class="brand-logo">
-            <img src="MW-logo.png" alt="MW logo">
+            <img
+              src="MW-logo.png"
+              alt="MW logo"
+            >
           </span>
 
           <span class="brand-name">
             <strong>Wazir Research Lab</strong>
-            <span>Research • Technology • Solutions</span>
+            <span>
+              Research • Technology • Solutions
+            </span>
           </span>
+
         </a>
 
         <button
@@ -1294,10 +1540,26 @@
         </button>
 
         <div id="navLinks" class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="privacy.html" class="active">Privacy</a>
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="contact.html">
+            Contact
+          </a>
+
+          <a href="privacy.html" class="active">
+            Privacy
+          </a>
+
+          <a href="terms.html">
+            Terms
+          </a>
 
           <a
             href="https://www.fiverr.com/s/jyjz6rZ"
@@ -1307,17 +1569,20 @@
           >
             Fiverr Profile
           </a>
+
         </div>
 
       </nav>
+
     </div>
+
   </header>
 
   <!-- =========================
        HERO
   ========================== -->
 
-  <header class="page-hero">
+  <section class="page-hero">
 
     <div class="hero-grid"></div>
     <div class="hero-orbit"></div>
@@ -1345,13 +1610,55 @@
 
         <p class="hero-text">
           A clear overview of how information may be collected,
-          used and handled when you visit Wazir Research Lab.
+          stored, used and handled when you interact with
+          Wazir Research Lab.
         </p>
+
+        <div class="hero-actions">
+
+          <a
+            href="index.html"
+            class="button button-secondary"
+          >
+            Back to Home
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M19 12H5"></path>
+              <path d="m11 18-6-6 6-6"></path>
+            </svg>
+
+          </a>
+
+          <a
+            href="contact.html"
+            class="button button-primary"
+          >
+            Contact Us
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            >
+              <path d="M5 12h14"></path>
+              <path d="m13 6 6 6-6 6"></path>
+            </svg>
+
+          </a>
+
+        </div>
 
       </div>
 
     </div>
-  </header>
+
+  </section>
 
   <main>
 
@@ -1372,9 +1679,11 @@
             <div class="sidebar-head">
 
               <div class="sidebar-icon">
+
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
+                  stroke="currentColor"
                   stroke-width="1.8"
                   stroke-linecap="round"
                   stroke-linejoin="round"
@@ -1382,18 +1691,33 @@
                   <path d="M12 3l7 3v5c0 4.6-2.7 8-7 10-4.3-2-7-5.4-7-10V6l7-3z"></path>
                   <path d="m9 12 2 2 4-4"></path>
                 </svg>
+
               </div>
 
               <div>
-                <h2>Privacy Overview</h2>
-                <p>Wazir Research Lab</p>
+
+                <h2>
+                  Privacy Overview
+                </h2>
+
+                <p>
+                  Wazir Research Lab
+                </p>
+
               </div>
 
             </div>
 
             <div class="policy-meta">
-              <strong>Last updated</strong>
-              <span>October 2, 2026</span>
+
+              <strong>
+                Last updated
+              </strong>
+
+              <span>
+                October 3, 2026
+              </span>
+
             </div>
 
             <div class="policy-nav">
@@ -1403,19 +1727,19 @@
                 Information We Collect
               </a>
 
-              <a href="#use">
+              <a href="#messages">
                 <span>02</span>
-                How We Use Information
+                Website Messages
+              </a>
+
+              <a href="#use">
+                <span>03</span>
+                How Information Is Used
               </a>
 
               <a href="#cookies">
-                <span>03</span>
-                Cookies
-              </a>
-
-              <a href="#adsense">
                 <span>04</span>
-                Google AdSense
+                Cookies & Similar Technologies
               </a>
 
               <a href="#third-party">
@@ -1446,8 +1770,9 @@
             </div>
 
             <p class="sidebar-note">
-              This page is intended to explain the website's
-              general privacy practices in a clear and accessible way.
+              This policy is written to explain the website's
+              general information-handling practices in a clear
+              and understandable way.
             </p>
 
           </aside>
@@ -1458,7 +1783,9 @@
 
             <div class="policy-intro">
 
-              <span class="section-kicker">Privacy & Transparency</span>
+              <span class="section-kicker">
+                Privacy & Transparency
+              </span>
 
               <h2>
                 Your privacy matters at
@@ -1467,8 +1794,10 @@
 
               <p>
                 Welcome to Wazir Research Lab. This Privacy Policy
-                explains how information may be collected, used and
-                handled when you visit or interact with this website.
+                explains how information may be collected, stored,
+                used and handled when you visit this website or
+                voluntarily communicate through its available
+                contact methods.
               </p>
 
               <div class="notice">
@@ -1478,21 +1807,29 @@
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
+                    stroke="currentColor"
                     stroke-width="1.8"
                     stroke-linecap="round"
                   >
-                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                    ></circle>
                     <path d="M12 10v6"></path>
                     <path d="M12 7h.01"></path>
                   </svg>
 
-                  Privacy Notice
+                  Website Privacy Notice
 
                 </div>
 
                 <p>
-                  Wazir Research Lab aims to keep its website
-                  transparent about how visitor information may be handled.
+                  Wazir Research Lab does not ask visitors to
+                  submit unnecessary personal information.
+                  Information is primarily collected when you
+                  choose to contact the lab through the website
+                  or another provided communication channel.
                 </p>
 
               </div>
@@ -1501,194 +1838,371 @@
 
             <!-- 01 -->
 
-            <section class="policy-block" id="information">
+            <section
+              class="policy-block"
+              id="information"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">01</div>
-                <h2>Information We Collect</h2>
+
+                <div class="policy-number">
+                  01
+                </div>
+
+                <h2>
+                  Information We Collect
+                </h2>
+
               </div>
 
               <p>
-                Wazir Research Lab does not intentionally request
-                personal information from visitors unless the visitor
-                voluntarily provides it through an available contact
-                method or interaction.
+                Depending on how you use the website, information
+                may be provided voluntarily through the contact
+                form, email or external professional platforms.
               </p>
 
               <p>
-                Depending on how the website is used, information may
-                be provided directly by a visitor, such as information
-                included in an email or other communication.
+                Information provided directly by you may include
+                <strong>your name, email address and the content
+                of your message</strong>, together with any other
+                information you choose to include in your inquiry.
+              </p>
+
+              <p>
+                Basic technical information may also be processed
+                by hosting, security or third-party services used
+                to operate the website. The exact information
+                collected by those services depends on their own
+                systems and policies.
               </p>
 
             </section>
 
             <!-- 02 -->
 
-            <section class="policy-block" id="use">
+            <section
+              class="policy-block"
+              id="messages"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">02</div>
-                <h2>How We Use Information</h2>
+
+                <div class="policy-number">
+                  02
+                </div>
+
+                <h2>
+                  Website Messages & Supabase
+                </h2>
+
               </div>
 
               <p>
-                Information voluntarily provided by visitors may be
-                used to respond to inquiries, discuss projects,
-                provide requested services and improve communication.
+                Messages submitted through the website contact
+                form are sent to the connected database service,
+                <strong>Supabase</strong>, so that inquiries can
+                be received and managed through the website's
+                protected administration system.
               </p>
 
               <p>
-                Information is intended to be used only for legitimate
-                website, communication and service-related purposes.
+                The contact form is currently designed to submit
+                the following message information:
+              </p>
+
+              <ul class="policy-list">
+
+                <li>
+                  Your name
+                </li>
+
+                <li>
+                  Your email address
+                </li>
+
+                <li>
+                  Your message
+                </li>
+
+                <li>
+                  The date and time associated with the submitted
+                  record
+                </li>
+
+              </ul>
+
+              <p>
+                Visitors should not submit passwords, API keys,
+                payment credentials or other highly sensitive
+                information through the contact form.
               </p>
 
             </section>
 
             <!-- 03 -->
 
-            <section class="policy-block" id="cookies">
+            <section
+              class="policy-block"
+              id="use"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">03</div>
-                <h2>Cookies</h2>
+
+                <div class="policy-number">
+                  03
+                </div>
+
+                <h2>
+                  How Information Is Used
+                </h2>
+
               </div>
 
               <p>
-                This website may use cookies or similar technologies
-                where needed for functionality, analytics, advertising
-                or improving the user experience.
+                Information voluntarily provided to Wazir Research
+                Lab may be used for legitimate communication and
+                service-related purposes.
               </p>
 
+              <ul class="policy-list">
+
+                <li>
+                  Responding to inquiries and messages
+                </li>
+
+                <li>
+                  Discussing research, data, web or digital projects
+                </li>
+
+                <li>
+                  Understanding project requirements
+                </li>
+
+                <li>
+                  Providing requested information or services
+                </li>
+
+                <li>
+                  Managing website communications
+                </li>
+
+              </ul>
+
               <p>
-                Where third-party services use cookies, those services
-                may have their own privacy policies and cookie controls.
+                Information is not intentionally collected simply
+                for unrelated purposes.
               </p>
 
             </section>
 
             <!-- 04 -->
 
-            <section class="policy-block" id="adsense">
+            <section
+              class="policy-block"
+              id="cookies"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">04</div>
-                <h2>Google AdSense</h2>
+
+                <div class="policy-number">
+                  04
+                </div>
+
+                <h2>
+                  Cookies & Similar Technologies
+                </h2>
+
               </div>
 
               <p>
-                If Google AdSense or another advertising service is
-                enabled on this website, third-party vendors may use
-                cookies or similar technologies to provide advertising
-                and related services.
+                The website itself may use browser technologies
+                required for basic functionality. In addition,
+                external services used by the website may use
+                cookies, local storage or similar technologies
+                according to their own systems.
               </p>
 
               <p>
-                Advertising preferences and controls may be managed
-                through the relevant settings provided by the advertising
-                service.
+                These technologies may support functionality,
+                security, analytics, advertising or user experience
+                features where such services are enabled.
               </p>
 
             </section>
 
             <!-- 05 -->
 
-            <section class="policy-block" id="third-party">
+            <section
+              class="policy-block"
+              id="third-party"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">05</div>
-                <h2>Third-Party Services & Links</h2>
+
+                <div class="policy-number">
+                  05
+                </div>
+
+                <h2>
+                  Third-Party Services & External Links
+                </h2>
+
               </div>
 
               <p>
-                This website may contain links to third-party websites,
-                platforms or services, including professional and
-                freelance platforms.
+                Wazir Research Lab may link to or use third-party
+                services including <strong>Supabase, Fiverr,
+                LinkedIn, GitHub Pages and other external platforms</strong>.
               </p>
 
               <p>
-                Wazir Research Lab does not control the privacy practices,
-                content or policies of external websites. Visitors should
-                review the privacy policies of third-party services
-                before providing personal information to them.
+                When you leave this website or interact with an
+                external service, that service may collect or
+                process information under its own privacy policy,
+                terms and security practices.
+              </p>
+
+              <p>
+                Wazir Research Lab does not control the privacy
+                practices of third-party websites and services.
+                Review their policies before submitting information
+                directly to those services.
               </p>
 
             </section>
 
             <!-- 06 -->
 
-            <section class="policy-block" id="security">
+            <section
+              class="policy-block"
+              id="security"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">06</div>
-                <h2>Data Security</h2>
+
+                <div class="policy-number">
+                  06
+                </div>
+
+                <h2>
+                  Data Security
+                </h2>
+
               </div>
 
               <p>
-                Reasonable steps may be taken to protect information
-                that is voluntarily provided to Wazir Research Lab.
-                However, no method of transmission or storage over the
-                Internet can be guaranteed to be completely secure.
+                Reasonable measures may be used to protect website
+                information and restrict administrative access.
+              </p>
+
+              <p>
+                However, no Internet transmission, website,
+                database or storage system can be guaranteed to
+                be completely secure. You should therefore avoid
+                submitting confidential credentials or information
+                that is not necessary for your inquiry.
               </p>
 
             </section>
 
             <!-- 07 -->
 
-            <section class="policy-block" id="children">
+            <section
+              class="policy-block"
+              id="children"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">07</div>
-                <h2>Children's Privacy</h2>
+
+                <div class="policy-number">
+                  07
+                </div>
+
+                <h2>
+                  Children's Privacy
+                </h2>
+
               </div>
 
               <p>
-                This website is not specifically directed toward children,
-                and Wazir Research Lab does not knowingly request personal
-                information from children.
+                This website is not specifically directed toward
+                children, and Wazir Research Lab does not knowingly
+                request personal information from children.
               </p>
 
             </section>
 
             <!-- 08 -->
 
-            <section class="policy-block" id="changes">
+            <section
+              class="policy-block"
+              id="changes"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">08</div>
-                <h2>Changes to This Privacy Policy</h2>
+
+                <div class="policy-number">
+                  08
+                </div>
+
+                <h2>
+                  Changes to This Privacy Policy
+                </h2>
+
               </div>
 
               <p>
-                This Privacy Policy may be updated from time to time to
-                reflect changes in the website, services or privacy practices.
+                This Privacy Policy may be updated when website
+                functionality, services, data practices or other
+                relevant circumstances change.
               </p>
 
               <p>
-                Any material update may be reflected on this page together
-                with a revised update date.
+                The <strong>Last updated</strong> date shown on
+                this page may be changed when a material revision
+                is published.
               </p>
 
             </section>
 
             <!-- 09 -->
 
-            <section class="policy-block" id="contact">
+            <section
+              class="policy-block"
+              id="contact"
+            >
 
               <div class="policy-title">
-                <div class="policy-number">09</div>
-                <h2>Contact</h2>
+
+                <div class="policy-number">
+                  09
+                </div>
+
+                <h2>
+                  Contact
+                </h2>
+
               </div>
 
               <p>
-                If you have questions about this Privacy Policy or
-                the website's privacy practices, you can contact
-                Wazir Research Lab through the
-                <a href="contact.html">Contact page</a>
+                Questions about this Privacy Policy or the
+                website's information practices can be sent
+                through the
+                <a href="contact.html">
+                  Contact page
+                </a>
                 or by email at
                 <a href="mailto:zuhaibwazir558@gmail.com">
                   zuhaibwazir558@gmail.com
                 </a>.
+              </p>
+
+              <p>
+                You can also visit the
+                <a href="about.html">
+                  About page
+                </a>
+                to learn more about Wazir Research Lab.
               </p>
 
             </section>
@@ -1697,10 +2211,12 @@
 
             <div class="policy-action">
 
-              <h3>Need to contact Wazir Research Lab?</h3>
+              <h3>
+                Need to contact Wazir Research Lab?
+              </h3>
 
               <p>
-                Choose the professional channel that works best for you.
+                Use the website contact form or email directly.
               </p>
 
               <div class="action-buttons">
@@ -1709,18 +2225,18 @@
                   href="contact.html"
                   class="button button-primary"
                 >
-                  Contact Page
+                  Open Contact Page
+
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m13 6 6 6-6 6"></path>
                   </svg>
+
                 </a>
 
                 <a
@@ -1728,17 +2244,35 @@
                   class="button button-secondary"
                 >
                   Email Murad
+
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     stroke-width="1.8"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m13 6 6 6-6 6"></path>
                   </svg>
+
+                </a>
+
+                <a
+                  href="terms.html"
+                  class="button button-secondary"
+                >
+                  View Terms
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+
                 </a>
 
               </div>
@@ -1750,6 +2284,7 @@
         </div>
 
       </div>
+
     </section>
 
   </main>
@@ -1766,44 +2301,88 @@
 
         <div>
 
-          <a href="index.html" class="brand">
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="Wazir Research Lab home"
+          >
 
             <span class="brand-logo">
-              <img src="MW-logo.png" alt="MW logo">
+              <img
+                src="MW-logo.png"
+                alt="MW logo"
+              >
             </span>
 
             <span class="brand-name">
               <strong>Wazir Research Lab</strong>
-              <span>Research • Technology • Solutions</span>
+              <span>
+                Research • Technology • Solutions
+              </span>
             </span>
 
           </a>
 
           <p class="footer-description">
             A professional digital workspace by Murad Wazir,
-            bringing research, data, technology, programming
-            and digital work together through one consistent identity.
+            bringing research, data, technology, programming,
+            branding and modern web work together through one
+            consistent digital identity.
           </p>
 
         </div>
 
         <div>
 
-          <div class="footer-title">Explore</div>
+          <div class="footer-title">
+            Explore
+          </div>
 
           <div class="footer-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
+
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+            <a href="index.html#services">
+              Services
+            </a>
+
+            <a href="index.html#work">
+              Work
+            </a>
+
+            <a href="index.html#faq">
+              FAQ
+            </a>
+
           </div>
 
         </div>
 
         <div>
 
-          <div class="footer-title">Connect</div>
+          <div class="footer-title">
+            Legal & Connect
+          </div>
 
           <div class="footer-links">
+
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
 
             <a
               href="https://www.fiverr.com/s/jyjz6rZ"
@@ -1825,14 +2404,6 @@
               Email
             </a>
 
-            <a href="privacy.html">
-              Privacy
-            </a>
-
-            <a href="terms.html">
-              Terms
-            </a>
-
           </div>
 
         </div>
@@ -1842,12 +2413,18 @@
       <div class="footer-bottom">
 
         <span>
-          © <span id="year"></span> Wazir Research Lab.
-          All rights reserved.
+          © <span id="year"></span>
+          Wazir Research Lab. All rights reserved.
         </span>
 
         <span>
-          Research • Technology • Solutions
+          <a href="privacy.html">
+            Privacy
+          </a>
+          &nbsp;•&nbsp;
+          <a href="terms.html">
+            Terms
+          </a>
         </span>
 
       </div>
@@ -1865,6 +2442,7 @@
     type="button"
     aria-label="Back to top"
   >
+
     <svg
       viewBox="0 0 24 24"
       fill="none"
@@ -1875,6 +2453,7 @@
     >
       <path d="m18 15-6-6-6 6"></path>
     </svg>
+
   </button>
 
   <!-- =========================
@@ -1885,57 +2464,126 @@
     (() => {
       "use strict";
 
-      const year = document.getElementById("year");
-      const menuToggle = document.getElementById("menuToggle");
-      const navLinks = document.getElementById("navLinks");
-      const backToTop = document.getElementById("backToTop");
-      const scrollProgress = document.getElementById("scrollProgress");
+      const year =
+        document.getElementById("year");
+
+      const siteHeader =
+        document.getElementById("siteHeader");
+
+      const menuToggle =
+        document.getElementById("menuToggle");
+
+      const navLinks =
+        document.getElementById("navLinks");
+
+      const backToTop =
+        document.getElementById("backToTop");
+
+      const scrollProgress =
+        document.getElementById("scrollProgress");
 
       /* =========================
          YEAR
       ========================== */
 
       if (year) {
-        year.textContent = new Date().getFullYear();
+        year.textContent =
+          new Date().getFullYear();
       }
 
       /* =========================
          MOBILE MENU
       ========================== */
 
+      const closeMenu = () => {
+
+        if (!navLinks || !menuToggle) {
+          return;
+        }
+
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      };
+
       if (menuToggle && navLinks) {
 
-        const closeMenu = () => {
-          navLinks.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-        };
+        menuToggle.addEventListener(
+          "click",
+          () => {
 
-        menuToggle.addEventListener("click", () => {
-          const isOpen = navLinks.classList.toggle("open");
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
-        });
+            const isOpen =
+              navLinks.classList.toggle("open");
 
-        navLinks.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", closeMenu);
-        });
+            menuToggle.setAttribute(
+              "aria-expanded",
+              String(isOpen)
+            );
 
-        document.addEventListener("keydown", (event) => {
-          if (event.key === "Escape") {
-            closeMenu();
           }
-        });
+        );
+
+        navLinks
+          .querySelectorAll("a")
+          .forEach((link) => {
+
+            link.addEventListener(
+              "click",
+              closeMenu
+            );
+
+          });
+
+        document.addEventListener(
+          "keydown",
+          (event) => {
+
+            if (event.key === "Escape") {
+              closeMenu();
+            }
+
+          }
+        );
+
+        document.addEventListener(
+          "click",
+          (event) => {
+
+            if (
+              !navLinks.classList.contains("open")
+            ) {
+              return;
+            }
+
+            const clickedInside =
+              navLinks.contains(event.target) ||
+              menuToggle.contains(event.target);
+
+            if (!clickedInside) {
+              closeMenu();
+            }
+
+          }
+        );
+
       }
 
       /* =========================
          SCROLL
       ========================== */
 
-      const updateScroll = () => {
+      const handleScroll = () => {
 
-        const doc = document.documentElement;
+        const doc =
+          document.documentElement;
 
         const scrollable =
-          doc.scrollHeight - window.innerHeight;
+          doc.scrollHeight -
+          window.innerHeight;
 
         const progress =
           scrollable > 0
@@ -1943,26 +2591,42 @@
             : 0;
 
         if (scrollProgress) {
+
           scrollProgress.style.transform =
-            `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+            `scaleX(${Math.min(
+              Math.max(progress, 0),
+              1
+            )})`;
+
+        }
+
+        if (siteHeader) {
+
+          siteHeader.classList.toggle(
+            "scrolled",
+            window.scrollY > 12
+          );
+
         }
 
         if (backToTop) {
 
-          if (window.scrollY > 500) {
-            backToTop.classList.add("show");
-          } else {
-            backToTop.classList.remove("show");
-          }
+          backToTop.classList.toggle(
+            "show",
+            window.scrollY > 500
+          );
 
         }
+
       };
 
-      window.addEventListener("scroll", updateScroll, {
-        passive: true
-      });
+      window.addEventListener(
+        "scroll",
+        handleScroll,
+        { passive: true }
+      );
 
-      updateScroll();
+      handleScroll();
 
       /* =========================
          BACK TO TOP
@@ -1970,12 +2634,17 @@
 
       if (backToTop) {
 
-        backToTop.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
+        backToTop.addEventListener(
+          "click",
+          () => {
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+
+          }
+        );
 
       }
 
@@ -1984,9 +2653,13 @@
       ========================== */
 
       const revealElements =
-        document.querySelectorAll(".reveal");
+        document.querySelectorAll(
+          ".reveal"
+        );
 
-      if ("IntersectionObserver" in window) {
+      if (
+        "IntersectionObserver" in window
+      ) {
 
         const observer =
           new IntersectionObserver(
@@ -1994,11 +2667,17 @@
 
               entries.forEach((entry) => {
 
-                if (entry.isIntersecting) {
+                if (
+                  entry.isIntersecting
+                ) {
 
-                  entry.target.classList.add("visible");
+                  entry.target.classList.add(
+                    "visible"
+                  );
 
-                  observer.unobserve(entry.target);
+                  observer.unobserve(
+                    entry.target
+                  );
 
                 }
 
@@ -2007,21 +2686,52 @@
             },
             {
               threshold: 0.08,
-              rootMargin: "0px 0px -35px 0px"
+              rootMargin:
+                "0px 0px -35px 0px"
             }
           );
 
-        revealElements.forEach((element) => {
-          observer.observe(element);
-        });
+        revealElements.forEach(
+          (element) => {
+
+            observer.observe(
+              element
+            );
+
+          }
+        );
 
       } else {
 
-        revealElements.forEach((element) => {
-          element.classList.add("visible");
-        });
+        revealElements.forEach(
+          (element) => {
+
+            element.classList.add(
+              "visible"
+            );
+
+          }
+        );
 
       }
+
+      /* =========================
+         ESC KEY + FOCUS
+      ========================== */
+
+      document.addEventListener(
+        "keydown",
+        (event) => {
+
+          if (
+            event.key === "Escape" &&
+            navLinks
+          ) {
+            closeMenu();
+          }
+
+        }
+      );
 
     })();
   </script>
