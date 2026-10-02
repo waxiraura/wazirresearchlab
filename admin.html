@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin — Wazir Research Lab</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(92,225,255,.08), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(120,90,255,.08), transparent 35%),
+        #05070b;
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: min(1000px, 92%);
+      margin: auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      background: rgba(5,7,11,.85);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: .95rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .brand span {
+      color: #5ce1ff;
+    }
+
+    main {
+      padding: 60px 0;
+    }
+
+    .card {
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.22);
+    }
+
+    .login-card {
+      max-width: 440px;
+      margin: 60px auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #5ce1ff;
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: rgba(255,255,255,.55);
+      font-size: .85rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    label {
+      display: block;
+      font-size: .72rem;
+      color: rgba(255,255,255,.58);
+      margin-bottom: 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.035);
+      color: #fff;
+      outline: none;
+      font: inherit;
+    }
+
+    input:focus {
+      border-color: rgba(92,225,255,.7);
+      box-shadow: 0 0 0 3px rgba(92,225,255,.08);
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 13px 18px;
+      background: #5ce1ff;
+      color: #041018;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    button:hover {
+      filter: brightness(1.05);
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    .login-button {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    #loginStatus {
+      min-height: 20px;
+      margin-top: 12px;
+      text-align: center;
+      font-size: .75rem;
+    }
+
+    #adminPanel {
+      display: none;
+    }
+
+    .admin-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 24px;
+    }
+
+    .admin-top h1 {
+      margin-bottom: 4px;
+    }
+
+    .admin-email {
+      color: rgba(255,255,255,.45);
+      font-size: .72rem;
+    }
+
+    .logout-button {
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .messages {
+      display: grid;
+      gap: 14px;
+    }
+
+    .message-card {
+      padding: 20px;
+      background: rgba(255,255,255,.025);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 15px;
+    }
+
+    .message-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 12px;
+    }
+
+    .message-name {
+      font-weight: 800;
+      font-size: .95rem;
+    }
+
+    .message-email {
+      color: #5ce1ff;
+      font-size: .72rem;
+      margin-top: 4px;
+      word-break: break-word;
+    }
+
+    .message-date {
+      color: rgba(255,255,255,.38);
+      font-size: .68rem;
+      white-space: nowrap;
+    }
+
+    .message-text {
+      color: rgba(255,255,255,.72);
+      font-size: .85rem;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 35px 10px;
+      color: rgba(255,255,255,.42);
+      font-size: .8rem;
+    }
+
+    @media (max-width: 650px) {
+      .admin-top {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .message-head {
+        flex-direction: column;
+      }
+
+      .message-date {
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        Wazir <span>Research Lab</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <div class="container">
+
+      <section class="card login-card" id="loginPanel">
+
+        <span class="eyebrow">Private Area</span>
+
+        <h1>Admin Login</h1>
+
+        <p class="subtitle">
+          Sign in to view messages submitted through the contact form.
+        </p>
+
+        <form id="loginForm">
+
+          <div class="field">
+            <label for="loginEmail">Email</label>
+
+            <input
+              type="email"
+              id="loginEmail"
+              autocomplete="username"
+              placeholder="Enter admin email"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="loginPassword">Password</label>
+
+            <input
+              type="password"
+              id="loginPassword"
+              autocomplete="current-password"
+              placeholder="Enter password"
+              required
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="login-button"
+            id="loginButton"
+          >
+            Login
+          </button>
+
+          <p id="loginStatus"></p>
+
+        </form>
+
+      </section>
+
+
+      <section id="adminPanel">
+
+        <div class="admin-top">
+
+          <div>
+            <span class="eyebrow">Dashboard</span>
+
+            <h1>Messages</h1>
+
+            <div
+              class="admin-email"
+              id="adminEmail"
+            ></div>
+          </div>
+
+          <button
+            type="button"
+            class="logout-button"
+            id="logoutButton"
+          >
+            Logout
+          </button>
+
+        </div>
+
+
+        <div class="messages" id="messagesContainer"></div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+    "use strict";
+
+    const SUPABASE_URL =
+      "https://hcztwkzvnswlwpkcpakh.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_TcvvhKV__Hv2QCcHAaD9NQ_MCM079CE";
+
+    const supabaseClient = window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+    const ADMIN_EMAIL = "wazirlab@proton.me";
+
+    const loginPanel =
+      document.getElementById("loginPanel");
+
+    const adminPanel =
+      document.getElementById("adminPanel");
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const loginEmail =
+      document.getElementById("loginEmail");
+
+    const loginPassword =
+      document.getElementById("loginPassword");
+
+    const loginButton =
+      document.getElementById("loginButton");
+
+    const loginStatus =
+      document.getElementById("loginStatus");
+
+    const logoutButton =
+      document.getElementById("logoutButton");
+
+    const adminEmail =
+      document.getElementById("adminEmail");
+
+    const messagesContainer =
+      document.getElementById("messagesContainer");
+
+
+    function showLogin() {
+      loginPanel.style.display = "block";
+      adminPanel.style.display = "none";
+    }
+
+
+    function showAdmin(email) {
+      loginPanel.style.display = "none";
+      adminPanel.style.display = "block";
+      adminEmail.textContent = email;
+    }
+
+
+    async function loadMessages() {
+
+      messagesContainer.innerHTML = `
+        <div class="empty">
+          Loading messages...
+        </div>
+      `;
+
+      const {
+        data: messages,
+        error
+      } = await supabaseClient
+        .from("messages")
+        .select("id, name, email, message, created_at")
+        .order("created_at", {
+          ascending: false
+        });
+
+      if (error) {
+        console.error(error);
+
+        messagesContainer.innerHTML = `
+          <div class="empty">
+            Could not load messages.
+          </div>
+        `;
+
+        return;
+      }
+
+      if (!messages || messages.length === 0) {
+        messagesContainer.innerHTML = `
+          <div class="empty">
+            No messages yet.
+          </div>
+        `;
+
+        return;
+      }
+
+      messagesContainer.innerHTML = messages.map((item) => {
+
+        const date = new Date(item.created_at);
+
+        return `
+          <article class="message-card">
+
+            <div class="message-head">
+
+              <div>
+                <div class="message-name">
+                  ${escapeHtml(item.name)}
+                </div>
+
+                <div class="message-email">
+                  ${escapeHtml(item.email)}
+                </div>
+              </div>
+
+              <div class="message-date">
+                ${date.toLocaleString()}
+              </div>
+
+            </div>
+
+            <div class="message-text">
+              ${escapeHtml(item.message)}
+            </div>
+
+          </article>
+        `;
+
+      }).join("");
+    }
+
+
+    function escapeHtml(value) {
+
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+
+    loginForm.addEventListener("submit", async (event) => {
+
+      event.preventDefault();
+
+      loginButton.disabled = true;
+      loginButton.textContent = "Logging in...";
+      loginStatus.textContent = "";
+      loginStatus.style.color = "#5ce1ff";
+
+      const email =
+        loginEmail.value.trim();
+
+      const password =
+        loginPassword.value;
+
+      const {
+        data,
+        error
+      } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+      });
+
+      if (error) {
+        loginStatus.textContent =
+          "Invalid email or password.";
+
+        loginStatus.style.color = "#ff7b7b";
+
+        loginButton.disabled = false;
+        loginButton.textContent = "Login";
+
+        return;
+      }
+
+      if (!data.user || data.user.email !== ADMIN_EMAIL) {
+
+        await supabaseClient.auth.signOut({
+          scope: "local"
+        });
+
+        loginStatus.textContent =
+          "This account is not authorized.";
+
+        loginStatus.style.color = "#ff7b7b";
+
+        loginButton.disabled = false;
+        loginButton.textContent = "Login";
+
+        return;
+      }
+
+      showAdmin(data.user.email);
+
+      loginButton.disabled = false;
+      loginButton.textContent = "Login";
+
+      await loadMessages();
+    });
+
+
+    logoutButton.addEventListener("click", async () => {
+
+      await supabaseClient.auth.signOut({
+        scope: "local"
+      });
+
+      showLogin();
+
+      loginForm.reset();
+
+      loginStatus.textContent = "";
+    });
+
+
+    async function checkExistingLogin() {
+
+      const {
+        data,
+        error
+      } = await supabaseClient.auth.getUser();
+
+      if (
+        !error &&
+        data.user &&
+        data.user.email === ADMIN_EMAIL
+      ) {
+        showAdmin(data.user.email);
+
+        await loadMessages();
+
+      } else {
+        showLogin();
+      }
+    }
+
+
+    checkExistingLogin();
+  </script>
+
+</body>
+</html>
