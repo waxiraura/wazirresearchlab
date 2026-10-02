@@ -38,7 +38,6 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
     }
 
     .brand {
@@ -56,17 +55,14 @@
       padding: 60px 0;
     }
 
-    .card {
+    .login-card {
+      max-width: 440px;
+      margin: 60px auto;
       background: rgba(255,255,255,.025);
       border: 1px solid rgba(255,255,255,.07);
       border-radius: 20px;
       padding: 30px;
       box-shadow: 0 20px 60px rgba(0,0,0,.22);
-    }
-
-    .login-card {
-      max-width: 440px;
-      margin: 60px auto;
     }
 
     .eyebrow {
@@ -120,15 +116,9 @@
     button {
       border: 0;
       border-radius: 12px;
-      padding: 13px 18px;
-      background: #5ce1ff;
-      color: #041018;
+      padding: 11px 15px;
       font-weight: 800;
       cursor: pointer;
-    }
-
-    button:hover {
-      filter: brightness(1.05);
     }
 
     button:disabled {
@@ -139,6 +129,8 @@
     .login-button {
       width: 100%;
       margin-top: 5px;
+      background: #5ce1ff;
+      color: #041018;
     }
 
     #loginStatus {
@@ -167,6 +159,17 @@
     .admin-email {
       color: rgba(255,255,255,.45);
       font-size: .72rem;
+    }
+
+    .top-buttons {
+      display: flex;
+      gap: 9px;
+    }
+
+    .refresh-button {
+      background: rgba(92,225,255,.09);
+      color: #5ce1ff;
+      border: 1px solid rgba(92,225,255,.18);
     }
 
     .logout-button {
@@ -222,16 +225,22 @@
       margin-bottom: 16px;
     }
 
-    .delete-button {
-      background: rgba(255, 82, 82, 0.10);
-      color: #ff8585;
-      border: 1px solid rgba(255, 82, 82, 0.20);
-      padding: 9px 13px;
-      font-size: .72rem;
+    .message-actions {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
     }
 
-    .delete-button:hover {
-      background: rgba(255, 82, 82, 0.18);
+    .reply-button {
+      background: rgba(92,225,255,.10);
+      color: #5ce1ff;
+      border: 1px solid rgba(92,225,255,.20);
+    }
+
+    .delete-button {
+      background: rgba(255,82,82,.10);
+      color: #ff8585;
+      border: 1px solid rgba(255,82,82,.20);
     }
 
     .empty {
@@ -245,6 +254,14 @@
       .admin-top {
         flex-direction: column;
         align-items: flex-start;
+      }
+
+      .top-buttons {
+        width: 100%;
+      }
+
+      .top-buttons button {
+        flex: 1;
       }
 
       .message-head {
@@ -272,7 +289,7 @@
 
     <div class="container">
 
-      <section class="card login-card" id="loginPanel">
+      <section class="login-card" id="loginPanel">
 
         <span class="eyebrow">Private Area</span>
 
@@ -338,18 +355,33 @@
             ></div>
           </div>
 
-          <button
-            type="button"
-            class="logout-button"
-            id="logoutButton"
-          >
-            Logout
-          </button>
+          <div class="top-buttons">
+
+            <button
+              type="button"
+              class="refresh-button"
+              id="refreshButton"
+            >
+              Refresh
+            </button>
+
+            <button
+              type="button"
+              class="logout-button"
+              id="logoutButton"
+            >
+              Logout
+            </button>
+
+          </div>
 
         </div>
 
 
-        <div class="messages" id="messagesContainer"></div>
+        <div
+          class="messages"
+          id="messagesContainer"
+        ></div>
 
       </section>
 
@@ -369,12 +401,14 @@
     const SUPABASE_PUBLISHABLE_KEY =
       "sb_publishable_TcvvhKV__Hv2QCcHAaD9NQ_MCM079CE";
 
-    const supabaseClient = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_PUBLISHABLE_KEY
-    );
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
 
-    const ADMIN_EMAIL = "wazirlab@proton.me";
+    const ADMIN_EMAIL =
+      "wazirlab@proton.me";
 
     const loginPanel =
       document.getElementById("loginPanel");
@@ -400,6 +434,9 @@
     const logoutButton =
       document.getElementById("logoutButton");
 
+    const refreshButton =
+      document.getElementById("refreshButton");
+
     const adminEmail =
       document.getElementById("adminEmail");
 
@@ -420,6 +457,16 @@
     }
 
 
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+
     async function loadMessages() {
 
       messagesContainer.innerHTML = `
@@ -433,7 +480,9 @@
         error
       } = await supabaseClient
         .from("messages")
-        .select("id, name, email, message, created_at")
+        .select(
+          "id, name, email, message, created_at"
+        )
         .order("created_at", {
           ascending: false
         });
@@ -451,6 +500,7 @@
       }
 
       if (!messages || messages.length === 0) {
+
         messagesContainer.innerHTML = `
           <div class="empty">
             No messages yet.
@@ -460,177 +510,232 @@
         return;
       }
 
-      messagesContainer.innerHTML = messages.map((item) => {
+      messagesContainer.innerHTML =
+        messages.map((item) => {
 
-        const date = new Date(item.created_at);
+          const date =
+            new Date(item.created_at);
 
-        return `
-          <article class="message-card">
+          return `
+            <article class="message-card">
 
-            <div class="message-head">
+              <div class="message-head">
 
-              <div>
-                <div class="message-name">
-                  ${escapeHtml(item.name)}
+                <div>
+
+                  <div class="message-name">
+                    ${escapeHtml(item.name)}
+                  </div>
+
+                  <div class="message-email">
+                    ${escapeHtml(item.email)}
+                  </div>
+
                 </div>
 
-                <div class="message-email">
-                  ${escapeHtml(item.email)}
+                <div class="message-date">
+                  ${date.toLocaleString()}
                 </div>
+
               </div>
 
-              <div class="message-date">
-                ${date.toLocaleString()}
+              <div class="message-text">
+                ${escapeHtml(item.message)}
               </div>
 
-            </div>
+              <div class="message-actions">
 
-            <div class="message-text">
-              ${escapeHtml(item.message)}
-            </div>
+                <button
+                  type="button"
+                  class="reply-button"
+                  data-email="${escapeHtml(item.email)}"
+                >
+                  Reply
+                </button>
 
-            <button
-              type="button"
-              class="delete-button"
-              data-id="${item.id}"
-            >
-              Delete Message
-            </button>
+                <button
+                  type="button"
+                  class="delete-button"
+                  data-id="${item.id}"
+                >
+                  Delete Message
+                </button>
 
-          </article>
-        `;
+              </div>
 
-      }).join("");
+            </article>
+          `;
+
+        }).join("");
+
+
+      document
+        .querySelectorAll(".reply-button")
+        .forEach((button) => {
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              const email =
+                button.dataset.email;
+
+              window.location.href =
+                "mailto:" + email;
+            }
+          );
+        });
+
 
       document
         .querySelectorAll(".delete-button")
         .forEach((button) => {
 
-          button.addEventListener("click", async () => {
+          button.addEventListener(
+            "click",
+            async () => {
 
-            const messageId = button.dataset.id;
+              const messageId =
+                button.dataset.id;
 
-            const confirmed = confirm(
-              "Delete this message?"
-            );
+              const confirmed =
+                confirm(
+                  "Delete this message?"
+                );
 
-            if (!confirmed) {
-              return;
+              if (!confirmed) {
+                return;
+              }
+
+              button.disabled = true;
+              button.textContent = "Deleting...";
+
+              const { error } =
+                await supabaseClient
+                  .from("messages")
+                  .delete()
+                  .eq("id", messageId);
+
+              if (error) {
+
+                console.error(error);
+
+                button.disabled = false;
+                button.textContent =
+                  "Delete Message";
+
+                alert(
+                  "Message could not be deleted."
+                );
+
+                return;
+              }
+
+              await loadMessages();
             }
+          );
+        });
+    }
 
-            button.disabled = true;
-            button.textContent = "Deleting...";
 
-            const { error } =
-              await supabaseClient
-                .from("messages")
-                .delete()
-                .eq("id", messageId);
+    loginForm.addEventListener(
+      "submit",
+      async (event) => {
 
-            if (error) {
-              console.error(error);
+        event.preventDefault();
 
-              button.disabled = false;
-              button.textContent = "Delete Message";
+        loginButton.disabled = true;
+        loginButton.textContent =
+          "Logging in...";
 
-              alert(
-                "Message could not be deleted."
-              );
+        loginStatus.textContent = "";
 
-              return;
-            }
+        const email =
+          loginEmail.value.trim();
 
-            await loadMessages();
+        const password =
+          loginPassword.value;
+
+        const {
+          data,
+          error
+        } =
+          await supabaseClient.auth
+            .signInWithPassword({
+              email: email,
+              password: password
+            });
+
+        if (error) {
+
+          loginStatus.textContent =
+            "Invalid email or password.";
+
+          loginStatus.style.color =
+            "#ff7b7b";
+
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
+
+          return;
+        }
+
+        if (
+          !data.user ||
+          data.user.email !== ADMIN_EMAIL
+        ) {
+
+          await supabaseClient.auth
+            .signOut({
+              scope: "local"
+            });
+
+          loginStatus.textContent =
+            "This account is not authorized.";
+
+          loginStatus.style.color =
+            "#ff7b7b";
+
+          loginButton.disabled = false;
+          loginButton.textContent = "Login";
+
+          return;
+        }
+
+        showAdmin(data.user.email);
+
+        loginButton.disabled = false;
+        loginButton.textContent = "Login";
+
+        await loadMessages();
+      }
+    );
+
+
+    refreshButton.addEventListener(
+      "click",
+      async () => {
+        await loadMessages();
+      }
+    );
+
+
+    logoutButton.addEventListener(
+      "click",
+      async () => {
+
+        await supabaseClient.auth
+          .signOut({
+            scope: "local"
           });
-        });
-    }
 
+        showLogin();
 
-    function escapeHtml(value) {
+        loginForm.reset();
 
-      return String(value)
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-
-    loginForm.addEventListener("submit", async (event) => {
-
-      event.preventDefault();
-
-      loginButton.disabled = true;
-      loginButton.textContent = "Logging in...";
-      loginStatus.textContent = "";
-      loginStatus.style.color = "#5ce1ff";
-
-      const email =
-        loginEmail.value.trim();
-
-      const password =
-        loginPassword.value;
-
-      const {
-        data,
-        error
-      } = await supabaseClient.auth.signInWithPassword({
-        email: email,
-        password: password
-      });
-
-      if (error) {
-
-        loginStatus.textContent =
-          "Invalid email or password.";
-
-        loginStatus.style.color = "#ff7b7b";
-
-        loginButton.disabled = false;
-        loginButton.textContent = "Login";
-
-        return;
+        loginStatus.textContent = "";
       }
-
-      if (!data.user || data.user.email !== ADMIN_EMAIL) {
-
-        await supabaseClient.auth.signOut({
-          scope: "local"
-        });
-
-        loginStatus.textContent =
-          "This account is not authorized.";
-
-        loginStatus.style.color = "#ff7b7b";
-
-        loginButton.disabled = false;
-        loginButton.textContent = "Login";
-
-        return;
-      }
-
-      showAdmin(data.user.email);
-
-      loginButton.disabled = false;
-      loginButton.textContent = "Login";
-
-      await loadMessages();
-    });
-
-
-    logoutButton.addEventListener("click", async () => {
-
-      await supabaseClient.auth.signOut({
-        scope: "local"
-      });
-
-      showLogin();
-
-      loginForm.reset();
-
-      loginStatus.textContent = "";
-    });
+    );
 
 
     async function checkExistingLogin() {
@@ -638,18 +743,21 @@
       const {
         data,
         error
-      } = await supabaseClient.auth.getUser();
+      } =
+        await supabaseClient.auth.getUser();
 
       if (
         !error &&
         data.user &&
         data.user.email === ADMIN_EMAIL
       ) {
+
         showAdmin(data.user.email);
 
         await loadMessages();
 
       } else {
+
         showLogin();
       }
     }
