@@ -3,54 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Wazir Research Lab — Murad Wazir's professional digital workspace for research, data organization, Microsoft Office workflows, branding and modern web experiences.">
+
+  <meta
+    name="description"
+    content="Wazir Research Lab by Murad Wazir — professional web research, data entry, spreadsheet work, document typing, social media design and modern web experiences."
+  >
   <meta name="author" content="Murad Wazir">
-  <meta name="theme-color" content="#050811">
-  <meta property="og:title" content="Wazir Research Lab — Research • Technology • Solutions">
-  <meta property="og:description" content="Research, Technology and Solutions by Murad Wazir.">
+  <meta name="theme-color" content="#050812">
+
+  <meta property="og:title" content="Wazir Research Lab — Murad Wazir">
+  <meta
+    property="og:description"
+    content="Research, Data, Digital Work and Modern Web Experiences by Murad Wazir."
+  >
   <meta property="og:type" content="website">
-  <title>Wazir Research Lab | Research • Technology • Solutions</title>
+
+  <title>Wazir Research Lab | Murad Wazir</title>
 
   <style>
     :root {
-      --bg: #050811;
-      --bg-soft: #080d18;
-      --bg-card: rgba(10,17,30,.86);
-      --white: #f8fbff;
+      --bg: #050812;
+      --bg-2: #070c16;
+      --bg-3: #0a111e;
+
+      --surface: rgba(13, 21, 36, 0.72);
+      --surface-strong: rgba(12, 20, 34, 0.92);
+      --surface-soft: rgba(255, 255, 255, 0.035);
+
       --text: #c8d4e3;
-      --muted: #8b9bb0;
-      --heading: #f0f6ff;
+      --text-soft: #91a0b4;
+      --heading: #f4f8ff;
+      --white: #ffffff;
+
       --cyan: #5ce1ff;
-      --cyan-light: #a8f0ff;
-      --cyan-soft: rgba(92,225,255,.12);
-      --blue: #7b8cff;
-      --blue-deep: #5a6ef5;
-      --green: #6ee7b0;
-      --border: rgba(255,255,255,.08);
-      --border-hover: rgba(92,225,255,.22);
-      --shadow: 0 24px 75px rgba(0,0,0,.35);
-      --shadow-soft: 0 14px 40px rgba(0,0,0,.22);
-      --shadow-glow: 0 12px 40px rgba(92,225,255,.18);
-      --radius: 22px;
+      --cyan-bright: #a9f1ff;
+      --blue: #7d8dff;
+      --green: #72e8b1;
+
+      --line: rgba(255, 255, 255, 0.075);
+      --line-hover: rgba(92, 225, 255, 0.24);
+
+      --glow: rgba(92, 225, 255, 0.14);
+      --shadow: 0 28px 80px rgba(0, 0, 0, 0.34);
+      --shadow-soft: 0 16px 45px rgba(0, 0, 0, 0.2);
+
+      --radius-sm: 12px;
+      --radius: 20px;
       --radius-lg: 28px;
+
       --container: 1180px;
-      --ease: cubic-bezier(.22,.7,.25,1);
-      --ease-slow: cubic-bezier(.25,.8,.25,1);
+
+      --ease: cubic-bezier(.22, .7, .25, 1);
+      --ease-slow: cubic-bezier(.2, .8, .2, 1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
     body {
       min-height: 100vh;
       overflow-x: hidden;
       color: var(--white);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
       line-height: 1.65;
       background:
-        radial-gradient(circle at 10% 0%, rgba(92,225,255,.08), transparent 28%),
-        radial-gradient(circle at 90% 8%, rgba(123,140,255,.09), transparent 30%),
-        linear-gradient(180deg, #040710 0%, #060a13 48%, #07101b 100%);
+        radial-gradient(circle at 8% 0%, rgba(92, 225, 255, .075), transparent 26%),
+        radial-gradient(circle at 92% 7%, rgba(125, 141, 255, .09), transparent 29%),
+        linear-gradient(180deg, #04070f 0%, #060b14 45%, #07101b 100%);
     }
 
     body::before {
@@ -59,48 +93,97 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: .14;
+      opacity: .16;
       background-image:
-        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+        linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
       background-size: 72px 72px;
-      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      mask-image: linear-gradient(to bottom, black 0%, transparent 88%);
     }
 
-    ::selection { color: #03131b; background: var(--cyan); }
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button { font: inherit; }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, transparent 38%, rgba(0, 0, 0, .16) 100%);
+    }
+
+    ::selection {
+      color: #041219;
+      background: var(--cyan);
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #04070e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+      border: 3px solid #04070e;
+      border-radius: 999px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
 
     .container {
       width: min(calc(100% - 40px), var(--container));
       margin-inline: auto;
     }
 
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #040710; }
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--cyan), var(--blue));
-      border: 3px solid #040710;
-      border-radius: 999px;
+    /* =========================
+       TOP PROGRESS
+    ========================== */
+
+    .scroll-progress {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 2000;
+      height: 2px;
+      transform-origin: left;
+      transform: scaleX(0);
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 18px rgba(92, 225, 255, .42);
     }
+
+    /* =========================
+       HEADER
+    ========================== */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,.055);
-      background: rgba(4,7,16,.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, .055);
+      background: rgba(4, 8, 16, .72);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
     }
 
     .nav {
-      min-height: 80px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
     .brand {
@@ -111,52 +194,77 @@
     }
 
     .brand-logo {
-      width: 48px;
-      height: 48px;
+      position: relative;
+      width: 46px;
+      height: 46px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(92,225,255,.18);
-      border-radius: 15px;
-      background: linear-gradient(145deg, rgba(92,225,255,.1), rgba(123,140,255,.05));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 0 28px rgba(92,225,255,.05);
+      flex: 0 0 auto;
+      border: 1px solid rgba(92, 225, 255, .17);
+      border-radius: 14px;
+      background:
+        linear-gradient(145deg, rgba(92, 225, 255, .09), rgba(125, 141, 255, .045));
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .05),
+        0 0 28px rgba(92, 225, 255, .05);
+      overflow: hidden;
     }
 
-    .brand-logo img { width: 31px; height: 31px; object-fit: contain; }
+    .brand-logo::before {
+      content: "";
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(92, 225, 255, .16), transparent 68%);
+      filter: blur(6px);
+    }
+
+    .brand-logo img {
+      position: relative;
+      z-index: 1;
+      width: 29px;
+      height: 29px;
+      object-fit: contain;
+    }
 
     .brand-name {
       display: flex;
       flex-direction: column;
-      line-height: 1.05;
+      line-height: 1.06;
     }
 
     .brand-name strong {
-      font-size: .93rem;
-      font-weight: 850;
       color: var(--heading);
+      font-size: .9rem;
+      font-weight: 880;
+      letter-spacing: -.015em;
     }
 
     .brand-name span {
       margin-top: 5px;
-      color: #8a9bb0;
-      font-size: .61rem;
-      font-weight: 800;
-      letter-spacing: .17em;
+      color: #8493a7;
+      font-size: .57rem;
+      font-weight: 820;
+      letter-spacing: .16em;
       text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
     }
 
     .nav-links a {
       position: relative;
-      padding: 10px 13px;
-      color: #b0bdcc;
-      font-size: .81rem;
-      font-weight: 750;
-      transition: color .4s var(--ease-slow), transform .4s var(--ease-slow);
+      padding: 10px 12px;
+      color: #9fadc0;
+      font-size: .78rem;
+      font-weight: 760;
+      transition:
+        color .35s ease,
+        transform .35s var(--ease);
     }
 
     .nav-links a:hover {
@@ -164,34 +272,37 @@
       transform: translateY(-1px);
     }
 
-    .nav-links a:not(.nav-button)::after {
+    .nav-links a:not(.nav-cta)::after {
       content: "";
       position: absolute;
-      left: 13px;
-      right: 13px;
-      bottom: 3px;
+      left: 12px;
+      right: 12px;
+      bottom: 4px;
       height: 2px;
       border-radius: 999px;
       background: linear-gradient(90deg, var(--cyan), var(--blue));
       transform: scaleX(0);
-      transition: transform .4s var(--ease-slow);
+      transform-origin: center;
+      transition: transform .35s var(--ease);
     }
 
-    .nav-links a:not(.nav-button):hover::after { transform: scaleX(1); }
-
-    .nav-button {
-      margin-left: 7px;
-      padding: 11px 18px !important;
-      color: #03141c !important;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #8aebff, var(--cyan));
-      box-shadow: 0 10px 28px rgba(92,225,255,.16);
-      transition: transform .45s var(--ease-slow), box-shadow .45s var(--ease-slow) !important;
+    .nav-links a:not(.nav-cta):hover::after {
+      transform: scaleX(1);
     }
 
-    .nav-button:hover {
+    .nav-cta {
+      margin-left: 8px;
+      padding: 10px 16px !important;
+      color: #03131a !important;
+      border: 1px solid rgba(92, 225, 255, .2);
+      border-radius: 11px;
+      background: linear-gradient(135deg, #99efff, var(--cyan));
+      box-shadow: 0 10px 28px rgba(92, 225, 255, .13);
+    }
+
+    .nav-cta:hover {
       transform: translateY(-3px) !important;
-      box-shadow: 0 16px 36px rgba(92,225,255,.28) !important;
+      box-shadow: 0 16px 36px rgba(92, 225, 255, .24);
     }
 
     .menu-toggle {
@@ -199,150 +310,126 @@
       width: 44px;
       height: 44px;
       place-items: center;
-      color: white;
-      border: 1px solid rgba(255,255,255,.08);
+      color: var(--white);
+      border: 1px solid var(--line);
       border-radius: 12px;
-      background: rgba(255,255,255,.03);
+      background: rgba(255, 255, 255, .03);
       cursor: pointer;
     }
 
-    .menu-toggle svg { width: 20px; height: 20px; }
+    .menu-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
 
-    .hero {
-      position: relative;
-      min-height: 730px;
-      display: grid;
-      place-items: center;
+    /* =========================
+       GLOBAL
+    ========================== */
+
+    main {
       overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,.05);
     }
 
-    .hero-grid {
+    section {
+      position: relative;
+      padding: 96px 0;
+    }
+
+    section + section::before {
+      content: "";
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 50%;
+      width: min(calc(100% - 100px), 1050px);
+      height: 1px;
+      transform: translateX(-50%);
       background:
-        linear-gradient(rgba(92,225,255,.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92,225,255,.04) 1px, transparent 1px);
-      background-size: 78px 78px;
-      mask-image: radial-gradient(ellipse at center, black 0%, rgba(0,0,0,.88) 44%, transparent 82%);
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, .025) 15%,
+          rgba(92, 225, 255, .18) 50%,
+          rgba(255, 255, 255, .025) 85%,
+          transparent
+        );
     }
 
-    .hero-glow {
+    section + section::after {
+      content: "";
       position: absolute;
-      width: 690px;
-      height: 690px;
+      top: -4px;
       left: 50%;
-      top: 43%;
-      transform: translate(-50%,-50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(92,225,255,.11), rgba(92,225,255,.03) 37%, transparent 72%);
-      filter: blur(5px);
-    }
-
-    .hero-glow.blue {
-      width: 360px;
-      height: 360px;
-      left: auto;
-      top: auto;
-      right: -165px;
-      bottom: -175px;
-      background: radial-gradient(circle, rgba(123,140,255,.11), transparent 70%);
-    }
-
-    .mw-watermark {
-      position: absolute;
-      width: min(630px,77vw);
-      height: min(630px,77vw);
-      left: 50%;
-      top: 48%;
-      transform: translate(-50%,-50%);
-      background: url("MW-logo.png") center / contain no-repeat;
-      opacity: .034;
-      filter: grayscale(100%) brightness(1.7) blur(.3px);
-      animation: watermarkFloat 9s ease-in-out infinite;
+      width: 140px;
+      height: 9px;
+      transform: translateX(-50%);
+      background: radial-gradient(
+        ellipse,
+        rgba(92, 225, 255, .13),
+        transparent 72%
+      );
+      filter: blur(3px);
       pointer-events: none;
     }
 
-    @keyframes watermarkFloat {
-      0%,100% { transform: translate(-50%,-50%) scale(1); }
-      50% { transform: translate(-50%,-50%) scale(1.022); }
+    .section-top {
+      max-width: 820px;
+      margin-bottom: 34px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      padding: 94px 0 83px;
-      text-align: center;
-    }
-
-    .hero-kicker {
+    .section-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
-      padding: 8px 14px;
-      color: #c4f4ff;
-      border: 1px solid rgba(92,225,255,.18);
-      border-radius: 999px;
-      background: rgba(92,225,255,.04);
-      font-size: .68rem;
-      font-weight: 850;
-      letter-spacing: .15em;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--cyan);
+      font-size: .63rem;
+      font-weight: 900;
+      letter-spacing: .19em;
       text-transform: uppercase;
     }
 
-    .hero-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 14px rgba(92,225,255,.85);
+    .section-kicker::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
     }
 
-    .hero h1 {
-      max-width: 1000px;
-      margin: 25px auto 0;
-      font-size: clamp(3rem, 7.8vw, 7.1rem);
-      line-height: .94;
-      letter-spacing: -.06em;
-      font-weight: 950;
+    .section-title {
+      max-width: 850px;
+      color: var(--heading);
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+      font-weight: 930;
       text-wrap: balance;
-      background: linear-gradient(180deg, #ffffff 7%, #eef9ff 45%, #9beeff 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
     }
 
-    .hero h1 .gradient {
-      background: linear-gradient(90deg, #a9f1ff, var(--cyan), #8b9aff);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      margin-top: 26px;
-      color: #d4f6ff;
-      font-size: clamp(.78rem, 1.8vw, 1.08rem);
-      font-weight: 850;
-      letter-spacing: .11em;
-      text-transform: uppercase;
-    }
-
-    .hero-text {
-      max-width: 790px;
-      margin: 18px auto 0;
+    .section-description {
+      max-width: 760px;
+      margin-top: 14px;
       color: var(--text);
-      font-size: clamp(.93rem, 1.6vw, 1.05rem);
+      font-size: .91rem;
       line-height: 1.86;
     }
 
-    .hero-actions {
-      margin-top: 30px;
+    .eyebrow-line {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
+      align-items: center;
+      gap: 9px;
+      color: #8d9db0;
+      font-size: .64rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-line span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 13px rgba(114, 232, 177, .65);
     }
 
     .button {
@@ -351,494 +438,892 @@
       align-items: center;
       justify-content: center;
       gap: 9px;
-      padding: 0 22px;
+      padding: 0 21px;
       border: 1px solid transparent;
       border-radius: 14px;
-      font-size: .83rem;
-      font-weight: 850;
+      font-size: .79rem;
+      font-weight: 860;
       transition:
-        transform .5s var(--ease-slow),
-        box-shadow .5s var(--ease-slow),
-        border-color .5s var(--ease-slow),
-        background .5s var(--ease-slow),
-        filter .5s var(--ease-slow);
+        transform .45s var(--ease),
+        box-shadow .45s var(--ease),
+        border-color .45s ease,
+        background .45s ease,
+        filter .45s ease;
     }
 
     .button svg {
-      width: 17px;
-      height: 17px;
-      transition: transform .45s var(--ease-slow);
+      width: 16px;
+      height: 16px;
+      transition: transform .4s var(--ease);
     }
 
     .button-primary {
-      color: #03141c;
-      background: linear-gradient(135deg, #8aebff, var(--cyan));
-      box-shadow: 0 12px 34px rgba(92,225,255,.16);
+      color: #03141b;
+      background: linear-gradient(135deg, #9bf0ff, var(--cyan));
+      box-shadow: 0 14px 35px rgba(92, 225, 255, .15);
     }
 
     .button-primary:hover {
       transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(92,225,255,.28);
-      filter: brightness(1.05);
+      box-shadow: 0 20px 48px rgba(92, 225, 255, .27);
+      filter: brightness(1.04);
     }
 
-    .button-primary:hover svg { transform: translateX(3px); }
+    .button-primary:hover svg {
+      transform: translateX(3px);
+    }
 
     .button-secondary {
-      color: #d8e8f2;
-      border-color: rgba(255,255,255,.1);
-      background: rgba(255,255,255,.03);
+      color: #d7e4ef;
+      border-color: rgba(255, 255, 255, .1);
+      background: rgba(255, 255, 255, .03);
     }
 
     .button-secondary:hover {
       transform: translateY(-4px);
-      border-color: rgba(92,225,255,.28);
-      background: rgba(92,225,255,.07);
-      box-shadow: 0 14px 36px rgba(0,0,0,.22);
+      border-color: var(--line-hover);
+      background: rgba(92, 225, 255, .065);
+      box-shadow: 0 15px 38px rgba(0, 0, 0, .21);
     }
 
-    .hero-points {
-      margin-top: 38px;
+    .button-secondary:hover svg {
+      transform: translateX(2px);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity .8s ease,
+        transform .8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 760px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .045);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(92, 225, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 225, 255, .035) 1px, transparent 1px);
+      background-size: 78px 78px;
+      mask-image:
+        radial-gradient(
+          ellipse at center,
+          black 0%,
+          rgba(0, 0, 0, .9) 40%,
+          transparent 84%
+        );
+    }
+
+    .hero-orbit {
+      position: absolute;
+      left: 50%;
+      top: 46%;
+      width: 690px;
+      height: 690px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(92, 225, 255, .04);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1px rgba(125, 141, 255, .018),
+        inset 0 0 80px rgba(92, 225, 255, .025);
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      inset: 10%;
+      border: 1px solid rgba(255, 255, 255, .025);
+      border-radius: 50%;
+    }
+
+    .hero-orbit::after {
+      inset: 22%;
+      border-color: rgba(92, 225, 255, .028);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 680px;
+      height: 680px;
+      left: 50%;
+      top: 43%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(92, 225, 255, .11),
+          rgba(92, 225, 255, .035) 36%,
+          transparent 73%
+        );
+      filter: blur(5px);
+    }
+
+    .hero-glow.blue {
+      width: 380px;
+      height: 380px;
+      left: auto;
+      top: auto;
+      right: -180px;
+      bottom: -200px;
+      background:
+        radial-gradient(
+          circle,
+          rgba(125, 141, 255, .11),
+          transparent 70%
+        );
+    }
+
+    .mw-watermark {
+      position: absolute;
+      width: min(620px, 75vw);
+      height: min(620px, 75vw);
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      background: url("MW-logo.png") center / contain no-repeat;
+      opacity: .03;
+      filter: grayscale(100%) brightness(1.75);
+      pointer-events: none;
+      animation: watermarkFloat 9s ease-in-out infinite;
+    }
+
+    @keyframes watermarkFloat {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.018);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 5;
+      width: 100%;
+      padding: 92px 0 86px;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      color: #c7f5ff;
+      border: 1px solid rgba(92, 225, 255, .17);
+      border-radius: 999px;
+      background: rgba(92, 225, 255, .04);
+      box-shadow: 0 0 30px rgba(92, 225, 255, .035);
+      font-size: .63rem;
+      font-weight: 880;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 14px rgba(92, 225, 255, .8);
+    }
+
+    .hero h1 {
+      max-width: 1050px;
+      margin: 24px auto 0;
+      color: var(--heading);
+      font-size: clamp(3.1rem, 7.8vw, 7.2rem);
+      line-height: .9;
+      letter-spacing: -.07em;
+      font-weight: 950;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      background:
+        linear-gradient(
+          90deg,
+          #b9f5ff 0%,
+          var(--cyan) 48%,
+          #a3adff 100%
+        );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-role {
+      margin-top: 25px;
+      color: #d4f6ff;
+      font-size: clamp(.72rem, 1.65vw, 1rem);
+      font-weight: 840;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .hero-text {
+      max-width: 790px;
+      margin: 17px auto 0;
+      color: var(--text);
+      font-size: clamp(.9rem, 1.6vw, 1.02rem);
+      line-height: 1.88;
+    }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .hero-proof {
+      margin-top: 37px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 8px;
     }
 
-    .hero-point {
+    .proof-item {
       display: inline-flex;
       align-items: center;
       gap: 7px;
-      padding: 8px 12px;
-      color: #a0b2c6;
-      border: 1px solid rgba(255,255,255,.07);
+      padding: 8px 11px;
+      color: #9eafc3;
+      border: 1px solid rgba(255, 255, 255, .065);
       border-radius: 999px;
-      background: rgba(255,255,255,.02);
-      font-size: .67rem;
-      font-weight: 750;
-      transition: border-color .4s ease, color .4s ease, transform .4s var(--ease-slow);
+      background: rgba(255, 255, 255, .018);
+      font-size: .64rem;
+      font-weight: 760;
     }
 
-    .hero-point:hover {
-      color: #c5d8ea;
-      border-color: rgba(92,225,255,.2);
-      transform: translateY(-2px);
-    }
-
-    .hero-point svg {
+    .proof-item svg {
       width: 14px;
       height: 14px;
       stroke: var(--cyan);
     }
 
-    section {
-      position: relative;
-      padding: 82px 0;
+    /* =========================
+       TRUST STRIP
+    ========================== */
+
+    .trust-strip {
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .045);
+      background: rgba(255, 255, 255, .012);
     }
 
-    section + section::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      width: min(calc(100% - 90px), 1000px);
-      height: 1px;
-      transform: translateX(-50%);
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,.03) 12%, rgba(92,225,255,.2) 50%, rgba(255,255,255,.03) 88%, transparent 100%);
-    }
-
-    section + section::after {
-      content: "";
-      position: absolute;
-      top: -4px;
-      left: 50%;
-      width: 130px;
-      height: 9px;
-      transform: translateX(-50%);
-      background: radial-gradient(ellipse, rgba(92,225,255,.16), transparent 72%);
-      filter: blur(3px);
-      pointer-events: none;
-    }
-
-    .section-kicker {
-      display: inline-block;
-      margin-bottom: 11px;
-      color: var(--cyan);
-      font-size: .69rem;
-      font-weight: 900;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .section-heading {
-      max-width: 820px;
-      margin-bottom: 33px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(1.95rem, 4vw, 3.35rem);
-      line-height: 1.06;
-      letter-spacing: -.043em;
-      font-weight: 930;
-      color: var(--heading);
-      text-wrap: balance;
-    }
-
-    .section-heading p {
-      margin-top: 14px;
-      color: var(--text);
-      font-size: .94rem;
-      line-height: 1.82;
-    }
-
-    .about-layout {
+    .trust-grid {
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .trust-card {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, .055);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .018);
+    }
+
+    .trust-icon {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(92, 225, 255, .12);
+      border-radius: 10px;
+      background: rgba(92, 225, 255, .04);
+    }
+
+    .trust-icon svg {
+      width: 17px;
+      height: 17px;
+      stroke: var(--cyan);
+    }
+
+    .trust-card strong {
+      display: block;
+      color: #e5eef7;
+      font-size: .72rem;
+      font-weight: 850;
+    }
+
+    .trust-card span {
+      display: block;
+      margin-top: 2px;
+      color: #7f8da1;
+      font-size: .6rem;
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
       gap: 46px;
       align-items: center;
     }
 
     .about-copy p {
       color: var(--text);
-      font-size: .91rem;
-      line-height: 1.88;
+      font-size: .89rem;
+      line-height: 1.9;
     }
 
-    .about-copy p + p { margin-top: 13px; }
+    .about-copy p + p {
+      margin-top: 13px;
+    }
 
-    .about-intro-box {
-      margin-top: 22px;
+    .about-note {
+      margin-top: 23px;
       padding: 17px 18px;
       border-left: 2px solid var(--cyan);
-      border-radius: 0 14px 14px 0;
-      background: linear-gradient(90deg, rgba(92,225,255,.06), transparent);
-      color: #c5eaf5;
-      font-size: .78rem;
+      border-radius: 0 15px 15px 0;
+      background:
+        linear-gradient(90deg, rgba(92, 225, 255, .065), transparent);
+      color: #c7eaf4;
+      font-size: .76rem;
       line-height: 1.82;
     }
 
-    .about-stats {
+    .about-values {
       margin-top: 22px;
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 9px;
     }
 
-    .about-stat {
-      padding: 15px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 14px;
-      background: rgba(255,255,255,.02);
-      transition: border-color .4s ease, transform .4s var(--ease-slow);
+    .value-card {
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, .06);
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .02);
+      transition:
+        transform .4s var(--ease),
+        border-color .4s ease;
     }
 
-    .about-stat:hover {
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
+    .value-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-hover);
     }
 
-    .about-stat strong {
+    .value-card strong {
       display: block;
-      color: #eef7ff;
-      font-size: .87rem;
-      font-weight: 900;
+      color: #eaf3fb;
+      font-size: .75rem;
+      font-weight: 880;
     }
 
-    .about-stat span {
+    .value-card span {
       display: block;
       margin-top: 4px;
-      color: var(--muted);
-      font-size: .66rem;
+      color: var(--text-soft);
+      font-size: .61rem;
+      line-height: 1.55;
     }
 
-    .about-visual {
+    .identity-card {
       position: relative;
-      min-height: 475px;
-      padding: 24px;
+      min-height: 480px;
+      padding: 25px;
       overflow: hidden;
-      border: 1px solid rgba(92,225,255,.12);
+      border: 1px solid rgba(92, 225, 255, .11);
       border-radius: var(--radius-lg);
-      background: linear-gradient(145deg, rgba(15,25,43,.94), rgba(7,12,21,.96));
+      background:
+        linear-gradient(145deg, rgba(15, 25, 43, .95), rgba(7, 12, 21, .98));
       box-shadow: var(--shadow);
     }
 
-    .about-visual::before {
+    .identity-card::before {
       content: "";
       position: absolute;
-      width: 325px;
-      height: 325px;
-      right: -155px;
-      top: -155px;
+      width: 360px;
+      height: 360px;
+      right: -180px;
+      top: -180px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(92,225,255,.15), transparent 70%);
+      background:
+        radial-gradient(circle, rgba(92, 225, 255, .13), transparent 70%);
     }
 
-    .visual-logo {
+    .identity-card::after {
+      content: "";
       position: absolute;
-      width: 255px;
-      height: 255px;
-      left: 50%;
-      top: 49%;
-      transform: translate(-50%,-50%);
-      background: url("MW-logo.png") center / contain no-repeat;
-      opacity: .05;
-      filter: grayscale(100%) brightness(1.8);
+      width: 250px;
+      height: 250px;
+      left: -150px;
+      bottom: -170px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, rgba(125, 141, 255, .08), transparent 70%);
     }
 
-    .visual-top {
+    .identity-top {
       position: relative;
       z-index: 2;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
-    .visual-title {
-      display: flex;
+    .identity-label {
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: #c5d6e5;
-      font-size: .72rem;
+      color: #c8d8e7;
+      font-size: .64rem;
       font-weight: 850;
-      letter-spacing: .09em;
+      letter-spacing: .1em;
       text-transform: uppercase;
     }
 
-    .visual-title svg {
-      width: 17px;
-      height: 17px;
+    .identity-label svg {
+      width: 16px;
+      height: 16px;
       stroke: var(--cyan);
     }
 
-    .status {
+    .identity-status {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 6px 10px;
-      color: #95edbb;
-      border: 1px solid rgba(110,231,176,.14);
+      padding: 6px 9px;
+      color: #9bf1c3;
+      border: 1px solid rgba(114, 232, 177, .12);
       border-radius: 999px;
-      background: rgba(110,231,176,.05);
-      font-size: .62rem;
+      background: rgba(114, 232, 177, .045);
+      font-size: .58rem;
       font-weight: 850;
     }
 
-    .status-dot {
-      width: 7px;
-      height: 7px;
+    .identity-status i {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 10px rgba(110,231,176,.55);
+      box-shadow: 0 0 10px rgba(114, 232, 177, .55);
     }
 
-    .visual-body {
+    .identity-logo {
+      position: absolute;
+      left: 50%;
+      top: 49%;
+      width: 255px;
+      height: 255px;
+      transform: translate(-50%, -50%);
+      background: url("MW-logo.png") center / contain no-repeat;
+      opacity: .045;
+      filter: grayscale(100%) brightness(1.8);
+    }
+
+    .identity-content {
       position: relative;
       z-index: 2;
-      min-height: 385px;
+      min-height: 430px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
     }
 
-    .visual-body h3 {
-      max-width: 470px;
-      font-size: clamp(1.45rem, 3vw, 2.08rem);
-      line-height: 1.2;
-      letter-spacing: -.03em;
-      font-weight: 900;
+    .identity-content h3 {
+      max-width: 480px;
       color: var(--heading);
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      line-height: 1.16;
+      letter-spacing: -.04em;
+      font-weight: 910;
     }
 
-    .visual-body h3 span { color: var(--cyan); }
+    .identity-content h3 span {
+      color: var(--cyan);
+    }
 
-    .visual-body p {
-      max-width: 470px;
-      margin-top: 13px;
+    .identity-content p {
+      max-width: 500px;
+      margin-top: 11px;
       color: #95a6ba;
-      font-size: .78rem;
+      font-size: .75rem;
       line-height: 1.82;
     }
 
-    .visual-tags {
+    .identity-tags {
       margin-top: 17px;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .visual-tags span {
+    .identity-tags span {
       padding: 6px 9px;
-      color: #b0c2d2;
-      border: 1px solid rgba(255,255,255,.06);
+      color: #adbecf;
+      border: 1px solid rgba(255, 255, 255, .055);
       border-radius: 8px;
-      background: rgba(255,255,255,.02);
-      font-size: .61rem;
-      font-weight: 750;
+      background: rgba(255, 255, 255, .018);
+      font-size: .59rem;
+      font-weight: 770;
     }
 
-    .expertise {
-      padding-top: 0;
-      padding-bottom: 28px;
-    }
-
-    .expertise-grid {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 10px;
-    }
-
-    .expertise-card {
-      padding: 19px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 16px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
-      transition: transform .45s var(--ease-slow), border-color .45s var(--ease-slow), box-shadow .45s var(--ease-slow);
-    }
-
-    .expertise-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-      box-shadow: 0 16px 40px rgba(0,0,0,.2);
-    }
-
-    .expertise-icon {
-      width: 41px;
-      height: 41px;
-      display: grid;
-      place-items: center;
-      border: 1px solid rgba(92,225,255,.14);
-      border-radius: 11px;
-      background: rgba(92,225,255,.05);
-    }
-
-    .expertise-icon svg {
-      width: 19px;
-      height: 19px;
-      stroke: var(--cyan);
-    }
-
-    .expertise-card strong {
-      display: block;
-      margin-top: 14px;
-      font-size: .84rem;
-      font-weight: 850;
-      color: var(--heading);
-    }
-
-    .expertise-card p {
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: .68rem;
-      line-height: 1.62;
-    }
+    /* =========================
+       SERVICES
+    ========================== */
 
     .services {
-      background: linear-gradient(180deg, transparent, rgba(92,225,255,.015), transparent);
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(92, 225, 255, .012),
+          transparent
+        );
     }
 
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 14px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
     }
 
     .service-card {
       position: relative;
-      min-height: 250px;
+      min-height: 245px;
       padding: 25px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.07);
+      border: 1px solid rgba(255, 255, 255, .065);
       border-radius: 20px;
-      background: linear-gradient(155deg, rgba(15,24,41,.92), rgba(8,13,23,.95));
+      background:
+        linear-gradient(
+          155deg,
+          rgba(15, 24, 41, .94),
+          rgba(8, 13, 23, .97)
+        );
       box-shadow: var(--shadow-soft);
-      transition: transform .5s var(--ease-slow), border-color .5s var(--ease-slow), box-shadow .5s var(--ease-slow);
-    }
-
-    .service-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-hover);
-      box-shadow: 0 24px 58px rgba(0,0,0,.3);
+      transition:
+        transform .45s var(--ease),
+        border-color .45s ease,
+        box-shadow .45s var(--ease);
     }
 
     .service-card::before {
       content: "";
       position: absolute;
-      top: 0;
       left: 0;
+      top: 0;
       width: 100%;
       height: 2px;
       opacity: 0;
-      background: linear-gradient(90deg, transparent, var(--cyan), var(--blue), transparent);
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--cyan),
+          var(--blue),
+          transparent
+        );
       transition: opacity .4s ease;
     }
 
-    .service-card:hover::before { opacity: 1; }
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--line-hover);
+      box-shadow: 0 25px 58px rgba(0, 0, 0, .29);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
 
     .service-icon {
-      width: 51px;
-      height: 51px;
+      width: 49px;
+      height: 49px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(92,225,255,.15);
-      border-radius: 14px;
-      background: linear-gradient(145deg, rgba(92,225,255,.09), rgba(123,140,255,.04));
+      border: 1px solid rgba(92, 225, 255, .14);
+      border-radius: 13px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92, 225, 255, .085),
+          rgba(125, 141, 255, .035)
+        );
     }
 
     .service-icon svg {
-      width: 23px;
-      height: 23px;
+      width: 22px;
+      height: 22px;
       stroke: var(--cyan);
     }
 
     .service-card h3 {
-      margin-top: 18px;
-      font-size: .98rem;
-      font-weight: 880;
+      margin-top: 17px;
       color: var(--heading);
+      font-size: .96rem;
+      font-weight: 900;
+      letter-spacing: -.01em;
     }
 
     .service-card p {
       margin-top: 8px;
-      color: var(--muted);
-      font-size: .76rem;
+      color: var(--text-soft);
+      font-size: .73rem;
       line-height: 1.78;
     }
 
     .service-label {
-      display: inline-block;
+      display: inline-flex;
       margin-top: 14px;
-      color: #b0f0ff;
-      font-size: .62rem;
-      font-weight: 850;
-      letter-spacing: .1em;
+      color: #a6ecfb;
+      font-size: .58rem;
+      font-weight: 860;
+      letter-spacing: .11em;
       text-transform: uppercase;
     }
 
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process-section {
+      padding-top: 88px;
+    }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .process-copy p {
+      color: var(--text);
+      font-size: .88rem;
+      line-height: 1.9;
+    }
+
+    .process-list {
+      margin-top: 23px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .process-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 11px;
+      align-items: start;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: var(--cyan);
+      border: 1px solid rgba(92, 225, 255, .13);
+      border-radius: 11px;
+      background: rgba(92, 225, 255, .035);
+      font-size: .63rem;
+      font-weight: 900;
+    }
+
+    .process-item h3 {
+      color: var(--heading);
+      font-size: .79rem;
+      font-weight: 850;
+    }
+
+    .process-item p {
+      margin-top: 2px;
+      color: var(--text-soft);
+      font-size: .67rem;
+      line-height: 1.67;
+    }
+
+    .process-panel {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .075);
+      border-radius: 21px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(14, 24, 42, .91),
+          rgba(7, 12, 21, .97)
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .process-panel-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, .05);
+    }
+
+    .process-panel-top strong {
+      color: var(--heading);
+      font-size: .76rem;
+      font-weight: 850;
+    }
+
+    .process-panel-top span {
+      color: #718095;
+      font-size: .59rem;
+      font-weight: 750;
+    }
+
+    .process-flow {
+      margin-top: 17px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .process-step {
+      display: grid;
+      grid-template-columns: 42px 1fr auto;
+      align-items: center;
+      gap: 11px;
+      padding: 11px;
+      border: 1px solid rgba(255, 255, 255, .05);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .015);
+      transition:
+        transform .4s var(--ease),
+        border-color .4s ease;
+    }
+
+    .process-step:hover {
+      transform: translateX(5px);
+      border-color: rgba(92, 225, 255, .15);
+    }
+
+    .process-step-number {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      color: var(--cyan);
+      border-radius: 11px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92, 225, 255, .08),
+          rgba(125, 141, 255, .045)
+        );
+      font-size: .62rem;
+      font-weight: 900;
+    }
+
+    .process-step strong {
+      display: block;
+      color: var(--heading);
+      font-size: .73rem;
+      font-weight: 850;
+    }
+
+    .process-step span {
+      display: block;
+      margin-top: 2px;
+      color: #748397;
+      font-size: .61rem;
+    }
+
+    .process-step svg {
+      width: 15px;
+      height: 15px;
+      stroke: #65758a;
+    }
+
+    /* =========================
+       FIVERR
+    ========================== */
+
     .fiverr-section {
-      background: linear-gradient(180deg, transparent, rgba(92,225,255,.018), transparent);
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(92, 225, 255, .014),
+          transparent
+        );
+    }
+
+    .fiverr-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 34px;
+    }
+
+    .fiverr-head .section-top {
+      margin-bottom: 0;
+    }
+
+    .fiverr-profile {
+      flex: 0 0 auto;
     }
 
     .fiverr-grid {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
     }
 
     .fiverr-card {
       position: relative;
-      padding: 26px;
+      padding: 24px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.07);
+      border: 1px solid rgba(255, 255, 255, .07);
       border-radius: 20px;
-      background: linear-gradient(155deg, rgba(15,24,41,.93), rgba(8,13,23,.96));
+      background:
+        linear-gradient(
+          155deg,
+          rgba(15, 24, 41, .94),
+          rgba(8, 13, 23, .97)
+        );
       box-shadow: var(--shadow-soft);
-      transition: transform .5s var(--ease-slow), border-color .5s var(--ease-slow), box-shadow .5s var(--ease-slow);
+      transition:
+        transform .45s var(--ease),
+        border-color .45s ease,
+        box-shadow .45s var(--ease);
     }
 
     .fiverr-card:hover {
       transform: translateY(-7px);
-      border-color: var(--border-hover);
-      box-shadow: 0 22px 52px rgba(0,0,0,.28);
+      border-color: var(--line-hover);
+      box-shadow: 0 23px 55px rgba(0, 0, 0, .29);
     }
 
     .fiverr-card::before {
@@ -849,222 +1334,150 @@
       width: 100%;
       height: 2px;
       opacity: 0;
-      background: linear-gradient(90deg, transparent, var(--cyan), var(--blue), transparent);
-      transition: opacity .4s ease;
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--cyan),
+          var(--blue),
+          transparent
+        );
+      transition: opacity .35s ease;
     }
 
-    .fiverr-card:hover::before { opacity: 1; }
+    .fiverr-card:hover::before {
+      opacity: 1;
+    }
+
+    .fiverr-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
 
     .fiverr-icon {
       width: 48px;
       height: 48px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(92,225,255,.15);
+      border: 1px solid rgba(92, 225, 255, .14);
       border-radius: 13px;
-      background: linear-gradient(145deg, rgba(92,225,255,.08), rgba(123,140,255,.04));
-      font-size: 1.25rem;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92, 225, 255, .08),
+          rgba(125, 141, 255, .04)
+        );
+    }
+
+    .fiverr-icon svg {
+      width: 21px;
+      height: 21px;
+      stroke: var(--cyan);
+    }
+
+    .fiverr-tag {
+      padding: 6px 8px;
+      color: #8d9caf;
+      border: 1px solid rgba(255, 255, 255, .055);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .018);
+      font-size: .55rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .fiverr-card h3 {
       margin-top: 16px;
-      font-size: 1rem;
-      font-weight: 900;
       color: var(--heading);
+      font-size: .98rem;
+      font-weight: 900;
+      letter-spacing: -.01em;
     }
 
     .fiverr-card p {
       margin-top: 8px;
-      color: var(--muted);
-      font-size: .76rem;
+      color: var(--text-soft);
+      font-size: .72rem;
       line-height: 1.78;
     }
 
     .fiverr-card .button {
       margin-top: 18px;
       min-height: 44px;
-      padding: 0 18px;
-      font-size: .78rem;
+      padding-inline: 17px;
+      font-size: .73rem;
     }
 
-    .research-layout {
-      display: grid;
-      grid-template-columns: .88fr 1.12fr;
-      gap: 45px;
-      align-items: start;
-    }
-
-    .research-copy p {
-      color: var(--text);
-      font-size: .89rem;
-      line-height: 1.88;
-    }
-
-    .research-list {
-      margin-top: 22px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .research-item {
-      display: grid;
-      grid-template-columns: 41px 1fr;
-      gap: 11px;
-    }
-
-    .research-number {
-      width: 41px;
-      height: 41px;
-      display: grid;
-      place-items: center;
-      color: var(--cyan);
-      border: 1px solid rgba(92,225,255,.14);
-      border-radius: 11px;
-      background: rgba(92,225,255,.04);
-      font-size: .67rem;
-      font-weight: 900;
-    }
-
-    .research-item h3 {
-      font-size: .84rem;
-      font-weight: 850;
-      color: var(--heading);
-    }
-
-    .research-item p {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: .71rem;
-      line-height: 1.68;
-    }
-
-    .workflow {
-      padding: 23px;
-      border: 1px solid rgba(255,255,255,.08);
-      border-radius: 21px;
-      background: linear-gradient(145deg, rgba(14,24,42,.9), rgba(7,12,21,.95));
-    }
-
-    .workflow-top {
+    .fiverr-note {
+      margin-top: 18px;
+      padding: 16px 18px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
-      padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255,255,255,.055);
+      gap: 18px;
+      border: 1px solid rgba(255, 255, 255, .065);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .018);
     }
 
-    .workflow-top strong {
-      font-size: .8rem;
-      font-weight: 850;
-      color: var(--heading);
+    .fiverr-note p {
+      color: #8e9daf;
+      font-size: .68rem;
+      line-height: 1.7;
     }
 
-    .workflow-top span {
-      color: #7a8a9e;
-      font-size: .63rem;
-      font-weight: 750;
-    }
-
-    .workflow-list {
-      margin-top: 20px;
-      display: grid;
-      gap: 9px;
-    }
-
-    .workflow-step {
-      display: grid;
-      grid-template-columns: 42px 1fr auto;
-      gap: 11px;
-      align-items: center;
-      padding: 12px;
-      border: 1px solid rgba(255,255,255,.05);
-      border-radius: 13px;
-      background: rgba(255,255,255,.015);
-      transition: transform .4s var(--ease-slow), border-color .4s var(--ease-slow);
-    }
-
-    .workflow-step:hover {
-      transform: translateX(5px);
-      border-color: rgba(92,225,255,.15);
-    }
-
-    .workflow-number {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
+    .fiverr-note a {
+      flex: 0 0 auto;
       color: var(--cyan);
-      border-radius: 11px;
-      background: linear-gradient(145deg, rgba(92,225,255,.09), rgba(123,140,255,.06));
-      font-size: .67rem;
-      font-weight: 900;
-    }
-
-    .workflow-step strong {
-      display: block;
-      font-size: .77rem;
-      font-weight: 850;
-      color: var(--heading);
-    }
-
-    .workflow-step span {
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
       font-size: .65rem;
+      font-weight: 850;
+      transition: color .3s ease;
     }
 
-    .workflow-step > svg {
-      width: 16px;
-      height: 16px;
-      stroke: #748396;
+    .fiverr-note a:hover {
+      color: var(--cyan-bright);
     }
 
-    .projects-intro {
-      max-width: 850px;
-      margin-bottom: 33px;
-    }
+    /* =========================
+       WORK
+    ========================== */
 
-    .projects-intro h2 {
-      font-size: clamp(1.95rem, 4vw, 3.35rem);
-      line-height: 1.06;
-      letter-spacing: -.043em;
-      font-weight: 930;
-      color: var(--heading);
-    }
-
-    .projects-intro p {
-      margin-top: 13px;
-      color: var(--text);
-      font-size: .92rem;
-      line-height: 1.86;
-    }
-
-    .project-grid {
+    .work-grid {
       display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
     }
 
-    .project-card {
+    .work-card {
       position: relative;
       padding: 25px;
-      min-height: 490px;
+      min-height: 410px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,.075);
-      border-radius: 22px;
-      background: linear-gradient(165deg, rgba(14,24,41,.94), rgba(7,12,21,.96));
-      box-shadow: 0 14px 42px rgba(0,0,0,.22);
-      transition: transform .5s var(--ease-slow), border-color .5s var(--ease-slow), box-shadow .5s var(--ease-slow);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 21px;
+      background:
+        linear-gradient(
+          165deg,
+          rgba(14, 24, 41, .95),
+          rgba(7, 12, 21, .98)
+        );
+      box-shadow: 0 16px 44px rgba(0, 0, 0, .22);
+      transition:
+        transform .45s var(--ease),
+        border-color .45s ease,
+        box-shadow .45s var(--ease);
     }
 
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-hover);
-      box-shadow: 0 26px 60px rgba(0,0,0,.3);
+    .work-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--line-hover);
+      box-shadow: 0 26px 60px rgba(0, 0, 0, .29);
     }
 
-    .project-card::after {
+    .work-card::after {
       content: "";
       position: absolute;
       width: 220px;
@@ -1072,262 +1485,246 @@
       right: -125px;
       bottom: -125px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(92,225,255,.08), transparent 70%);
+      background:
+        radial-gradient(circle, rgba(92, 225, 255, .075), transparent 72%);
+      pointer-events: none;
     }
 
-    .project-header {
+    .work-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 14px;
     }
 
-    .project-icon {
-      width: 51px;
-      height: 51px;
+    .work-icon {
+      width: 50px;
+      height: 50px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(92,225,255,.15);
+      border: 1px solid rgba(92, 225, 255, .14);
       border-radius: 14px;
-      background: rgba(92,225,255,.05);
+      background: rgba(92, 225, 255, .045);
     }
 
-    .project-icon svg {
-      width: 23px;
-      height: 23px;
+    .work-icon svg {
+      width: 22px;
+      height: 22px;
       stroke: var(--cyan);
     }
 
-    .project-type {
+    .work-type {
       padding: 6px 9px;
-      color: #91a3b5;
-      border: 1px solid rgba(255,255,255,.06);
+      color: #8d9db0;
+      border: 1px solid rgba(255, 255, 255, .055);
       border-radius: 8px;
-      font-size: .59rem;
+      background: rgba(255, 255, 255, .018);
+      font-size: .55rem;
       font-weight: 850;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    .project-card h3 {
-      margin-top: 20px;
-      font-size: 1.13rem;
+    .work-card h3 {
+      margin-top: 18px;
+      color: var(--heading);
+      font-size: 1.08rem;
       font-weight: 900;
       letter-spacing: -.025em;
-      color: var(--heading);
     }
 
-    .project-summary {
+    .work-card > p {
       margin-top: 8px;
-      color: #a9b9ca;
-      font-size: .77rem;
-      line-height: 1.78;
+      color: #a8b7c8;
+      font-size: .75rem;
+      line-height: 1.8;
     }
 
-    .project-section { margin-top: 18px; }
+    .work-details {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
 
-    .project-section strong {
+    .work-detail strong {
       display: block;
-      margin-bottom: 6px;
-      color: #d8eaf5;
-      font-size: .66rem;
+      margin-bottom: 5px;
+      color: #d9e8f3;
+      font-size: .61rem;
       font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
     }
 
-    .project-section p {
-      color: var(--muted);
-      font-size: .71rem;
-      line-height: 1.74;
+    .work-detail p {
+      color: var(--text-soft);
+      font-size: .67rem;
+      line-height: 1.75;
     }
 
-    .project-points {
-      margin-top: 7px;
-      display: grid;
-      gap: 6px;
-    }
-
-    .project-point {
-      display: flex;
-      align-items: flex-start;
-      gap: 7px;
-      color: #aabbcb;
-      font-size: .69rem;
-    }
-
-    .project-point svg {
-      width: 14px;
-      height: 14px;
-      flex: 0 0 auto;
-      margin-top: 2px;
-      stroke: var(--cyan);
-    }
-
-    .project-tags {
-      margin-top: 19px;
+    .work-tags {
+      margin-top: 17px;
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
     }
 
-    .project-tags span {
+    .work-tags span {
       padding: 6px 9px;
-      color: #9fb1c3;
-      border: 1px solid rgba(255,255,255,.055);
+      color: #9cafc0;
+      border: 1px solid rgba(255, 255, 255, .05);
       border-radius: 8px;
-      background: rgba(255,255,255,.018);
-      font-size: .6rem;
-      font-weight: 800;
+      background: rgba(255, 255, 255, .016);
+      font-size: .57rem;
+      font-weight: 790;
     }
 
-    .project-link {
+    .work-link {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       margin-top: 17px;
       color: var(--cyan);
-      font-size: .69rem;
+      font-size: .65rem;
       font-weight: 850;
-      transition: gap .4s var(--ease-slow), color .4s ease;
+      transition:
+        gap .35s var(--ease),
+        color .3s ease;
     }
 
-    .project-link:hover {
+    .work-link:hover {
       gap: 10px;
-      color: var(--cyan-light);
+      color: var(--cyan-bright);
     }
 
-    .project-link svg { width: 15px; height: 15px; }
-
-    .project-journey {
-      margin-top: 15px;
-      padding: 27px;
-      border: 1px solid rgba(92,225,255,.11);
-      border-radius: 21px;
-      background: linear-gradient(145deg, rgba(92,225,255,.05), rgba(123,140,255,.025));
+    .work-link svg {
+      width: 14px;
+      height: 14px;
     }
 
-    .journey-head { max-width: 780px; }
+    /* =========================
+       CONTACT
+    ========================== */
 
-    .journey-head h3 {
-      font-size: clamp(1.45rem, 3vw, 2.15rem);
-      line-height: 1.14;
-      font-weight: 900;
-      letter-spacing: -.03em;
-      color: var(--heading);
+    .contact-section {
+      padding-bottom: 80px;
     }
 
-    .journey-head p {
-      margin-top: 8px;
-      color: var(--text);
-      font-size: .78rem;
-      line-height: 1.8;
+    .contact-panel {
+      position: relative;
+      padding: 31px;
+      overflow: hidden;
+      border: 1px solid rgba(92, 225, 255, .11);
+      border-radius: 24px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(15, 25, 44, .92),
+          rgba(7, 12, 21, .97)
+        );
+      box-shadow: var(--shadow);
     }
 
-    .journey-grid {
-      margin-top: 21px;
+    .contact-panel::before {
+      content: "";
+      position: absolute;
+      width: 430px;
+      height: 430px;
+      left: 50%;
+      top: -315px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(92, 225, 255, .12),
+          transparent 70%
+        );
+    }
+
+    .contact-layout {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .contact-copy h2 {
+      max-width: 720px;
+      color: var(--heading);
+      font-size: clamp(2rem, 4vw, 3.45rem);
+      line-height: 1.03;
+      letter-spacing: -.05em;
+      font-weight: 930;
+    }
+
+    .contact-copy p {
+      max-width: 650px;
+      margin-top: 13px;
+      color: var(--text);
+      font-size: .79rem;
+      line-height: 1.82;
+    }
+
+    .contact-actions {
+      margin-top: 23px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-details {
+      display: grid;
       gap: 9px;
     }
 
-    .journey-step {
-      padding: 15px;
-      border: 1px solid rgba(255,255,255,.06);
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px;
+      border: 1px solid rgba(255, 255, 255, .06);
       border-radius: 13px;
-      background: rgba(255,255,255,.02);
-      transition: border-color .4s ease, transform .4s var(--ease-slow);
+      background: rgba(255, 255, 255, .018);
     }
 
-    .journey-step:hover {
-      border-color: rgba(92,225,255,.18);
-      transform: translateY(-3px);
-    }
-
-    .journey-step span {
-      display: block;
-      color: var(--cyan);
-      font-size: .6rem;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .journey-step strong {
-      display: block;
-      margin-top: 7px;
-      font-size: .75rem;
-      color: var(--heading);
-    }
-
-    .journey-step p {
-      margin-top: 3px;
-      color: var(--muted);
-      font-size: .64rem;
-      line-height: 1.66;
-    }
-
-    .connect-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .connect-card {
-      padding: 25px;
-      border: 1px solid rgba(255,255,255,.075);
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(15,24,41,.9), rgba(8,13,23,.95));
-      transition: transform .45s var(--ease-slow), border-color .45s var(--ease-slow);
-    }
-
-    .connect-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--border-hover);
-    }
-
-    .connect-icon {
-      width: 48px;
-      height: 48px;
+    .contact-icon {
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
-      border: 1px solid rgba(92,225,255,.14);
-      border-radius: 13px;
-      background: rgba(92,225,255,.05);
+      flex: 0 0 auto;
+      border: 1px solid rgba(92, 225, 255, .12);
+      border-radius: 11px;
+      background: rgba(92, 225, 255, .035);
     }
 
-    .connect-icon svg {
-      width: 21px;
-      height: 21px;
+    .contact-icon svg {
+      width: 18px;
+      height: 18px;
       stroke: var(--cyan);
     }
 
-    .connect-card h3 {
-      margin-top: 16px;
-      font-size: 1rem;
-      font-weight: 900;
-      color: var(--heading);
-    }
-
-    .connect-card p {
-      margin-top: 7px;
-      color: var(--muted);
-      font-size: .75rem;
-      line-height: 1.78;
-    }
-
-    .connect-card a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 15px;
-      color: var(--cyan);
+    .contact-item strong {
+      display: block;
+      color: #e6f0f8;
       font-size: .68rem;
       font-weight: 850;
-      transition: gap .4s var(--ease-slow);
     }
 
-    .connect-card a:hover { gap: 10px; }
+    .contact-item span {
+      display: block;
+      margin-top: 2px;
+      color: #78889b;
+      font-size: .6rem;
+      overflow-wrap: anywhere;
+    }
+
+    /* =========================
+       FAQ
+    ========================== */
 
     .faq {
       max-width: 900px;
@@ -1336,180 +1733,151 @@
 
     details {
       margin-bottom: 8px;
-      border: 1px solid rgba(255,255,255,.07);
-      border-radius: 15px;
-      background: rgba(255,255,255,.018);
       overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .065);
+      border-radius: 14px;
+      background: rgba(255, 255, 255, .018);
       transition: border-color .35s ease;
     }
 
-    details:hover { border-color: rgba(92,225,255,.15); }
+    details:hover,
+    details[open] {
+      border-color: rgba(92, 225, 255, .14);
+    }
 
     summary {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 14px;
       padding: 16px 18px;
+      color: var(--heading);
+      font-size: .76rem;
+      font-weight: 850;
       cursor: pointer;
       list-style: none;
-      font-size: .79rem;
-      font-weight: 850;
-      color: var(--heading);
     }
 
-    summary::-webkit-details-marker { display: none; }
+    summary::-webkit-details-marker {
+      display: none;
+    }
 
     .faq-plus {
-      width: 29px;
-      height: 29px;
+      width: 28px;
+      height: 28px;
       display: grid;
       place-items: center;
       flex: 0 0 auto;
       color: var(--cyan);
-      border: 1px solid rgba(255,255,255,.07);
+      border: 1px solid rgba(255, 255, 255, .065);
       border-radius: 8px;
-      background: rgba(92,225,255,.04);
-      transition: transform .4s var(--ease-slow);
+      background: rgba(92, 225, 255, .035);
+      transition: transform .35s var(--ease);
     }
 
-    details[open] .faq-plus { transform: rotate(45deg); }
+    details[open] .faq-plus {
+      transform: rotate(45deg);
+    }
 
     .faq-answer {
-      padding: 0 18px 17px;
-      color: var(--muted);
-      font-size: .72rem;
-      line-height: 1.78;
+      padding: 0 18px 16px;
+      color: var(--text-soft);
+      font-size: .69rem;
+      line-height: 1.8;
     }
 
-    .cta-section {
-      padding-top: 55px;
-      padding-bottom: 88px;
-    }
-
-    .cta {
-      position: relative;
-      padding: 53px 35px;
-      overflow: hidden;
-      text-align: center;
-      border: 1px solid rgba(92,225,255,.12);
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(16,27,47,.93), rgba(7,12,21,.96));
-      box-shadow: 0 25px 75px rgba(0,0,0,.32);
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      left: 50%;
-      top: -310px;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(92,225,255,.14), transparent 70%);
-    }
-
-    .cta-content { position: relative; z-index: 2; }
-
-    .cta h2 {
-      max-width: 820px;
-      margin-inline: auto;
-      font-size: clamp(1.95rem, 4vw, 3.45rem);
-      line-height: 1.04;
-      letter-spacing: -.043em;
-      font-weight: 930;
-      color: var(--heading);
-    }
-
-    .cta p {
-      max-width: 690px;
-      margin: 14px auto 0;
-      color: var(--text);
-      font-size: .83rem;
-      line-height: 1.78;
-    }
-
-    .cta-actions {
-      margin-top: 23px;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 11px;
-    }
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      border-top: 1px solid rgba(255,255,255,.055);
-      background: rgba(2,4,9,.78);
+      border-top: 1px solid rgba(255, 255, 255, .05);
+      background: rgba(2, 4, 9, .8);
     }
 
     .footer-main {
-      padding: 39px 0;
+      padding: 42px 0;
       display: grid;
       grid-template-columns: 1.35fr .7fr .7fr;
       gap: 30px;
     }
 
     .footer-description {
-      max-width: 430px;
+      max-width: 450px;
       margin-top: 11px;
-      color: #7a8a9e;
-      font-size: .71rem;
-      line-height: 1.8;
+      color: #758498;
+      font-size: .67rem;
+      line-height: 1.82;
     }
 
     .footer-title {
       margin-bottom: 10px;
-      color: #dce8f2;
-      font-size: .65rem;
+      color: #dbe7f0;
+      font-size: .6rem;
       font-weight: 900;
       letter-spacing: .13em;
       text-transform: uppercase;
     }
 
-    .footer-links { display: grid; gap: 7px; }
-
-    .footer-links a {
-      color: #8290a3;
-      font-size: .69rem;
-      transition: color .35s ease;
+    .footer-links {
+      display: grid;
+      gap: 7px;
     }
 
-    .footer-links a:hover { color: var(--cyan); }
+    .footer-links a {
+      color: #7f8da0;
+      font-size: .65rem;
+      transition: color .3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
 
     .footer-bottom {
       min-height: 62px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 15px;
-      border-top: 1px solid rgba(255,255,255,.045);
-      color: #6b7a8e;
-      font-size: .64rem;
+      border-top: 1px solid rgba(255, 255, 255, .04);
+      color: #68778a;
+      font-size: .59rem;
     }
 
-    .footer-bottom a:hover { color: var(--cyan); }
+    .footer-bottom a:hover {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       BACK TO TOP
+    ========================== */
 
     #backToTop {
       position: fixed;
-      right: 19px;
-      bottom: 19px;
-      width: 46px;
-      height: 46px;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      width: 45px;
+      height: 45px;
       display: grid;
       place-items: center;
       color: var(--cyan);
-      border: 1px solid rgba(92,225,255,.15);
+      border: 1px solid rgba(92, 225, 255, .14);
       border-radius: 13px;
-      background: rgba(7,13,23,.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      box-shadow: 0 14px 32px rgba(0,0,0,.25);
+      background: rgba(7, 13, 23, .88);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 15px 34px rgba(0, 0, 0, .25);
       opacity: 0;
       visibility: hidden;
       transform: translateY(12px);
       cursor: pointer;
-      transition: opacity .4s ease, visibility .4s ease, transform .45s var(--ease-slow), box-shadow .45s var(--ease-slow);
+      transition:
+        opacity .35s ease,
+        visibility .35s ease,
+        transform .4s var(--ease),
+        box-shadow .4s var(--ease);
     }
 
     #backToTop.show {
@@ -1520,36 +1888,50 @@
 
     #backToTop:hover {
       transform: translateY(-4px);
-      box-shadow: 0 18px 40px rgba(92,225,255,.15);
+      box-shadow: 0 20px 42px rgba(92, 225, 255, .13);
     }
 
-    #backToTop svg { width: 18px; height: 18px; }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity .8s ease, transform .8s var(--ease-slow);
+    #backToTop svg {
+      width: 17px;
+      height: 17px;
     }
 
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1080px) {
+      .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid,
+      .process-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .identity-card {
+        min-height: 430px;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-main {
+        grid-template-columns: 1.15fr .85fr;
+      }
     }
 
-    @media (max-width: 1050px) {
-      .service-grid { grid-template-columns: repeat(2,1fr); }
-      .expertise-grid { grid-template-columns: repeat(2,1fr); }
-      .fiverr-grid { grid-template-columns: 1fr; }
-      .about-layout,
-      .research-layout { grid-template-columns: 1fr; }
-      .about-visual { min-height: 440px; }
-      .project-grid { grid-template-columns: 1fr; }
-      .journey-grid { grid-template-columns: repeat(2,1fr); }
-      .footer-main { grid-template-columns: 1.2fr .8fr; }
-    }
-
-    @media (max-width: 840px) {
-      .menu-toggle { display: grid; }
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: grid;
+      }
 
       .nav-links {
         position: absolute;
@@ -1559,763 +1941,2005 @@
         display: none;
         flex-direction: column;
         align-items: stretch;
-        padding: 10px;
-        border: 1px solid rgba(255,255,255,.08);
+        padding: 9px;
+        border: 1px solid rgba(255, 255, 255, .08);
         border-radius: 17px;
-        background: rgba(7,12,22,.97);
-        box-shadow: 0 22px 60px rgba(0,0,0,.38);
-        backdrop-filter: blur(18px);
+        background: rgba(7, 12, 22, .97);
+        box-shadow: 0 25px 62px rgba(0, 0, 0, .4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
 
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 11px 12px; }
-      .nav-links a:not(.nav-button)::after { display: none; }
-      .nav-button { margin-left: 0; text-align: center; }
-      .hero { min-height: 675px; }
-      .hero-content { padding: 80px 0 66px; }
-      .footer-main { grid-template-columns: 1fr; }
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 12px;
+      }
+
+      .nav-links a:not(.nav-cta)::after {
+        display: none;
+      }
+
+      .nav-cta {
+        margin-left: 0;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      .hero {
+        min-height: 690px;
+      }
+
+      .hero-content {
+        padding: 78px 0 68px;
+      }
+
+      .fiverr-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 690px) {
-      .container { width: min(calc(100% - 28px), var(--container)); }
-      section { padding: 70px 0; }
-      section + section::before { width: calc(100% - 48px); }
-      .hero { min-height: 660px; }
-      .hero-content { padding: 80px 0 62px; }
-      .hero h1 { font-size: clamp(2.55rem, 13vw, 4.8rem); }
-      .hero-subtitle { font-size: .68rem; letter-spacing: .075em; }
-      .hero-text { font-size: .86rem; }
-      .hero-actions { flex-direction: column; }
-      .hero-actions .button { width: 100%; }
-      .hero-points { margin-top: 31px; }
-      .about-stats { grid-template-columns: 1fr; }
-      .about-visual { min-height: 395px; padding: 20px; }
-      .visual-body { min-height: 325px; }
-      .visual-logo { width: 205px; height: 205px; }
-      .expertise-grid,
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      section + section::before {
+        width: calc(100% - 48px);
+      }
+
+      .hero {
+        min-height: 660px;
+      }
+
+      .hero-content {
+        padding: 72px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.6rem, 14vw, 4.8rem);
+        letter-spacing: -.07em;
+      }
+
+      .hero-role {
+        font-size: .66rem;
+        letter-spacing: .075em;
+      }
+
+      .hero-text {
+        font-size: .84rem;
+        line-height: 1.78;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-proof {
+        margin-top: 28px;
+      }
+
+      .trust-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-values {
+        grid-template-columns: 1fr;
+      }
+
       .service-grid,
-      .project-grid,
-      .fiverr-grid { grid-template-columns: 1fr; }
-      .project-card { min-height: auto; }
-      .project-journey { padding: 23px; }
-      .journey-grid { grid-template-columns: 1fr; }
-      .connect-layout { grid-template-columns: 1fr; }
-      .cta { padding: 42px 20px; }
+      .fiverr-grid,
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .identity-card {
+        min-height: 390px;
+        padding: 20px;
+      }
+
+      .identity-content {
+        min-height: 345px;
+      }
+
+      .identity-logo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .fiverr-note {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .contact-panel {
+        padding: 23px 19px;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+      }
+
+      .contact-actions .button {
+        width: 100%;
+      }
+
+      .contact-item {
+        align-items: flex-start;
+      }
+
       .footer-bottom {
+        min-height: auto;
         padding: 18px 0;
         flex-direction: column;
         justify-content: center;
         text-align: center;
       }
-      .mw-watermark { width: 380px; height: 380px; opacity: .027; }
-      #backToTop { right: 14px; bottom: 14px; }
+
+      .mw-watermark {
+        width: 380px;
+        height: 380px;
+        opacity: .024;
+      }
+
+      .hero-orbit {
+        width: 520px;
+        height: 520px;
+      }
+
+      .hero-glow {
+        width: 520px;
+        height: 520px;
+      }
+
+      #backToTop {
+        right: 13px;
+        bottom: 13px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand-name span {
+        display: none;
+      }
+
+      .brand-name strong {
+        font-size: .82rem;
+      }
+
+      .brand-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .hero-badge {
+        font-size: .57rem;
+      }
+
+      .section-title {
+        font-size: 1.95rem;
+      }
+
+      .service-card,
+      .fiverr-card,
+      .work-card {
+        padding: 21px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation: none !important;
         transition: none !important;
       }
-      .reveal { opacity: 1; transform: none; }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
   </style>
 </head>
 
 <body>
 
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
     <div class="container">
       <nav class="nav">
-        <a href="index.html" class="brand">
+
+        <a href="index.html" class="brand" aria-label="Wazir Research Lab home">
           <span class="brand-logo">
-            <img src="MW-logo.png" alt="MW Logo">
+            <img src="MW-logo.png" alt="MW logo">
           </span>
+
           <span class="brand-name">
             <strong>Wazir Research Lab</strong>
             <span>Research • Technology • Solutions</span>
           </span>
         </a>
 
-        <button id="menuToggle" class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-            <path d="M4 6h16"/>
-            <path d="M4 12h16"/>
-            <path d="M4 18h16"/>
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+          >
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
           </svg>
         </button>
 
         <div id="navLinks" class="nav-links">
           <a href="#about">About</a>
           <a href="#services">Services</a>
-          <a href="#earn">Earn</a>
-          <a href="#fiverr-services">Fiverr</a>
-          <a href="#research">Research</a>
-          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#fiverr">Fiverr</a>
+          <a href="#work">Work</a>
           <a href="#faq">FAQ</a>
-          <a href="contact.html" class="nav-button">Contact</a>
+          <a href="#contact" class="nav-cta">Contact</a>
         </div>
+
       </nav>
     </div>
   </header>
 
   <main>
 
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero">
       <div class="hero-grid"></div>
+      <div class="hero-orbit"></div>
       <div class="hero-glow"></div>
       <div class="hero-glow blue"></div>
       <div class="mw-watermark"></div>
 
       <div class="container">
         <div class="hero-content reveal">
-          <span class="hero-kicker">
-            <span class="hero-dot"></span>
-            Wazir Research Lab
+
+          <span class="hero-badge">
+            <i></i>
+            MW • Wazir Research Lab
           </span>
 
           <h1>
             Research.
-            <span class="gradient">Technology.</span>
-            Solutions.
+            <span>Build.</span>
+            Deliver.
           </h1>
 
-          <div class="hero-subtitle">Research • Technology • Solutions</div>
+          <div class="hero-role">
+            Research • Data • Digital Work • Web
+          </div>
 
           <p class="hero-text">
-            Wazir Research Lab is a professional digital workspace by
-            Murad Wazir, bringing together web research, data organization,
-            Microsoft Office productivity, digital branding and modern
-            web experiences into one structured environment.
+            I’m Murad Wazir. I work across web research, data organization,
+            Excel and Google Sheets, document typing, digital design and
+            modern web experiences — with a focus on clear structure and
+            professional delivery.
           </p>
 
           <div class="hero-actions">
-            <a href="#projects" class="button button-primary">
-              Explore My Projects
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M5 12h14"/>
-                <path d="m13 6 6 6-6 6"/>
+            <a href="#fiverr" class="button button-primary">
+              Explore My Fiverr Services
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
               </svg>
             </a>
-            <a href="contact.html" class="button button-secondary">
-              Contact Me
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.2 9.2 0 0 1-4.2-1.1L3 20l1.2-4.2A8.7 8.7 0 1 1 21 11.5Z"/>
+
+            <a href="mailto:zuhaibwazir558@gmail.com" class="button button-secondary">
+              Email Me
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
               </svg>
             </a>
           </div>
 
-          <div class="hero-points">
-            <span class="hero-point">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+          <div class="hero-proof">
+
+            <span class="proof-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+              </svg>
               Web Research
             </span>
-            <span class="hero-point">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 3-3 3 2 5-6"/></svg>
-              Data Organization
+
+            <span class="proof-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="m7 15 3-3 3 2 5-6"></path>
+              </svg>
+              Data & Spreadsheets
             </span>
-            <span class="hero-point">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h5"/></svg>
-              Professional Documents
+
+            <span class="proof-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M6 3h10l3 3v15H6z"></path>
+                <path d="M16 3v4h4"></path>
+                <path d="M9 11h6"></path>
+                <path d="M9 15h6"></path>
+              </svg>
+              Documents
             </span>
-            <span class="hero-point">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 21h8"/><path d="M12 19v2"/></svg>
+
+            <span class="proof-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                <path d="M8 21h8"></path>
+                <path d="M12 19v2"></path>
+              </svg>
               Web Design
             </span>
+
           </div>
+
         </div>
       </div>
     </section>
+
+    <!-- =========================
+         TRUST STRIP
+    ========================== -->
+
+    <div class="trust-strip">
+      <div class="container">
+
+        <div class="trust-grid">
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Research</strong>
+              <span>Finding useful information</span>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="m7 15 3-3 3 2 5-6"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Data Work</strong>
+              <span>Structured and organized output</span>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="4" y="3" width="16" height="18" rx="2"></rect>
+                <path d="M8 7h8"></path>
+                <path d="M8 11h8"></path>
+                <path d="M8 15h5"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Documents</strong>
+              <span>Clean digital presentation</span>
+            </div>
+          </div>
+
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                <path d="M8 21h8"></path>
+                <path d="M12 19v2"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Web & Design</strong>
+              <span>Modern responsive experiences</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
     <section id="about">
       <div class="container">
-        <div class="about-layout">
+
+        <div class="about-grid">
+
           <div class="about-copy reveal">
-            <span class="section-kicker">About Me</span>
-            <div class="section-heading">
-              <h2>A researcher, digital builder and creator focused on useful work.</h2>
+
+            <span class="section-kicker">About Murad</span>
+
+            <div class="section-top">
+              <h2 class="section-title">
+                Practical digital work, built around research and structure.
+              </h2>
             </div>
-            <p>I’m Murad Wazir, the creator behind Wazir Research Lab. My work is built around a simple idea: information becomes more valuable when it is properly researched, organized, presented and turned into something practical.</p>
-            <p>I work across web research, data collection, Excel, Microsoft Word, PowerPoint, digital documentation and modern web design. These areas connect naturally because strong digital work is not only about creating something — it is also about understanding information and structuring it correctly.</p>
-            <p>Wazir Research Lab is my personal space for bringing these skills together. It gives me a place to experiment, build projects, improve workflows and present professional digital work in a clear and organized way.</p>
-            <p>My approach is practical: understand the objective first, research carefully, organize the information, build the required solution and refine the final presentation.</p>
-            <div class="about-intro-box">The focus is not on making work complicated. The focus is on making the final result clear, structured, professional and genuinely useful.</div>
-            <div class="about-stats">
-              <div class="about-stat"><strong>Research</strong><span>Discovery, collection and organization</span></div>
-              <div class="about-stat"><strong>Technology</strong><span>Web, digital tools and workflows</span></div>
-              <div class="about-stat"><strong>Delivery</strong><span>Clear and polished final output</span></div>
+
+            <p>
+              I’m Murad Wazir, the creator behind Wazir Research Lab.
+              My work brings together information research, data organization,
+              productivity tools, digital presentation and web design.
+            </p>
+
+            <p>
+              I believe strong digital work starts with understanding the
+              objective. From there, the information can be researched,
+              structured, formatted and turned into something useful.
+            </p>
+
+            <p>
+              Wazir Research Lab is my personal digital workspace for building
+              that process into a clear professional identity — from research
+              and spreadsheets to documents, design and web experiences.
+            </p>
+
+            <div class="about-note">
+              The goal is simple: understand the work, organize it properly,
+              improve the presentation and deliver a result that is clear and
+              practical.
             </div>
+
+            <div class="about-values">
+
+              <div class="value-card">
+                <strong>Clarity</strong>
+                <span>Information should be easy to understand.</span>
+              </div>
+
+              <div class="value-card">
+                <strong>Structure</strong>
+                <span>Good organization makes digital work stronger.</span>
+              </div>
+
+              <div class="value-card">
+                <strong>Presentation</strong>
+                <span>Final output should look professional and polished.</span>
+              </div>
+
+            </div>
+
           </div>
 
-          <div class="about-visual reveal">
-            <div class="visual-top">
-              <div class="visual-title">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/><circle cx="8" cy="5" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="10" cy="19" r="1"/></svg>
+          <div class="identity-card reveal">
+
+            <div class="identity-top">
+              <div class="identity-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="M4 5h16"></path>
+                  <path d="M4 12h16"></path>
+                  <path d="M4 19h16"></path>
+                  <circle cx="8" cy="5" r="1"></circle>
+                  <circle cx="15" cy="12" r="1"></circle>
+                  <circle cx="10" cy="19" r="1"></circle>
+                </svg>
                 Digital Workspace
               </div>
-              <span class="status"><span class="status-dot"></span>Active</span>
+
+              <span class="identity-status">
+                <i></i>
+                MW Identity
+              </span>
             </div>
-            <div class="visual-logo"></div>
-            <div class="visual-body">
-              <h3>Building a digital identity around <span>research and technology.</span></h3>
-              <p>The MW identity represents the connection between personal creativity, structured research and practical digital work. Wazir Research Lab is designed to keep those areas together instead of treating them as separate skills.</p>
-              <div class="visual-tags">
-                <span>Web Research</span><span>Data Collection</span><span>Excel</span><span>Word</span><span>PowerPoint</span><span>Web Design</span><span>Branding</span>
+
+            <div class="identity-logo"></div>
+
+            <div class="identity-content">
+
+              <h3>
+                One identity for
+                <span>research, data and digital work.</span>
+              </h3>
+
+              <p>
+                The MW identity connects personal creativity with structured
+                research, practical digital services and modern presentation.
+              </p>
+
+              <div class="identity-tags">
+                <span>Web Research</span>
+                <span>Data Collection</span>
+                <span>Excel</span>
+                <span>Google Sheets</span>
+                <span>Word</span>
+                <span>PowerPoint</span>
+                <span>Web Design</span>
+                <span>Branding</span>
               </div>
+
             </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
 
-    <section class="expertise">
-      <div class="container">
-        <div class="expertise-grid reveal">
-          <div class="expertise-card">
-            <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg></div>
-            <strong>Web Research</strong>
-            <p>Finding and organizing relevant information from the web.</p>
-          </div>
-          <div class="expertise-card">
-            <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15v-4"/><path d="M11 15V8"/><path d="M15 15V6"/><path d="M19 15V4"/></svg></div>
-            <strong>Data Work</strong>
-            <p>Structured collection, entry, organization and spreadsheet work.</p>
-          </div>
-          <div class="expertise-card">
-            <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 3h10l3 3v15H6z"/><path d="M16 3v4h4"/><path d="M9 11h6"/><path d="M9 15h6"/><path d="M9 19h4"/></svg></div>
-            <strong>Office Productivity</strong>
-            <p>Professional Word, Excel and PowerPoint workflows.</p>
-          </div>
-          <div class="expertise-card">
-            <div class="expertise-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 21h8"/><path d="M12 19v2"/></svg></div>
-            <strong>Web Experiences</strong>
-            <p>Responsive websites with modern presentation and structure.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- =========================
+         SERVICES
+    ========================== -->
 
     <section id="services" class="services">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">What I Work With</span>
-          <h2>Skills and services that connect research with technology.</h2>
-          <p>Each area is built around practical digital work, clear structure and professional presentation.</p>
+
+        <div class="section-top reveal">
+          <span class="section-kicker">Services</span>
+
+          <h2 class="section-title">
+            Digital services focused on useful, organized results.
+          </h2>
+
+          <p class="section-description">
+            From online research to spreadsheets, documents, design and web
+            experiences, each service is built around clear requirements,
+            structured work and professional presentation.
+          </p>
         </div>
+
         <div class="service-grid">
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/><path d="M11 8v6"/><path d="M8 11h6"/></svg></div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <circle cx="11" cy="11" r="7"></circle>
+                <path d="m20 20-4-4"></path>
+                <path d="M11 8v6"></path>
+                <path d="M8 11h6"></path>
+              </svg>
+            </div>
+
             <h3>Web Research</h3>
-            <p>Researching topics, finding relevant online information, comparing sources and organizing findings into practical outputs.</p>
+
+            <p>
+              Research topics, find relevant online information, compare
+              sources and organize findings into practical outputs.
+            </p>
+
             <span class="service-label">Research</span>
           </article>
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 8h8"/><path d="M8 12h3"/><path d="M13 12h3"/><path d="M8 16h8"/></svg></div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <path d="M8 8h8"></path>
+                <path d="M8 12h3"></path>
+                <path d="M13 12h3"></path>
+                <path d="M8 16h8"></path>
+              </svg>
+            </div>
+
             <h3>Data Entry & Collection</h3>
-            <p>Building organized datasets through structured collection, entry and formatting with consistency in mind.</p>
+
+            <p>
+              Structured data collection, entry, formatting and organization
+              with consistency across the final dataset.
+            </p>
+
             <span class="service-label">Data</span>
           </article>
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15v-4"/><path d="M11 15V8"/><path d="M15 15V6"/><path d="M19 15V4"/></svg></div>
-            <h3>Excel & Spreadsheet Work</h3>
-            <p>Working with structured tables, spreadsheet organization, formatting and practical data workflows.</p>
-            <span class="service-label">Excel</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="M7 15v-4"></path>
+                <path d="M11 15V8"></path>
+                <path d="M15 15V6"></path>
+                <path d="M19 15V4"></path>
+              </svg>
+            </div>
+
+            <h3>Excel & Google Sheets</h3>
+
+            <p>
+              Spreadsheet organization, copy-paste work, formatting and
+              practical workflows for structured information.
+            </p>
+
+            <span class="service-label">Spreadsheets</span>
           </article>
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 3h10l3 3v15H6z"/><path d="M16 3v4h4"/><path d="M9 11h6"/><path d="M9 15h6"/><path d="M9 19h4"/></svg></div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M6 3h10l3 3v15H6z"></path>
+                <path d="M16 3v4h4"></path>
+                <path d="M9 11h6"></path>
+                <path d="M9 15h6"></path>
+                <path d="M9 19h4"></path>
+              </svg>
+            </div>
+
             <h3>Word Documents</h3>
-            <p>Professional document structure, formatting, readability and presentation for digital work.</p>
+
+            <p>
+              Clean document structure, formatting, readability and digital
+              presentation for professional work.
+            </p>
+
             <span class="service-label">Documents</span>
           </article>
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 5h16v14H4z"/><path d="m8 15 2.5-3 2 2 2-4 2.5 5"/><path d="M8 8h.01"/></svg></div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <path d="M4 5h16v14H4z"></path>
+                <path d="m8 15 2.5-3 2 2 2-4 2.5 5"></path>
+                <path d="M8 8h.01"></path>
+              </svg>
+            </div>
+
             <h3>PowerPoint Presentations</h3>
-            <p>Clean presentation layouts with logical structure, visual hierarchy and readable content organization.</p>
+
+            <p>
+              Clear presentation layouts with logical structure, visual
+              hierarchy and readable content organization.
+            </p>
+
             <span class="service-label">Presentation</span>
           </article>
+
           <article class="service-card reveal">
-            <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 21h8"/><path d="M12 19v2"/><path d="M7 9h10"/><path d="M7 13h6"/></svg></div>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                <path d="M8 21h8"></path>
+                <path d="M12 19v2"></path>
+                <path d="M7 9h10"></path>
+                <path d="M7 13h6"></path>
+              </svg>
+            </div>
+
             <h3>Web Design</h3>
-            <p>Responsive pages with premium visual styling, structured content, strong typography and a professional digital identity.</p>
+
+            <p>
+              Responsive web pages with modern typography, structured content,
+              premium visual styling and a consistent digital identity.
+            </p>
+
             <span class="service-label">Web</span>
           </article>
+
         </div>
+
       </div>
     </section>
-    <section id="earn">
-  <div class="container">
 
-    <div class="section-heading reveal">
-      <span class="section-kicker">WazirLab Earn</span>
-      <h2>Complete useful tasks. Earn rewards.</h2>
-      <p>
-        Explore simple digital tasks, complete them carefully and submit your work
-        for review. Approved tasks can become eligible for rewards.
-      </p>
-    </div>
+    <!-- =========================
+         PROCESS
+    ========================== -->
 
-    <div class="service-grid">
-
-      <article class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-            <circle cx="11" cy="11" r="7"/>
-            <path d="m20 20-4-4"/>
-            <path d="M8 11h6"/>
-            <path d="M11 8v6"/>
-          </svg>
-        </div>
-        <h3>Research Tasks</h3>
-        <p>
-          Find specific information online and organize the results according
-          to the task requirements.
-        </p>
-        <span class="service-label">Research</span>
-        <a href="#" class="button button-primary" style="margin-top:18px;">
-  View Task
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M5 12h14"/>
-    <path d="m13 6 6 6-6 6"/>
-  </svg>
-</a>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-            <rect x="4" y="4" width="16" height="16" rx="2"/>
-            <path d="M8 8h8"/>
-            <path d="M8 12h8"/>
-            <path d="M8 16h5"/>
-          </svg>
-        </div>
-        <h3>Data Tasks</h3>
-        <p>
-          Complete structured data collection, checking, entry and organization
-          tasks with accuracy.
-        </p>
-        <span class="service-label">Data</span>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-            <rect x="3" y="4" width="18" height="15" rx="2"/>
-            <path d="M8 21h8"/>
-            <path d="M12 19v2"/>
-            <path d="M7 9h10"/>
-            <path d="M7 13h6"/>
-          </svg>
-        </div>
-        <h3>Website Testing</h3>
-        <p>
-          Test websites, identify usability issues and provide clear,
-          useful feedback.
-        </p>
-        <span class="service-label">Testing</span>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
-            <path d="M4 19V5"/>
-            <path d="M4 19h16"/>
-            <path d="m7 15 3-3 3 2 5-6"/>
-          </svg>
-        </div>
-        <h3>Feedback Tasks</h3>
-        <p>
-          Review digital content or workflows and provide genuine,
-          task-specific feedback.
-        </p>
-        <span class="service-label">Feedback</span>
-      </article>
-
-    </div>
-
-    <div class="project-journey reveal" style="margin-top: 28px;">
-      <div class="journey-head">
-        <span class="section-kicker">How It Works</span>
-        <h3>A simple workflow for useful digital work.</h3>
-        <p>
-          Choose a task, complete the requirements, submit your work and wait
-          for review. Reward eligibility depends on successful task approval.
-        </p>
-      </div>
-
-      <div class="journey-grid">
-        <div class="journey-step">
-          <span>Stage 01</span>
-          <strong>Choose</strong>
-          <p>Find a task that matches your available skills.</p>
-        </div>
-
-        <div class="journey-step">
-          <span>Stage 02</span>
-          <strong>Complete</strong>
-          <p>Follow the task instructions and complete the required work.</p>
-        </div>
-
-        <div class="journey-step">
-          <span>Stage 03</span>
-          <strong>Submit</strong>
-          <p>Send the completed work or required proof for review.</p>
-        </div>
-
-        <div class="journey-step">
-          <span>Stage 04</span>
-          <strong>Reward</strong>
-          <p>Approved work becomes eligible for the listed reward.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-    <section id="fiverr-services" class="fiverr-section">
+    <section id="process" class="process-section">
       <div class="container">
-        <div class="section-heading reveal">
-          <span class="section-kicker">Fiverr Services</span>
-          <h2>Hire Me for Professional Digital Work</h2>
-          <p>Explore my Fiverr services for research, data entry, document typing, spreadsheet work and professional design.</p>
+
+        <div class="process-layout">
+
+          <div class="process-copy reveal">
+
+            <span class="section-kicker">My Process</span>
+
+            <div class="section-top">
+              <h2 class="section-title">
+                Good work starts with a clear process.
+              </h2>
+            </div>
+
+            <p>
+              Whether the project starts with a research question, a spreadsheet,
+              a document or a web idea, the workflow follows the same principle:
+              understand first, structure second, improve and deliver last.
+            </p>
+
+            <div class="process-list">
+
+              <div class="process-item">
+                <div class="process-number">01</div>
+                <div>
+                  <h3>Understand</h3>
+                  <p>
+                    Identify the objective, requirements and expected final output.
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-item">
+                <div class="process-number">02</div>
+                <div>
+                  <h3>Research</h3>
+                  <p>
+                    Find relevant information and focus on what actually matters.
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-item">
+                <div class="process-number">03</div>
+                <div>
+                  <h3>Structure</h3>
+                  <p>
+                    Organize information into a clean and usable format.
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-item">
+                <div class="process-number">04</div>
+                <div>
+                  <h3>Refine</h3>
+                  <p>
+                    Improve clarity, formatting, consistency and presentation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="process-item">
+                <div class="process-number">05</div>
+                <div>
+                  <h3>Deliver</h3>
+                  <p>
+                    Present the finished result in a clear professional form.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="process-panel reveal">
+
+            <div class="process-panel-top">
+              <strong>Research → Structure → Deliver</strong>
+              <span>Core Workflow</span>
+            </div>
+
+            <div class="process-flow">
+
+              <div class="process-step">
+                <div class="process-step-number">01</div>
+                <div>
+                  <strong>Discover</strong>
+                  <span>Find the relevant information</span>
+                </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step-number">02</div>
+                <div>
+                  <strong>Organize</strong>
+                  <span>Create structure from raw information</span>
+                </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step-number">03</div>
+                <div>
+                  <strong>Build</strong>
+                  <span>Turn structure into a usable solution</span>
+                </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step-number">04</div>
+                <div>
+                  <strong>Refine</strong>
+                  <span>Improve clarity and visual quality</span>
+                </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </div>
+
+              <div class="process-step">
+                <div class="process-step-number">05</div>
+                <div>
+                  <strong>Deliver</strong>
+                  <span>Present the final result professionally</span>
+                </div>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke-width="1.8"
+                >
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
+      </div>
+    </section>
+
+    <!-- =========================
+         FIVERR
+    ========================== -->
+
+    <section id="fiverr" class="fiverr-section">
+      <div class="container">
+
+        <div class="fiverr-head">
+
+          <div class="section-top reveal">
+            <span class="section-kicker">Fiverr Services</span>
+
+            <h2 class="section-title">
+              Hire me for focused digital work.
+            </h2>
+
+            <p class="section-description">
+              My Fiverr profile includes services for web research, data entry,
+              Excel and Google Sheets work, PDF and image typing and social media
+              banner design.
+            </p>
+          </div>
+
+          <div class="fiverr-profile reveal">
+            <a
+              href="https://www.fiverr.com/s/jyjz6rZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-secondary"
+            >
+              View Fiverr Profile
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
         <div class="fiverr-grid">
+
+          <!-- GIG 1 -->
           <article class="fiverr-card reveal">
-            <div class="fiverr-icon">🔎</div>
-            <h3>Web Research & Data Collection</h3>
-            <p>Fast and accurate web research, information gathering and organized data collection delivered within 24 hours.</p>
-            <a class="button button-primary" href="https://www.fiverr.com/s/Q27VNEe" target="_blank" rel="noopener noreferrer">
+
+            <div class="fiverr-card-top">
+
+              <div class="fiverr-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <path d="m20 20-4-4"></path>
+                  <path d="M11 8v6"></path>
+                  <path d="M8 11h6"></path>
+                </svg>
+              </div>
+
+              <span class="fiverr-tag">Research</span>
+
+            </div>
+
+            <h3>
+              I will do fast web research and data collection within 24 hours
+            </h3>
+
+            <p>
+              Web research, information gathering and organized data collection
+              for clearly defined research tasks.
+            </p>
+
+            <a
+              href="https://www.fiverr.com/s/K3eQZA8"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+            >
               View Fiverr Gig
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
             </a>
+
           </article>
+
+          <!-- GIG 2 -->
           <article class="fiverr-card reveal">
-            <div class="fiverr-icon">📄</div>
-            <h3>PDF & Image Typing</h3>
-            <p>Accurate copy-paste work and typing from PDF files and images into editable Word or Excel documents.</p>
-            <a class="button button-primary" href="https://www.fiverr.com/s/1Eqgbv6" target="_blank" rel="noopener noreferrer">
+
+            <div class="fiverr-card-top">
+
+              <div class="fiverr-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <path d="M4 19V5"></path>
+                  <path d="M4 19h16"></path>
+                  <path d="m7 15 3-3 3 2 5-6"></path>
+                </svg>
+              </div>
+
+              <span class="fiverr-tag">Data Entry</span>
+
+            </div>
+
+            <h3>
+              I will do fast and accurate data entry in Excel and Google Sheets
+            </h3>
+
+            <p>
+              Data entry, copy-paste, spreadsheet organization and typing work
+              using Excel and Google Sheets.
+            </p>
+
+            <a
+              href="https://www.fiverr.com/s/aekD2LQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+            >
               View Fiverr Gig
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
             </a>
+
           </article>
+
+          <!-- GIG 3 -->
           <article class="fiverr-card reveal">
-            <div class="fiverr-icon">🎨</div>
-            <h3>Social Media Banner Design</h3>
-            <p>Professional and eye-catching social media banners designed to present your brand with a clean and modern look.</p>
-            <a class="button button-primary" href="https://www.fiverr.com/s/yev4d9G" target="_blank" rel="noopener noreferrer">
+
+            <div class="fiverr-card-top">
+
+              <div class="fiverr-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <path d="M6 3h10l3 3v15H6z"></path>
+                  <path d="M16 3v4h4"></path>
+                  <path d="M9 11h6"></path>
+                  <path d="M9 15h6"></path>
+                  <path d="M9 19h4"></path>
+                </svg>
+              </div>
+
+              <span class="fiverr-tag">Typing</span>
+
+            </div>
+
+            <h3>
+              I will do copy paste and accurate PDF and image typing
+            </h3>
+
+            <p>
+              Accurate typing, copy-paste and conversion of information from
+              PDF files and images into editable digital documents.
+            </p>
+
+            <a
+              href="https://www.fiverr.com/s/VrYl5WY"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+            >
               View Fiverr Gig
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
             </a>
+
           </article>
+
+          <!-- GIG 4 -->
           <article class="fiverr-card reveal">
-            <div class="fiverr-icon">📊</div>
-            <h3>Excel & Google Sheets Data Entry</h3>
-            <p>Fast and accurate data entry, copy-paste and typing tasks using Microsoft Excel and Google Sheets.</p>
-            <a class="button button-primary" href="https://www.fiverr.com/s/em6pd4P" target="_blank" rel="noopener noreferrer">
+
+            <div class="fiverr-card-top">
+
+              <div class="fiverr-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                  <path d="M8 21h8"></path>
+                  <path d="M12 19v2"></path>
+                  <path d="M7 9h10"></path>
+                  <path d="M7 13h6"></path>
+                </svg>
+              </div>
+
+              <span class="fiverr-tag">Design</span>
+
+            </div>
+
+            <h3>
+              I will design professional social media banners for your brand
+            </h3>
+
+            <p>
+              Clean, modern and professional social media banner designs built
+              around your brand and content.
+            </p>
+
+            <a
+              href="https://www.fiverr.com/s/9d9pZld"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="button button-primary"
+            >
               View Fiverr Gig
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
             </a>
+
           </article>
+
         </div>
+
+        <div class="fiverr-note reveal">
+          <p>
+            New to Fiverr? You can also join through my referral link.
+          </p>
+
+          <a
+            href="https://www.fiverr.com/pe/rEYkq6b"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Explore Fiverr Referral →
+          </a>
+        </div>
+
       </div>
     </section>
 
-    <section id="research">
-      <div class="container">
-        <div class="research-layout">
-          <div class="research-copy reveal">
-            <span class="section-kicker">Research Method</span>
-            <div class="section-heading"><h2>Information is more useful when the process is structured.</h2></div>
-            <p>My research workflow starts with understanding the actual objective. From there, information is discovered, reviewed, organized and transformed into a useful output.</p>
-            <div class="research-list">
-              <div class="research-item"><div class="research-number">01</div><div><h3>Define</h3><p>Identify exactly what the project needs and what the final output should contain.</p></div></div>
-              <div class="research-item"><div class="research-number">02</div><div><h3>Discover</h3><p>Search for relevant information and organize useful sources around the objective.</p></div></div>
-              <div class="research-item"><div class="research-number">03</div><div><h3>Structure</h3><p>Turn scattered information into tables, notes, documents or other practical formats.</p></div></div>
-              <div class="research-item"><div class="research-number">04</div><div><h3>Refine</h3><p>Improve clarity, organization, formatting and presentation before final delivery.</p></div></div>
-            </div>
-          </div>
-          <div class="workflow reveal">
-            <div class="workflow-top"><strong>Research → Build → Deliver</strong><span>Core Workflow</span></div>
-            <div class="workflow-list">
-              <div class="workflow-step"><div class="workflow-number">01</div><div><strong>Discover</strong><span>Find the right information</span></div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></div>
-              <div class="workflow-step"><div class="workflow-number">02</div><div><strong>Organize</strong><span>Create structure from raw information</span></div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></div>
-              <div class="workflow-step"><div class="workflow-number">03</div><div><strong>Build</strong><span>Turn structure into a usable solution</span></div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></div>
-              <div class="workflow-step"><div class="workflow-number">04</div><div><strong>Refine</strong><span>Improve clarity and visual quality</span></div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></div>
-              <div class="workflow-step"><div class="workflow-number">05</div><div><strong>Deliver</strong><span>Present the final result professionally</span></div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m9 18 6-6-6-6"/></svg></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- =========================
+         WORK
+    ========================== -->
 
-    <section id="projects">
+    <section id="work">
       <div class="container">
-        <div class="projects-intro reveal">
-          <span class="section-kicker">My Projects</span>
-          <h2>Work that shows how research, branding and technology come together.</h2>
-          <p>These featured projects represent the digital work and professional systems being developed through Wazir Research Lab. Each project is presented with its purpose, process and practical role rather than being shown as a simple project title.</p>
+
+        <div class="section-top reveal">
+          <span class="section-kicker">Selected Work</span>
+
+          <h2 class="section-title">
+            A digital ecosystem built around one clear identity.
+          </h2>
+
+          <p class="section-description">
+            The work presented here connects research, data, branding and web
+            development into one consistent professional system.
+          </p>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 21h8"/><path d="M12 19v2"/><path d="M7 9h10"/><path d="M7 13h6"/></svg></div>
-              <span class="project-type">Web Project</span>
+        <div class="work-grid">
+
+          <!-- WORK 1 -->
+          <article class="work-card reveal">
+
+            <div class="work-top">
+
+              <div class="work-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                  <path d="M8 21h8"></path>
+                  <path d="M12 19v2"></path>
+                  <path d="M7 9h10"></path>
+                  <path d="M7 13h6"></path>
+                </svg>
+              </div>
+
+              <span class="work-type">Web Project</span>
+
             </div>
+
             <h3>Wazir Research Lab Website</h3>
-            <p class="project-summary">The main personal portfolio and digital research platform created to represent my work, skills, projects and professional identity in one modern web experience.</p>
-            <div class="project-section"><strong>Project Purpose</strong><p>Create a premium digital home for Wazir Research Lab where visitors can quickly understand who I am, what I work with, how I approach research and what type of digital projects I build.</p></div>
-            <div class="project-section">
-              <strong>What I Built</strong>
-              <div class="project-points">
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg>Responsive multi-section portfolio structure</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>Navigation and content hierarchy</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="m9 12 2 2 4-4"/></svg>Premium dark visual identity and interface design</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 3-3 3 2 5-6"/></svg>Project, research and service presentation</div>
+
+            <p>
+              A central digital platform for presenting my professional
+              identity, services, research approach and selected work.
+            </p>
+
+            <div class="work-details">
+
+              <div class="work-detail">
+                <strong>Focus</strong>
+                <p>
+                  Responsive structure, premium dark interface, clear content
+                  hierarchy and integrated professional links.
+                </p>
               </div>
+
+              <div class="work-detail">
+                <strong>Built With</strong>
+                <p>
+                  HTML, CSS, responsive layout systems and lightweight
+                  JavaScript interactions.
+                </p>
+              </div>
+
             </div>
-            <div class="project-tags"><span>HTML</span><span>CSS</span><span>Responsive</span><span>Branding</span><span>UI</span></div>
-            <a href="https://waxiraura.github.io/wazirresearchlab/" target="_blank" rel="noopener noreferrer" class="project-link">View Live Website<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 14v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"/></svg></a>
+
+            <div class="work-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Responsive</span>
+              <span>UI</span>
+              <span>Branding</span>
+            </div>
+
+            <a
+              href="https://waxiraura.github.io/wazirresearchlab/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-link"
+            >
+              View Live Website
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+                <path d="M19 14v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"></path>
+              </svg>
+            </a>
+
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15v-4"/><path d="M11 15V8"/><path d="M15 15V6"/><path d="M19 15V4"/></svg></div>
-              <span class="project-type">Data Project</span>
-            </div>
-            <h3>Research & Data Workflow System</h3>
-            <p class="project-summary">A structured workflow concept for turning web research and raw information into organized data that can be reviewed, maintained and presented more effectively.</p>
-            <div class="project-section"><strong>Project Purpose</strong><p>Build a repeatable process where research is not left as scattered notes. The objective is to move from discovery to structured information and then to a useful final format.</p></div>
-            <div class="project-section">
-              <strong>Workflow Focus</strong>
-              <div class="project-points">
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>Online information discovery</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>Structured information collection</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/><path d="m7 15 3-3 3 2 5-6"/></svg>Spreadsheet-based organization</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg>Clean, reviewable final output</div>
+          <!-- WORK 2 -->
+          <article class="work-card reveal">
+
+            <div class="work-top">
+
+              <div class="work-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <path d="M4 19V5"></path>
+                  <path d="M4 19h16"></path>
+                  <path d="M7 15v-4"></path>
+                  <path d="M11 15V8"></path>
+                  <path d="M15 15V6"></path>
+                  <path d="M19 15V4"></path>
+                </svg>
               </div>
+
+              <span class="work-type">Data Concept</span>
+
             </div>
-            <div class="project-tags"><span>Research</span><span>Data Collection</span><span>Excel</span><span>Organization</span><span>Workflow</span></div>
+
+            <h3>Research & Data Workflow</h3>
+
+            <p>
+              A structured process for turning scattered online information
+              into organized, reviewable and practical data.
+            </p>
+
+            <div class="work-details">
+
+              <div class="work-detail">
+                <strong>Focus</strong>
+                <p>
+                  Discovery, collection, spreadsheet organization and clean
+                  final presentation.
+                </p>
+              </div>
+
+              <div class="work-detail">
+                <strong>Workflow</strong>
+                <p>
+                  Research → organize → format → review → deliver.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="work-tags">
+              <span>Research</span>
+              <span>Data</span>
+              <span>Excel</span>
+              <span>Organization</span>
+              <span>Workflow</span>
+            </div>
+
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m8 9 4-3 4 3v6l-4 3-4-3z"/><path d="M12 3v3"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="m7 17-1.5 1.5"/><path d="m18.5 5.5-1.5 1.5"/></svg></div>
-              <span class="project-type">Brand Project</span>
+          <!-- WORK 3 -->
+          <article class="work-card reveal">
+
+            <div class="work-top">
+
+              <div class="work-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <path d="m8 9 4-3 4 3v6l-4 3-4-3z"></path>
+                  <path d="M12 3v3"></path>
+                  <path d="M5 12H3"></path>
+                  <path d="M21 12h-2"></path>
+                  <path d="m7 17-1.5 1.5"></path>
+                  <path d="m18.5 5.5-1.5 1.5"></path>
+                </svg>
+              </div>
+
+              <span class="work-type">Brand Project</span>
+
             </div>
+
             <h3>MW Brand & Digital Identity</h3>
-            <p class="project-summary">The MW identity forms the visual foundation of Wazir Research Lab, connecting a recognizable personal mark with the wider research and technology-focused digital presence.</p>
-            <div class="project-section"><strong>Project Purpose</strong><p>Create a visual identity that can work consistently across the website and professional digital presence while staying minimal, recognizable and modern.</p></div>
-            <div class="project-section">
-              <strong>Identity Work</strong>
-              <div class="project-points">
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>MW logo integration throughout the website</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="8"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>Consistent dark-tech visual direction</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/></svg>Visual hierarchy for personal branding</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg>Subtle logo watermark for premium presentation</div>
+
+            <p>
+              The MW logo provides the visual foundation for Wazir Research Lab,
+              connecting the personal identity with the wider digital presence.
+            </p>
+
+            <div class="work-details">
+
+              <div class="work-detail">
+                <strong>Focus</strong>
+                <p>
+                  Minimal identity, dark-tech visual language, consistent logo
+                  use and subtle visual integration.
+                </p>
               </div>
+
+              <div class="work-detail">
+                <strong>Role</strong>
+                <p>
+                  A recognizable visual mark that works across the website and
+                  professional digital presence.
+                </p>
+              </div>
+
             </div>
-            <div class="project-tags"><span>MW</span><span>Brand Identity</span><span>Logo</span><span>Visual Design</span><span>Digital Brand</span></div>
+
+            <div class="work-tags">
+              <span>MW</span>
+              <span>Logo</span>
+              <span>Identity</span>
+              <span>Visual Design</span>
+              <span>Branding</span>
+            </div>
+
           </article>
 
-          <article class="project-card reveal">
-            <div class="project-header">
-              <div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M7 8h10"/><path d="M7 12h6"/><path d="M7 16h8"/></svg></div>
-              <span class="project-type">Portfolio Project</span>
+          <!-- WORK 4 -->
+          <article class="work-card reveal">
+
+            <div class="work-top">
+
+              <div class="work-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8">
+                  <rect x="3" y="4" width="18" height="15" rx="2"></rect>
+                  <path d="M7 8h10"></path>
+                  <path d="M7 12h6"></path>
+                  <path d="M7 16h8"></path>
+                </svg>
+              </div>
+
+              <span class="work-type">Portfolio System</span>
+
             </div>
+
             <h3>Freelance Digital Portfolio</h3>
-            <p class="project-summary">A professional presentation layer for showcasing digital services, skills and online professional presence through platforms such as Fiverr and LinkedIn.</p>
-            <div class="project-section"><strong>Project Purpose</strong><p>Present professional services in a clearer way so that research, data entry, Excel, Word, PowerPoint and web design capabilities can be understood without unnecessary complexity.</p></div>
-            <div class="project-section">
-              <strong>Presentation Focus</strong>
-              <div class="project-points">
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19V5"/><path d="M4 19h16"/></svg>Service-focused professional presentation</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>Clear categorization of digital skills</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M6 12h12"/><path d="m13 5 7 7-7 7"/></svg>Links between website and professional platforms</div>
-                <div class="project-point"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="m5 12 4 4L19 6"/></svg>Consistent personal digital identity</div>
+
+            <p>
+              A professional presentation layer connecting website content with
+              Fiverr services and LinkedIn presence.
+            </p>
+
+            <div class="work-details">
+
+              <div class="work-detail">
+                <strong>Focus</strong>
+                <p>
+                  Make services easier to understand while keeping branding and
+                  professional links consistent.
+                </p>
               </div>
+
+              <div class="work-detail">
+                <strong>Platforms</strong>
+                <p>
+                  Fiverr, LinkedIn and the Wazir Research Lab website.
+                </p>
+              </div>
+
             </div>
-            <div class="project-tags"><span>Fiverr</span><span>LinkedIn</span><span>Services</span><span>Portfolio</span><span>Branding</span></div>
-            <a href="https://www.fiverr.com/s/P42eaXG" target="_blank" rel="noopener noreferrer" class="project-link">Visit Fiverr Profile<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg></a>
+
+            <div class="work-tags">
+              <span>Fiverr</span>
+              <span>LinkedIn</span>
+              <span>Services</span>
+              <span>Portfolio</span>
+              <span>Branding</span>
+            </div>
+
+            <a
+              href="https://www.fiverr.com/s/jyjz6rZ"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="work-link"
+            >
+              Visit Fiverr Profile
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M14 5h5v5"></path>
+                <path d="M10 14 19 5"></path>
+              </svg>
+            </a>
+
           </article>
+
         </div>
 
-        <div class="project-journey reveal">
-          <div class="journey-head">
-            <span class="section-kicker">How My Projects Connect</span>
-            <h3>One professional system instead of disconnected pieces.</h3>
-            <p>The projects on this website are connected by the same workflow: research information, organize it, create something useful, improve the presentation and make the final result easy to understand.</p>
-          </div>
-          <div class="journey-grid">
-            <div class="journey-step"><span>Stage 01</span><strong>Research</strong><p>Discover the information and understand the objective.</p></div>
-            <div class="journey-step"><span>Stage 02</span><strong>Structure</strong><p>Organize data, content and requirements into a clear system.</p></div>
-            <div class="journey-step"><span>Stage 03</span><strong>Build</strong><p>Turn the structure into a website, document, spreadsheet or digital workflow.</p></div>
-            <div class="journey-step"><span>Stage 04</span><strong>Present</strong><p>Refine the final result so it looks clear, polished and useful.</p></div>
-          </div>
-        </div>
       </div>
     </section>
+
+    <!-- =========================
+         PROFESSIONAL PRESENCE
+    ========================== -->
 
     <section>
       <div class="container">
-        <div class="section-heading reveal">
+
+        <div class="section-top reveal">
           <span class="section-kicker">Professional Presence</span>
-          <h2>Continue exploring the work beyond the website.</h2>
-          <p>Wazir Research Lab acts as the central digital space, while professional platforms provide additional ways to discover services and connect.</p>
+
+          <h2 class="section-title">
+            Connect with me beyond the website.
+          </h2>
+
+          <p class="section-description">
+            Wazir Research Lab acts as the central digital space, while Fiverr,
+            LinkedIn and email provide additional ways to explore my work and
+            connect professionally.
+          </p>
         </div>
-        <div class="connect-layout">
-          <div class="connect-card reveal">
-            <div class="connect-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M8 8h8"/><path d="M8 12h8"/><path d="M8 16h5"/></svg></div>
-            <h3>Fiverr</h3>
-            <p>A professional service presence for digital work including research, data and productivity-focused services.</p>
-            <a href="https://www.fiverr.com/s/P42eaXG" target="_blank" rel="noopener noreferrer">Open Fiverr<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg></a>
-          </div>
-          <div class="connect-card reveal">
-            <div class="connect-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 8a6 6 0 1 1-8 8"/><path d="M8 12h8"/></svg></div>
-            <h3>LinkedIn</h3>
-            <p>Connect through the professional network and explore the broader digital and professional profile.</p>
-            <a href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/" target="_blank" rel="noopener noreferrer">Open LinkedIn<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg></a>
-          </div>
+
+        <div class="contact-details">
+
+          <a
+            href="https://www.fiverr.com/s/jyjz6rZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-item reveal"
+          >
+            <div class="contact-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <path d="M4 4h16v16H4z"></path>
+                <path d="M8 8h8"></path>
+                <path d="M8 12h8"></path>
+                <path d="M8 16h5"></path>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Fiverr Profile</strong>
+              <span>fiverr.com/s/jyjz6rZ</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-item reveal"
+          >
+            <div class="contact-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <path d="M8 11v5"></path>
+                <path d="M8 8.5v.01"></path>
+                <path d="M12 16v-5"></path>
+                <path d="M12 13.2c0-1.3.9-2.2 2.1-2.2 1.2 0 1.9.8 1.9 2.2V16"></path>
+              </svg>
+            </div>
+
+            <div>
+              <strong>LinkedIn</strong>
+              <span>linkedin.com/in/murad-wazir-bbb0b541a</span>
+            </div>
+          </a>
+
+          <a
+            href="mailto:zuhaibwazir558@gmail.com"
+            class="contact-item reveal"
+          >
+            <div class="contact-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke-width="1.8"
+              >
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </div>
+
+            <div>
+              <strong>Email</strong>
+              <span>zuhaibwazir558@gmail.com</span>
+            </div>
+          </a>
+
         </div>
+
       </div>
     </section>
+
+    <!-- =========================
+         FAQ
+    ========================== -->
 
     <section id="faq">
       <div class="container">
-        <div class="section-heading reveal">
+
+        <div class="section-top reveal">
           <span class="section-kicker">FAQ</span>
-          <h2>A few useful answers.</h2>
+
+          <h2 class="section-title">
+            A few useful answers.
+          </h2>
         </div>
+
         <div class="faq">
+
           <details class="reveal">
-            <summary>What is Wazir Research Lab?<span class="faq-plus">+</span></summary>
-            <div class="faq-answer">Wazir Research Lab is a personal digital workspace focused on research, data organization, Microsoft Office workflows, branding and modern web experiences.</div>
+            <summary>
+              What is Wazir Research Lab?
+              <span class="faq-plus">+</span>
+            </summary>
+
+            <div class="faq-answer">
+              Wazir Research Lab is the personal digital workspace of Murad Wazir,
+              focused on research, data organization, digital productivity,
+              design and modern web experiences.
+            </div>
           </details>
+
           <details class="reveal">
-            <summary>What is the main purpose of the website?<span class="faq-plus">+</span></summary>
-            <div class="faq-answer">The website brings together the personal introduction, professional skills, research approach, selected projects and digital presence of Murad Wazir in one organized platform.</div>
+            <summary>
+              What services do you provide?
+              <span class="faq-plus">+</span>
+            </summary>
+
+            <div class="faq-answer">
+              Services include web research, data collection, Excel and Google
+              Sheets work, document typing, PowerPoint presentations, social
+              media banner design and web design.
+            </div>
           </details>
+
           <details class="reveal">
-            <summary>What types of projects are presented here?<span class="faq-plus">+</span></summary>
-            <div class="faq-answer">The featured work covers the Wazir Research Lab website, research and data workflow concepts, the MW digital identity and the professional freelance portfolio ecosystem.</div>
+            <summary>
+              Where can I hire you?
+              <span class="faq-plus">+</span>
+            </summary>
+
+            <div class="faq-answer">
+              You can explore the Fiverr profile and individual Fiverr gigs
+              through the Fiverr section on this website.
+            </div>
           </details>
+
           <details class="reveal">
-            <summary>Is the website responsive?<span class="faq-plus">+</span></summary>
-            <div class="faq-answer">Yes. The layout is designed to adapt to desktop, tablet and mobile screen sizes.</div>
+            <summary>
+              Can I contact you directly?
+              <span class="faq-plus">+</span>
+            </summary>
+
+            <div class="faq-answer">
+              Yes. You can contact Murad directly by email or use the contact
+              page for project discussions.
+            </div>
           </details>
+
           <details class="reveal">
-            <summary>How can I contact Murad?<span class="faq-plus">+</span></summary>
-            <div class="faq-answer">Use the Contact page for direct communication and project discussions.</div>
+            <summary>
+              Is this website mobile responsive?
+              <span class="faq-plus">+</span>
+            </summary>
+
+            <div class="faq-answer">
+              Yes. The layout is designed to adapt across desktop, tablet and
+              mobile screen sizes.
+            </div>
           </details>
+
         </div>
+
       </div>
     </section>
 
-    <section class="cta-section">
+    <!-- =========================
+         FINAL CTA
+    ========================== -->
+
+    <section id="contact" class="contact-section">
       <div class="container">
-        <div class="cta reveal">
-          <div class="cta-content">
-            <span class="section-kicker">Let's Build Something Useful</span>
-            <h2>Research a question. Organize the information. Build the solution.</h2>
-            <p>Whether the work begins with research, data, documents, branding or a web idea, the process starts with understanding the objective and ends with a clear professional result.</p>
-            <div class="cta-actions">
-              <a href="contact.html" class="button button-primary">Contact Me<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
-              <a href="https://www.fiverr.com/s/P42eaXG" target="_blank" rel="noopener noreferrer" class="button button-secondary">Visit Fiverr<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 5h5v5"/><path d="M10 14 19 5"/></svg></a>
+
+        <div class="contact-panel reveal">
+
+          <div class="contact-layout">
+
+            <div class="contact-copy">
+
+              <span class="section-kicker">Let's Work</span>
+
+              <h2>
+                Have a task, idea or digital project?
+                Let’s turn it into something useful.
+              </h2>
+
+              <p>
+                Whether the work starts with research, data, documents, design
+                or a web idea, the process begins with understanding what you
+                need and building the right result around it.
+              </p>
+
+              <div class="contact-actions">
+
+                <a
+                  href="mailto:zuhaibwazir558@gmail.com"
+                  class="button button-primary"
+                >
+                  Email Murad
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+                </a>
+
+                <a
+                  href="contact.html"
+                  class="button button-secondary"
+                >
+                  Open Contact Page
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M14 5h5v5"></path>
+                    <path d="M10 14 19 5"></path>
+                    <path d="M19 14v3a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h3"></path>
+                  </svg>
+                </a>
+
+              </div>
+
             </div>
+
+            <div class="contact-details">
+
+              <a
+                href="https://www.fiverr.com/s/jyjz6rZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+              >
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 4h16v16H4z"></path>
+                    <path d="M8 8h8"></path>
+                    <path d="M8 12h8"></path>
+                    <path d="M8 16h5"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <strong>Fiverr</strong>
+                  <span>View profile & services</span>
+                </div>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+              >
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="1.8"
+                  >
+                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <path d="M8 11v5"></path>
+                    <path d="M8 8.5v.01"></path>
+                    <path d="M12 16v-5"></path>
+                    <path d="M12 13.2c0-1.3.9-2.2 2.1-2.2 1.2 0 1.9.8 1.9 2.2V16"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <strong>LinkedIn</strong>
+                  <span>Connect professionally</span>
+                </div>
+              </a>
+
+              <a
+                href="mailto:zuhaibwazir558@gmail.com"
+                class="contact-item"
+              >
+                <div class="contact-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <strong>Email</strong>
+                  <span>zuhaibwazir558@gmail.com</span>
+                </div>
+              </a>
+
+            </div>
+
           </div>
+
         </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
   <footer>
     <div class="container">
+
       <div class="footer-main">
+
         <div>
+
           <a href="index.html" class="brand">
-            <span class="brand-logo"><img src="MW-logo.png" alt="MW Logo"></span>
-            <span class="brand-name"><strong>Wazir Research Lab</strong><span>Research • Technology • Solutions</span></span>
+
+            <span class="brand-logo">
+              <img src="MW-logo.png" alt="MW logo">
+            </span>
+
+            <span class="brand-name">
+              <strong>Wazir Research Lab</strong>
+              <span>Research • Technology • Solutions</span>
+            </span>
+
           </a>
-          <p class="footer-description">A professional digital workspace by Murad Wazir, bringing research, data, technology and digital presentation together in one modern platform.</p>
+
+          <p class="footer-description">
+            A professional digital workspace by Murad Wazir, bringing research,
+            data, productivity, branding and modern web work together through
+            one consistent digital identity.
+          </p>
+
         </div>
+
         <div>
+
           <div class="footer-title">Explore</div>
+
           <div class="footer-links">
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#fiverr-services">Fiverr</a>
-            <a href="#research">Research</a>
-            <a href="#projects">Projects</a>
+            <a href="#process">Process</a>
+            <a href="#fiverr">Fiverr</a>
+            <a href="#work">Work</a>
             <a href="#faq">FAQ</a>
           </div>
+
         </div>
+
         <div>
+
           <div class="footer-title">Pages</div>
+
           <div class="footer-links">
             <a href="about.html">About Page</a>
             <a href="contact.html">Contact</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
+            <a
+              href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
           </div>
+
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Wazir Research Lab. All rights reserved.</span>
-        <span><a href="privacy.html">Privacy</a> &nbsp;•&nbsp; <a href="terms.html">Terms</a></span>
+
+        <span>
+          © <span id="year"></span> Wazir Research Lab. All rights reserved.
+        </span>
+
+        <span>
+          <a href="privacy.html">Privacy</a>
+          &nbsp;•&nbsp;
+          <a href="terms.html">Terms</a>
+        </span>
+
       </div>
+
     </div>
   </footer>
 
-  <button id="backToTop" type="button" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m18 15-6-6-6 6"/></svg>
+  <!-- =========================
+       BACK TO TOP
+  ========================== -->
+
+  <button
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
   </button>
 
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
+    (() => {
+      "use strict";
 
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+      const year = document.getElementById("year");
+      const menuToggle = document.getElementById("menuToggle");
+      const navLinks = document.getElementById("navLinks");
+      const backToTop = document.getElementById("backToTop");
+      const scrollProgress = document.getElementById("scrollProgress");
 
-    menuToggle.addEventListener("click", () => {
-      const opened = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(opened));
-    });
-
-    document.querySelectorAll("#navLinks a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    const revealElements = document.querySelectorAll(".reveal");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealElements.forEach((el) => observer.observe(el));
-
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 450) backToTop.classList.add("show");
-      else backToTop.classList.remove("show");
-    }, { passive: true });
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
+      /* Current year */
+      if (year) {
+        year.textContent = new Date().getFullYear();
       }
-    });
+
+      /* Mobile navigation */
+      if (menuToggle && navLinks) {
+        const closeMenu = () => {
+          navLinks.classList.remove("open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("open");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape") {
+            closeMenu();
+          }
+        });
+      }
+
+      /* Scroll progress + back to top */
+      const handleScroll = () => {
+        const doc = document.documentElement;
+        const scrollable = doc.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0
+          ? window.scrollY / scrollable
+          : 0;
+
+        if (scrollProgress) {
+          scrollProgress.style.transform =
+            `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+        }
+
+        if (backToTop) {
+          if (window.scrollY > 500) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      if (backToTop) {
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+      }
+
+      /* Reveal animation */
+      const revealElements = document.querySelectorAll(".reveal");
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.08,
+            rootMargin: "0px 0px -35px 0px"
+          }
+        );
+
+        revealElements.forEach((element) => {
+          observer.observe(element);
+        });
+      } else {
+        revealElements.forEach((element) => {
+          element.classList.add("visible");
+        });
+      }
+    })();
   </script>
 
 </body>
