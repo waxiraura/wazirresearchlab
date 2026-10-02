@@ -4,7 +4,7 @@
 <tr>
 <td align="center" width="100%">
 
-#🌐 ✦ WAZIR RESEARCH LAB ✦
+###🌐 ✦ WAZIR RESEARCH LAB ✦
 
 ### 🔬 Research  •  ⚙️ Technology  •  💡 Solutions
 
