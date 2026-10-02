@@ -4,13 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact — Wazir Research Lab</title>
   <meta
     name="description"
-    content="Contact Wazir Research Lab for research, collaboration, questions, and professional inquiries."
+    content="Contact Wazir Research Lab for research, data, technology, collaboration, web projects and professional inquiries."
   >
+  <meta name="author" content="Murad Wazir">
+  <meta name="theme-color" content="#050812">
+  <meta name="robots" content="index, follow">
+
+  <meta
+    property="og:title"
+    content="Contact | Wazir Research Lab"
+  >
+  <meta
+    property="og:description"
+    content="Contact Murad Wazir for research, data, technology and digital projects."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="MW-logo.png">
+
+  <link rel="icon" type="image/png" href="MW-logo.png">
+
+  <title>Contact | Wazir Research Lab</title>
 
   <style>
+    :root {
+      --bg: #050812;
+      --bg-2: #070c16;
+      --bg-3: #0a111e;
+
+      --surface: rgba(13, 21, 36, .76);
+      --surface-strong: rgba(11, 19, 33, .95);
+      --surface-soft: rgba(255, 255, 255, .028);
+
+      --heading: #f4f8ff;
+      --text: #c8d4e3;
+      --muted: #91a0b4;
+      --muted-2: #718197;
+
+      --cyan: #5ce1ff;
+      --cyan-bright: #b2f4ff;
+      --blue: #7d8dff;
+      --green: #72e8b1;
+      --red: #ff808c;
+
+      --line: rgba(255, 255, 255, .075);
+      --line-hover: rgba(92, 225, 255, .25);
+
+      --shadow: 0 28px 80px rgba(0, 0, 0, .34);
+      --shadow-soft: 0 16px 46px rgba(0, 0, 0, .22);
+
+      --radius: 20px;
+      --radius-lg: 28px;
+
+      --container: 1180px;
+
+      --ease: cubic-bezier(.22, .7, .25, 1);
+      --ease-slow: cubic-bezier(.2, .8, .2, 1);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -19,258 +71,1265 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 92px;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(92, 225, 255, 0.08), transparent 35%),
-        radial-gradient(circle at bottom right, rgba(120, 90, 255, 0.08), transparent 35%),
-        #05070b;
-      color: #ffffff;
       min-height: 100vh;
+      overflow-x: hidden;
+      color: var(--heading);
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.65;
+      background:
+        radial-gradient(circle at 8% 0%, rgba(92, 225, 255, .075), transparent 26%),
+        radial-gradient(circle at 92% 7%, rgba(125, 141, 255, .085), transparent 29%),
+        linear-gradient(180deg, #04070f 0%, #060b14 45%, #07101b 100%);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      pointer-events: none;
+      opacity: .13;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, .022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .022) 1px, transparent 1px);
+      background-size: 72px 72px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, .18) 100%);
+    }
+
+    ::selection {
+      color: #041219;
+      background: var(--cyan);
+    }
+
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #04070e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, var(--cyan), var(--blue));
+      border: 3px solid #04070e;
+      border-radius: 999px;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
     }
 
     .container {
-      width: min(1100px, 92%);
-      margin: auto;
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
     }
+
+    /* =========================
+       PROGRESS
+    ========================== */
+
+    .scroll-progress {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 2000;
+      width: 100%;
+      height: 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 18px rgba(92, 225, 255, .45);
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
 
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      background: rgba(5, 7, 11, 0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, .055);
+      background: rgba(4, 8, 16, .73);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(4, 8, 16, .91);
+      border-bottom-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, .16);
     }
 
     .nav {
-      min-height: 74px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 24px;
     }
 
     .brand {
-      font-size: 1rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .brand span {
-      color: #5ce1ff;
+    .brand-logo {
+      position: relative;
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(92, 225, 255, .17);
+      border-radius: 14px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(92, 225, 255, .09),
+          rgba(125, 141, 255, .045)
+        );
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .05),
+        0 0 28px rgba(92, 225, 255, .05);
+    }
+
+    .brand-logo::before {
+      content: "";
+      position: absolute;
+      width: 31px;
+      height: 31px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(92, 225, 255, .16),
+          transparent 68%
+        );
+      filter: blur(6px);
+    }
+
+    .brand-logo img {
+      position: relative;
+      z-index: 1;
+      width: 29px;
+      height: 29px;
+      object-fit: contain;
+    }
+
+    .brand-name {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-name strong {
+      color: var(--heading);
+      font-size: .9rem;
+      font-weight: 880;
+      letter-spacing: -.015em;
+    }
+
+    .brand-name span {
+      margin-top: 5px;
+      color: #8493a7;
+      font-size: .57rem;
+      font-weight: 820;
+      letter-spacing: .16em;
+      text-transform: uppercase;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 4px;
     }
 
     .nav-links a {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.68);
-      transition: 0.25s ease;
+      position: relative;
+      padding: 10px 12px;
+      color: #9fadc0;
+      font-size: .78rem;
+      font-weight: 760;
+      transition:
+        color .35s ease,
+        transform .35s var(--ease);
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: #5ce1ff;
+    .nav-links a:hover {
+      color: #fff;
+      transform: translateY(-1px);
     }
+
+    .nav-links a:not(.active):not(.nav-cta)::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 4px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      transform: scaleX(0);
+      transition: transform .35s var(--ease);
+    }
+
+    .nav-links a:not(.active):not(.nav-cta):hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-links .active {
+      color: #dff8ff;
+    }
+
+    .nav-links .active::after {
+      content: "";
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 4px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      box-shadow: 0 0 10px rgba(92, 225, 255, .18);
+    }
+
+    .nav-cta {
+      margin-left: 8px;
+      padding: 10px 16px !important;
+      color: #03131a !important;
+      border: 1px solid rgba(92, 225, 255, .2);
+      border-radius: 11px;
+      background: linear-gradient(135deg, #99efff, var(--cyan));
+      box-shadow: 0 10px 28px rgba(92, 225, 255, .13);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 16px 36px rgba(92, 225, 255, .25);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      color: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .03);
+      cursor: pointer;
+    }
+
+    .menu-toggle svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .contact-hero {
+      position: relative;
+      min-height: 500px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .045);
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(92, 225, 255, .035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(92, 225, 255, .035) 1px, transparent 1px);
+      background-size: 78px 78px;
+      mask-image:
+        radial-gradient(
+          ellipse at center,
+          black 0%,
+          rgba(0, 0, 0, .9) 42%,
+          transparent 84%
+        );
+      -webkit-mask-image:
+        radial-gradient(
+          ellipse at center,
+          black 0%,
+          rgba(0, 0, 0, .9) 42%,
+          transparent 84%
+        );
+    }
+
+    .hero-orbit {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      width: 600px;
+      height: 600px;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(92, 225, 255, .04);
+      border-radius: 50%;
+    }
+
+    .hero-orbit::before,
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, .024);
+      border-radius: 50%;
+    }
+
+    .hero-orbit::before {
+      inset: 10%;
+    }
+
+    .hero-orbit::after {
+      inset: 24%;
+      border-color: rgba(92, 225, 255, .025);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 620px;
+      height: 620px;
+      left: 50%;
+      top: 42%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(92, 225, 255, .105),
+          rgba(92, 225, 255, .03) 38%,
+          transparent 72%
+        );
+      filter: blur(5px);
+    }
+
+    .hero-glow.blue {
+      width: 350px;
+      height: 350px;
+      left: auto;
+      top: auto;
+      right: -170px;
+      bottom: -190px;
+      background:
+        radial-gradient(
+          circle,
+          rgba(125, 141, 255, .1),
+          transparent 70%
+        );
+    }
+
+    .hero-watermark {
+      position: absolute;
+      left: 50%;
+      top: 45%;
+      width: min(420px, 68vw);
+      height: min(420px, 68vw);
+      transform: translate(-50%, -50%);
+      background: url("MW-logo.png") center / contain no-repeat;
+      opacity: .03;
+      filter: grayscale(100%) brightness(1.8);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 75px 0;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      color: #caf5ff;
+      border: 1px solid rgba(92, 225, 255, .17);
+      border-radius: 999px;
+      background: rgba(92, 225, 255, .04);
+      font-size: .61rem;
+      font-weight: 880;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .hero-badge i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 14px rgba(92, 225, 255, .8);
+    }
+
+    .hero-content h1 {
+      max-width: 900px;
+      margin: 24px auto 0;
+      color: var(--heading);
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 950;
+      line-height: .93;
+      letter-spacing: -.07em;
+    }
+
+    .hero-content h1 span {
+      color: var(--cyan);
+    }
+
+    .hero-content p {
+      max-width: 720px;
+      margin: 18px auto 0;
+      color: var(--text);
+      font-size: .92rem;
+      line-height: 1.85;
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .button {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 0 19px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      font-size: .75rem;
+      font-weight: 850;
+      cursor: pointer;
+      transition:
+        transform .4s var(--ease),
+        box-shadow .4s var(--ease),
+        background .4s ease,
+        border-color .4s ease,
+        filter .4s ease;
+    }
+
+    .button svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .35s var(--ease);
+    }
+
+    .button-primary {
+      color: #03141b;
+      background: linear-gradient(135deg, #9bf0ff, var(--cyan));
+      box-shadow: 0 13px 34px rgba(92, 225, 255, .15);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 45px rgba(92, 225, 255, .24);
+      filter: brightness(1.04);
+    }
+
+    .button-primary:hover svg {
+      transform: translateX(3px);
+    }
+
+    .button-secondary {
+      color: #d8e5ef;
+      border-color: rgba(255, 255, 255, .1);
+      background: rgba(255, 255, 255, .03);
+    }
+
+    .button-secondary:hover {
+      transform: translateY(-3px);
+      border-color: var(--line-hover);
+      background: rgba(92, 225, 255, .05);
+    }
+
+    /* =========================
+       CONTACT AREA
+    ========================== */
 
     main {
-      min-height: calc(100vh - 74px);
-      display: flex;
-      align-items: center;
-      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    .contact-section {
+      position: relative;
+      padding: 90px 0 110px;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 18px;
       align-items: stretch;
     }
 
     .card {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 22px;
-      padding: 34px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.22);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(14, 24, 41, .93),
+          rgba(7, 12, 21, .98)
+        );
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: -190px;
+      top: -190px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(92, 225, 255, .09),
+          transparent 70%
+        );
+      pointer-events: none;
+    }
+
+    .info-card {
+      padding: 31px;
+    }
+
+    .form-card {
+      padding: 31px;
     }
 
     .eyebrow {
-      display: inline-block;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--cyan);
+      font-size: .61rem;
+      font-weight: 900;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      color: #5ce1ff;
-      margin-bottom: 14px;
     }
 
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 4.2rem);
-      line-height: 1;
-      margin-bottom: 18px;
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cyan));
+    }
+
+    .info-card h2,
+    .form-card h2 {
+      margin-top: 14px;
+      color: var(--heading);
+      font-size: clamp(1.9rem, 4vw, 3.05rem);
+      line-height: 1.04;
+      letter-spacing: -.05em;
+      font-weight: 920;
     }
 
     .intro {
-      color: rgba(255,255,255,0.66);
-      font-size: 0.95rem;
-      line-height: 1.8;
-      margin-bottom: 28px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .79rem;
+      line-height: 1.88;
     }
 
-    .contact-info {
+    .info-list {
       display: grid;
-      gap: 14px;
+      gap: 10px;
+      margin-top: 24px;
     }
 
     .info-item {
-      padding: 16px;
-      border: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 72px;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.065);
       border-radius: 14px;
-      background: rgba(255,255,255,0.02);
+      background: rgba(255,255,255,.018);
+      transition:
+        transform .3s var(--ease),
+        border-color .3s ease,
+        background .3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateX(3px);
+      border-color: var(--line-hover);
+      background: rgba(92,225,255,.025);
+    }
+
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(92,225,255,.13);
+      border-radius: 12px;
+      background: rgba(92,225,255,.035);
+    }
+
+    .info-icon svg {
+      width: 19px;
+      height: 19px;
+      stroke: var(--cyan);
     }
 
     .info-label {
-      font-size: 0.68rem;
+      color: #738297;
+      font-size: .57rem;
+      font-weight: 850;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      letter-spacing: 0.14em;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 6px;
     }
 
     .info-value {
-      color: rgba(255,255,255,0.84);
-      font-size: 0.88rem;
+      margin-top: 3px;
+      color: #d6e2ec;
+      font-size: .72rem;
       word-break: break-word;
     }
 
-    form {
-      width: 100%;
+    .info-value.link {
+      color: #aeefff;
+    }
+
+    .info-item:hover .info-value.link {
+      color: var(--cyan);
+    }
+
+    .availability {
+      margin-top: 18px;
+      padding: 14px 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border: 1px solid rgba(114,232,177,.1);
+      border-radius: 13px;
+      background: rgba(114,232,177,.028);
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      margin-top: 6px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 13px rgba(114,232,177,.55);
+    }
+
+    .availability strong,
+    .availability span {
+      display: block;
+    }
+
+    .availability strong {
+      color: #bff5d8;
+      font-size: .68rem;
+    }
+
+    .availability span {
+      margin-top: 2px;
+      color: #799083;
+      font-size: .62rem;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       FORM
+    ========================== */
+
+    .form-head {
+      margin-bottom: 23px;
+    }
+
+    .form-head p {
+      max-width: 600px;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .71rem;
+      line-height: 1.75;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
     }
 
     .field {
-      margin-bottom: 14px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
     }
 
     .field label {
-      display: block;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.58);
-      margin-bottom: 7px;
+      color: #a8b5c4;
+      font-size: .64rem;
+      font-weight: 760;
     }
 
-    input,
-    textarea {
+    .field input,
+    .field textarea {
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: 12px;
-      background: rgba(255,255,255,0.035);
-      color: #ffffff;
-      padding: 14px 15px;
-      font: inherit;
       outline: none;
-      transition: 0.25s ease;
+      background: rgba(255,255,255,.025);
+      color: #fff;
+      padding: 13px 14px;
+      font-size: .74rem;
+      transition:
+        border-color .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
     }
 
-    input:focus,
-    textarea:focus {
-      border-color: rgba(92,225,255,0.7);
-      box-shadow: 0 0 0 3px rgba(92,225,255,0.08);
+    .field input {
+      min-height: 46px;
     }
 
-    textarea {
+    .field textarea {
+      min-height: 150px;
       resize: vertical;
-      min-height: 140px;
+      line-height: 1.7;
     }
 
-    button {
-      width: 100%;
-      border: 0;
-      border-radius: 12px;
-      padding: 14px 18px;
-      background: #5ce1ff;
-      color: #041018;
-      font-weight: 800;
-      cursor: pointer;
-      transition: 0.25s ease;
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #5d6b7d;
     }
 
-    button:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(92,225,255,.42);
+      background: rgba(255,255,255,.035);
+      box-shadow: 0 0 0 3px rgba(92,225,255,.055);
     }
 
-    button:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-      transform: none;
+    .field input:invalid:not(:placeholder-shown),
+    .field textarea:invalid:not(:placeholder-shown) {
+      border-color: rgba(255,128,140,.28);
     }
 
-    #formStatus {
+    .message-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 5px;
+      color: #627083;
+      font-size: .58rem;
+    }
+
+    .form-actions {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .send-button {
+      min-width: 170px;
+    }
+
+    .form-status {
+      flex: 1;
       min-height: 20px;
-      margin-top: 12px;
-      text-align: center;
-      font-size: 0.75rem;
+      color: var(--muted);
+      font-size: .66rem;
     }
+
+    .form-status.success {
+      color: var(--green);
+    }
+
+    .form-status.error {
+      color: var(--red);
+    }
+
+    .honeypot {
+      position: absolute !important;
+      left: -9999px !important;
+      width: 1px !important;
+      height: 1px !important;
+      overflow: hidden !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    .form-note {
+      margin-top: 13px;
+      color: #5e6c7e;
+      font-size: .59rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       QUICK LINKS
+    ========================== */
+
+    .quick-section {
+      position: relative;
+      padding: 0 0 105px;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+    }
+
+    .quick-card {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 78px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: rgba(255,255,255,.018);
+      transition:
+        transform .35s var(--ease),
+        border-color .35s ease,
+        background .35s ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--line-hover);
+      background: rgba(92,225,255,.025);
+    }
+
+    .quick-icon {
+      width: 43px;
+      height: 43px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(92,225,255,.12);
+      border-radius: 12px;
+      background: rgba(92,225,255,.03);
+    }
+
+    .quick-icon svg {
+      width: 19px;
+      height: 19px;
+      stroke: var(--cyan);
+    }
+
+    .quick-card strong,
+    .quick-card span {
+      display: block;
+    }
+
+    .quick-card strong {
+      color: var(--heading);
+      font-size: .72rem;
+    }
+
+    .quick-card span {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: .62rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding: 25px 0;
-      text-align: center;
-      color: rgba(255,255,255,0.38);
-      font-size: 0.72rem;
+      border-top: 1px solid rgba(255,255,255,.05);
+      background: rgba(2,4,9,.82);
     }
 
-    @media (max-width: 800px) {
-      .nav {
-        min-height: 65px;
-      }
+    .footer-main {
+      padding: 42px 0;
+      display: grid;
+      grid-template-columns: 1.35fr .7fr .7fr;
+      gap: 30px;
+    }
 
-      .nav-links {
-        gap: 14px;
-      }
+    .footer-description {
+      max-width: 470px;
+      margin-top: 11px;
+      color: #758498;
+      font-size: .67rem;
+      line-height: 1.82;
+    }
 
+    .footer-title {
+      margin-bottom: 10px;
+      color: #dbe7f0;
+      font-size: .6rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 7px;
+    }
+
+    .footer-links a {
+      width: fit-content;
+      color: #7f8da0;
+      font-size: .65rem;
+      transition: color .3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--cyan);
+    }
+
+    .footer-bottom {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      border-top: 1px solid rgba(255,255,255,.04);
+      color: #68778a;
+      font-size: .59rem;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       REVEAL
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition:
+        opacity .8s ease,
+        transform .8s var(--ease);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       BACK TO TOP
+    ========================== */
+
+    #backToTop {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      color: var(--cyan);
+      border: 1px solid rgba(92,225,255,.14);
+      border-radius: 13px;
+      background: rgba(7,13,23,.88);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: 0 15px 34px rgba(0,0,0,.25);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      cursor: pointer;
+      transition:
+        opacity .35s ease,
+        visibility .35s ease,
+        transform .4s var(--ease),
+        box-shadow .4s var(--ease);
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #backToTop:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 42px rgba(92,225,255,.13);
+    }
+
+    #backToTop svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1050px) {
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      main {
-        padding: 50px 0;
+      .quick-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .card {
-        padding: 25px;
+      .footer-main {
+        grid-template-columns: 1.15fr .85fr;
       }
     }
 
-    @media (max-width: 560px) {
-      .nav {
-        flex-direction: column;
-        justify-content: center;
-        padding: 15px 0;
+    @media (max-width: 850px) {
+      .menu-toggle {
+        display: grid;
       }
 
       .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
+        position: absolute;
+        top: calc(100% + 9px);
+        left: 20px;
+        right: 20px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 9px;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 17px;
+        background: rgba(7,12,22,.97);
+        box-shadow: 0 25px 62px rgba(0,0,0,.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
 
-      h1 {
-        font-size: 2.5rem;
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 11px 12px;
+      }
+
+      .nav-links a:not(.active):not(.nav-cta)::after,
+      .nav-links .active::after {
+        display: none;
+      }
+
+      .nav-cta {
+        margin-left: 0;
+        margin-top: 2px;
+        text-align: center;
+      }
+
+      .hero-content {
+        padding: 65px 0;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.8rem, 12vw, 5rem);
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .brand-name span {
+        display: none;
+      }
+
+      .brand-name strong {
+        font-size: .82rem;
+      }
+
+      .brand-logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .contact-hero {
+        min-height: 445px;
+      }
+
+      .hero-content {
+        padding: 60px 0;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.55rem, 15vw, 4.6rem);
+      }
+
+      .hero-content p {
+        font-size: .83rem;
+        line-height: 1.78;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .contact-section {
+        padding: 65px 0 80px;
+      }
+
+      .info-card,
+      .form-card {
+        padding: 22px 18px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .form-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .send-button {
+        width: 100%;
+      }
+
+      .form-status {
+        text-align: center;
+      }
+
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        min-height: auto;
+        padding: 18px 0;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-orbit {
+        width: 470px;
+        height: 470px;
+      }
+
+      .hero-glow {
+        width: 470px;
+        height: 470px;
+      }
+
+      .hero-watermark {
+        width: 320px;
+        height: 320px;
+        opacity: .023;
+      }
+
+      #backToTop {
+        right: 13px;
+        bottom: 13px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .info-item {
+        align-items: flex-start;
+      }
+
+      .quick-card {
+        min-height: 72px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
       }
     }
   </style>
@@ -278,188 +1337,1274 @@
 
 <body>
 
-  <header>
-    <div class="container nav">
+  <div class="scroll-progress" id="scrollProgress"></div>
 
-      <a href="index.html" class="brand">
-        Wazir <span>Research Lab</span>
-      </a>
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html" class="active">Contact</a>
+  <header id="siteHeader">
+    <div class="container">
+
+      <nav class="nav" aria-label="Main navigation">
+
+        <a
+          href="index.html"
+          class="brand"
+          aria-label="Wazir Research Lab home"
+        >
+          <span class="brand-logo">
+            <img src="MW-logo.png" alt="MW logo">
+          </span>
+
+          <span class="brand-name">
+            <strong>Wazir Research Lab</strong>
+            <span>Research • Technology • Solutions</span>
+          </span>
+        </a>
+
+        <button
+          id="menuToggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="navLinks"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.9"
+            stroke-linecap="round"
+          >
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        </button>
+
+        <div id="navLinks" class="nav-links">
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="about.html">
+            About
+          </a>
+
+          <a href="contact.html" class="active">
+            Contact
+          </a>
+
+          <a
+            href="https://www.fiverr.com/s/jyjz6rZ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Fiverr
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a href="#message" class="nav-cta">
+            Send Message
+          </a>
+
+        </div>
+
       </nav>
 
     </div>
   </header>
 
   <main>
-    <div class="container">
 
-      <div class="contact-grid">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-        <section class="card">
-          <span class="eyebrow">Get in touch</span>
+    <section class="contact-hero">
 
-          <h1>Contact</h1>
+      <div class="hero-grid"></div>
+      <div class="hero-orbit"></div>
+      <div class="hero-glow"></div>
+      <div class="hero-glow blue"></div>
+      <div class="hero-watermark"></div>
 
-          <p class="intro">
-            Have a question, research idea, collaboration proposal, or professional
-            inquiry? Send a message using the form.
+      <div class="container">
+
+        <div class="hero-content reveal">
+
+          <span class="hero-badge">
+            <i></i>
+            Wazir Research Lab
+          </span>
+
+          <h1>
+            Let’s
+            <span>Connect.</span>
+          </h1>
+
+          <p>
+            Have a research task, data project, website idea, collaboration
+            proposal or professional inquiry? Send a message and share
+            what you need.
           </p>
 
-          <div class="contact-info">
+          <div class="hero-actions">
 
-            <div class="info-item">
-              <div class="info-label">Email</div>
-              <div class="info-value">wazirlab@proton.me</div>
-            </div>
+            <a
+              href="#message"
+              class="button button-primary"
+            >
+              Send a Message
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </a>
 
-            <div class="info-item">
-              <div class="info-label">Research Lab</div>
-              <div class="info-value">Wazir Research Lab</div>
-            </div>
-
-            <div class="info-item">
-              <div class="info-label">Professional Network</div>
-              <div class="info-value">LinkedIn</div>
-            </div>
+            <a
+              href="index.html"
+              class="button button-secondary"
+            >
+              Back to Home
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M19 12H5"></path>
+                <path d="m11 18-6-6 6-6"></path>
+              </svg>
+            </a>
 
           </div>
-        </section>
 
+        </div>
 
-        <section class="card">
+      </div>
+    </section>
 
-          <span class="eyebrow">Message</span>
+    <!-- =========================
+         CONTACT
+    ========================== -->
 
-          <form id="contactForm">
+    <section class="contact-section">
 
-            <div class="field">
-              <label for="name">Your Name</label>
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <!-- INFO -->
+
+          <section class="card info-card reveal">
+
+            <span class="eyebrow">
+              Get in Touch
+            </span>
+
+            <h2>
+              Start with a message.
+            </h2>
+
+            <p class="intro">
+              Tell me what you are working on, what information you need,
+              or what kind of digital result you are looking for. The
+              contact form sends your message directly to the website's
+              connected message system.
+            </p>
+
+            <div class="info-list">
+
+              <a
+                href="mailto:zuhaibwazir558@gmail.com"
+                class="info-item"
+              >
+
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="info-label">
+                    Email
+                  </div>
+
+                  <div class="info-value link">
+                    zuhaibwazir558@gmail.com
+                  </div>
+                </div>
+
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="info-item"
+              >
+
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                    <path d="M8 11v5"></path>
+                    <path d="M8 8.5v.01"></path>
+                    <path d="M12 16v-5"></path>
+                    <path d="M12 13.2c0-1.3.9-2.2 2.1-2.2 1.2 0 1.9.8 1.9 2.2V16"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="info-label">
+                    Professional Network
+                  </div>
+
+                  <div class="info-value link">
+                    LinkedIn Profile
+                  </div>
+                </div>
+
+              </a>
+
+              <a
+                href="https://www.fiverr.com/s/jyjz6rZ"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="info-item"
+              >
+
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 4h16v16H4z"></path>
+                    <path d="M8 8h8"></path>
+                    <path d="M8 12h8"></path>
+                    <path d="M8 16h5"></path>
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="info-label">
+                    Freelance
+                  </div>
+
+                  <div class="info-value link">
+                    Fiverr Profile
+                  </div>
+                </div>
+
+              </a>
+
+              <div class="info-item">
+
+                <div class="info-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                  >
+                    <path d="M4 5h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 19h16"></path>
+                    <circle cx="8" cy="5" r="1"></circle>
+                    <circle cx="15" cy="12" r="1"></circle>
+                    <circle cx="10" cy="19" r="1"></circle>
+                  </svg>
+                </div>
+
+                <div>
+                  <div class="info-label">
+                    Research Lab
+                  </div>
+
+                  <div class="info-value">
+                    Wazir Research Lab
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="availability">
+
+              <span class="availability-dot"></span>
+
+              <div>
+                <strong>
+                  Message system online
+                </strong>
+
+                <span>
+                  Website messages are connected to the lab's database
+                  and can be managed from the protected admin dashboard.
+                </span>
+              </div>
+
+            </div>
+
+          </section>
+
+          <!-- FORM -->
+
+          <section
+            class="card form-card reveal"
+            id="message"
+          >
+
+            <div class="form-head">
+
+              <span class="eyebrow">
+                Message
+              </span>
+
+              <h2>
+                Send an inquiry.
+              </h2>
+
+              <p>
+                Complete the fields below and your message will be stored
+                securely in the connected message database.
+              </p>
+
+            </div>
+
+            <form
+              id="contactForm"
+              novalidate
+            >
+
+              <!-- Anti-spam honeypot -->
+
               <input
+                class="honeypot"
                 type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                required
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
               >
-            </div>
 
-            <div class="field">
-              <label for="email">Your Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
+              <div class="form-grid">
+
+                <div class="field">
+
+                  <label for="name">
+                    Your Name
+                  </label>
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter your name"
+                    minlength="2"
+                    maxlength="100"
+                    autocomplete="name"
+                    required
+                  >
+
+                </div>
+
+                <div class="field">
+
+                  <label for="email">
+                    Your Email
+                  </label>
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="you@example.com"
+                    maxlength="160"
+                    autocomplete="email"
+                    required
+                  >
+
+                </div>
+
+                <div class="field full">
+
+                  <label for="messageText">
+                    Your Message
+                  </label>
+
+                  <textarea
+                    id="messageText"
+                    name="message"
+                    placeholder="Write your message here..."
+                    minlength="5"
+                    maxlength="5000"
+                    required
+                  ></textarea>
+
+                  <div class="message-meta">
+                    <span>
+                      Please include enough detail to understand your request.
+                    </span>
+
+                    <span id="charCount">
+                      0 / 5000
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="form-actions">
+
+                <button
+                  type="submit"
+                  id="sendButton"
+                  class="button button-primary send-button"
+                >
+                  Send Message
+
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                  </svg>
+
+                </button>
+
+                <p
+                  id="formStatus"
+                  class="form-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
+
+              </div>
+
+              <p class="form-note">
+                Your name, email and message are used to process your inquiry.
+                Do not submit passwords, API keys or other private credentials.
+              </p>
+
+            </form>
+
+          </section>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================
+         QUICK LINKS
+    ========================== -->
+
+    <section class="quick-section">
+
+      <div class="container">
+
+        <div class="quick-grid">
+
+          <a
+            href="index.html#services"
+            class="quick-card reveal"
+          >
+
+            <div class="quick-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
               >
+                <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+                <path d="M8 8h8"></path>
+                <path d="M8 12h8"></path>
+                <path d="M8 16h5"></path>
+              </svg>
             </div>
 
-            <div class="field">
-              <label for="message">Your Message</label>
-              <textarea
-                id="message"
-                name="message"
-                placeholder="Write your message..."
-                required
-              ></textarea>
+            <div>
+              <strong>
+                Explore Services
+              </strong>
+
+              <span>
+                Research, data, documents, design & web
+              </span>
             </div>
 
-            <button type="submit" id="sendButton">
-              Send Message
-            </button>
+          </a>
 
-            <p id="formStatus"></p>
+          <a
+            href="about.html"
+            class="quick-card reveal"
+          >
 
-          </form>
+            <div class="quick-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <circle cx="12" cy="8" r="3"></circle>
+                <path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"></path>
+              </svg>
+            </div>
 
-        </section>
+            <div>
+              <strong>
+                About Murad
+              </strong>
+
+              <span>
+                Learn more about the lab and its approach
+              </span>
+            </div>
+
+          </a>
+
+          <a
+            href="index.html#fiverr"
+            class="quick-card reveal"
+          >
+
+            <div class="quick-icon">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </div>
+
+            <div>
+              <strong>
+                Fiverr Services
+              </strong>
+
+              <span>
+                View profile and available gigs
+              </span>
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+
+          <a
+            href="index.html"
+            class="brand"
+            aria-label="Wazir Research Lab home"
+          >
+
+            <span class="brand-logo">
+              <img src="MW-logo.png" alt="MW logo">
+            </span>
+
+            <span class="brand-name">
+              <strong>Wazir Research Lab</strong>
+              <span>Research • Technology • Solutions</span>
+            </span>
+
+          </a>
+
+          <p class="footer-description">
+            A professional digital workspace by Murad Wazir,
+            bringing research, data, technology, programming,
+            branding and modern web work together.
+          </p>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">
+            Explore
+          </div>
+
+          <div class="footer-links">
+
+            <a href="index.html">
+              Home
+            </a>
+
+            <a href="about.html">
+              About
+            </a>
+
+            <a href="contact.html">
+              Contact
+            </a>
+
+            <a href="index.html#services">
+              Services
+            </a>
+
+            <a href="index.html#work">
+              Work
+            </a>
+
+            <a href="index.html#faq">
+              FAQ
+            </a>
+
+          </div>
+
+        </div>
+
+        <div>
+
+          <div class="footer-title">
+            Connect
+          </div>
+
+          <div class="footer-links">
+
+            <a
+              href="https://www.fiverr.com/s/jyjz6rZ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Fiverr
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <a href="mailto:zuhaibwazir558@gmail.com">
+              Email
+            </a>
+
+            <a href="privacy.html">
+              Privacy
+            </a>
+
+            <a href="terms.html">
+              Terms
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <span>
+          © <span id="year"></span>
+          Wazir Research Lab. All rights reserved.
+        </span>
+
+        <span>
+          <a href="privacy.html">
+            Privacy
+          </a>
+          &nbsp;•&nbsp;
+          <a href="terms.html">
+            Terms
+          </a>
+        </span>
 
       </div>
 
     </div>
-  </main>
 
-  <footer>
-    © <span id="year"></span> Wazir Research Lab. All rights reserved.
   </footer>
 
+  <!-- =========================
+       BACK TO TOP
+  ========================== -->
+
+  <button
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.8"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="m18 15-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <!-- =========================
+       SUPABASE
+  ========================== -->
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <script>
-    "use strict";
+    (() => {
+      "use strict";
 
-    const SUPABASE_URL =
-      "https://hcztwkzvnswlwpkcpakh.supabase.co";
+      const SUPABASE_URL =
+        "https://hcztwkzvnswlwpkcpakh.supabase.co";
 
-    const SUPABASE_PUBLISHABLE_KEY =
-      "sb_publishable_TcvvhKV__Hv2QCcHAaD9NQ_MCM079CE";
+      const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_TcvvhKV__Hv2QCcHAaD9NQ_MCM079CE";
 
-    const supabaseClient = window.supabase.createClient(
-      SUPABASE_URL,
-      SUPABASE_PUBLISHABLE_KEY
-    );
+      const supabaseClient =
+        window.supabase.createClient(
+          SUPABASE_URL,
+          SUPABASE_PUBLISHABLE_KEY
+        );
 
-    const contactForm = document.getElementById("contactForm");
-    const formStatus = document.getElementById("formStatus");
-    const sendButton = document.getElementById("sendButton");
+      const year =
+        document.getElementById("year");
 
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+      const siteHeader =
+        document.getElementById("siteHeader");
 
-    contactForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
+      const menuToggle =
+        document.getElementById("menuToggle");
 
-      sendButton.disabled = true;
-      sendButton.textContent = "Sending...";
-      formStatus.textContent = "";
-      formStatus.style.color = "#5ce1ff";
+      const navLinks =
+        document.getElementById("navLinks");
 
-      const name =
-        document.getElementById("name").value.trim();
+      const backToTop =
+        document.getElementById("backToTop");
 
-      const email =
-        document.getElementById("email").value.trim();
+      const scrollProgress =
+        document.getElementById("scrollProgress");
 
-      const message =
-        document.getElementById("message").value.trim();
+      const contactForm =
+        document.getElementById("contactForm");
 
-      const { error } = await supabaseClient
-        .from("messages")
-        .insert({
-          name: name,
-          email: email,
-          message: message
-        });
+      const formStatus =
+        document.getElementById("formStatus");
 
-      if (error) {
-        console.error(error);
+      const sendButton =
+        document.getElementById("sendButton");
 
-        formStatus.textContent =
-          "Message could not be sent. Please try again.";
+      const messageText =
+        document.getElementById("messageText");
 
-        formStatus.style.color = "#ff7b7b";
+      const charCount =
+        document.getElementById("charCount");
 
-        sendButton.disabled = false;
-        sendButton.textContent = "Send Message";
+      /* =========================
+         YEAR
+      ========================== */
 
-        return;
+      if (year) {
+        year.textContent =
+          new Date().getFullYear();
       }
 
-      formStatus.textContent =
-        "Message sent successfully!";
+      /* =========================
+         MOBILE MENU
+      ========================== */
 
-      formStatus.style.color = "#5ce1ff";
+      const closeMenu = () => {
 
-      contactForm.reset();
+        if (!navLinks || !menuToggle) {
+          return;
+        }
 
-      sendButton.disabled = false;
-      sendButton.textContent = "Send Message";
-    });
+        navLinks.classList.remove("open");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+      };
+
+      if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener(
+          "click",
+          () => {
+
+            const isOpen =
+              navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              String(isOpen)
+            );
+
+          }
+        );
+
+        navLinks
+          .querySelectorAll("a")
+          .forEach((link) => {
+
+            link.addEventListener(
+              "click",
+              closeMenu
+            );
+
+          });
+
+        document.addEventListener(
+          "keydown",
+          (event) => {
+
+            if (event.key === "Escape") {
+              closeMenu();
+            }
+
+          }
+        );
+
+        document.addEventListener(
+          "click",
+          (event) => {
+
+            if (
+              !navLinks.classList.contains("open")
+            ) {
+              return;
+            }
+
+            const clickedInside =
+              navLinks.contains(event.target) ||
+              menuToggle.contains(event.target);
+
+            if (!clickedInside) {
+              closeMenu();
+            }
+
+          }
+        );
+
+      }
+
+      /* =========================
+         SCROLL
+      ========================== */
+
+      const handleScroll = () => {
+
+        const doc =
+          document.documentElement;
+
+        const scrollable =
+          doc.scrollHeight -
+          window.innerHeight;
+
+        const progress =
+          scrollable > 0
+            ? window.scrollY / scrollable
+            : 0;
+
+        if (scrollProgress) {
+
+          scrollProgress.style.transform =
+            `scaleX(${Math.min(
+              Math.max(progress, 0),
+              1
+            )})`;
+
+        }
+
+        if (siteHeader) {
+
+          siteHeader.classList.toggle(
+            "scrolled",
+            window.scrollY > 12
+          );
+
+        }
+
+        if (backToTop) {
+
+          backToTop.classList.toggle(
+            "show",
+            window.scrollY > 500
+          );
+
+        }
+
+      };
+
+      window.addEventListener(
+        "scroll",
+        handleScroll,
+        { passive: true }
+      );
+
+      handleScroll();
+
+      /* =========================
+         BACK TO TOP
+      ========================== */
+
+      if (backToTop) {
+
+        backToTop.addEventListener(
+          "click",
+          () => {
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+
+          }
+        );
+
+      }
+
+      /* =========================
+         REVEAL ANIMATION
+      ========================== */
+
+      const revealElements =
+        document.querySelectorAll(
+          ".reveal"
+        );
+
+      if (
+        "IntersectionObserver" in window
+      ) {
+
+        const observer =
+          new IntersectionObserver(
+            (entries) => {
+
+              entries.forEach((entry) => {
+
+                if (entry.isIntersecting) {
+
+                  entry.target.classList.add(
+                    "visible"
+                  );
+
+                  observer.unobserve(
+                    entry.target
+                  );
+
+                }
+
+              });
+
+            },
+            {
+              threshold: 0.08,
+              rootMargin:
+                "0px 0px -35px 0px"
+            }
+          );
+
+        revealElements.forEach(
+          (element) => {
+            observer.observe(element);
+          }
+        );
+
+      } else {
+
+        revealElements.forEach(
+          (element) => {
+            element.classList.add(
+              "visible"
+            );
+          }
+        );
+
+      }
+
+      /* =========================
+         CHARACTER COUNTER
+      ========================== */
+
+      if (messageText && charCount) {
+
+        const updateCharCount = () => {
+
+          charCount.textContent =
+            `${messageText.value.length} / 5000`;
+
+        };
+
+        messageText.addEventListener(
+          "input",
+          updateCharCount
+        );
+
+        updateCharCount();
+
+      }
+
+      /* =========================
+         CONTACT FORM
+      ========================== */
+
+      if (contactForm) {
+
+        contactForm.addEventListener(
+          "submit",
+          async (event) => {
+
+            event.preventDefault();
+
+            if (
+              !formStatus ||
+              !sendButton
+            ) {
+              return;
+            }
+
+            formStatus.className =
+              "form-status";
+
+            formStatus.textContent =
+              "";
+
+            const name =
+              document
+                .getElementById("name")
+                .value
+                .trim();
+
+            const email =
+              document
+                .getElementById("email")
+                .value
+                .trim();
+
+            const message =
+              document
+                .getElementById("messageText")
+                .value
+                .trim();
+
+            const honeypot =
+              document
+                .getElementById("website")
+                .value
+                .trim();
+
+            /* =========================
+               SPAM CHECK
+            ========================== */
+
+            if (honeypot) {
+
+              formStatus.className =
+                "form-status success";
+
+              formStatus.textContent =
+                "Message received.";
+
+              contactForm.reset();
+
+              if (charCount) {
+                charCount.textContent =
+                  "0 / 5000";
+              }
+
+              return;
+            }
+
+            /* =========================
+               VALIDATION
+            ========================== */
+
+            if (name.length < 2) {
+
+              formStatus.className =
+                "form-status error";
+
+              formStatus.textContent =
+                "Please enter your name.";
+
+              document
+                .getElementById("name")
+                .focus();
+
+              return;
+            }
+
+            if (
+              !email ||
+              !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+            ) {
+
+              formStatus.className =
+                "form-status error";
+
+              formStatus.textContent =
+                "Please enter a valid email address.";
+
+              document
+                .getElementById("email")
+                .focus();
+
+              return;
+            }
+
+            if (message.length < 5) {
+
+              formStatus.className =
+                "form-status error";
+
+              formStatus.textContent =
+                "Please enter a message.";
+
+              document
+                .getElementById("messageText")
+                .focus();
+
+              return;
+            }
+
+            /* =========================
+               LOADING
+            ========================== */
+
+            sendButton.disabled = true;
+
+            const oldButtonHTML =
+              sendButton.innerHTML;
+
+            sendButton.innerHTML = `
+              Sending...
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+              >
+                <path d="M4 12h16"></path>
+              </svg>
+            `;
+
+            try {
+
+              const {
+                error
+              } =
+                await supabaseClient
+                  .from("messages")
+                  .insert({
+                    name: name,
+                    email: email,
+                    message: message
+                  });
+
+              if (error) {
+                throw error;
+              }
+
+              formStatus.className =
+                "form-status success";
+
+              formStatus.textContent =
+                "Message sent successfully! Thank you for contacting Wazir Research Lab.";
+
+              contactForm.reset();
+
+              if (charCount) {
+                charCount.textContent =
+                  "0 / 5000";
+              }
+
+            } catch (error) {
+
+              console.error(
+                "Contact form error:",
+                error
+              );
+
+              formStatus.className =
+                "form-status error";
+
+              formStatus.textContent =
+                "Message could not be sent right now. Please try again or email directly.";
+
+            } finally {
+
+              sendButton.disabled =
+                false;
+
+              sendButton.innerHTML =
+                oldButtonHTML;
+
+            }
+
+          }
+        );
+
+      }
+
+    })();
   </script>
 
 </body>
