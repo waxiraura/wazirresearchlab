@@ -1,71 +1,85 @@
 <div align="center">
 
-<img src="MW-logo.png" alt="Wazir Research Lab Logo" width="120">
+<table>
+<tr>
+<td align="center" width="100%">
 
-# WAZIR RESEARCH LAB
+# ✦ WAZIR RESEARCH LAB ✦
 
-### <span style="color:#00d4ff;">Research</span> • <span style="color:#7c3aed;">Technology</span> • <span style="color:#00e5a0;">Solutions</span>
+### 🔬 Research  •  ⚙️ Technology  •  💡 Solutions
 
-**A professional digital workspace for research, technology, programming, and practical digital solutions.**
+**A professional digital workspace for research, data, technology, programming, and web development.**
 
 <br>
 
-<a href="https://waziraura.github.io/wazirresearchlab/">
-  <img src="https://img.shields.io/badge/EXPLORE%20WEBSITE-00d4ff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Explore Website">
-</a>
-&nbsp;
-<a href="https://github.com/waxiraura/wazirresearchlab">
-  <img src="https://img.shields.io/badge/SOURCE%20CODE-18181b?style=for-the-badge&logo=github&logoColor=white" alt="Source Code">
-</a>
+[![Live Website](https://img.shields.io/badge/LIVE%20WEBSITE-00C8FF?style=for-the-badge\&logo=googlechrome\&logoColor=white)](https://waziraura.github.io/wazirresearchlab/)
+[![GitHub](https://img.shields.io/badge/GITHUB-111827?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/waxiraura/wazirresearchlab)
+[![LinkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/murad-wazir-bbb0b541a/)
+[![Fiverr](https://img.shields.io/badge/FIVERR-1DBF73?style=for-the-badge\&logo=fiverr\&logoColor=white)](https://www.fiverr.com/s/jyjz6rZ)
 
 <br><br>
 
-<img src="https://img.shields.io/badge/Research-0ea5e9?style=flat-square" alt="Research">
-<img src="https://img.shields.io/badge/Technology-7c3aed?style=flat-square" alt="Technology">
-<img src="https://img.shields.io/badge/Web%20Development-06b6d4?style=flat-square" alt="Web Development">
-<img src="https://img.shields.io/badge/Data-10b981?style=flat-square" alt="Data">
+`MW`   **Wazir Research Lab**   `MW`
+
+</td>
+</tr>
+</table>
 
 </div>
 
 ---
 
-# About the Lab
+<div align="center">
 
-**Wazir Research Lab** is a professional personal website and digital portfolio built around the intersection of **research, technology, programming, data, and web development**.
+## 🌐 Research • Technology • Solutions
 
-The platform is designed to present professional capabilities, digital services, projects, research workflows, and useful resources through a clean and modern web experience.
+**Where research meets technology — and ideas become practical digital solutions.**
 
-> **Research with purpose. Technology with direction. Solutions that work.**
+</div>
 
 ---
 
-# What I Do
+# 🧠 About Wazir Research Lab
+
+**Wazir Research Lab** is a personal professional platform focused on combining:
+
+> **Research + Data + Documentation + Programming + Web Development**
+
+The website acts as a central digital workspace for presenting professional skills, services, projects, research workflows, technical capabilities, and online presence.
+
+The goal is simple:
+
+### **Build useful. Present clearly. Work professionally.**
+
+---
+
+# 🔎 What I Work With
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-### Research & Data
+## 🔬 Research
 
 * Web Research
-* Information Gathering
+* Information Discovery
+* Online Research
 * Data Collection
-* Data Entry
-* Data Organization
+* Source-Based Information Gathering
 * Research Support
 
 </td>
 
 <td width="50%" valign="top">
 
-### Technology & Development
+## 📊 Data
 
-* Web Development
-* Responsive Web Design
-* HTML & CSS
-* Programming
-* Website Structure
-* Digital Solutions
+* Data Entry
+* Data Collection
+* Data Organization
+* Spreadsheet Management
+* Excel Work
+* Structured Information
 
 </td>
 </tr>
@@ -73,27 +87,27 @@ The platform is designed to present professional capabilities, digital services,
 <tr>
 <td width="50%" valign="top">
 
-### Documentation
+## 📝 Documentation
 
 * Research Documentation
-* Professional Reports
 * Microsoft Word
-* Microsoft Excel
-* Data Formatting
-* Structured Information
+* Reports
+* Structured Documents
+* Content Organization
+* Professional Formatting
 
 </td>
 
 <td width="50%" valign="top">
 
-### Presentation
+## 💻 Technology
 
-* Microsoft PowerPoint
-* Visual Content Structure
-* Professional Layouts
-* Digital Presentation
-* Portfolio Development
-* Online Presence
+* Web Development
+* HTML5
+* CSS3
+* Responsive Web Design
+* Programming
+* Digital Solutions
 
 </td>
 </tr>
@@ -101,66 +115,60 @@ The platform is designed to present professional capabilities, digital services,
 
 ---
 
-# Technology Stack
+# 🛠️ Technology Stack
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=html,css,git,github" alt="Technology Stack">
-
-<br><br>
-
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white">
-<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
-<img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white">
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge\&logo=html5\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Git](https://img.shields.io/badge/GIT-F05032?style=for-the-badge\&logo=git\&logoColor=white)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/)
+[![GitHub Pages](https://img.shields.io/badge/GITHUB%20PAGES-222222?style=for-the-badge\&logo=githubpages\&logoColor=white)](https://pages.github.com/)
 
 </div>
 
 ---
 
-# Website Experience
+# ✨ Website Highlights
 
-The website is designed around a modern, technology-focused interface with an emphasis on clarity, responsiveness, and professional presentation.
-
-| Feature                   | Description                                                    |
-| ------------------------- | -------------------------------------------------------------- |
-| **Modern UI**             | Premium dark-tech visual language with clean content hierarchy |
-| **Responsive Design**     | Optimized for desktop, tablet, and mobile devices              |
-| **Professional Branding** | Consistent MW / Wazir Research Lab identity                    |
-| **Service Showcase**      | Clear presentation of professional digital services            |
-| **Project Presentation**  | Structured display of work, skills, and capabilities           |
-| **Mobile Navigation**     | Simple and accessible navigation experience                    |
-| **SEO Essentials**        | Sitemap, robots.txt, and verification support                  |
-| **Lightweight Structure** | Simple front-end architecture for easy maintenance             |
+| Feature                      | Description                                     |
+| ---------------------------- | ----------------------------------------------- |
+| 🎨 **Premium UI**            | Modern dark-tech inspired visual identity       |
+| 📱 **Responsive**            | Designed for desktop, tablet, and mobile        |
+| 🧭 **Clear Navigation**      | Structured pages and easy user flow             |
+| 🔬 **Research Focus**        | Dedicated presentation of research capabilities |
+| 💼 **Professional Services** | Clear service and skill presentation            |
+| ⚡ **Lightweight**            | Simple HTML/CSS architecture                    |
+| 🔐 **Legal Pages**           | Privacy Policy and Terms pages                  |
+| 🤖 **SEO Setup**             | Sitemap, robots.txt, and Google verification    |
 
 ---
 
-# Website Pages
+# 🗂️ Website Structure
 
 <div align="center">
 
-|     Page    | Purpose                                                       |
-| :---------: | ------------------------------------------------------------- |
-|   **Home**  | Main introduction, services, projects, and professional focus |
-|  **About**  | Background, skills, goals, and areas of expertise             |
-| **Contact** | Professional contact details and service connections          |
-| **Privacy** | Privacy and data-related information                          |
-|  **Terms**  | Website terms, usage information, and disclaimers             |
+|      Page      | Purpose                                          |
+| :------------: | ------------------------------------------------ |
+|   🏠 **Home**  | Main introduction, services, projects, and focus |
+|  👤 **About**  | Background, skills, goals, and expertise         |
+| 📩 **Contact** | Professional contact and service information     |
+| 🔐 **Privacy** | Privacy and data-related information             |
+|  📜 **Terms**  | Website terms and disclaimers                    |
 
 </div>
 
-### Live Website
+### 🌍 Live Website
 
 <div align="center">
 
-# [waziraura.github.io/wazirresearchlab](https://waziraura.github.io/wazirresearchlab/)
+## [waziraura.github.io/wazirresearchlab](https://waziraura.github.io/wazirresearchlab/)
 
 </div>
 
 ---
 
-# Project Architecture
+# 📁 Project Structure
 
 ```text
 wazirresearchlab/
@@ -181,135 +189,169 @@ wazirresearchlab/
 
 ---
 
-# Professional Focus
+# 🚀 Core Capabilities
 
 <div align="center">
 
-### RESEARCH
+### 🔬 RESEARCH
 
-Web Research · Information Discovery · Data Collection
+**Web Research · Information Discovery · Data Collection**
 
-### DATA
+### 📊 DATA
 
-Data Entry · Data Organization · Excel · Structured Records
+**Data Entry · Excel · Data Organization · Structured Records**
 
-### DOCUMENTATION
+### 📝 DOCUMENTATION
 
-Research Documentation · Word · Reports · Presentations
+**Research Documentation · Word · Reports · Presentations**
 
-### TECHNOLOGY
+### 💻 TECHNOLOGY
 
-HTML · CSS · Programming · Web Development · Responsive Design
+**HTML · CSS · Programming · Web Development**
 
 </div>
 
 ---
 
-# Professional Presence
+# 🌐 Professional Presence
 
 <table>
 <tr>
+
 <td align="center" width="25%">
 
-### Website
+### 🌍 Website
 
 [Visit Website](https://waziraura.github.io/wazirresearchlab/)
 
 </td>
+
 <td align="center" width="25%">
 
-### GitHub
+### 💻 GitHub
 
-[View Profile](https://github.com/waxiraura)
+[View Repository](https://github.com/waxiraura/wazirresearchlab)
 
 </td>
+
 <td align="center" width="25%">
 
-### LinkedIn
+### 🔗 LinkedIn
 
 [Connect](https://www.linkedin.com/in/murad-wazir-bbb0b541a/)
 
 </td>
+
 <td align="center" width="25%">
 
-### Fiverr
+### 💼 Fiverr
 
 [View Profile](https://www.fiverr.com/s/jyjz6rZ)
 
 </td>
+
 </tr>
 </table>
 
 ---
 
-# Deployment
+# 🎯 Professional Services
 
-The website is deployed through **GitHub Pages**.
+```text
+WEB RESEARCH
+DATA COLLECTION
+DATA ENTRY
+RESEARCH & DOCUMENTATION
+MICROSOFT EXCEL
+MICROSOFT WORD
+MICROSOFT POWERPOINT
+PROGRAMMING
+WEB DEVELOPMENT
+RESPONSIVE WEB DESIGN
+```
+
+---
+
+# 🧩 Brand Identity
+
+<div align="center">
+
+### `MW`
+
+## Wazir Research Lab
+
+### **Research • Technology • Solutions**
+
+<br>
+
+**Personal Brand:** Murad Wazir
+**Brand Mark:** MW
+**Professional Identity:** Wazir Research Lab
+
+</div>
+
+---
+
+# 🚀 Deployment
+
+This website is deployed and maintained using **GitHub Pages**.
 
 ### Repository
 
 **https://github.com/waxiraura/wazirresearchlab**
 
-### Live Environment
+### Live Website
 
 **https://waziraura.github.io/wazirresearchlab/**
 
 ---
 
-# Brand Identity
+# 🛡️ Project Standards
 
-<div align="center">
+This project follows a simple professional philosophy:
 
-<img src="MW-logo.png" alt="MW Brand Mark" width="90">
+> **Clean structure. Clear information. Responsive design. Practical technology.**
 
-### Wazir Research Lab
+The website is developed with emphasis on:
 
-**Research • Technology • Solutions**
-
-**Brand Mark:** `MW`
-
-</div>
-
-The **MW** identity represents the personal brand behind Wazir Research Lab and serves as the core visual mark across the website and related digital presence.
-
----
-
-# Vision
-
-Wazir Research Lab is built around a simple direction:
-
-> **Combine research, technology, and practical digital skills to create useful, organized, and professional solutions.**
-
-The website serves as a central platform for showcasing capabilities, services, projects, and ongoing digital work.
+* Accessibility
+* Responsive layouts
+* Clear content hierarchy
+* Consistent branding
+* Easy maintenance
+* Professional presentation
 
 ---
 
-# License
+# 📄 License
 
-This project and its original materials are created for **Wazir Research Lab**.
+This website and its original materials are created for **Wazir Research Lab**.
 
-Unless otherwise stated, the original design, branding, logo, source content, and custom materials may not be reproduced, redistributed, or commercially reused without permission.
+Unless otherwise stated, the original design, branding, logo, content, and custom materials may not be reproduced, redistributed, or commercially reused without permission.
 
-Third-party trademarks, platforms, names, and services remain the property of their respective owners.
+Third-party trademarks, services, platforms, and names remain the property of their respective owners.
 
 ---
 
 <div align="center">
 
-## WAZIR RESEARCH LAB
+# ✦ WAZIR RESEARCH LAB ✦
 
-### Research • Technology • Solutions
+### 🔬 Research • ⚙️ Technology • 💡 Solutions
 
 <br>
 
-<a href="https://waziraura.github.io/wazirresearchlab/">Website</a>
-  •   <a href="https://github.com/waxiraura">GitHub</a>
-  •   <a href="https://www.linkedin.com/in/murad-wazir-bbb0b541a/">LinkedIn</a>
-  •   <a href="https://www.fiverr.com/s/jyjz6rZ">Fiverr</a>
+[Website](https://waziraura.github.io/wazirresearchlab/)
+  •  
+[GitHub](https://github.com/waxiraura)
+  •  
+[LinkedIn](https://www.linkedin.com/in/murad-wazir-bbb0b541a/)
+  •  
+[Fiverr](https://www.fiverr.com/s/jyjz6rZ)
 
 <br><br>
 
-**Built and maintained by Murad Wazir**
+**Built & maintained by Murad Wazir**
 
 <br>
 
