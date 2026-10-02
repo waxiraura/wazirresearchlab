@@ -27,8 +27,6 @@
       --sidebar: 260px;
       --radius: 16px;
       --shadow: 0 20px 60px rgba(0,0,0,.25);
-      --density: 1;
-      --font-scale: 1;
     }
 
     [data-theme="light"] {
@@ -69,7 +67,7 @@
         var(--bg);
       color: var(--text);
       min-height: 100vh;
-      font-size: calc(14px * var(--font-scale));
+      font-size: 14px;
     }
 
     body.compact {
@@ -108,18 +106,6 @@
 
     .hidden {
       display: none !important;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
     }
 
     .app {
@@ -246,29 +232,6 @@
       left: 16px;
       right: 16px;
       bottom: 17px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .mini-user {
-      padding: 11px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      background: var(--panel);
-    }
-
-    .mini-user-email {
-      font-size: .68rem;
-      word-break: break-word;
-      color: var(--muted);
-    }
-
-    .mini-user-role {
-      color: var(--accent);
-      font-size: .58rem;
-      margin-top: 4px;
-      text-transform: uppercase;
-      letter-spacing: .12em;
     }
 
     .main {
@@ -530,7 +493,7 @@
     }
 
     .message-row {
-      padding: calc(15px * var(--density));
+      padding: 15px;
       border-bottom: 1px solid var(--border);
       transition: .18s ease;
     }
@@ -944,7 +907,6 @@
       background: rgba(255,255,255,.06);
       cursor: pointer;
       position: relative;
-      flex-shrink: 0;
     }
 
     .toggle::after {
@@ -1149,12 +1111,6 @@
       text-align: center;
     }
 
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
     .footer-note {
       color: var(--muted-2);
       text-align: center;
@@ -1246,8 +1202,7 @@
       }
 
       .toolbar-row,
-      .toolbar-row + .toolbar-row,
-      .two-col {
+      .toolbar-row + .toolbar-row {
         grid-template-columns: 1fr;
       }
 
@@ -1266,14 +1221,6 @@
       .messages-header-right {
         width: 100%;
         justify-content: flex-start;
-      }
-
-      .stats-grid {
-        gap: 8px;
-      }
-
-      .stat-card {
-        padding: 13px;
       }
     }
   </style>
@@ -1348,15 +1295,9 @@
   </section>
 
 
-  <div
-    id="app"
-    class="app hidden"
-  >
+  <div id="app" class="app hidden">
 
-    <aside
-      class="sidebar"
-      id="sidebar"
-    >
+    <aside class="sidebar" id="sidebar">
 
       <div class="brand">
 
@@ -1529,19 +1470,6 @@
 
       <div class="sidebar-bottom">
 
-        <div class="mini-user">
-
-          <div
-            class="mini-user-email"
-            id="sidebarEmail"
-          ></div>
-
-          <div class="mini-user-role">
-            Administrator
-          </div>
-
-        </div>
-
         <button
           class="side-btn"
           id="sidebarLogout"
@@ -1587,7 +1515,6 @@
           <button
             class="btn btn-accent"
             id="newMessageBtn"
-            title="Jump to contact page"
           >
             + Contact Page
           </button>
@@ -1595,7 +1522,6 @@
           <button
             class="btn"
             id="commandBtn"
-            title="Command palette"
           >
             ⌘ / Ctrl + K
           </button>
@@ -1603,7 +1529,6 @@
           <button
             class="btn"
             id="themeBtn"
-            title="Toggle theme"
           >
             ☼
           </button>
@@ -1611,7 +1536,6 @@
           <button
             class="btn"
             id="refreshBtn"
-            title="Refresh messages"
           >
             ↻
           </button>
@@ -1747,14 +1671,12 @@
                 id="dateFrom"
                 class="control"
                 type="date"
-                title="From date"
               >
 
               <input
                 id="dateTo"
                 class="control"
                 type="date"
-                title="To date"
               >
 
               <select
@@ -1803,6 +1725,7 @@
               </div>
 
               <div>
+
                 <button
                   class="btn"
                   id="recentSearchesBtn"
@@ -1816,6 +1739,7 @@
                 >
                   Save Current View
                 </button>
+
               </div>
 
             </div>
@@ -1946,23 +1870,19 @@
           id="view-analytics"
         >
 
-          <div class="dashboard-intro">
+          <span class="top-eyebrow">
+            Analytics
+          </span>
 
-            <span class="top-eyebrow">
-              Analytics
-            </span>
+          <h1 style="margin-bottom:7px;">
+            Message Analytics
+          </h1>
 
-            <h1 style="margin-bottom:7px;">
-              Message Analytics
-            </h1>
-
-            <div
-              class="result-meta"
-              style="margin-bottom:18px;"
-            >
-              Live statistics from your contact database.
-            </div>
-
+          <div
+            class="result-meta"
+            style="margin-bottom:18px;"
+          >
+            Live statistics from your contact database.
           </div>
 
 
@@ -2109,7 +2029,6 @@
 
                 <button
                   class="toggle"
-                  data-setting="autoRefresh"
                   id="toggleAutoRefresh"
                 ></button>
               </div>
@@ -2134,7 +2053,6 @@
 
                 <button
                   class="toggle"
-                  data-setting="sound"
                   id="toggleSound"
                 ></button>
               </div>
@@ -2149,7 +2067,7 @@
               </div>
 
               <div class="setting-help">
-                Ask before permanently deleting messages.
+                Ask before deleting messages.
               </div>
 
               <div class="setting-line">
@@ -2159,7 +2077,6 @@
 
                 <button
                   class="toggle"
-                  data-setting="confirmDelete"
                   id="toggleConfirmDelete"
                 ></button>
               </div>
@@ -2174,7 +2091,7 @@
               </div>
 
               <div class="setting-help">
-                Clicking a message opens its details.
+                Double click a message row to open details.
               </div>
 
               <div class="setting-line">
@@ -2184,7 +2101,6 @@
 
                 <button
                   class="toggle"
-                  data-setting="rowDetail"
                   id="toggleRowDetail"
                 ></button>
               </div>
@@ -2336,6 +2252,7 @@
       <div class="modal-header">
 
         <div>
+
           <span class="top-eyebrow">
             Message Details
           </span>
@@ -2346,6 +2263,7 @@
           >
             Message
           </h2>
+
         </div>
 
         <button
@@ -2665,19 +2583,15 @@
 
       <div class="modal-body">
 
-        <div
-          class="table-wrap"
-        >
+        <div class="table-wrap">
 
           <table>
 
             <thead>
-
               <tr>
                 <th>Key</th>
                 <th>Action</th>
               </tr>
-
             </thead>
 
             <tbody>
@@ -2685,7 +2599,7 @@
               <tr><td>/</td><td>Focus search</td></tr>
               <tr><td>Ctrl / Cmd + K</td><td>Command palette</td></tr>
               <tr><td>R</td><td>Refresh</td></tr>
-              <tr><td>Esc</td><td>Close open dialog</td></tr>
+              <tr><td>Esc</td><td>Close dialog</td></tr>
               <tr><td>G then I</td><td>Go Inbox</td></tr>
               <tr><td>G then S</td><td>Go Starred</td></tr>
               <tr><td>G then U</td><td>Go Unread</td></tr>
@@ -2717,18 +2631,14 @@
   <script>
     "use strict";
 
-
     const SUPABASE_URL =
       "https://hcztwkzvnswlwpkcpakh.supabase.co";
-
 
     const SUPABASE_PUBLISHABLE_KEY =
       "sb_publishable_TcvvhKV__Hv2QCcHAaD9NQ_MCM079CE";
 
-
-     const ADMIN_EMAIL =
+    const ADMIN_EMAIL =
       "wazirlab@proton.me";
-
 
     const supabaseClient =
       window.supabase.createClient(
@@ -2737,28 +2647,43 @@
       );
 
 
-    const $ = (selector) =>
+    const $ = selector =>
       document.querySelector(selector);
 
 
-    const $$ = (selector) =>
-      Array.from(document.querySelectorAll(selector));
+    const $$ = selector =>
+      Array.from(
+        document.querySelectorAll(
+          selector
+        )
+      );
 
 
     const state = {
+
       messages: [],
+
       filtered: [],
+
       selected: new Set(),
+
       page: 1,
+
       currentView: "inbox",
+
       currentMessageId: null,
+
       commandIndex: 0,
-      searchHistory: JSON.parse(
-        localStorage.getItem(
-          "wrl_search_history"
-        ) || "[]"
-      ),
+
+      searchHistory:
+        JSON.parse(
+          localStorage.getItem(
+            "wrl_search_history"
+          ) || "[]"
+        ),
+
       settings: {
+
         autoRefresh:
           localStorage.getItem(
             "wrl_auto_refresh"
@@ -2792,7 +2717,8 @@
     };
 
 
-    let refreshTimer = null;
+    let refreshTimer =
+      null;
 
 
     const loginScreen =
@@ -2839,143 +2765,54 @@
       $("#toast");
 
 
-    function setTheme(theme) {
+    function escapeHtml(value) {
 
-      document.documentElement
-        .setAttribute(
-          "data-theme",
-          theme
-        );
+      return String(
+        value ?? ""
+      )
 
-      state.settings.theme =
-        theme;
+        .replaceAll(
+          "&",
+          "&amp;"
+        )
 
-      localStorage.setItem(
-        "wrl_theme",
-        theme
-      );
+        .replaceAll(
+          "<",
+          "&lt;"
+        )
 
-      $("#themeSelect").value =
-        theme;
-    }
+        .replaceAll(
+          ">",
+          "&gt;"
+        )
 
+        .replaceAll(
+          '"',
+          "&quot;"
+        )
 
-    function applySettings() {
-
-      document.body.classList.remove(
-        "compact",
-        "large"
-      );
-
-      const density =
-        $("#densitySelect").value;
-
-      if (density === "compact") {
-        document.body.classList.add(
-          "compact"
-        );
-      }
-
-      if (density === "large") {
-        document.body.classList.add(
-          "large"
-        );
-      }
-
-      const toggles = {
-        autoRefresh:
-          $("#toggleAutoRefresh"),
-
-        sound:
-          $("#toggleSound"),
-
-        confirmDelete:
-          $("#toggleConfirmDelete"),
-
-        rowDetail:
-          $("#toggleRowDetail")
-      };
-
-      Object.entries(toggles)
-        .forEach(([key, node]) => {
-
-          if (!node) return;
-
-          node.classList.toggle(
-            "on",
-            !!state.settings[key]
-          );
-        });
-
-      $("#settingsPageSize").value =
-        state.settings.pageSize;
-
-      $("#pageSize").value =
-        state.settings.pageSize;
-
-      setTheme(
-        state.settings.theme
-      );
-
-      setupAutoRefresh();
-    }
-
-
-    function setupAutoRefresh() {
-
-      if (refreshTimer) {
-        clearInterval(refreshTimer);
-        refreshTimer = null;
-      }
-
-      if (!state.settings.autoRefresh) {
-        return;
-      }
-
-      refreshTimer =
-        setInterval(
-          () => {
-            if (
-              !document.hidden &&
-              app &&
-              !app.classList.contains(
-                "hidden"
-              )
-            ) {
-              loadMessages(
-                false
-              );
-            }
-          },
-          30000
+        .replaceAll(
+          "'",
+          "&#039;"
         );
     }
 
 
-    function saveSetting(
-      key,
-      value
-    ) {
+    function escapeCsv(value) {
 
-      state.settings[key] =
-        value;
-
-      localStorage.setItem(
-        "wrl_" + key
-          .replace(/[A-Z]/g, m =>
-            "_" +
-            m.toLowerCase()
-          ),
-        String(value)
-      );
-
-      applySettings();
+      return '"' +
+        String(
+          value ?? ""
+        )
+          .replaceAll(
+            '"',
+            '""'
+          ) +
+        '"';
     }
 
 
-    function showToast(
-      message
-    ) {
+    function showToast(message) {
 
       toast.textContent =
         message;
@@ -2985,17 +2822,18 @@
       );
 
       clearTimeout(
-        window.__wrlToast
+        window.__toastTimer
       );
 
-      window.__wrlToast =
-        setTimeout(() => {
-
-          toast.classList.remove(
-            "show"
-          );
-
-        }, 2200);
+      window.__toastTimer =
+        setTimeout(
+          () => {
+            toast.classList.remove(
+              "show"
+            );
+          },
+          2200
+        );
     }
 
 
@@ -3014,6 +2852,7 @@
           ) || "[]"
         );
 
+
       items.unshift({
         action,
         detail,
@@ -3021,12 +2860,17 @@
           new Date().toISOString()
       });
 
+
       localStorage.setItem(
         key,
         JSON.stringify(
-          items.slice(0, 100)
+          items.slice(
+            0,
+            100
+          )
         )
       );
+
 
       renderActivity();
     }
@@ -3041,12 +2885,14 @@
         return;
       }
 
+
       const items =
         JSON.parse(
           localStorage.getItem(
             "wrl_activity"
           ) || "[]"
         );
+
 
       if (!items.length) {
 
@@ -3059,12 +2905,17 @@
         return;
       }
 
+
       container.innerHTML =
         items
-          .slice(0, 12)
-          .map(item => {
+          .slice(
+            0,
+            12
+          )
 
-            return `
+          .map(
+            item => `
+
               <div
                 style="
                   border:1px solid var(--border);
@@ -3080,7 +2931,9 @@
                     font-weight:800;
                   "
                 >
-                  ${escapeHtml(item.action)}
+                  ${escapeHtml(
+                    item.action
+                  )}
                 </div>
 
                 <div
@@ -3090,7 +2943,9 @@
                     margin-top:4px;
                   "
                 >
-                  ${escapeHtml(item.detail)}
+                  ${escapeHtml(
+                    item.detail
+                  )}
                 </div>
 
                 <div
@@ -3100,60 +2955,219 @@
                     margin-top:5px;
                   "
                 >
-                  ${new Date(item.at).toLocaleString()}
+                  ${new Date(
+                    item.at
+                  ).toLocaleString()}
                 </div>
 
               </div>
-            `;
-
-          })
+            `
+          )
           .join("");
     }
 
 
-    function escapeHtml(
-      value
+    function setTheme(
+      theme
     ) {
 
-      return String(
-        value ?? ""
+      document.documentElement
+        .setAttribute(
+          "data-theme",
+          theme
+        );
+
+      state.settings.theme =
+        theme;
+
+      localStorage.setItem(
+        "wrl_theme",
+        theme
+      );
+
+
+      if ($("#themeSelect")) {
+
+        $("#themeSelect").value =
+          theme;
+      }
+    }
+
+
+    function applySettings() {
+
+      document.body
+        .classList
+        .remove(
+          "compact",
+          "large"
+        );
+
+
+      const density =
+        $("#densitySelect").value;
+
+
+      if (
+        density ===
+        "compact"
+      ) {
+
+        document.body
+          .classList
+          .add(
+            "compact"
+          );
+      }
+
+
+      if (
+        density ===
+        "large"
+      ) {
+
+        document.body
+          .classList
+          .add(
+            "large"
+          );
+      }
+
+
+      const toggleMap = {
+
+        autoRefresh:
+          "#toggleAutoRefresh",
+
+        sound:
+          "#toggleSound",
+
+        confirmDelete:
+          "#toggleConfirmDelete",
+
+        rowDetail:
+          "#toggleRowDetail"
+      };
+
+
+      Object.entries(
+        toggleMap
       )
-        .replaceAll(
-          "&",
-          "&amp;"
-        )
-        .replaceAll(
-          "<",
-          "&lt;"
-        )
-        .replaceAll(
-          ">",
-          "&gt;"
-        )
-        .replaceAll(
-          '"',
-          "&quot;"
-        )
-        .replaceAll(
-          "'",
-          "&#039;"
+        .forEach(
+          ([key, selector]) => {
+
+            const node =
+              $(selector);
+
+            if (!node) {
+              return;
+            }
+
+
+            node.classList.toggle(
+              "on",
+              !!state
+                .settings[
+                  key
+                ]
+            );
+          }
+        );
+
+
+      $("#settingsPageSize")
+        .value =
+        state.settings.pageSize;
+
+
+      $("#pageSize")
+        .value =
+        state.settings.pageSize;
+
+
+      setTheme(
+        state.settings.theme
+      );
+
+
+      setupAutoRefresh();
+    }
+
+
+    function setupAutoRefresh() {
+
+      if (
+        refreshTimer
+      ) {
+
+        clearInterval(
+          refreshTimer
+        );
+
+        refreshTimer =
+          null;
+      }
+
+
+      if (
+        !state.settings.autoRefresh
+      ) {
+
+        return;
+      }
+
+
+      refreshTimer =
+        setInterval(
+          () => {
+
+            if (
+              !document.hidden &&
+              app &&
+              !app
+                .classList
+                .contains(
+                  "hidden"
+                )
+            ) {
+
+              loadMessages(
+                false
+              );
+            }
+
+          },
+          30000
         );
     }
 
 
-    function escapeCsv(
+    function saveSetting(
+      key,
       value
     ) {
 
-      return '"' +
-        String(
-          value ?? ""
-        )
-          .replaceAll(
-            '"',
-            '""'
-          ) +
-        '"';
+      state.settings[key] =
+        value;
+
+
+      const storageKey =
+        "wrl_" +
+        key.replace(
+          /[A-Z]/g,
+          letter =>
+            "_" +
+            letter.toLowerCase()
+        );
+
+
+      localStorage.setItem(
+        storageKey,
+        String(value)
+      );
+
+
+      applySettings();
     }
 
 
@@ -3161,10 +3175,12 @@
       id
     ) {
 
-      return state.messages.find(
-        item =>
-          item.id === id
-      );
+      return state.messages
+        .find(
+          item =>
+            item.id ===
+            id
+        );
     }
 
 
@@ -3189,10 +3205,19 @@
     ) {
 
       return {
-        urgent: 4,
-        high: 3,
-        normal: 2,
-        low: 1
+
+        urgent:
+          4,
+
+        high:
+          3,
+
+        normal:
+          2,
+
+        low:
+          1
+
       }[
         priority
       ] || 0;
@@ -3202,48 +3227,63 @@
     function getBaseViewMessages() {
 
       return state.messages
-        .filter(item => {
+        .filter(
+          item => {
 
-          if (
-            state.currentView ===
-            "trash"
-          ) {
-            return !!item.deleted_at;
+            if (
+              state.currentView ===
+              "trash"
+            ) {
+
+              return !!item.deleted_at;
+            }
+
+
+            if (
+              item.deleted_at
+            ) {
+
+              return false;
+            }
+
+
+            if (
+              state.currentView ===
+              "archive"
+            ) {
+
+              return !!item.archived;
+            }
+
+
+            if (
+              state.currentView ===
+              "starred"
+            ) {
+
+              return (
+                !!item.is_starred &&
+                !item.archived
+              );
+            }
+
+
+            if (
+              state.currentView ===
+              "unread"
+            ) {
+
+              return (
+                !item.is_read &&
+                !item.archived
+              );
+            }
+
+
+            return !item.archived;
+
           }
-
-          if (item.deleted_at) {
-            return false;
-          }
-
-          if (
-            state.currentView ===
-            "archive"
-          ) {
-            return !!item.archived;
-          }
-
-          if (
-            state.currentView ===
-            "starred"
-          ) {
-            return (
-              !!item.is_starred &&
-              !item.archived
-            );
-          }
-
-          if (
-            state.currentView ===
-            "unread"
-          ) {
-            return (
-              !item.is_read &&
-              !item.archived
-            );
-          }
-
-          return !item.archived;
-        });
+        );
     }
 
 
@@ -3254,23 +3294,30 @@
           .trim()
           .toLowerCase();
 
+
       const status =
         $("#statusFilter").value;
+
 
       const priority =
         $("#priorityFilter").value;
 
+
       const category =
         $("#categoryFilter").value;
+
 
       const readFilter =
         $("#readFilter").value;
 
+
       const sort =
         $("#sortFilter").value;
 
+
       const from =
         $("#dateFrom").value;
+
 
       const to =
         $("#dateTo").value;
@@ -3280,33 +3327,45 @@
         getBaseViewMessages();
 
 
-      if (query) {
+      if (
+        query
+      ) {
 
         results =
-          results.filter(item => {
+          results.filter(
+            item => {
 
-            const haystack =
-              [
-                item.name,
-                item.email,
-                item.message,
-                item.admin_note,
-                item.category,
-                item.priority,
-                item.status,
-                ...(item.tags || [])
-              ]
-                .join(" ")
-                .toLowerCase();
+              const haystack =
+                [
+                  item.name,
+                  item.email,
+                  item.message,
+                  item.admin_note,
+                  item.category,
+                  item.priority,
+                  item.status,
+                  ...(
+                    item.tags ||
+                    []
+                  )
+                ]
+                  .join(" ")
+                  .toLowerCase();
 
-            return haystack.includes(
-              query
-            );
-          });
+
+              return haystack
+                .includes(
+                  query
+                );
+            }
+          );
       }
 
 
-      if (status !== "all") {
+      if (
+        status !==
+        "all"
+      ) {
 
         results =
           results.filter(
@@ -3317,7 +3376,10 @@
       }
 
 
-      if (priority !== "all") {
+      if (
+        priority !==
+        "all"
+      ) {
 
         results =
           results.filter(
@@ -3328,7 +3390,10 @@
       }
 
 
-      if (category !== "all") {
+      if (
+        category !==
+        "all"
+      ) {
 
         results =
           results.filter(
@@ -3339,7 +3404,10 @@
       }
 
 
-      if (readFilter === "read") {
+      if (
+        readFilter ===
+        "read"
+      ) {
 
         results =
           results.filter(
@@ -3349,7 +3417,10 @@
       }
 
 
-      if (readFilter === "unread") {
+      if (
+        readFilter ===
+        "unread"
+      ) {
 
         results =
           results.filter(
@@ -3359,7 +3430,9 @@
       }
 
 
-      if (from) {
+      if (
+        from
+      ) {
 
         const start =
           new Date(
@@ -3367,17 +3440,21 @@
             "T00:00:00"
           );
 
+
         results =
           results.filter(
             item =>
               new Date(
                 item.created_at
-              ) >= start
+              ) >=
+              start
           );
       }
 
 
-      if (to) {
+      if (
+        to
+      ) {
 
         const end =
           new Date(
@@ -3385,23 +3462,29 @@
             "T23:59:59"
           );
 
+
         results =
           results.filter(
             item =>
               new Date(
                 item.created_at
-              ) <= end
+              ) <=
+              end
           );
       }
 
 
       results.sort(
-        (a, b) => {
+        (
+          a,
+          b
+        ) => {
 
           if (
             sort ===
             "oldest"
           ) {
+
             return (
               new Date(
                 a.created_at
@@ -3417,6 +3500,7 @@
             sort ===
             "name_az"
           ) {
+
             return a.name
               .localeCompare(
                 b.name
@@ -3428,6 +3512,7 @@
             sort ===
             "name_za"
           ) {
+
             return b.name
               .localeCompare(
                 a.name
@@ -3439,6 +3524,7 @@
             sort ===
             "priority"
           ) {
+
             return (
               getPriorityRank(
                 b.priority
@@ -3458,6 +3544,7 @@
               a.created_at
             )
           );
+
         }
       );
 
@@ -3465,10 +3552,13 @@
       state.filtered =
         results;
 
+
       const pageSize =
         Number(
-          $("#pageSize").value
+          $("#pageSize")
+            .value
         );
+
 
       const pageCount =
         Math.max(
@@ -3479,18 +3569,22 @@
           )
         );
 
+
       if (
         state.page >
         pageCount
       ) {
+
         state.page =
           pageCount;
       }
+
 
       if (
         state.page <
         1
       ) {
+
         state.page =
           1;
       }
@@ -3506,8 +3600,10 @@
 
       const pageSize =
         Number(
-          $("#pageSize").value
+          $("#pageSize")
+            .value
         );
+
 
       const start =
         (
@@ -3516,10 +3612,12 @@
         ) *
         pageSize;
 
+
       const pageItems =
         state.filtered.slice(
           start,
-          start + pageSize
+          start +
+          pageSize
         );
 
 
@@ -3533,7 +3631,8 @@
           </div>
         `;
 
-        $("#selectAll").checked =
+        $("#selectAll")
+          .checked =
           false;
 
         updateBulkUI();
@@ -3543,272 +3642,271 @@
 
 
       messageList.innerHTML =
-        pageItems.map(
-          item => {
+        pageItems
+          .map(
+            item => {
 
-            const date =
-              new Date(
-                item.created_at
-              );
-
-
-            const selected =
-              state.selected.has(
-                item.id
-              );
+              const date =
+                new Date(
+                  item.created_at
+                );
 
 
-            const readClass =
-              item.is_read
-                ? ""
-                : "unread";
+              const selected =
+                state.selected.has(
+                  item.id
+                );
 
 
-            const rowClass =
-              selected
-                ? "selected"
-                : "";
-
-
-            const priorityClass =
-              item.priority ===
-              "urgent"
-                ? "danger"
-                : item.priority ===
-                  "high"
-                  ? "warning"
-                  : "";
-
-
-            const statusClass =
-              item.status ===
-              "resolved"
-                ? "success"
-                : item.status ===
-                  "spam"
+              const priorityClass =
+                item.priority ===
+                "urgent"
                   ? "danger"
-                  : item.status ===
-                    "new"
-                    ? "accent"
+                  : item.priority ===
+                    "high"
+                    ? "warning"
                     : "";
 
 
-            const tagsHtml =
-              (item.tags || [])
-                .slice(0, 4)
-                .map(
-                  tag =>
-                    `<span class="tag">
-                      ${escapeHtml(tag)}
-                    </span>`
+              const statusClass =
+                item.status ===
+                "resolved"
+                  ? "success"
+                  : item.status ===
+                    "spam"
+                    ? "danger"
+                    : item.status ===
+                      "new"
+                      ? "accent"
+                      : "";
+
+
+              const tagsHtml =
+                (
+                  item.tags ||
+                  []
                 )
-                .join("");
+                  .slice(
+                    0,
+                    4
+                  )
+                  .map(
+                    tag =>
+                      `<span class="tag">
+                        ${escapeHtml(tag)}
+                      </span>`
+                  )
+                  .join("");
 
 
-            return `
-              <article
-                class="message-row ${readClass} ${rowClass}"
-                data-id="${item.id}"
-              >
+              return `
+                <article
+                  class="message-row ${
+                    item.is_read
+                      ? ""
+                      : "unread"
+                  } ${
+                    selected
+                      ? "selected"
+                      : ""
+                  }"
+                  data-id="${item.id}"
+                >
 
-                <div class="row-main">
+                  <div class="row-main">
 
-                  <div class="row-check">
-                    <input
-                      type="checkbox"
-                      class="message-check"
-                      data-id="${item.id}"
-                      ${selected ? "checked" : ""}
-                    >
-                  </div>
-
-
-                  <div
-                    class="sender"
-                  >
-
-                    <div class="sender-name">
-                      ${escapeHtml(item.name)}
-                    </div>
-
-                    <div class="sender-email">
-                      ${escapeHtml(item.email)}
-                    </div>
-
-                    <div class="row-subline">
-                      ${date.toLocaleString()}
-                    </div>
-
-                  </div>
-
-
-                  <div class="row-preview">
-
-                    <div class="preview">
-                      ${escapeHtml(item.message)}
-                    </div>
-
-                    ${
-                      item.admin_note
-                        ? `
-                          <div
-                            class="row-subline"
-                          >
-                            Note:
-                            ${escapeHtml(
-                              item.admin_note
-                            )}
-                          </div>
-                        `
-                        : ""
-                    }
-
-                    <div class="tag-wrap">
-                      ${tagsHtml}
-                    </div>
-
-                  </div>
-
-
-                  <div class="row-meta">
-
-                    <div class="meta-stack">
-
-                      <span
-                        class="pill ${priorityClass}"
+                    <div class="row-check">
+                      <input
+                        type="checkbox"
+                        class="message-check"
+                        data-id="${item.id}"
+                        ${
+                          selected
+                            ? "checked"
+                            : ""
+                        }
                       >
-                        ${escapeHtml(
-                          item.priority
-                        )}
-                      </span>
+                    </div>
 
-                      <span
-                        class="pill ${statusClass}"
-                      >
-                        ${escapeHtml(
-                          item.status
-                        )}
-                      </span>
 
-                      <span
-                        class="pill"
-                      >
+                    <div>
+
+                      <div class="sender-name">
                         ${escapeHtml(
-                          item.category
+                          item.name
                         )}
-                      </span>
+                      </div>
+
+                      <div class="sender-email">
+                        ${escapeHtml(
+                          item.email
+                        )}
+                      </div>
+
+                      <div class="row-subline">
+                        ${date.toLocaleString()}
+                      </div>
 
                     </div>
 
-                  </div>
 
+                    <div>
 
-                  <div class="row-actions">
+                      <div class="preview">
+                        ${escapeHtml(
+                          item.message
+                        )}
+                      </div>
 
-                    <button
-                      class="icon-btn ${
-                        item.is_starred
-                          ? "starred"
+                      ${
+                        item.admin_note
+                          ? `
+                            <div class="row-subline">
+                              Note:
+                              ${escapeHtml(
+                                item.admin_note
+                              )}
+                            </div>
+                          `
                           : ""
-                      }"
-                      title="Star"
-                      data-action="star"
-                      data-id="${item.id}"
-                    >
-                      ${
-                        item.is_starred
-                          ? "★"
-                          : "☆"
                       }
-                    </button>
+
+                      <div class="tag-wrap">
+                        ${tagsHtml}
+                      </div>
+
+                    </div>
 
 
-                    <button
-                      class="icon-btn"
-                      title="Mark read/unread"
-                      data-action="read"
-                      data-id="${item.id}"
-                    >
+                    <div>
+
+                      <div class="meta-stack">
+
+                        <span
+                          class="pill ${priorityClass}"
+                        >
+                          ${escapeHtml(
+                            item.priority
+                          )}
+                        </span>
+
+                        <span
+                          class="pill ${statusClass}"
+                        >
+                          ${escapeHtml(
+                            item.status
+                          )}
+                        </span>
+
+                        <span class="pill">
+                          ${escapeHtml(
+                            item.category
+                          )}
+                        </span>
+
+                      </div>
+
+                    </div>
+
+
+                    <div class="row-actions">
+
+                      <button
+                        class="icon-btn ${
+                          item.is_starred
+                            ? "starred"
+                            : ""
+                        }"
+                        title="Star"
+                        data-action="star"
+                        data-id="${item.id}"
+                      >
+                        ${
+                          item.is_starred
+                            ? "★"
+                            : "☆"
+                        }
+                      </button>
+
+
+                      <button
+                        class="icon-btn"
+                        title="Mark read/unread"
+                        data-action="read"
+                        data-id="${item.id}"
+                      >
+                        ${
+                          item.is_read
+                            ? "●"
+                            : "○"
+                        }
+                      </button>
+
+
+                      <button
+                        class="icon-btn"
+                        title="Open message"
+                        data-action="open"
+                        data-id="${item.id}"
+                      >
+                        ↗
+                      </button>
+
+
+                      <button
+                        class="icon-btn"
+                        title="Reply"
+                        data-action="reply"
+                        data-id="${item.id}"
+                      >
+                        ↩
+                      </button>
+
+
                       ${
-                        item.is_read
-                          ? "●"
-                          : "○"
+                        state.currentView ===
+                        "trash"
+                          ? `
+                            <button
+                              class="icon-btn"
+                              title="Restore"
+                              data-action="restore"
+                              data-id="${item.id}"
+                            >
+                              ♲
+                            </button>
+                          `
+                          : `
+                            <button
+                              class="icon-btn"
+                              title="Archive"
+                              data-action="archive"
+                              data-id="${item.id}"
+                            >
+                              ▣
+                            </button>
+                          `
                       }
-                    </button>
 
 
-                    <button
-                      class="icon-btn"
-                      title="Open message"
-                      data-action="open"
-                      data-id="${item.id}"
-                    >
-                      ↗
-                    </button>
+                      <button
+                        class="icon-btn"
+                        title="Delete"
+                        data-action="delete"
+                        data-id="${item.id}"
+                      >
+                        ×
+                      </button>
 
-
-                    <button
-                      class="icon-btn"
-                      title="Reply"
-                      data-action="reply"
-                      data-id="${item.id}"
-                    >
-                      ↩
-                    </button>
-
-
-                    ${
-                      state.currentView ===
-                      "trash"
-                        ? `
-                          <button
-                            class="icon-btn"
-                            title="Restore"
-                            data-action="restore"
-                            data-id="${item.id}"
-                          >
-                            ♲
-                          </button>
-                        `
-                        : `
-                          <button
-                            class="icon-btn"
-                            title="${
-                              item.archived
-                                ? "Restore from archive"
-                                : "Archive"
-                            }"
-                            data-action="archive"
-                            data-id="${item.id}"
-                          >
-                            ${
-                              item.archived
-                                ? "▤"
-                                : "▣"
-                            }
-                          </button>
-                        `
-                    }
-
-
-                    <button
-                      class="icon-btn"
-                      title="Delete"
-                      data-action="delete"
-                      data-id="${item.id}"
-                    >
-                      ×
-                    </button>
+                    </div>
 
                   </div>
 
-                </div>
-
-              </article>
-            `;
-
-          }
-        ).join("");
+                </article>
+              `;
+            }
+          )
+          .join("");
 
 
       $$(".message-check")
@@ -3820,20 +3918,27 @@
               event => {
 
                 const id =
-                  event.target.dataset
+                  event.target
+                    .dataset
                     .id;
 
+
                 if (
-                  event.target.checked
+                  event.target
+                    .checked
                 ) {
+
                   state.selected.add(
                     id
                   );
+
                 } else {
+
                   state.selected.delete(
                     id
                   );
                 }
+
 
                 applyFilters();
               }
@@ -3851,10 +3956,12 @@
               event => {
 
                 if (
-                  !state.settings.rowDetail
+                  !state.settings
+                    .rowDetail
                 ) {
                   return;
                 }
+
 
                 if (
                   event.target.closest(
@@ -3863,6 +3970,7 @@
                 ) {
                   return;
                 }
+
 
                 openDetail(
                   row.dataset.id
@@ -3883,70 +3991,87 @@
 
                 const action =
                   event.currentTarget
-                    .dataset.action;
+                    .dataset
+                    .action;
+
 
                 const id =
                   event.currentTarget
-                    .dataset.id;
+                    .dataset
+                    .id;
+
 
                 if (
                   action ===
                   "open"
                 ) {
+
                   openDetail(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "reply"
                 ) {
+
                   replyTo(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "read"
                 ) {
+
                   await toggleRead(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "star"
                 ) {
+
                   await toggleStar(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "archive"
                 ) {
+
                   await toggleArchive(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "restore"
                 ) {
+
                   await restoreMessage(
                     id
                   );
                 }
 
+
                 if (
                   action ===
                   "delete"
                 ) {
+
                   await deleteMessage(
                     id
                   );
@@ -3968,10 +4093,13 @@
       const total =
         state.filtered.length;
 
+
       const pageSize =
         Number(
-          $("#pageSize").value
+          $("#pageSize")
+            .value
         );
+
 
       const pageCount =
         Math.max(
@@ -3982,60 +4110,79 @@
           )
         );
 
-      $("#resultMeta").textContent =
+
+      $("#resultMeta")
+        .textContent =
         `${total} matching message${
-          total === 1 ? "" : "s"
+          total === 1
+            ? ""
+            : "s"
         }`;
 
-      $("#pageMeta").textContent =
+
+      $("#pageMeta")
+        .textContent =
         `Page ${state.page} of ${pageCount}`;
 
-      $("#prevPage").disabled =
-        state.page <= 1;
 
-      $("#nextPage").disabled =
-        state.page >= pageCount;
+      $("#prevPage")
+        .disabled =
+        state.page <=
+        1;
+
+
+      $("#nextPage")
+        .disabled =
+        state.page >=
+        pageCount;
     }
 
 
     function updateSelectAll() {
 
-      const visibleIds =
-        state.filtered
-          .slice(
-            (
-              state.page -
-              1
-            ) *
-            Number(
-              $("#pageSize").value
-            ),
-            state.page *
-            Number(
-              $("#pageSize").value
-            )
-          )
-          .map(
-            item => item.id
-          );
+      const pageSize =
+        Number(
+          $("#pageSize")
+            .value
+        );
+
+
+      const visible =
+        state.filtered.slice(
+          (
+            state.page -
+            1
+          ) *
+          pageSize,
+
+          state.page *
+          pageSize
+        );
 
 
       const selectedVisible =
-        visibleIds.filter(
-          id =>
-            state.selected.has(id)
+        visible.filter(
+          item =>
+            state.selected.has(
+              item.id
+            )
         ).length;
 
 
-      $("#selectAll").checked =
-        visibleIds.length > 0 &&
+      $("#selectAll")
+        .checked =
+        visible.length >
+          0 &&
         selectedVisible ===
-          visibleIds.length;
+          visible.length;
 
-      $("#selectAll").indeterminate =
-        selectedVisible > 0 &&
+
+      $("#selectAll")
+        .indeterminate =
+        selectedVisible >
+          0 &&
         selectedVisible <
-          visibleIds.length;
+          visible.length;
     }
 
 
@@ -4044,13 +4191,18 @@
       const count =
         state.selected.size;
 
-      $("#bulkCount").textContent =
+
+      $("#bulkCount")
+        .textContent =
         `${count} selected`;
 
+
       $("#bulkActions")
-        .classList.toggle(
+        .classList
+        .toggle(
           "show",
-          count > 0
+          count >
+            0
         );
     }
 
@@ -4062,6 +4214,7 @@
       if (
         showLoading
       ) {
+
         messageList.innerHTML = `
           <div class="empty">
             Loading messages...
@@ -4082,14 +4235,17 @@
           .order(
             "created_at",
             {
-              ascending: false
+              ascending:
+                false
             }
           );
 
 
       if (error) {
 
-        console.error(error);
+        console.error(
+          error
+        );
 
         messageList.innerHTML = `
           <div class="empty">
@@ -4105,69 +4261,19 @@
       }
 
 
-      const oldUnreadIds =
-        new Set(
-          state.messages
-            .filter(
-              item =>
-                !item.is_read
-            )
-            .map(
-              item =>
-                item.id
-            )
-        );
-
-
       state.messages =
         data || [];
 
 
-      const newUnread =
-        state.messages.filter(
-          item =>
-            !item.is_read &&
-            !oldUnreadIds.has(
-              item.id
-            )
-        );
-
-
-      if (
-        newUnread.length &&
-        state.settings.sound
-      ) {
-        playNotification();
-      }
-
-
-      state.selected.forEach(
-        id => {
-
-          if (
-            !state.messages.some(
-              item =>
-                item.id === id
-            )
-          ) {
-            state.selected.delete(
-              id
-            );
-          }
-        }
-      );
-
-
       updateStats();
+
       applyFilters();
+
       renderAnalytics();
+
       renderActivity();
+
       updateSidebarCounts();
-
-
-      if (!showLoading) {
-        $("#lastUpdated");
-      }
     }
 
 
@@ -4176,6 +4282,7 @@
       const messages =
         state.messages;
 
+
       const active =
         messages.filter(
           item =>
@@ -4183,64 +4290,97 @@
         );
 
 
-      const unread =
+      $("#statTotal")
+        .textContent =
+        active.length;
+
+
+      $("#statUnread")
+        .textContent =
         active.filter(
           item =>
             !item.is_read
-        );
+        ).length;
 
 
-      const starred =
+      $("#statStarred")
+        .textContent =
         active.filter(
           item =>
             item.is_starred
-        );
+        ).length;
 
 
-      const archived =
-        active.filter(
-          item =>
-            item.archived
-        );
-
-
-      const trash =
-        messages.filter(
-          item =>
-            !!item.deleted_at
-        );
-
-
-      const today =
+      $("#statToday")
+        .textContent =
         active.filter(
           item =>
             new Date(
               item.created_at
             ) >=
             getTodayStart()
-        );
+        ).length;
 
 
-      $("#statTotal").textContent =
-        active.length;
-
-      $("#statUnread").textContent =
-        unread.length;
-
-      $("#statStarred").textContent =
-        starred.length;
-
-      $("#statToday").textContent =
-        today.length;
-
-      $("#statArchived").textContent =
-        archived.length;
-
-      $("#statTrash").textContent =
-        trash.length;
+      $("#statArchived")
+        .textContent =
+        active.filter(
+          item =>
+            item.archived
+        ).length;
 
 
-      $("#analyticsUrgent").textContent =
+      $("#statTrash")
+        .textContent =
+        messages.filter(
+          item =>
+            !!item.deleted_at
+        ).length;
+
+
+      const readCount =
+        active.filter(
+          item =>
+            item.is_read
+        ).length;
+
+
+      const replyCount =
+        active.filter(
+          item =>
+            item.status ===
+            "replied"
+        ).length;
+
+
+      $("#analyticsReadRate")
+        .textContent =
+        active.length
+          ? Math.round(
+              (
+                readCount /
+                active.length
+              ) * 100
+            ) +
+            "%"
+          : "0%";
+
+
+      $("#analyticsReplyRate")
+        .textContent =
+        active.length
+          ? Math.round(
+              (
+                replyCount /
+                active.length
+              ) * 100
+            ) +
+            "%"
+          : "0%";
+
+
+      $("#analyticsUrgent")
+        .textContent =
         active.filter(
           item =>
             item.priority ===
@@ -4248,7 +4388,8 @@
         ).length;
 
 
-      $("#analyticsResolved").textContent =
+      $("#analyticsResolved")
+        .textContent =
         active.filter(
           item =>
             item.status ===
@@ -4256,7 +4397,8 @@
         ).length;
 
 
-      $("#analyticsSpam").textContent =
+      $("#analyticsSpam")
+        .textContent =
         active.filter(
           item =>
             item.status ===
@@ -4264,67 +4406,26 @@
         ).length;
 
 
-      const readRate =
-        active.length
-          ? Math.round(
-              (
-                active.filter(
-                  item =>
-                    item.is_read
-                ).length /
-                active.length
-              ) * 100
-            )
-          : 0;
-
-
-      const replyRate =
-        active.length
-          ? Math.round(
-              (
-                active.filter(
-                  item =>
-                    item.status ===
-                    "replied"
-                ).length /
-                active.length
-              ) * 100
-            )
-          : 0;
-
-
-      $("#analyticsReadRate")
-        .textContent =
-        `${readRate}%`;
-
-
-      $("#analyticsReplyRate")
-        .textContent =
-        `${replyRate}%`;
-
-
-      const dates =
-        active.map(
-          item =>
-            new Date(
-              item.created_at
-            )
-        );
-
-
       let average =
         0;
 
 
       if (
-        dates.length
+        active.length
       ) {
+
+        const dates =
+          active.map(
+            item =>
+              new Date(
+                item.created_at
+              ).getTime()
+          );
+
 
         const oldest =
           Math.min(
-            ...dates.map(
-              d => d.getTime()
-            )
+            ...dates
           );
 
 
@@ -4345,7 +4446,9 @@
           (
             active.length /
             days
-          ).toFixed(1);
+          ).toFixed(
+            1
+          );
       }
 
 
@@ -4410,7 +4513,7 @@
     async function updateMessage(
       id,
       changes,
-      activityText = "Updated message"
+      activity
     ) {
 
       const {
@@ -4429,7 +4532,9 @@
 
       if (error) {
 
-        console.error(error);
+        console.error(
+          error
+        );
 
         showToast(
           "Update failed."
@@ -4440,7 +4545,7 @@
 
 
       logActivity(
-        activityText,
+        activity,
         id
       );
 
@@ -4448,6 +4553,7 @@
       await loadMessages(
         false
       );
+
 
       return true;
     }
@@ -4462,7 +4568,10 @@
           id
         );
 
-      if (!item) return;
+
+      if (!item) {
+        return;
+      }
 
 
       await updateMessage(
@@ -4476,6 +4585,7 @@
               ? "read"
               : "new"
         },
+
         item.is_read
           ? "Marked unread"
           : "Marked read"
@@ -4492,7 +4602,10 @@
           id
         );
 
-      if (!item) return;
+
+      if (!item) {
+        return;
+      }
 
 
       await updateMessage(
@@ -4501,6 +4614,7 @@
           is_starred:
             !item.is_starred
         },
+
         item.is_starred
           ? "Removed star"
           : "Starred message"
@@ -4517,7 +4631,10 @@
           id
         );
 
-      if (!item) return;
+
+      if (!item) {
+        return;
+      }
 
 
       await updateMessage(
@@ -4526,6 +4643,7 @@
           archived:
             !item.archived
         },
+
         item.archived
           ? "Restored from archive"
           : "Archived message"
@@ -4541,8 +4659,11 @@
         id,
         {
           deleted_at:
-            null
+            null,
+          archived:
+            false
         },
+
         "Restored message"
       );
     }
@@ -4553,9 +4674,10 @@
     ) {
 
       const allowed =
-        state.settings.confirmDelete
+        state.settings
+          .confirmDelete
           ? confirm(
-              "Delete this message permanently?"
+              "Move this message to trash?"
             )
           : true;
 
@@ -4571,14 +4693,15 @@
           deleted_at:
             new Date().toISOString()
         },
-        "Deleted message"
+
+        "Moved message to trash"
       );
     }
 
 
     async function bulkUpdate(
       changes,
-      activityText
+      activity
     ) {
 
       const ids =
@@ -4608,7 +4731,9 @@
 
       if (error) {
 
-        console.error(error);
+        console.error(
+          error
+        );
 
         showToast(
           "Bulk update failed."
@@ -4620,8 +4745,9 @@
 
       state.selected.clear();
 
+
       logActivity(
-        activityText,
+        activity,
         `${ids.length} messages`
       );
 
@@ -4651,9 +4777,10 @@
 
 
       const allowed =
-        state.settings.confirmDelete
+        state.settings
+          .confirmDelete
           ? confirm(
-              `Delete ${ids.length} selected message(s)?`
+              `Move ${ids.length} selected message(s) to trash?`
             )
           : true;
 
@@ -4680,7 +4807,9 @@
 
       if (error) {
 
-        console.error(error);
+        console.error(
+          error
+        );
 
         showToast(
           "Bulk delete failed."
@@ -4692,8 +4821,9 @@
 
       state.selected.clear();
 
+
       logActivity(
-        "Bulk deleted messages",
+        "Bulk moved messages to trash",
         `${ids.length} messages`
       );
 
@@ -4713,6 +4843,7 @@
           id
         );
 
+
       if (!item) {
         return;
       }
@@ -4722,45 +4853,70 @@
         id;
 
 
-      $("#detailTitle").textContent =
+      $("#detailTitle")
+        .textContent =
         item.name;
 
 
-      $("#detailMeta").innerHTML = `
-        <div class="meta-box">
-          <div class="meta-label">Name</div>
-          <div class="meta-value">
-            ${escapeHtml(item.name)}
-          </div>
-        </div>
+      $("#detailMeta")
+        .innerHTML = `
 
-        <div class="meta-box">
-          <div class="meta-label">Email</div>
-          <div class="meta-value">
-            ${escapeHtml(item.email)}
-          </div>
-        </div>
+          <div class="meta-box">
+            <div class="meta-label">
+              Name
+            </div>
 
-        <div class="meta-box">
-          <div class="meta-label">Date</div>
-          <div class="meta-value">
-            ${new Date(
-              item.created_at
-            ).toLocaleString()}
+            <div class="meta-value">
+              ${escapeHtml(
+                item.name
+              )}
+            </div>
           </div>
-        </div>
 
-        <div class="meta-box">
-          <div class="meta-label">Updated</div>
-          <div class="meta-value">
-            ${item.updated_at
-              ? new Date(
-                  item.updated_at
-                ).toLocaleString()
-              : "—"}
+
+          <div class="meta-box">
+            <div class="meta-label">
+              Email
+            </div>
+
+            <div class="meta-value">
+              ${escapeHtml(
+                item.email
+              )}
+            </div>
           </div>
-        </div>
-      `;
+
+
+          <div class="meta-box">
+            <div class="meta-label">
+              Date
+            </div>
+
+            <div class="meta-value">
+              ${new Date(
+                item.created_at
+              ).toLocaleString()}
+            </div>
+          </div>
+
+
+          <div class="meta-box">
+            <div class="meta-label">
+              Updated
+            </div>
+
+            <div class="meta-value">
+              ${
+                item.updated_at
+                  ? new Date(
+                      item.updated_at
+                    ).toLocaleString()
+                  : "—"
+              }
+            </div>
+          </div>
+
+        `;
 
 
       $("#detailMessage")
@@ -4768,29 +4924,39 @@
         item.message || "";
 
 
-      $("#detailNote").value =
-        item.admin_note || "";
+      $("#detailNote")
+        .value =
+        item.admin_note ||
+        "";
 
 
-      $("#detailStatus").value =
-        item.status || "new";
+      $("#detailStatus")
+        .value =
+        item.status ||
+        "new";
 
 
-      $("#detailPriority").value =
-        item.priority || "normal";
+      $("#detailPriority")
+        .value =
+        item.priority ||
+        "normal";
 
 
-      $("#detailCategory").value =
-        item.category || "general";
+      $("#detailCategory")
+        .value =
+        item.category ||
+        "general";
 
 
       renderDetailTags(
-        item.tags || []
+        item.tags ||
+        []
       );
 
 
       $("#detailOverlay")
-        .classList.add(
+        .classList
+        .add(
           "show"
         );
     }
@@ -4800,9 +4966,12 @@
       tags
     ) {
 
-      if (!tags.length) {
+      if (
+        !tags.length
+      ) {
 
-        $("#detailTags").innerHTML =
+        $("#detailTags")
+          .innerHTML =
           `<span class="result-meta">
             No tags
           </span>`;
@@ -4811,25 +4980,31 @@
       }
 
 
-      $("#detailTags").innerHTML =
-        tags.map(
-          (
-            tag,
-            index
-          ) => `
-            <span class="tag">
-              ${escapeHtml(tag)}
+      $("#detailTags")
+        .innerHTML =
+        tags
+          .map(
+            (
+              tag,
+              index
+            ) =>
+              `
+                <span class="tag">
+                  ${escapeHtml(
+                    tag
+                  )}
 
-              <button
-                type="button"
-                data-tag-index="${index}"
-                title="Remove tag"
-              >
-                ×
-              </button>
-            </span>
-          `
-        ).join("");
+                  <button
+                    type="button"
+                    data-tag-index="${index}"
+                  >
+                    ×
+                  </button>
+
+                </span>
+              `
+          )
+          .join("");
 
 
       $$("#detailTags button")
@@ -4845,15 +5020,17 @@
                     state.currentMessageId
                   );
 
+
                 if (!item) {
                   return;
                 }
 
+
                 const tags =
-                  [...(
-                    item.tags ||
-                    []
-                  )];
+                  [
+                    ...(item.tags || [])
+                  ];
+
 
                 tags.splice(
                   Number(
@@ -4863,6 +5040,7 @@
                   1
                 );
 
+
                 await updateMessage(
                   item.id,
                   {
@@ -4870,6 +5048,7 @@
                   },
                   "Removed message tag"
                 );
+
 
                 openDetail(
                   item.id
@@ -4888,6 +5067,7 @@
           state.currentMessageId
         );
 
+
       if (!item) {
         return;
       }
@@ -4905,22 +5085,22 @@
 
 
       const tags =
-        [...(
-          item.tags ||
-          []
-        )];
+        [
+          ...(item.tags || [])
+        ];
 
 
       if (
         !tags
           .map(
-            t =>
-              t.toLowerCase()
+            value =>
+              value.toLowerCase()
           )
           .includes(
             tag.toLowerCase()
           )
       ) {
+
         tags.push(
           tag
         );
@@ -4936,7 +5116,8 @@
       );
 
 
-      $("#tagInput").value =
+      $("#tagInput")
+        .value =
         "";
 
 
@@ -4952,6 +5133,7 @@
         getMessageById(
           state.currentMessageId
         );
+
 
       if (!item) {
         return;
@@ -4981,7 +5163,8 @@
 
             is_read:
               $("#detailStatus")
-                .value !== "new"
+                .value !==
+              "new"
           },
           "Saved message details"
         );
@@ -4992,6 +5175,7 @@
         showToast(
           "Message changes saved."
         );
+
 
         openDetail(
           item.id
@@ -5008,6 +5192,7 @@
         getMessageById(
           id
         );
+
 
       if (!item) {
         return;
@@ -5043,7 +5228,7 @@
 
     async function copyText(
       text,
-      successMessage
+      message
     ) {
 
       try {
@@ -5054,13 +5239,18 @@
             text
           );
 
+
         showToast(
-          successMessage
+          message
         );
 
       } catch (
         error
       ) {
+
+        console.error(
+          error
+        );
 
         showToast(
           "Copy failed."
@@ -5111,7 +5301,9 @@
       key
     ) {
 
-      const result = {};
+      const result =
+        {};
+
 
       items.forEach(
         item => {
@@ -5119,6 +5311,7 @@
           const value =
             item[key] ||
             "unknown";
+
 
           result[value] =
             (
@@ -5148,19 +5341,18 @@
       entries
     ) {
 
-      if (
-        !container
-      ) {
+      if (!container) {
         return;
       }
 
 
       if (!entries.length) {
 
-        container.innerHTML =
-          `<div class="empty">
+        container.innerHTML = `
+          <div class="empty">
             No data available.
-          </div>`;
+          </div>
+        `;
 
         return;
       }
@@ -5177,57 +5369,50 @@
 
 
       container.innerHTML =
-        entries.map(
-          item => {
+        entries
+          .map(
+            item => {
 
-            const width =
-              (
-                item[1] /
-                max
-              ) * 100;
+              const width =
+                (
+                  item[1] /
+                  max
+                ) *
+                100;
 
 
-            return `
-              <div class="bar-row">
+              return `
+                <div class="bar-row">
 
-                <div class="bar-label">
-                  ${escapeHtml(item[0])}
+                  <div class="bar-label">
+                    ${escapeHtml(
+                      item[0]
+                    )}
+                  </div>
+
+                  <div class="bar-track">
+                    <div
+                      class="bar-fill"
+                      style="width:${width}%"
+                    ></div>
+                  </div>
+
+                  <div class="bar-number">
+                    ${item[1]}
+                  </div>
+
                 </div>
-
-                <div class="bar-track">
-                  <div
-                    class="bar-fill"
-                    style="width:${width}%"
-                  ></div>
-                </div>
-
-                <div class="bar-number">
-                  ${item[1]}
-                </div>
-
-              </div>
-            `;
-
-          }
-        ).join("");
+              `;
+            }
+          )
+          .join("");
     }
 
 
     function exportCSV() {
 
-      if (
-        !state.messages.length
-      ) {
-
-        showToast(
-          "No messages to export."
-        );
-
-        return;
-      }
-
-
       const rows = [
+
         [
           "Name",
           "Email",
@@ -5244,6 +5429,7 @@
           "Archived",
           "Deleted At"
         ]
+
       ];
 
 
@@ -5251,33 +5437,48 @@
         item => {
 
           rows.push([
+
             item.name,
+
             item.email,
+
             item.message,
+
             item.created_at,
+
             item.updated_at,
+
             item.is_read
               ? "Yes"
               : "No",
+
             item.is_starred
               ? "Yes"
               : "No",
+
             item.priority,
+
             item.status,
+
             item.category,
+
             item.admin_note ||
               "",
+
             (
               item.tags ||
               []
             ).join(
               " | "
             ),
+
             item.archived
               ? "Yes"
               : "No",
+
             item.deleted_at ||
               ""
+
           ]);
         }
       );
@@ -5376,16 +5577,21 @@
       link.href =
         url;
 
+
       link.download =
         filename;
+
 
       document.body.appendChild(
         link
       );
 
+
       link.click();
 
+
       link.remove();
+
 
       URL.revokeObjectURL(
         url
@@ -5395,44 +5601,47 @@
 
     function printMessages() {
 
-      const printable =
+      const html =
         state.filtered
           .map(
-            item =>
-              `
-                <article
-                  style="
-                    page-break-inside:avoid;
-                    margin-bottom:24px;
-                    padding-bottom:16px;
-                    border-bottom:1px solid #ddd;
-                  "
+            item => `
+              <article
+                style="
+                  page-break-inside:avoid;
+                  margin-bottom:24px;
+                  padding-bottom:16px;
+                  border-bottom:1px solid #ddd;
+                "
+              >
+
+                <h3>
+                  ${escapeHtml(
+                    item.name
+                  )}
+                </h3>
+
+                <p>
+                  ${escapeHtml(
+                    item.email
+                  )}
+                </p>
+
+                <p>
+                  ${new Date(
+                    item.created_at
+                  ).toLocaleString()}
+                </p>
+
+                <p
+                  style="white-space:pre-wrap;"
                 >
-                  <h3>
-                    ${escapeHtml(
-                      item.name
-                    )}
-                  </h3>
+                  ${escapeHtml(
+                    item.message
+                  )}
+                </p>
 
-                  <p>
-                    ${escapeHtml(
-                      item.email
-                    )}
-                  </p>
-
-                  <p>
-                    ${new Date(
-                      item.created_at
-                    ).toLocaleString()}
-                  </p>
-
-                  <p style="white-space:pre-wrap;">
-                    ${escapeHtml(
-                      item.message
-                    )}
-                  </p>
-                </article>
-              `
+              </article>
+            `
           )
           .join("");
 
@@ -5445,20 +5654,28 @@
 
 
       if (!win) {
+
         showToast(
           "Popup blocked by browser."
         );
+
         return;
       }
 
 
       win.document.write(`
         <!DOCTYPE html>
+
         <html>
+
         <head>
-          <title>Wazir Research Lab Messages</title>
+
+          <title>
+            Wazir Research Lab Messages
+          </title>
 
           <style>
+
             body {
               font-family:Arial,Helvetica,sans-serif;
               padding:30px;
@@ -5472,7 +5689,9 @@
             p {
               line-height:1.6;
             }
+
           </style>
+
         </head>
 
         <body>
@@ -5481,7 +5700,7 @@
             Wazir Research Lab Messages
           </h1>
 
-          ${printable}
+          ${html}
 
           <script>
             window.onload = () => {
@@ -5490,8 +5709,10 @@
           <\/script>
 
         </body>
+
         </html>
       `);
+
 
       win.document.close();
     }
@@ -5499,27 +5720,34 @@
 
     function loadTemplates() {
 
-      const defaults = [
+      const defaultTemplates = [
+
         {
           name:
             "Thank You",
+
           text:
             "Thank you for contacting Wazir Research Lab. I have received your message and will review it shortly."
         },
 
+
         {
           name:
             "Research",
+
           text:
             "Thank you for your research inquiry. Please share any additional details or references that may help us understand your proposal."
         },
 
+
         {
           name:
             "Collaboration",
+
           text:
             "Thank you for reaching out regarding collaboration. Please send the relevant project details, timeline and expected contribution."
         }
+
       ];
 
 
@@ -5537,11 +5765,12 @@
         localStorage.setItem(
           "wrl_templates",
           JSON.stringify(
-            defaults
+            defaultTemplates
           )
         );
 
-        return defaults;
+
+        return defaultTemplates;
       }
 
 
@@ -5560,56 +5789,60 @@
 
 
       list.innerHTML =
-        templates.map(
-          (
-            item,
-            index
-          ) => `
-            <div class="template-item">
+        templates
+          .map(
+            (
+              item,
+              index
+            ) => `
 
-              <div>
+              <div class="template-item">
 
-                <div class="template-name">
-                  ${escapeHtml(
-                    item.name
-                  )}
+                <div>
+
+                  <div class="template-name">
+                    ${escapeHtml(
+                      item.name
+                    )}
+                  </div>
+
+                  <div class="template-preview">
+                    ${escapeHtml(
+                      item.text
+                    )}
+                  </div>
+
                 </div>
 
-                <div class="template-preview">
-                  ${escapeHtml(
-                    item.text
-                  )}
+
+                <div
+                  style="
+                    display:flex;
+                    gap:6px;
+                    align-items:flex-start;
+                  "
+                >
+
+                  <button
+                    class="btn"
+                    data-template-use="${index}"
+                  >
+                    Use
+                  </button>
+
+                  <button
+                    class="btn btn-danger"
+                    data-template-delete="${index}"
+                  >
+                    Delete
+                  </button>
+
                 </div>
 
               </div>
-
-              <div
-                style="
-                  display:flex;
-                  gap:6px;
-                  align-items:flex-start;
-                "
-              >
-
-                <button
-                  class="btn"
-                  data-template-use="${index}"
-                >
-                  Use
-                </button>
-
-                <button
-                  class="btn btn-danger"
-                  data-template-delete="${index}"
-                >
-                  Delete
-                </button>
-
-              </div>
-
-            </div>
-          `
-        ).join("");
+            `
+          )
+          .join("");
 
 
       $$("[data-template-use]")
@@ -5626,11 +5859,14 @@
                       .templateUse
                   );
 
+
                 const templates =
                   loadTemplates();
 
+
                 const template =
                   templates[index];
+
 
                 if (
                   state.currentMessageId
@@ -5641,6 +5877,7 @@
                       state.currentMessageId
                     );
 
+
                   if (item) {
 
                     const subject =
@@ -5648,10 +5885,12 @@
                         "Re: Message to Wazir Research Lab"
                       );
 
+
                     const body =
                       encodeURIComponent(
                         template.text
                       );
+
 
                     window.location.href =
                       "mailto:" +
@@ -5661,18 +5900,21 @@
                       "&body=" +
                       body;
 
+
                     showToast(
                       "Template opened."
                     );
                   }
+
                 } else {
 
                   $("#templateText")
                     .value =
                     template.text;
 
+
                   showToast(
-                    "Template copied to editor."
+                    "Template loaded."
                   );
                 }
               }
@@ -5695,13 +5937,16 @@
                       .templateDelete
                   );
 
+
                 const templates =
                   loadTemplates();
+
 
                 templates.splice(
                   index,
                   1
                 );
+
 
                 localStorage.setItem(
                   "wrl_templates",
@@ -5710,7 +5955,9 @@
                   )
                 );
 
+
                 renderTemplates();
+
 
                 showToast(
                   "Template deleted."
@@ -5728,6 +5975,7 @@
         $("#templateName")
           .value
           .trim();
+
 
       const text =
         $("#templateText")
@@ -5766,20 +6014,17 @@
       );
 
 
-      $("#templateName").value =
+      $("#templateName")
+        .value =
         "";
 
-      $("#templateText").value =
+
+      $("#templateText")
+        .value =
         "";
 
 
       renderTemplates();
-
-
-      logActivity(
-        "Saved reply template",
-        name
-      );
 
 
       showToast(
@@ -5795,8 +6040,10 @@
       state.currentView =
         view;
 
+
       state.page =
         1;
+
 
       $$(".view")
         .forEach(
@@ -5818,49 +6065,46 @@
 
             button.classList.toggle(
               "active",
-              button.dataset.view ===
+              button.dataset
+                .view ===
               view
             );
           }
         );
 
 
-      $("#pageTitle").textContent =
+      $("#pageTitle")
+        .textContent =
+
         ({
           inbox:
             "Messages",
+
           starred:
             "Starred Messages",
+
           unread:
             "Unread Messages",
+
           archive:
             "Archived Messages",
+
           trash:
             "Trash"
-        }[view] || "Messages");
 
-
-      if (
-        view !==
-        "inbox" &&
-        view !==
-        "starred" &&
-        view !==
-        "unread" &&
-        view !==
-        "archive" &&
-        view !==
-        "trash"
-      ) {
-        return;
-      }
+        }[
+          view
+        ] || "Messages");
 
 
       applyFilters();
 
-      sidebar.classList.remove(
-        "open"
-      );
+
+      sidebar
+        .classList
+        .remove(
+          "open"
+        );
     }
 
 
@@ -5868,35 +6112,40 @@
       tool
     ) {
 
+      $$(".view")
+        .forEach(
+          node =>
+            node.classList.remove(
+              "active"
+            )
+        );
+
+
+      $$(".side-btn")
+        .forEach(
+          button =>
+            button.classList.remove(
+              "active"
+            )
+        );
+
+
       if (
         tool ===
         "analytics"
       ) {
 
-        $$(".view")
-          .forEach(
-            node =>
-              node.classList.remove(
-                "active"
-              )
-          );
-
         $("#view-analytics")
-          .classList.add(
+          .classList
+          .add(
             "active"
           );
 
-        $$(".side-btn")
-          .forEach(
-            button =>
-              button.classList.remove(
-                "active"
-              )
-          );
 
         $("#pageTitle")
           .textContent =
           "Analytics";
+
 
         renderAnalytics();
 
@@ -5909,30 +6158,17 @@
         "settings"
       ) {
 
-        $$(".view")
-          .forEach(
-            node =>
-              node.classList.remove(
-                "active"
-              )
-          );
-
         $("#view-settings")
-          .classList.add(
+          .classList
+          .add(
             "active"
           );
 
-        $$(".side-btn")
-          .forEach(
-            button =>
-              button.classList.remove(
-                "active"
-              )
-          );
 
         $("#pageTitle")
           .textContent =
           "Settings";
+
 
         return;
       }
@@ -5945,10 +6181,13 @@
 
         renderTemplates();
 
+
         $("#templatesOverlay")
-          .classList.add(
+          .classList
+          .add(
             "show"
           );
+
 
         return;
       }
@@ -5960,11 +6199,10 @@
       ) {
 
         $("#helpOverlay")
-          .classList.add(
+          .classList
+          .add(
             "show"
           );
-
-        return;
       }
     }
 
@@ -5972,7 +6210,8 @@
     function saveSearchHistory() {
 
       const value =
-        searchInput.value.trim();
+        searchInput.value
+          .trim();
 
 
       if (!value) {
@@ -6019,109 +6258,41 @@
       }
 
 
-      $("#commandInput").value =
+      $("#commandInput")
+        .value =
         "";
 
 
-      renderCommandResults(
+      $("#commandResults")
+        .innerHTML =
         state.searchHistory
           .map(
-            item => ({
-              name:
-                item,
-              desc:
-                "Recent search",
-              shortcut:
-                "Use"
-            })
+            item => `
+
+              <button
+                class="command-item"
+                data-recent-search="${escapeHtml(item)}"
+              >
+
+                <div>
+
+                  <div class="command-name">
+                    ${escapeHtml(item)}
+                  </div>
+
+                  <div class="command-desc">
+                    Recent search
+                  </div>
+
+                </div>
+
+              </button>
+            `
           )
-      );
+          .join("");
 
 
-      $("#commandOverlay")
-        .classList.add(
-          "show"
-        );
-    }
-
-
-    function renderCommandResults(
-      entries
-    ) {
-
-      const query =
-        $("#commandInput")
-          .value
-          .trim()
-          .toLowerCase();
-
-
-      const filtered =
-        entries.filter(
-          item =>
-            !query ||
-            item.name
-              .toLowerCase()
-              .includes(
-                query
-              ) ||
-            item.desc
-              .toLowerCase()
-              .includes(
-                query
-              )
-        );
-
-
-      $("#commandResults").innerHTML =
-        filtered.map(
-          (
-            item,
-            index
-          ) => `
-
-            <button
-              class="command-item ${
-                index ===
-                state.commandIndex
-                  ? "active"
-                  : ""
-              }"
-              data-command="${escapeHtml(
-                item.name
-              )}"
-            >
-
-              <div>
-
-                <div class="command-name">
-                  ${escapeHtml(
-                    item.name
-                  )}
-                </div>
-
-                <div class="command-desc">
-                  ${escapeHtml(
-                    item.desc
-                  )}
-                </div>
-
-              </div>
-
-              <div class="shortcut">
-                ${escapeHtml(
-                  item.shortcut ||
-                  ""
-                )}
-              </div>
-
-            </button>
-
-          `
-        ).join("");
-
-
-      $$(".command-item")
+      $$("[data-recent-search]")
         .forEach(
           button => {
 
@@ -6129,738 +6300,35 @@
               "click",
               () => {
 
-                const name =
+                searchInput.value =
                   button.dataset
-                    .command;
-
-                if (
-                  state.searchHistory
-                    .includes(name)
-                ) {
-
-                  searchInput.value =
-                    name;
-
-                  saveSearchHistory();
-
-                  applyFilters();
-
-                  $("#commandOverlay")
-                    .classList.remove(
-                      "show"
-                    );
-
-                  return;
-                }
+                    .recentSearch;
 
 
-                runCommand(
-                  name
+                saveSearchHistory();
+
+                $("#commandOverlay")
+                  .classList
+                  .remove(
+                    "show"
+                  );
+
+
+                showView(
+                  "inbox"
                 );
               }
             );
           }
         );
-    }
 
-
-    function commandEntries() {
-
-      return [
-
-        {
-          name:
-            "Refresh messages",
-          desc:
-            "Reload data from Supabase",
-          shortcut:
-            "R"
-        },
-
-        {
-          name:
-            "Go Inbox",
-          desc:
-            "Show active messages",
-          shortcut:
-            "G I"
-        },
-
-        {
-          name:
-            "Go Starred",
-          desc:
-            "Show starred messages",
-          shortcut:
-            "G S"
-        },
-
-        {
-          name:
-            "Go Unread",
-          desc:
-            "Show unread messages",
-          shortcut:
-            "G U"
-        },
-
-        {
-          name:
-            "Go Archive",
-          desc:
-            "Show archived messages",
-          shortcut:
-            "G A"
-        },
-
-        {
-          name:
-            "Go Trash",
-          desc:
-            "Show deleted messages",
-          shortcut:
-            "G T"
-        },
-
-        {
-          name:
-            "Open Analytics",
-          desc:
-            "View message statistics",
-          shortcut:
-            ""
-        },
-
-        {
-          name:
-            "Open Templates",
-          desc:
-            "Manage reply templates",
-          shortcut:
-            ""
-        },
-
-        {
-          name:
-            "Open Settings",
-          desc:
-            "Dashboard preferences",
-          shortcut:
-            ""
-        },
-
-        {
-          name:
-            "Keyboard Help",
-          desc:
-            "Show all shortcuts",
-          shortcut:
-            "?"
-        },
-
-        {
-          name:
-            "Export CSV",
-          desc:
-            "Download spreadsheet data",
-          shortcut:
-            ""
-        },
-
-        {
-          name:
-            "Export JSON",
-          desc:
-            "Download JSON backup",
-          shortcut:
-            ""
-        },
-
-        {
-          name:
-            "Toggle Theme",
-          desc:
-            "Switch dark/light mode",
-          shortcut:
-            ""
-        }
-
-      ];
-    }
-
-
-    function runCommand(
-      name
-    ) {
 
       $("#commandOverlay")
-        .classList.remove(
+        .classList
+        .add(
           "show"
         );
-
-
-      if (
-        name ===
-        "Refresh messages"
-      ) {
-
-        loadMessages();
-        return;
-      }
-
-
-      if (
-        name ===
-        "Go Inbox"
-      ) {
-
-        showView("inbox");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Go Starred"
-      ) {
-
-        showView("starred");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Go Unread"
-      ) {
-
-        showView("unread");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Go Archive"
-      ) {
-
-        showView("archive");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Go Trash"
-      ) {
-
-        showView("trash");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Open Analytics"
-      ) {
-
-        showTool("analytics");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Open Templates"
-      ) {
-
-        showTool("templates");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Open Settings"
-      ) {
-
-        showTool("settings");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Keyboard Help"
-      ) {
-
-        showTool("help");
-        return;
-      }
-
-
-      if (
-        name ===
-        "Export CSV"
-      ) {
-
-        exportCSV();
-        return;
-      }
-
-
-      if (
-        name ===
-        "Export JSON"
-      ) {
-
-        exportJSON();
-        return;
-      }
-
-
-      if (
-        name ===
-        "Toggle Theme"
-      ) {
-
-        setTheme(
-          state.settings.theme ===
-            "dark"
-            ? "light"
-            : "dark"
-        );
-
-        return;
-      }
-
-
-      searchInput.value =
-        name;
-
-      saveSearchHistory();
-
-      showView(
-        "inbox"
-      );
-
-      applyFilters();
     }
-
-
-    function playNotification() {
-
-      try {
-
-        const AudioContext =
-          window.AudioContext ||
-          window.webkitAudioContext;
-
-
-        if (!AudioContext) {
-          return;
-        }
-
-
-        const ctx =
-          new AudioContext();
-
-
-        const oscillator =
-          ctx.createOscillator();
-
-
-        const gain =
-          ctx.createGain();
-
-
-        oscillator.type =
-          "sine";
-
-
-        oscillator.frequency
-          .setValueAtTime(
-            740,
-            ctx.currentTime
-          );
-
-
-        gain.gain
-          .setValueAtTime(
-            .0001,
-            ctx.currentTime
-          );
-
-
-        gain.gain
-          .exponentialRampToValueAtTime(
-            .06,
-            ctx.currentTime + .01
-          );
-
-
-        gain.gain
-          .exponentialRampToValueAtTime(
-            .0001,
-            ctx.currentTime + .22
-          );
-
-
-        oscillator
-          .connect(
-            gain
-          )
-          .connect(
-            ctx.destination
-          );
-
-
-        oscillator.start();
-
-        oscillator.stop(
-          ctx.currentTime + .24
-        );
-
-      } catch (
-        error
-      ) {
-        console.warn(
-          "Sound notification unavailable."
-        );
-      }
-    }
-
-
-    async function login(
-      email,
-      password
-    ) {
-
-      const {
-        data,
-        error
-      } =
-        await supabaseClient
-          .auth
-          .signInWithPassword({
-            email,
-            password
-          });
-
-
-      if (error) {
-        throw error;
-      }
-
-
-      if (
-        !data.user ||
-        data.user.email !==
-          ADMIN_EMAIL
-      ) {
-
-        await supabaseClient
-          .auth
-          .signOut({
-            scope:
-              "local"
-          });
-
-        throw new Error(
-          "Unauthorized"
-        );
-      }
-
-
-      return data.user;
-    }
-
-
-    async function logout() {
-
-      await supabaseClient
-        .auth
-        .signOut({
-          scope:
-            "local"
-        });
-
-
-      state.messages =
-        [];
-
-      state.selected.clear();
-
-      app.classList.add(
-        "hidden"
-      );
-
-      loginScreen.classList.remove(
-        "hidden"
-      );
-
-      loginForm.reset();
-
-      loginStatus.textContent =
-        "";
-    }
-
-
-    async function startApp(
-      user
-    ) {
-
-      loginScreen.classList.add(
-        "hidden"
-      );
-
-      app.classList.remove(
-        "hidden"
-      );
-
-
-      $("#sidebarEmail")
-        .textContent =
-        user.email;
-
-
-      setTheme(
-        state.settings.theme
-      );
-
-
-      applySettings();
-
-
-      await loadMessages();
-
-
-      renderTemplates();
-      renderActivity();
-    }
-
-
-    loginForm.addEventListener(
-      "submit",
-      async event => {
-
-        event.preventDefault();
-
-
-        loginButton.disabled =
-          true;
-
-        loginButton.textContent =
-          "Logging in...";
-
-        loginStatus.textContent =
-          "";
-
-
-        try {
-
-          const user =
-            await login(
-              loginEmail.value.trim(),
-              loginPassword.value
-            );
-
-
-          loginStatus.style.color =
-            "var(--success)";
-
-
-          loginStatus.textContent =
-            "Login successful.";
-
-
-          await startApp(
-            user
-          );
-
-
-          logActivity(
-            "Logged in",
-            user.email
-          );
-
-
-        } catch (
-          error
-        ) {
-
-          console.error(
-            error
-          );
-
-
-          loginStatus.style.color =
-            "var(--danger)";
-
-
-          loginStatus.textContent =
-            "Invalid email or password.";
-
-
-        } finally {
-
-          loginButton.disabled =
-            false;
-
-          loginButton.textContent =
-            "Login";
-        }
-      }
-    );
-
-
-    $$("[data-view]")
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              showView(
-                button.dataset.view
-              );
-            }
-          );
-        }
-      );
-
-
-    $$("[data-tool]")
-      .forEach(
-        button => {
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              showTool(
-                button.dataset.tool
-              );
-            }
-          );
-        }
-      );
-
-
-    $("#refreshBtn")
-      .addEventListener(
-        "click",
-        async () => {
-
-          $("#refreshBtn")
-            .disabled =
-            true;
-
-          await loadMessages(
-            false
-          );
-
-          $("#refreshBtn")
-            .disabled =
-            false;
-
-          showToast(
-            "Messages refreshed."
-          );
-        }
-      );
-
-
-    $("#themeBtn")
-      .addEventListener(
-        "click",
-        () => {
-
-          setTheme(
-            state.settings.theme ===
-              "dark"
-              ? "light"
-              : "dark"
-          );
-        }
-      );
-
-
-    $("#themeSelect")
-      .addEventListener(
-        "change",
-        event => {
-
-          saveSetting(
-            "theme",
-            event.target.value
-          );
-        }
-      );
-
-
-    $("#densitySelect")
-      .addEventListener(
-        "change",
-        () => {
-
-          const value =
-            $("#densitySelect")
-              .value;
-
-          localStorage.setItem(
-            "wrl_density",
-            value
-          );
-
-          applySettings();
-        }
-      );
-
-
-    const savedDensity =
-      localStorage.getItem(
-        "wrl_density"
-      ) || "normal";
-
-
-    $("#densitySelect").value =
-      savedDensity;
-
-
-    $("#settingsPageSize")
-      .addEventListener(
-        "change",
-        event => {
-
-          saveSetting(
-            "pageSize",
-            event.target.value
-          );
-
-          applyFilters();
-        }
-      );
-
-
-    $("#mobileMenu")
-      .addEventListener(
-        "click",
-        () => {
-
-          sidebar.classList.toggle(
-            "open"
-          );
-        }
-      );
-
-
-    $("#sidebarLogout")
-      .addEventListener(
-        "click",
-        logout
-      );
 
 
     $("#searchInput")
@@ -6919,31 +6387,40 @@
           searchInput.value =
             "";
 
-          $("#statusFilter").value =
+          $("#statusFilter")
+            .value =
             "all";
 
-          $("#priorityFilter").value =
+          $("#priorityFilter")
+            .value =
             "all";
 
-          $("#categoryFilter").value =
+          $("#categoryFilter")
+            .value =
             "all";
 
-          $("#readFilter").value =
+          $("#readFilter")
+            .value =
             "all";
 
-          $("#sortFilter").value =
+          $("#sortFilter")
+            .value =
             "newest";
 
-          $("#dateFrom").value =
+          $("#dateFrom")
+            .value =
             "";
 
-          $("#dateTo").value =
+          $("#dateTo")
+            .value =
             "";
 
           state.page =
             1;
 
+
           applyFilters();
+
 
           showToast(
             "Filters cleared."
@@ -7001,20 +6478,22 @@
 
 
           const visible =
-            state.filtered.slice(
-              (
-                state.page -
-                1
-              ) *
-              pageSize,
+            state.filtered
+              .slice(
+                (
+                  state.page -
+                  1
+                ) *
+                pageSize,
 
-              state.page *
-              pageSize
-            );
+                state.page *
+                pageSize
+              );
 
 
           if (
-            event.target.checked
+            event.target
+              .checked
           ) {
 
             visible.forEach(
@@ -7060,13 +6539,6 @@
     $("#bulkUnread")
       .addEventListener(
         "click",
-        "change",
-        () => {}
-      );
-
-
-    $("#bulkUnread")
-      .onclick =
         () =>
           bulkUpdate(
             {
@@ -7077,22 +6549,21 @@
                 "new"
             },
             "Bulk marked unread"
-          );
+          )
+      );
 
 
     $("#bulkStar")
       .addEventListener(
         "click",
-        async () => {
-
-          await bulkUpdate(
+        () =>
+          bulkUpdate(
             {
               is_starred:
                 true
             },
             "Bulk starred"
-          );
-        }
+          )
       );
 
 
@@ -7118,6 +6589,7 @@
             {
               archived:
                 false,
+
               deleted_at:
                 null
             },
@@ -7166,39 +6638,39 @@
         "click",
         () => {
 
-          const view =
-            {
-              search:
-                searchInput.value,
+          const view = {
 
-              status:
-                $("#statusFilter")
-                  .value,
+            search:
+              searchInput.value,
 
-              priority:
-                $("#priorityFilter")
-                  .value,
+            status:
+              $("#statusFilter")
+                .value,
 
-              category:
-                $("#categoryFilter")
-                  .value,
+            priority:
+              $("#priorityFilter")
+                .value,
 
-              read:
-                $("#readFilter")
-                  .value,
+            category:
+              $("#categoryFilter")
+                .value,
 
-              sort:
-                $("#sortFilter")
-                  .value,
+            read:
+              $("#readFilter")
+                .value,
 
-              from:
-                $("#dateFrom")
-                  .value,
+            sort:
+              $("#sortFilter")
+                .value,
 
-              to:
-                $("#dateTo")
-                  .value
-            };
+            from:
+              $("#dateFrom")
+                .value,
+
+            to:
+              $("#dateTo")
+                .value
+          };
 
 
           localStorage.setItem(
@@ -7206,12 +6678,6 @@
             JSON.stringify(
               view
             )
-          );
-
-
-          logActivity(
-            "Saved current view",
-            "Filters saved locally"
           );
 
 
@@ -7240,20 +6706,330 @@
         "click",
         () => {
 
-          state.commandIndex =
-            0;
-
-          $("#commandInput").value =
+          $("#commandInput")
+            .value =
             "";
 
-          renderCommandResults(
-            commandEntries()
-          );
+
+          $("#commandResults")
+            .innerHTML = `
+
+              <button
+                class="command-item"
+                data-command="refresh"
+              >
+                <div>
+                  <div class="command-name">
+                    Refresh messages
+                  </div>
+                  <div class="command-desc">
+                    Reload messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  R
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="inbox"
+              >
+                <div>
+                  <div class="command-name">
+                    Go Inbox
+                  </div>
+                  <div class="command-desc">
+                    Show active messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  G I
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="starred"
+              >
+                <div>
+                  <div class="command-name">
+                    Go Starred
+                  </div>
+                  <div class="command-desc">
+                    Show starred messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  G S
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="unread"
+              >
+                <div>
+                  <div class="command-name">
+                    Go Unread
+                  </div>
+                  <div class="command-desc">
+                    Show unread messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  G U
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="archive"
+              >
+                <div>
+                  <div class="command-name">
+                    Go Archive
+                  </div>
+                  <div class="command-desc">
+                    Show archived messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  G A
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="trash"
+              >
+                <div>
+                  <div class="command-name">
+                    Go Trash
+                  </div>
+                  <div class="command-desc">
+                    Show trashed messages
+                  </div>
+                </div>
+                <div class="shortcut">
+                  G T
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="analytics"
+              >
+                <div>
+                  <div class="command-name">
+                    Open Analytics
+                  </div>
+                  <div class="command-desc">
+                    View statistics
+                  </div>
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="settings"
+              >
+                <div>
+                  <div class="command-name">
+                    Open Settings
+                  </div>
+                  <div class="command-desc">
+                    Dashboard preferences
+                  </div>
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="templates"
+              >
+                <div>
+                  <div class="command-name">
+                    Open Templates
+                  </div>
+                  <div class="command-desc">
+                    Saved replies
+                  </div>
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="export"
+              >
+                <div>
+                  <div class="command-name">
+                    Export CSV
+                  </div>
+                  <div class="command-desc">
+                    Download messages
+                  </div>
+                </div>
+              </button>
+
+
+              <button
+                class="command-item"
+                data-command="theme"
+              >
+                <div>
+                  <div class="command-name">
+                    Toggle Theme
+                  </div>
+                  <div class="command-desc">
+                    Dark / Light
+                  </div>
+                </div>
+              </button>
+
+            `;
+
+
+          $$("#commandResults button")
+            .forEach(
+              button => {
+
+                button.addEventListener(
+                  "click",
+                  () => {
+
+                    const command =
+                      button.dataset
+                        .command;
+
+
+                    $("#commandOverlay")
+                      .classList
+                      .remove(
+                        "show"
+                      );
+
+
+                    if (
+                      command ===
+                      "refresh"
+                    ) {
+
+                      loadMessages();
+
+                    } else if (
+                      command ===
+                      "inbox"
+                    ) {
+
+                      showView(
+                        "inbox"
+                      );
+
+                    } else if (
+                      command ===
+                      "starred"
+                    ) {
+
+                      showView(
+                        "starred"
+                      );
+
+                    } else if (
+                      command ===
+                      "unread"
+                    ) {
+
+                      showView(
+                        "unread"
+                      );
+
+                    } else if (
+                      command ===
+                      "archive"
+                    ) {
+
+                      showView(
+                        "archive"
+                      );
+
+                    } else if (
+                      command ===
+                      "trash"
+                    ) {
+
+                      showView(
+                        "trash"
+                      );
+
+                    } else if (
+                      command ===
+                      "analytics"
+                    ) {
+
+                      showTool(
+                        "analytics"
+                      );
+
+                    } else if (
+                      command ===
+                      "settings"
+                    ) {
+
+                      showTool(
+                        "settings"
+                      );
+
+                    } else if (
+                      command ===
+                      "templates"
+                    ) {
+
+                      showTool(
+                        "templates"
+                      );
+
+                    } else if (
+                      command ===
+                      "export"
+                    ) {
+
+                      exportCSV();
+
+                    } else if (
+                      command ===
+                      "theme"
+                    ) {
+
+                      setTheme(
+                        state.settings
+                          .theme ===
+                          "dark"
+                          ? "light"
+                          : "dark"
+                      );
+                    }
+                  }
+                );
+              }
+            );
+
 
           $("#commandOverlay")
-            .classList.add(
+            .classList
+            .add(
               "show"
             );
+
 
           setTimeout(
             () =>
@@ -7268,262 +7044,154 @@
     $("#commandInput")
       .addEventListener(
         "input",
+        () => {}
+      );
+
+
+    $("#themeBtn")
+      .addEventListener(
+        "click",
         () => {
 
-          state.commandIndex =
-            0;
-
-          renderCommandResults(
-            commandEntries()
+          setTheme(
+            state.settings
+              .theme ===
+              "dark"
+              ? "light"
+              : "dark"
           );
         }
       );
 
 
-    $("#detailReply")
+    $("#mobileMenu")
       .addEventListener(
         "click",
         () => {
 
-          if (
-            state.currentMessageId
-          ) {
-            replyTo(
-              state.currentMessageId
+          sidebar
+            .classList
+            .toggle(
+              "open"
             );
-          }
         }
       );
 
 
-    $("#detailCopyEmail")
-      .addEventListener(
-        "click",
-        () => {
-
-          const item =
-            getMessageById(
-              state.currentMessageId
-            );
-
-          if (item) {
-            copyText(
-              item.email,
-              "Email copied."
-            );
-          }
-        }
-      );
-
-
-    $("#detailCopyMessage")
-      .addEventListener(
-        "click",
-        () => {
-
-          const item =
-            getMessageById(
-              state.currentMessageId
-            );
-
-          if (item) {
-            copyText(
-              item.message,
-              "Message copied."
-            );
-          }
-        }
-      );
-
-
-    $("#detailSave")
-      .addEventListener(
-        "click",
-        saveDetail
-      );
-
-
-    $("#detailDelete")
+    $("#refreshBtn")
       .addEventListener(
         "click",
         async () => {
 
-          if (
-            state.currentMessageId
-          ) {
+          $("#refreshBtn")
+            .disabled =
+            true;
 
-            await deleteMessage(
-              state.currentMessageId
-            );
-
-            $("#detailOverlay")
-              .classList.remove(
-                "show"
-              );
-          }
-        }
-      );
-
-
-    $("#addTagBtn")
-      .addEventListener(
-        "click",
-        addTag
-      );
-
-
-    $("#tagInput")
-      .addEventListener(
-        "keydown",
-        event => {
-
-          if (
-            event.key ===
-            "Enter"
-          ) {
-            event.preventDefault();
-            addTag();
-          }
-        }
-      );
-
-
-    $("#closeDetail")
-      .addEventListener(
-        "click",
-        () => {
-
-          $("#detailOverlay")
-            .classList.remove(
-              "show"
-            );
-        }
-      );
-
-
-    $("#detailOverlay")
-      .addEventListener(
-        "click",
-        event => {
-
-          if (
-            event.target.id ===
-            "detailOverlay"
-          ) {
-
-            event.currentTarget
-              .classList.remove(
-                "show"
-              );
-          }
-        }
-      );
-
-
-    $("#closeTemplates")
-      .addEventListener(
-        "click",
-        () => {
-
-          $("#templatesOverlay")
-            .classList.remove(
-              "show"
-            );
-        }
-      );
-
-
-    $("#templatesOverlay")
-      .addEventListener(
-        "click",
-        event => {
-
-          if (
-            event.target.id ===
-            "templatesOverlay"
-          ) {
-
-            event.currentTarget
-              .classList.remove(
-                "show"
-              );
-          }
-        }
-      );
-
-
-    $("#saveTemplate")
-      .addEventListener(
-        "click",
-        saveTemplate
-      );
-
-
-    $("#closeHelp")
-      .addEventListener(
-        "click",
-        () => {
-
-          $("#helpOverlay")
-            .classList.remove(
-              "show"
-            );
-        }
-      );
-
-
-    $("#helpOverlay")
-      .addEventListener(
-        "click",
-        event => {
-
-          if (
-            event.target.id ===
-            "helpOverlay"
-          ) {
-
-            event.currentTarget
-              .classList.remove(
-                "show"
-              );
-          }
-        }
-      );
-
-
-    [
-      [
-        "#toggleAutoRefresh",
-        "autoRefresh"
-      ],
-      [
-        "#toggleSound",
-        "sound"
-      ],
-      [
-        "#toggleConfirmDelete",
-        "confirmDelete"
-      ],
-      [
-        "#toggleRowDetail",
-        "rowDetail"
-      ]
-    ].forEach(
-      ([selector, key]) => {
-
-        $(selector)
-          .addEventListener(
-            "click",
-            () => {
-
-              saveSetting(
-                key,
-                !state.settings[key]
-              );
-            }
+          await loadMessages(
+            false
           );
-      }
-    );
+
+          $("#refreshBtn")
+            .disabled =
+            false;
+
+          showToast(
+            "Messages refreshed."
+          );
+        }
+      );
+
+
+    $("#settingsPageSize")
+      .addEventListener(
+        "change",
+        event => {
+
+          saveSetting(
+            "pageSize",
+            event.target
+              .value
+          );
+        }
+      );
+
+
+    $("#densitySelect")
+      .addEventListener(
+        "change",
+        () => {
+
+          localStorage.setItem(
+            "wrl_density",
+            $("#densitySelect")
+              .value
+          );
+
+          applySettings();
+        }
+      );
+
+
+    $("#themeSelect")
+      .addEventListener(
+        "change",
+        event => {
+
+          saveSetting(
+            "theme",
+            event.target
+              .value
+          );
+        }
+      );
+
+
+    $("#toggleAutoRefresh")
+      .addEventListener(
+        "click",
+        () =>
+          saveSetting(
+            "autoRefresh",
+            !state.settings
+              .autoRefresh
+          )
+      );
+
+
+    $("#toggleSound")
+      .addEventListener(
+        "click",
+        () =>
+          saveSetting(
+            "sound",
+            !state.settings
+              .sound
+          )
+      );
+
+
+    $("#toggleConfirmDelete")
+      .addEventListener(
+        "click",
+        () =>
+          saveSetting(
+            "confirmDelete",
+            !state.settings
+              .confirmDelete
+          )
+      );
+
+
+    $("#toggleRowDetail")
+      .addEventListener(
+        "click",
+        () =>
+          saveSetting(
+            "rowDetail",
+            !state.settings
+              .rowDetail
+          )
+      );
 
 
     $("#clearActivity")
@@ -7531,20 +7199,22 @@
         "click",
         () => {
 
-          const ok =
-            confirm(
+          if (
+            !confirm(
               "Clear local activity history?"
-            );
-
-          if (!ok) {
+            )
+          ) {
             return;
           }
+
 
           localStorage.removeItem(
             "wrl_activity"
           );
 
+
           renderActivity();
+
 
           showToast(
             "Activity cleared."
@@ -7558,14 +7228,14 @@
         "click",
         () => {
 
-          const ok =
-            confirm(
+          if (
+            !confirm(
               "Reset all dashboard preferences?"
-            );
-
-          if (!ok) {
+            )
+          ) {
             return;
           }
+
 
           localStorage.removeItem(
             "wrl_auto_refresh"
@@ -7597,33 +7267,264 @@
 
 
           state.settings = {
+
             autoRefresh:
               true,
+
             sound:
               true,
+
             confirmDelete:
               true,
+
             rowDetail:
               true,
+
             theme:
               "dark",
+
             pageSize:
               "20"
           };
 
 
-          setTheme(
-            "dark"
-          );
-
-          $("#densitySelect").value =
+          $("#densitySelect")
+            .value =
             "normal";
 
+
           applySettings();
+
 
           showToast(
             "Settings reset."
           );
+        }
+      );
+
+
+    $("#closeDetail")
+      .addEventListener(
+        "click",
+        () => {
+
+          $("#detailOverlay")
+            .classList
+            .remove(
+              "show"
+            );
+        }
+      );
+
+
+    $("#detailOverlay")
+      .addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target.id ===
+            "detailOverlay"
+          ) {
+
+            event.currentTarget
+              .classList
+              .remove(
+                "show"
+              );
+          }
+        }
+      );
+
+
+    $("#detailReply")
+      .addEventListener(
+        "click",
+        () => {
+
+          if (
+            state.currentMessageId
+          ) {
+
+            replyTo(
+              state.currentMessageId
+            );
+          }
+        }
+      );
+
+
+    $("#detailCopyEmail")
+      .addEventListener(
+        "click",
+        () => {
+
+          const item =
+            getMessageById(
+              state.currentMessageId
+            );
+
+
+          if (item) {
+
+            copyText(
+              item.email,
+              "Email copied."
+            );
+          }
+        }
+      );
+
+
+    $("#detailCopyMessage")
+      .addEventListener(
+        "click",
+        () => {
+
+          const item =
+            getMessageById(
+              state.currentMessageId
+            );
+
+
+          if (item) {
+
+            copyText(
+              item.message,
+              "Message copied."
+            );
+          }
+        }
+      );
+
+
+    $("#detailSave")
+      .addEventListener(
+        "click",
+        saveDetail
+      );
+
+
+    $("#detailDelete")
+      .addEventListener(
+        "click",
+        async () => {
+
+          if (
+            state.currentMessageId
+          ) {
+
+            await deleteMessage(
+              state.currentMessageId
+            );
+
+
+            $("#detailOverlay")
+              .classList
+              .remove(
+                "show"
+              );
+          }
+        }
+      );
+
+
+    $("#addTagBtn")
+      .addEventListener(
+        "click",
+        addTag
+      );
+
+
+    $("#tagInput")
+      .addEventListener(
+        "keydown",
+        event => {
+
+          if (
+            event.key ===
+            "Enter"
+          ) {
+
+            event.preventDefault();
+
+            addTag();
+          }
+        }
+      );
+
+
+    $("#closeTemplates")
+      .addEventListener(
+        "click",
+        () => {
+
+          $("#templatesOverlay")
+            .classList
+            .remove(
+              "show"
+            );
+        }
+      );
+
+
+    $("#templatesOverlay")
+      .addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target.id ===
+            "templatesOverlay"
+          ) {
+
+            event.currentTarget
+              .classList
+              .remove(
+                "show"
+              );
+          }
+        }
+      );
+
+
+    $("#saveTemplate")
+      .addEventListener(
+        "click",
+        saveTemplate
+      );
+
+
+    $("#closeHelp")
+      .addEventListener(
+        "click",
+        () => {
+
+          $("#helpOverlay")
+            .classList
+            .remove(
+              "show"
+            );
+        }
+      );
+
+
+    $("#helpOverlay")
+      .addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target.id ===
+            "helpOverlay"
+          ) {
+
+            event.currentTarget
+              .classList
+              .remove(
+                "show"
+              );
+          }
         }
       );
 
@@ -7639,10 +7540,183 @@
           ) {
 
             event.currentTarget
-              .classList.remove(
+              .classList
+              .remove(
                 "show"
               );
           }
+        }
+      );
+
+
+    $("#sidebarLogout")
+      .addEventListener(
+        "click",
+        async () => {
+
+          await supabaseClient
+            .auth
+            .signOut({
+              scope:
+                "local"
+            });
+
+
+          location.reload();
+        }
+      );
+
+
+    loginForm
+      .addEventListener(
+        "submit",
+        async event => {
+
+          event.preventDefault();
+
+
+          loginButton
+            .disabled =
+            true;
+
+
+          loginButton
+            .textContent =
+            "Logging in...";
+
+
+          loginStatus
+            .textContent =
+            "";
+
+
+          const email =
+            loginEmail
+              .value
+              .trim();
+
+
+          const password =
+            loginPassword
+              .value;
+
+
+          const {
+            data,
+            error
+          } =
+            await supabaseClient
+              .auth
+              .signInWithPassword({
+                email,
+                password
+              });
+
+
+          if (
+            error
+          ) {
+
+            loginStatus
+              .textContent =
+              "Invalid email or password.";
+
+
+            loginStatus
+              .style
+              .color =
+              "var(--danger)";
+
+
+            loginButton
+              .disabled =
+              false;
+
+
+            loginButton
+              .textContent =
+              "Login";
+
+
+            return;
+          }
+
+
+          if (
+            !data.user ||
+            data.user.email !==
+            ADMIN_EMAIL
+          ) {
+
+            await supabaseClient
+              .auth
+              .signOut({
+                scope:
+                  "local"
+              });
+
+
+            loginStatus
+              .textContent =
+              "This account is not authorized.";
+
+
+            loginStatus
+              .style
+              .color =
+              "var(--danger)";
+
+
+            loginButton
+              .disabled =
+              false;
+
+
+            loginButton
+              .textContent =
+              "Login";
+
+
+            return;
+          }
+
+
+          loginScreen
+            .classList
+            .add(
+              "hidden"
+            );
+
+
+          app
+            .classList
+            .remove(
+              "hidden"
+            );
+
+
+          applySettings();
+
+          await loadMessages();
+
+          renderTemplates();
+
+          renderActivity();
+
+          logActivity(
+            "Logged in",
+            email
+          );
+
+
+          loginButton
+            .disabled =
+            false;
+
+
+          loginButton
+            .textContent =
+            "Login";
         }
       );
 
@@ -7671,42 +7745,36 @@
           "Escape"
         ) {
 
-          $("#detailOverlay")
-            .classList.remove(
-              "show"
+          $$("#detailOverlay,.command-overlay,.settings-overlay,.help-overlay")
+            .forEach(
+              element => {
+
+                element.classList
+                  .remove(
+                    "show"
+                  );
+              }
             );
 
-          $("#commandOverlay")
-            .classList.remove(
-              "show"
-            );
-
-          $("#templatesOverlay")
-            .classList.remove(
-              "show"
-            );
-
-          $("#helpOverlay")
-            .classList.remove(
-              "show"
-            );
 
           return;
         }
 
 
         if (
-          event.key ===
-            "k" &&
           (
             event.ctrlKey ||
             event.metaKey
-          )
+          ) &&
+          event.key
+            .toLowerCase() ===
+          "k"
         ) {
 
           event.preventDefault();
 
-          $("#commandBtn").click();
+          $("#commandBtn")
+            .click();
 
           return;
         }
@@ -7714,7 +7782,7 @@
 
         if (
           event.key ===
-            "/" &&
+          "/" &&
           !typing
         ) {
 
@@ -7729,7 +7797,7 @@
         if (
           event.key
             .toLowerCase() ===
-            "r" &&
+          "r" &&
           !typing
         ) {
 
@@ -7741,15 +7809,14 @@
 
         if (
           event.key ===
-            "?" &&
+          "?"
+          &&
           !typing
         ) {
 
           showTool(
             "help"
           );
-
-          return;
         }
       }
     );
@@ -7772,18 +7839,18 @@
         }
 
 
+        const tag =
+          document.activeElement
+            ?.tagName
+            ?.toLowerCase();
+
+
         if (
-          document.activeElement
-            ?.tagName
-            ?.toLowerCase() ===
+          tag ===
             "input" ||
-          document.activeElement
-            ?.tagName
-            ?.toLowerCase() ===
+          tag ===
             "textarea" ||
-          document.activeElement
-            ?.tagName
-            ?.toLowerCase() ===
+          tag ===
             "select"
         ) {
           return;
@@ -7860,7 +7927,7 @@
     );
 
 
-    async function checkSession() {
+    async function restoreSession() {
 
       const {
         data,
@@ -7878,9 +7945,27 @@
           ADMIN_EMAIL
       ) {
 
-        await startApp(
-          data.user
-        );
+        loginScreen
+          .classList
+          .add(
+            "hidden"
+          );
+
+
+        app
+          .classList
+          .remove(
+            "hidden"
+          );
+
+
+        applySettings();
+
+        await loadMessages();
+
+        renderTemplates();
+
+        renderActivity();
 
       } else {
 
@@ -7889,6 +7974,7 @@
           .remove(
             "hidden"
           );
+
 
         app
           .classList
@@ -7899,7 +7985,7 @@
     }
 
 
-    checkSession();
+    restoreSession();
   </script>
 
 </body>
